@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Floating Reading Indicator</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family: Inter, sans-serif;
+            background:#f3f3f3;
+        }
+
+        .doc-section{
+            scroll-margin-top:120px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div
+    x-data="readingIndicator()"
+    x-init="init()"
+    @scroll.window="updateActiveSection"
+    class="relative min-h-screen"
+>
+
+    <!-- ================================================= -->
+    <!-- FLOATING READING INDICATOR -->
+    <!-- ================================================= -->
+
+    <div
+        x-data="{ open:false }"
+        class="fixed left-5 top-1/2 -translate-y-1/2 z-50"
+    >
+
+        <!-- WRAPPER -->
+        <div
+            class="relative flex items-center"
+            @mouseenter="open = true"
+            @mouseleave="open = false"
+        >
+
+            <!-- SMALL LINES -->
+            <div class="flex flex-col gap-2 pr-5">
+
+                <template x-for="item in items" :key="item.id">
+
+                    <button
+                        @click="scrollTo(item.id)"
+                        class=" group flex items-center h-[1px]"
+                    >
+
+                        <div
+                            class="rounded-full transition-all duration-100 ease-out"
+                            :class="
+                                active === item.id
+                                ? 'w-10 h-[2px] bg-[#8b5cf6]'
+                                : 'w-6 h-[2px] bg-[#b7b2ae] group-hover:w-8'
+                            "
+                        ></div>
+
+                    </button>
+
+                </template>
+
+            </div>
+
+            <!-- FLOATING MENU -->
+            <div
+
+                x-show="open"
+
+                x-transition:enter="transition-all duration-300 ease-out"
+                x-transition:enter-start="
+                    opacity-0
+                    scale-95
+                    -translate-x-3
+                "
+                x-transition:enter-end="
+                    opacity-100
+                    scale-100
+                    translate-x-0
+                "
+
+                x-transition:leave="transition-all duration-200 ease-in"
+                x-transition:leave-start="
+                    opacity-100
+                    scale-100
+                    translate-x-0
+                "
+                x-transition:leave-end="
+                    opacity-0
+                    scale-95
+                    -translate-x-3
+                "
+
+                style="transform-origin:left center;"
+
+                class="
+                    absolute
+                    left-[60px]
+                    top-1/2
+                    -translate-y-1/2
+
+                    w-[540px]
+
+                    rounded-[24px]
+
+                    border border-white/40
+
+                    bg-[#ebe8e5]/95
+                    backdrop-blur-xl
+
+                    p-6
+
+                    shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                "
+            >
+
+                <div class="flex flex-col gap-5">
+
+                    <template x-for="item in items" :key="item.id">
+
+                        <button
+                            @click="scrollTo(item.id)"
+                            class="text-left"
+                        >
+
+                            <div
+                                class="text-[22px] leading-none transition-all duration-300"
+                                :class="
+                                    active === item.id
+                                    ? 'font-semibold text-[#111111]'
+                                    : 'font-normal text-[#5d5855] hover:text-[#111111]'
+                                "
+                                x-text="item.label"
+                            ></div>
+
+                        </button>
+
+                    </template>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================================================= -->
+    <!-- DOCUMENT -->
+    <!-- ================================================= -->
+
+    <div class="flex justify-center py-10">
+
+        <div
+            class="
+                w-[760px]
+                overflow-hidden
+                rounded-[20px]
+                border
+                border-[#dddddd]
+                bg-white
+                shadow-sm
+            "
+        >
+
+            <!-- SECTION -->
+            <template x-for="section in items" :key="section.id">
+
+                <section
+                    :id="section.id"
+                    class="
+                        doc-section
+                        min-h-[100px]
+        mb-10
+                        border-b
+                        border-dashed
+                        border-[#60a5fa]
+                        px-10
+                        py-10
+                    "
+                >
+
+                    <!-- TITLE -->
+                    <h2
+                        class="
+                            mb-8
+                            text-[28px]
+                            font-semibold
+                            leading-tight
+                            text-[#111]
+                        "
+                        x-text="section.title"
+                    ></h2>
+
+                    <!-- CONTENT -->
+                    <div
+                        class="
+                            space-y-6
+                            text-[15px]
+                            leading-8
+                            text-[#444]
+                        "
+                    >
+
+                        <p>
+                            This Non-Disclosure Agreement ("Agreement")
+                            is entered into between the parties for
+                            discussing confidential business information.
+                        </p>
+
+                        <p>
+                            The Receiving Party agrees not to disclose
+                            any confidential materials to third parties
+                            without prior written consent.
+                        </p>
+
+                    
+                    </div>
+
+                </section>
+
+            </template>
+
+            
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function readingIndicator(){
+
+    return{
+
+        // =========================================
+        // ACTIVE SECTION
+        // =========================================
+
+        active:'',
+
+        // =========================================
+        // MENU ITEMS
+        // =========================================
+
+        items:[
+
+            {
+                id:'nda',
+                label:'Non-Disclosure Agreement',
+                title:'NON-DISCLOSURE AGREEMENT'
+            },
+
+            {
+                id:'purpose',
+                label:'Purpose',
+                title:'1. PURPOSE'
+            },
+
+            {
+                id:'definition',
+                label:'Definition of confidential',
+                title:'2. DEFINITION OF CONFIDENTIAL INFORMATION'
+            },
+
+            {
+                id:'obligations',
+                label:'Obligations of the receiving party',
+                title:'3. OBLIGATIONS OF THE RECEIVING PARTY'
+            },
+
+            {
+                id:'exclusions',
+                label:'Exclusions from confidential information',
+                title:'4. EXCLUSIONS FROM CONFIDENTIAL INFORMATION'
+            }
+
+        ],
+
+        // =========================================
+        // INIT
+        // =========================================
+
+        init(){
+
+            this.updateActiveSection()
+
+            // SCROLL
+            window.addEventListener(
+
+                'scroll',
+
+                ()=>{
+
+                    this.updateActiveSection()
+
+                }
+
+            )
+
+            // RESIZE
+            window.addEventListener(
+
+                'resize',
+
+                ()=>{
+
+                    this.updateActiveSection()
+
+                }
+
+            )
+
+            // LOAD
+            window.addEventListener(
+
+                'load',
+
+                ()=>{
+
+                    this.updateActiveSection()
+
+                }
+
+            )
+
+        },
+
+        // =========================================
+        // UPDATE ACTIVE SECTION
+        // =========================================
+
+        updateActiveSection(){
+
+            /*
+            -----------------------------------
+            DEFAULT ACTIVE
+            -----------------------------------
+            */
+
+            let current = this.items[0].id
+
+            /*
+            -----------------------------------
+            ACTIVE RANGE
+            -----------------------------------
+            */
+
+            const topTrigger = window.innerHeight * 0.20
+            const bottomTrigger = window.innerHeight * 0.60
+
+            /*
+            -----------------------------------
+            PAGE TOP FIX
+            -----------------------------------
+            */
+
+            if(window.scrollY < 100){
+
+                this.active = this.items[0].id
+                return
+
+            }
+
+            /*
+            -----------------------------------
+            LOOP THROUGH SECTIONS
+            -----------------------------------
+            */
+
+            this.items.forEach((item)=>{
+
+                const el = document.getElementById(item.id)
+
+                if(!el) return
+
+                const rect = el.getBoundingClientRect()
+
+                /*
+                -----------------------------------
+                SECTION INSIDE ACTIVE RANGE
+                -----------------------------------
+                */
+
+                const isVisible =
+
+                    rect.top <= bottomTrigger &&
+                    rect.bottom >= topTrigger
+
+                /*
+                -----------------------------------
+                APPLY ACTIVE
+                -----------------------------------
+                */
+
+                if(isVisible){
+
+                    current = item.id
+
+                }
+
+            })
+
+            /*
+            -----------------------------------
+            LAST SECTION FIX
+            -----------------------------------
+            */
+
+            if(
+
+                window.innerHeight + window.scrollY
+                >= document.body.offsetHeight - 80
+
+            ){
+
+                current = this.items[
+                    this.items.length - 1
+                ].id
+
+            }
+
+            /*
+            -----------------------------------
+            APPLY FINAL ACTIVE
+            -----------------------------------
+            */
+
+            this.active = current
+
+        },
+
+        // =========================================
+        // SMOOTH SCROLL
+        // =========================================
+
+        scrollTo(id){
+
+            const el = document.getElementById(id)
+
+            if(!el) return
+
+            /*
+            -----------------------------------
+            OFFSET
+            -----------------------------------
+            */
+
+            const offset = 80
+
+            const top =
+
+                el.getBoundingClientRect().top +
+                window.pageYOffset -
+                offset
+
+            /*
+            -----------------------------------
+            SCROLL
+            -----------------------------------
+            */
+
+            window.scrollTo({
+
+                top,
+                behavior:'smooth'
+
+            })
+
+        }
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1196 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- REQUIRED META TAGS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Agreed</title>
+  <!--Main CSS-->
+  <link href="assets/css/output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-Theme-Forground font-inter-display overflow-hidden">
+  <div class="block relative">
+    <!--Sidebar-->
+    <div class="relative flex h-full">
+      <aside
+        class="md:fixed relative bg-transparent top-0 xl:w-[270px] lg:w-[250px] w-full md:w-[240px] md:h-[100vh] overflow-y-auto px-2.5 z-50">
+        <!--logo wrapper-->
+        <div class="py-2.5 flex items-center gap-1.5 border-b border-[#EEEEEC] mb-3">
+          <!--logo-->
+          <a href="#" class="outline-none">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="10" fill="#8E5EFE" />
+              <path
+                d="M27.1067 18.6644C27.1067 17.2103 26.6208 16.5551 26.1951 16.2374C25.713 15.8777 25.0735 15.7771 24.5701 15.8369C23.817 15.9263 22.2364 17.1757 22.8308 19.3846C23.1967 20.7444 24.0801 21.756 25.2058 22.3925C26.4321 21.3072 27.1067 19.9093 27.1067 18.6644ZM12.8827 18.6644C12.8827 19.9093 13.5573 21.3072 14.7835 22.3925C15.9093 21.756 16.7927 20.7445 17.1586 19.3846C17.753 17.1757 16.1724 15.9263 15.4193 15.8369C14.9159 15.7771 14.2764 15.8777 13.7943 16.2374C13.3686 16.5551 12.8827 17.2103 12.8827 18.6644ZM29.5764 18.6644C29.5764 20.269 28.9588 21.8408 27.884 23.1636C28.9489 23.2177 29.9568 22.9838 30.7075 22.5046L32.0363 24.5862C30.1733 25.7754 27.6812 25.9203 25.5162 25.213C23.9826 26.1458 22.0999 26.7146 20.0193 26.7146H19.9701C17.8894 26.7146 16.0067 26.1458 14.4732 25.213C12.3081 25.9203 9.81607 25.7754 7.95312 24.5862L9.2819 22.5046C10.0326 22.9837 11.0405 23.2177 12.1053 23.1636C11.0305 21.8408 10.413 20.269 10.413 18.6644C10.413 16.5869 11.1515 15.1281 12.3172 14.2582C13.4266 13.4304 14.7455 13.2698 15.7106 13.3844C17.8943 13.6438 20.5458 16.3014 19.5435 20.0263C19.1174 21.6097 18.2355 22.856 17.1282 23.767C17.9694 24.0687 18.9211 24.2449 19.9701 24.2449H20.0193C21.0683 24.2449 22.02 24.0687 22.8612 23.767C21.7539 22.856 20.872 21.6097 20.4459 20.0263C19.4436 16.3014 22.0951 13.6438 24.2788 13.3844C25.2439 13.2698 26.5629 13.4304 27.6722 14.2582C28.8379 15.1281 29.5764 16.5869 29.5764 18.6644Z"
+                fill="white" />
+            </svg>
+          </a>
+          <!--User Dropdown-->
+          <div x-data="dropdownComponent('user-menu')" class="relative w-max">
+            <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}" class="bg-[]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M8.99841 13.4853L8.99841 13.4979" stroke="#000A06" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path d="M8.99841 9.09075L8.99841 9.10333" stroke="#000A06" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path d="M8.99841 4.69231L8.99841 4.70489" stroke="#000A06" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </button>
+
+            <div x-ref="user-menu" x-show="isOpen" x-transition=""
+              x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
+              class="absolute left-0 z-10 p-2 mt-[5px] w-[252px] bg-gradient-gray rounded-10px p-[2px]" style="
+                  overflow: hidden;
+                  transition: height 300ms;
+                  height: auto;
+                  display: none;
+                ">
+              <span
+                class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Workspace</span>
+              <div class="bg-white rounded-lg p-2">
+                <!--list-->
+                <ul class="flex flex-col gap-0.5">
+                  <li>
+                    <button
+                      class="group w-full py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      <svg
+                        class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                        width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_7888_846)">
+                          <path
+                            d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z"
+                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                          <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                          </path>
+                          <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_7888_846">
+                            <rect width="18" height="18" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                      Rename
+                    </button>
+                  </li>
+
+                  <li>
+                    <button
+                      class="group w-full py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      <svg
+                        class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                        width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_7888_853)">
+                          <path
+                            d="M15.9881 5.35409L15.6179 4.71164C15.3379 4.22577 15.198 3.98284 14.9598 3.88596C14.7216 3.78909 14.4522 3.86553 13.9135 4.01841L12.9983 4.27618C12.6544 4.3555 12.2935 4.3105 11.9794 4.14914L11.7268 4.00336C11.4574 3.83087 11.2503 3.57655 11.1356 3.2776L10.8852 2.52957C10.7205 2.03455 10.6381 1.78705 10.4421 1.64548C10.2461 1.50391 9.98572 1.50391 9.46492 1.50391H8.62882C8.1081 1.50391 7.8477 1.50391 7.65165 1.64548C7.45564 1.78705 7.37329 2.03455 7.20862 2.52957L6.95815 3.2776C6.84349 3.57655 6.63634 3.83087 6.36703 4.00336L6.11437 4.14914C5.8003 4.3105 5.43944 4.3555 5.09548 4.27618L4.18031 4.01841C3.64156 3.86553 3.37219 3.78909 3.134 3.88596C2.89582 3.98284 2.75584 4.22577 2.47586 4.71164L2.10568 5.35409C1.84324 5.80953 1.71202 6.03725 1.73749 6.27967C1.76296 6.52208 1.93862 6.71743 2.28994 7.10814L3.06322 7.97265C3.25222 8.2119 3.38641 8.6289 3.38641 9.00382C3.38641 9.3789 3.25227 9.79575 3.06325 10.0351L2.28994 10.8996C1.93862 11.2903 1.76296 11.4856 1.73749 11.7281C1.71202 11.9705 1.84324 12.1982 2.10568 12.6536L2.47585 13.2961C2.75582 13.7819 2.89582 14.0249 3.134 14.1217C3.37219 14.2186 3.64156 14.1422 4.18033 13.9893L5.09545 13.7315C5.43947 13.6522 5.8004 13.6972 6.1145 13.8586L6.36712 14.0044C6.63638 14.1769 6.84348 14.4312 6.95812 14.7301L7.20862 15.4783C7.37329 15.9733 7.45564 16.2208 7.65165 16.3624C7.8477 16.5039 8.1081 16.5039 8.62882 16.5039H9.46492C9.98572 16.5039 10.2461 16.5039 10.4421 16.3624C10.6381 16.2208 10.7205 15.9733 10.8852 15.4783L11.1357 14.7301C11.2503 14.4312 11.4574 14.1769 11.7267 14.0044L11.9793 13.8586C12.2934 13.6972 12.6543 13.6522 12.9983 13.7315L13.9135 13.9893C14.4522 14.1422 14.7216 14.2186 14.9598 14.1217C15.198 14.0249 15.3379 13.7819 15.6179 13.2961L15.9881 12.6536C16.2505 12.1982 16.3817 11.9705 16.3563 11.7281C16.3308 11.4856 16.1551 11.2903 15.8038 10.8996L15.0305 10.0351C14.8415 9.79575 14.7073 9.3789 14.7073 9.00382C14.7073 8.6289 14.8416 8.2119 15.0305 7.97265L15.8038 7.10814C16.1551 6.71743 16.3308 6.52208 16.3563 6.27967C16.3817 6.03725 16.2505 5.80953 15.9881 5.35409Z"
+                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                          <path
+                            d="M11.6406 9C11.6406 10.4498 10.4654 11.625 9.0156 11.625C7.56585 11.625 6.39062 10.4498 6.39062 9C6.39062 7.55025 7.56585 6.375 9.0156 6.375C10.4654 6.375 11.6406 7.55025 11.6406 9Z"
+                            stroke="currentColor" stroke-width="1.6"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_7888_853">
+                            <rect width="18" height="18" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                      Settings
+                    </button>
+                  </li>
+
+                  <li>
+                    <button data-modal-target="Delete-workspace"
+                      class="group w-full py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      <svg
+                        class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                          d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
+                          stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                        <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                        </path>
+                        <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                        </path>
+                        <path
+                          d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
+                          stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                      </svg>
+
+                      Delete
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--main list wrapper-->
+        <div class="flex flex-col divide-y divide-[#EEEEEC]">
+          <div class="flex flex-col gap-1.5 pb-3">
+            <h5
+              class="text-xs text-Theme-light-gray leading-[133%] font-inter-display-medium tracking-[0.96px] uppercase px-3">
+              Workspace</h5>
+            <!--list-->
+            <ul class="flex flex-col">
+              <li>
+                <a href="#"
+                  class="font-inter-display-medium py-2.5 px-3 rounded-lg flex items-center justify-between gap-3 text-sm leading-[170%] transition-all duration-500 border text-Theme-dark-gray bg-transparent border-transparent hover:text-Theme-black hover:bg-[#EEEEEC]  [&.active]:bg-white [&.active]:text-Theme-black [&.active]:border-[#EBEBEB] ">
+                  My Workspace
+                </a>
+              </li>
+            </ul>
+            <button class="btn-gray-icon-text">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.9987 2.33203V11.6654M11.6654 6.9987H2.33203" stroke="#090536" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Create Workspace</span>
+            </button>
+          </div>
+          <div class="flex flex-col gap-1.5 py-3">
+            <!--list-->
+            <ul class="flex flex-col gap-[2px]">
+              <li>
+                <a href="#" class="doc-list-item group active">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.875 9C1.875 5.64124 1.875 3.96187 2.91843 2.91843C3.96187 1.875 5.64124 1.875 9 1.875C12.3587 1.875 14.0381 1.875 15.0816 2.91843C16.125 3.96187 16.125 5.64124 16.125 9C16.125 12.3587 16.125 14.0381 15.0816 15.0816C14.0381 16.125 12.3587 16.125 9 16.125C5.64124 16.125 3.96187 16.125 2.91843 15.0816C1.875 14.0381 1.875 12.3587 1.875 9Z"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M16.125 10.125H12.4307C11.7992 10.125 11.303 10.6527 11.0246 11.2104C10.7222 11.8163 10.1167 12.375 9 12.375C7.88333 12.375 7.2778 11.8163 6.9754 11.2104C6.69706 10.6527 6.20083 10.125 5.56925 10.125H1.875"
+                      stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                  </svg>
+
+                  Inbox
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_7938_676)">
+                      <path
+                        d="M16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9Z"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9.30105 6.22347L11.491 5.49349C12.1556 5.27193 12.488 5.16115 12.6635 5.33658C12.8389 5.51201 12.7281 5.84435 12.5065 6.50903L11.7765 8.69895C11.399 9.8316 11.2102 10.3979 10.8041 10.8041C10.3979 11.2102 9.8316 11.399 8.69895 11.7765L6.50903 12.5065C5.84435 12.7281 5.51201 12.8389 5.33658 12.6635C5.16115 12.488 5.27193 12.1556 5.49349 11.491L6.22347 9.30105C6.60102 8.1684 6.7898 7.60208 7.19593 7.19593C7.60208 6.7898 8.1684 6.60102 9.30105 6.22347Z"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9.09375 9H9M9.1875 9C9.1875 9.10357 9.10357 9.1875 9 9.1875C8.89643 9.1875 8.8125 9.10357 8.8125 9C8.8125 8.89643 8.89643 8.8125 9 8.8125C9.10357 8.8125 9.1875 8.89643 9.1875 9Z"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_7938_676">
+                        <rect width="18" height="18" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Templates
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="flex flex-col gap-1.5 py-3">
+            <h5
+              class="text-xs text-Theme-light-gray leading-[133%] font-inter-display-medium tracking-[0.96px] uppercase px-3">
+              Document Status</h5>
+            <!--list-->
+            <ul class="flex flex-col gap-1 doc-list">
+              <li>
+                <a href="#" class="doc-list-item group">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M7.125 11.25L12.75 5.625" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M6.00617 5.75916L11.4967 3.16411C13.778 2.08583 14.9187 1.54669 15.6463 2.08756C16.3738 2.62841 16.1659 3.86099 15.7502 6.32614L15.034 10.5726C14.7622 12.1845 14.6263 12.9904 14.0256 13.3418C13.4248 13.6933 12.6445 13.4233 11.0838 12.8835L6.30949 11.2321C3.39079 10.2226 1.93144 9.71782 1.87656 8.72737C1.82167 7.73692 3.2165 7.07769 6.00617 5.75916Z"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M7.125 11.625V13.2955C7.125 15.0757 7.125 15.9659 7.65764 16.1078C8.19029 16.2497 8.75122 15.5092 9.87307 14.0279L10.5 13.125"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  Sent for sign
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                      d="M12.901 1.5H5.09898C4.00566 1.5 3.04642 2.23853 3.00261 3.30266C2.94748 4.64159 3.88914 5.53067 4.87817 6.36533C6.24637 7.51995 6.93047 8.0973 7.00222 8.8281C7.01345 8.94248 7.01345 9.05753 7.00222 9.1719C6.93047 9.9027 6.24637 10.4801 4.87817 11.6347C3.8619 12.4923 2.94463 13.2896 3.00261 14.6973C3.04642 15.7615 4.00566 16.5 5.09898 16.5H12.901C13.9942 16.5 14.9535 15.7615 14.9973 14.6973C15.0322 13.8501 14.7182 13.0065 14.0513 12.42C13.7473 12.1526 13.4316 11.8961 13.1218 11.6347C11.7535 10.4801 11.0695 9.9027 10.9977 9.1719C10.9864 9.05753 10.9864 8.94248 10.9977 8.8281C11.0695 8.0973 11.7535 7.51995 13.1218 6.36533C14.1274 5.51669 15.0546 4.69357 14.9973 3.30266C14.9535 2.23853 13.9942 1.5 12.901 1.5Z"
+                      stroke="currentColor" stroke-width="1.6" />
+                    <path
+                      d="M6.75 16.2286C6.75 15.8972 6.75 15.7314 6.8157 15.5866C6.82613 15.5636 6.83774 15.5411 6.85049 15.5192C6.93076 15.3818 7.06658 15.2847 7.33824 15.0906C8.09287 14.5516 8.47013 14.282 8.8989 14.2534C8.96625 14.2489 9.03375 14.2489 9.1011 14.2534C9.52987 14.282 9.90713 14.5516 10.6618 15.0906C10.9334 15.2847 11.0693 15.3818 11.1495 15.5192C11.1623 15.5411 11.1739 15.5636 11.1843 15.5866C11.25 15.7314 11.25 15.8972 11.25 16.2286V16.5H6.75V16.2286Z"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  </svg>
+
+                  Sign by me
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <g clip-path="url(#clip0_7938_700)">
+                      <path
+                        d="M16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9Z"
+                        stroke="currentColor" stroke-width="1.6" />
+                      <path d="M6 9.375L7.875 11.25L12 6.75" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_7938_700">
+                        <rect width="18" height="18" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Completed
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <g clip-path="url(#clip0_7938_706)">
+                      <path d="M3.75 3.75L14.25 14.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_7938_706">
+                        <rect width="18" height="18" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Rejected
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                      d="M10.4436 15.75H7.5564C4.08357 15.75 2.34717 15.75 1.70727 14.6204C1.06738 13.4909 1.95552 11.9935 3.73181 8.99887L5.17543 6.565C6.8817 3.68834 7.73483 2.25 9 2.25C10.2652 2.25 11.1183 3.68833 12.8246 6.56499L14.2682 8.99887C16.0445 11.9935 16.9326 13.4909 16.2927 14.6204C15.6528 15.75 13.9164 15.75 10.4436 15.75Z"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 6.75V9.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M9.09375 12.5625H9M9.1875 12.5625C9.1875 12.6661 9.10357 12.75 9 12.75C8.89643 12.75 8.8125 12.6661 8.8125 12.5625C8.8125 12.4589 8.89643 12.375 9 12.375C9.10357 12.375 9.1875 12.4589 9.1875 12.5625Z"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  Expiring Soon
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                      d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    <path d="M6.75 8.79688H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    <path
+                      d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
+                      stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  </svg>
+                  Trash
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="flex flex-col gap-1.5 py-3">
+            <h5
+              class="text-xs text-Theme-light-gray leading-[133%] font-inter-display-medium tracking-[0.96px] uppercase px-3">
+              Help Center</h5>
+            <!--list-->
+            <ul class="flex flex-col gap-1 doc-list">
+              <li>
+                <a href="#" class="doc-list-item group">
+
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <g clip-path="url(#clip0_7938_734)">
+                      <path
+                        d="M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9.75 4.875C12.1004 4.875 13.125 3.88615 13.125 1.5C13.125 3.88615 14.1425 4.875 16.5 4.875C14.1425 4.875 13.125 5.89252 13.125 8.25C13.125 5.89252 12.1004 4.875 9.75 4.875Z"
+                        stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_7938_734">
+                        <rect width="18" height="18" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  What’s New
+                </a>
+              </li>
+              <li>
+                <a href="#" class="doc-list-item group">
+
+                  <svg
+                    class="w-[18px] h-[18px] text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-Theme-purple"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <g clip-path="url(#clip0_7938_740)">
+                      <path
+                        d="M12.75 10.3534C12.75 10.0941 12.75 9.9645 12.789 9.849C12.9024 9.5133 13.2014 9.3831 13.5008 9.24667C13.8375 9.0933 14.0058 9.01665 14.1726 9.00315C14.362 8.98785 14.5517 9.02865 14.7135 9.11947C14.9281 9.23985 15.0777 9.46867 15.2309 9.65475C15.9384 10.5141 16.2922 10.9438 16.4216 11.4177C16.5261 11.8 16.5261 12.1999 16.4216 12.5823C16.2329 13.2734 15.6364 13.8528 15.1948 14.389C14.969 14.6633 14.8561 14.8005 14.7135 14.8805C14.5517 14.9713 14.362 15.0121 14.1726 14.9968C14.0058 14.9833 13.8375 14.9067 13.5008 14.7533C13.2014 14.6169 12.9024 14.4867 12.789 14.151C12.75 14.0355 12.75 13.9059 12.75 13.6466V10.3534Z"
+                        stroke="currentColor" stroke-width="1.6" />
+                      <path d="M7.125 15.75C8.16053 16.75 9.83948 16.75 10.875 15.75" stroke="currentColor"
+                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.25 10.3534C5.25 10.027 5.24084 9.73363 4.97693 9.50413C4.88095 9.42065 4.75369 9.36268 4.49918 9.24673C4.16251 9.09343 3.99417 9.01678 3.82737 9.00328C3.32693 8.96278 3.05769 9.30433 2.7691 9.6548C2.06156 10.5142 1.7078 10.9438 1.57835 11.4177C1.47388 11.8 1.47388 12.1999 1.57835 12.5823C1.76715 13.2734 2.36364 13.8526 2.80516 14.3889C3.08347 14.7269 3.34933 15.0354 3.82737 14.9967C3.99417 14.9832 4.16251 14.9065 4.49918 14.7532C4.75369 14.6373 4.88095 14.5793 4.97693 14.4958C5.24084 14.2663 5.25 13.973 5.25 13.6465V10.3534Z"
+                        stroke="currentColor" stroke-width="1.6" />
+                      <path d="M1.5 12V9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9L16.5001 12"
+                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_7938_740">
+                        <rect width="18" height="18" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  Help
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+      </aside>
+    </div>
+    <!--Main Content-->
+    <div
+      class="xl:w-[calc(100%-270px)] lg:w-[calc(100%-250px)] md:w-[calc(100%-240px)] w-full ml-auto relative md:h-screen h-auto p-1 pl-0 h-full min-h-screen">
+      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full px-5">
+        <div class="py-3.5  pb-3.5 border-b border-[#EEEEEC] flex justify-between items-center relative z-10 bg-white">
+          <div class="flex items-center gap-2.5">
+            <h1 class="text-2xl font-inter-display-medium leading-[34px] text-Theme-black">Personal Workspace</h1>
+            <!--workspace dropdown -->
+            <div x-data="dropdownComponent('workspace-menu')" class="relative w-max">
+              <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}" class="btn-white-icon-square">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M8.99841 13.4853L8.99841 13.4979" stroke="#000A06" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8.99841 9.09075L8.99841 9.10333" stroke="#000A06" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8.99841 4.69231L8.99841 4.70489" stroke="#000A06" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div x-ref="workspace-menu" x-show="isOpen" x-transition=""
+                x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
+                @keydown.escape.window="close()"
+                class="absolute left-0 z-10 p-2 mt-[5px] w-[252px] bg-gradient-gray rounded-10px p-[2px]"
+                style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                <span
+                  class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Workspace</span>
+                <div class="bg-white rounded-lg p-2 ">
+                  <!--list-->
+                  <ul class="flex flex-col gap-0.5">
+                    <li>
+                      <button
+                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                        <svg
+                          class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                          width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_7888_846)">
+                            <path
+                              d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z"
+                              stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                            <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6"
+                              stroke-linejoin="round" />
+                            <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_7888_846">
+                              <rect width="18" height="18" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        Rename
+                      </button>
+                    </li>
+
+                    <li>
+                      <button
+                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                        <svg
+                          class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                          width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_7888_853)">
+                            <path
+                              d="M15.9881 5.35409L15.6179 4.71164C15.3379 4.22577 15.198 3.98284 14.9598 3.88596C14.7216 3.78909 14.4522 3.86553 13.9135 4.01841L12.9983 4.27618C12.6544 4.3555 12.2935 4.3105 11.9794 4.14914L11.7268 4.00336C11.4574 3.83087 11.2503 3.57655 11.1356 3.2776L10.8852 2.52957C10.7205 2.03455 10.6381 1.78705 10.4421 1.64548C10.2461 1.50391 9.98572 1.50391 9.46492 1.50391H8.62882C8.1081 1.50391 7.8477 1.50391 7.65165 1.64548C7.45564 1.78705 7.37329 2.03455 7.20862 2.52957L6.95815 3.2776C6.84349 3.57655 6.63634 3.83087 6.36703 4.00336L6.11437 4.14914C5.8003 4.3105 5.43944 4.3555 5.09548 4.27618L4.18031 4.01841C3.64156 3.86553 3.37219 3.78909 3.134 3.88596C2.89582 3.98284 2.75584 4.22577 2.47586 4.71164L2.10568 5.35409C1.84324 5.80953 1.71202 6.03725 1.73749 6.27967C1.76296 6.52208 1.93862 6.71743 2.28994 7.10814L3.06322 7.97265C3.25222 8.2119 3.38641 8.6289 3.38641 9.00382C3.38641 9.3789 3.25227 9.79575 3.06325 10.0351L2.28994 10.8996C1.93862 11.2903 1.76296 11.4856 1.73749 11.7281C1.71202 11.9705 1.84324 12.1982 2.10568 12.6536L2.47585 13.2961C2.75582 13.7819 2.89582 14.0249 3.134 14.1217C3.37219 14.2186 3.64156 14.1422 4.18033 13.9893L5.09545 13.7315C5.43947 13.6522 5.8004 13.6972 6.1145 13.8586L6.36712 14.0044C6.63638 14.1769 6.84348 14.4312 6.95812 14.7301L7.20862 15.4783C7.37329 15.9733 7.45564 16.2208 7.65165 16.3624C7.8477 16.5039 8.1081 16.5039 8.62882 16.5039H9.46492C9.98572 16.5039 10.2461 16.5039 10.4421 16.3624C10.6381 16.2208 10.7205 15.9733 10.8852 15.4783L11.1357 14.7301C11.2503 14.4312 11.4574 14.1769 11.7267 14.0044L11.9793 13.8586C12.2934 13.6972 12.6543 13.6522 12.9983 13.7315L13.9135 13.9893C14.4522 14.1422 14.7216 14.2186 14.9598 14.1217C15.198 14.0249 15.3379 13.7819 15.6179 13.2961L15.9881 12.6536C16.2505 12.1982 16.3817 11.9705 16.3563 11.7281C16.3308 11.4856 16.1551 11.2903 15.8038 10.8996L15.0305 10.0351C14.8415 9.79575 14.7073 9.3789 14.7073 9.00382C14.7073 8.6289 14.8416 8.2119 15.0305 7.97265L15.8038 7.10814C16.1551 6.71743 16.3308 6.52208 16.3563 6.27967C16.3817 6.03725 16.2505 5.80953 15.9881 5.35409Z"
+                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                            <path
+                              d="M11.6406 9C11.6406 10.4498 10.4654 11.625 9.0156 11.625C7.56585 11.625 6.39062 10.4498 6.39062 9C6.39062 7.55025 7.56585 6.375 9.0156 6.375C10.4654 6.375 11.6406 7.55025 11.6406 9Z"
+                              stroke="currentColor" stroke-width="1.6" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_7888_853">
+                              <rect width="18" height="18" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        Settings
+                      </button>
+                    </li>
+
+                    <li>
+                      <button data-modal-target="Delete-workspace" @click="close()"
+                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                        <svg
+                          class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <path
+                            d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
+                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                          <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" />
+                          <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" />
+                          <path
+                            d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
+                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                        </svg>
+
+
+
+                        Delete
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <!--invite dropdown -->
+            <div x-data="dropdownComponent('invite-menu')" class="relative w-max">
+              <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.9987 2.33203V11.6654M11.6654 6.9987H2.33203" stroke="white" stroke-width="1.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Invite</span>
+              </button>
+              <div x-ref="invite-menu" x-show="isOpen" x-transition=""
+                x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
+                class="absolute right-0 z-10 p-2 mt-[15px] w-[440px] bg-gradient-gray rounded-10px p-[2px]"
+                style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                <div class="flex flex-col gap-0.5 p-[14px]">
+                  <h4 class="text-lg block text-Theme-black ">Invite Members</h4>
+                  <p class="text-xs text-Theme-light-gray leading-[130%]">Manage who has access to this workspace</p>
+                </div>
+                <div class="bg-white rounded-lg p-2 flex flex-col gap-2">
+                  <div class="flex flex-col gap-2">
+                    <!--email box-->
+                    <div class="p-2 flex flex-row gap-2.5 w-full">
+                      <div
+                        class="w-[336px] flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-[#EEEEEC] hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
+                        <input type="text" id="email-address"
+                          class="w-[246px] bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  "
+                          placeholder="Enter Email Address" />
+                        <div class="custom-dropdown relative w-max" data-style="design1">
+                          <button
+                            class="dropdown-button p-[7px] pl-2 cursor-pointer rounded flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-transparent transition-all duration-300 hover:bg-white/70">
+                            <span class="selected-option">Editor</span>
+
+                            <svg class="dropdown-arrow transition-all duration-300 ease-in-out rotate-180" width="10"
+                              height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                          </button>
+
+                          <div
+                            class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5">
+                            <span
+                              class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+
+                            <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+
+                              <li>
+                                <button
+                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                  Editor
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                  Viewer
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                  Remove
+                                </button>
+                              </li>
+
+                            </ul>
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <!--invite button-->
+                      <button class="btn-purple">Invite</button>
+                    </div>
+                    <div class="flex flex-col gap-2 custom-scrollbar max-h-[428px]">
+                      <!--members list-->
+                      <div class="flex flex-col ">
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Members with
+                          access</h5>
+                        <ul class="flex flex-col  divide-y divide-[#EEEEEC] px-2">
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
+                                src="assets/images/avatar-1.png" alt="Avatar">
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ankur
+                                  Kanasagara</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level-->
+                            <span
+                              class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
+                          </li>
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
+                                AF
+                              </div>
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Albert
+                                  Flores</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level dropdown-->
+                            <div class="custom-dropdown relative w-max" data-style="design1">
+                              <button
+                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                                <span class="selected-option">Editor</span>
+
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
+                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+
+                              </button>
+
+                              <div
+                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span
+                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+
+                                <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                      Editor
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Viewer
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Remove
+                                    </button>
+                                  </li>
+
+                                </ul>
+
+
+
+                              </div>
+                            </div>
+                          </li>
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
+                                src="assets/images/avatar-2.png" alt="Avatar">
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Cameron
+                                  Williamson</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level dropdown-->
+                            <div class="custom-dropdown relative w-max" data-style="design1">
+                              <button
+                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                                <span class="selected-option">Editor</span>
+
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
+                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+
+                              </button>
+
+                              <div
+                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span
+                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+
+                                <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                      Editor
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Viewer
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Remove
+                                    </button>
+                                  </li>
+
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
+                                src="assets/images/avatar-3.png" alt="Avatar">
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ralph
+                                  Edwards</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level dropdown-->
+                            <div class="custom-dropdown relative w-max" data-style="design1">
+                              <button
+                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                                <span class="selected-option">Editor</span>
+
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
+                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+
+                              </button>
+
+                              <div
+                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span
+                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+
+                                <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                      Editor
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Viewer
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Remove
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--invited member list-->
+                      <div class="flex flex-col ">
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Invited
+                          People</h5>
+                        <ul class="flex flex-col  divide-y divide-[#EEEEEC] px-2">
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                                RR</div>
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ronald
+                                  Richards</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ronaldrichards@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level-->
+                            <div class="btn-invited">
+                              <div class="btn-invited-inner">
+                                Invited
+                              </div>
+                            </div>
+                          </li>
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                                DR</div>
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
+                                  Russell</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level-->
+                            <div class="btn-invited">
+                              <div class="btn-invited-inner">
+                                Invited
+                              </div>
+                            </div>
+                          </li>
+                          <!--list-->
+                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                            <!--member details-->
+                            <div class="flex items-center gap-2.5">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                                DR</div>
+                              <div class="flex flex-col">
+                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
+                                  Russell</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
+                              </div>
+                            </div>
+                            <!--access level-->
+                            <div class="btn-invited">
+                              <div class="btn-invited-inner">
+                                Invited
+                              </div>
+                            </div>
+
+
+
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-[calc(100%-62px)] flex justify-center items-center ">
+          <div class="flex flex-col items-center justify-center gap-[87px]">
+            <div class="flex flex-col items-center gap-[34px]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="145" height="150" viewBox="0 0 145 150" fill="none">
+                <g clip-path="url(#clip0_7938_832)">
+                  <path
+                    d="M0 72.1428C0 32.2995 32.2995 0 72.1429 0V0C111.986 0 144.286 32.2995 144.286 72.1428V148.929C144.286 149.52 143.806 150 143.214 150H1.07143C0.479693 150 0 149.52 0 148.929V72.1428Z"
+                    fill="#F3F2F4" />
+                  <path
+                    d="M100.676 73.852L103.508 127.887C103.714 131.827 100.687 135.187 96.7478 135.394L53.2362 137.674C49.297 137.881 45.9363 134.854 45.7296 130.915L42.0848 61.3672C41.8785 57.4279 44.9045 54.0672 48.8437 53.8606L76.8931 52.3906L100.676 73.852Z"
+                    fill="white" />
+                  <path d="M54.707 104.289L91.799 102.345" stroke="#D0D1D3" stroke-width="2.85714"
+                    stroke-linecap="round" />
+                  <path d="M55.0625 111.062L82.1682 109.642" stroke="#D0D1D3" stroke-width="2.85714"
+                    stroke-linecap="round" />
+                  <path d="M55.4336 118.195L71.8397 117.336" stroke="#D0D1D3" stroke-width="2.85714"
+                    stroke-linecap="round" />
+                  <path
+                    d="M100.418 73.6067L77.1509 52.6219C77.0564 52.5366 76.9059 52.6083 76.9126 52.7355L77.9684 72.8815C78.0304 74.0634 79.0386 74.9712 80.2205 74.9093L100.329 73.8554C100.456 73.8488 100.512 73.6919 100.418 73.6067Z"
+                    fill="#8E5EFE" />
+                  <path d="M0 122.5C11.4279 118.214 58.9279 119.821 144.286 145.536V149.999H0V122.5Z" fill="#BDBEBF" />
+                  <rect x="18.2109" y="79.6406" width="6.42857" height="45.7143" rx="3.21429" fill="#A5A6A7" />
+                  <path d="M18.2109 101.244C14.0688 101.244 10.7109 97.8866 10.7109 93.7444V91.6016" stroke="#A5A6A7"
+                    stroke-width="6.42857" stroke-linecap="round" />
+                  <path d="M24.6406 111.787C28.7828 111.787 32.1406 108.429 32.1406 104.287V103.93" stroke="#A5A6A7"
+                    stroke-width="6.42857" stroke-linecap="round" />
+                  <circle cx="121.607" cy="30.6074" r="20.6074" fill="#8E5EFE" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_7938_832">
+                    <path
+                      d="M0 72.1428C0 32.2995 32.2995 0 72.1429 0V0C111.986 0 144.286 32.2995 144.286 72.1428V150H0V72.1428Z"
+                      fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="flex flex-col gap-3">
+                <h2 class="text-[26px] text-Theme-black font-inter-display-medium leading-[34px] text-center">No
+                  Documents in this workspace</h2>
+                <p class="text-sm text-Theme-dark-gray leading-[24px] tracking-[0.28px]">Create your first agreement and
+                  start collecting signatures in minutes</p>
+              </div>
+            </div>
+            <!--grid-->
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+              <div
+                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                <div class="p-5 pb-0">
+                  <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M40.4446 18.0345C41.2261 18.8159 41.665 19.8757 41.665 20.9808V39.583C41.665 41.8841 39.8001 43.7498 37.499 43.75H12.499C10.1978 43.75 8.33203 41.8842 8.33203 39.583V10.417C8.33203 8.11581 10.1978 6.25 12.499 6.25H26.9343C28.0393 6.25 29.0991 6.68899 29.8805 7.47039L40.4446 18.0345Z"
+                      fill="#327BEE" />
+                    <path
+                      d="M27.082 6.25C28.1334 6.28729 29.1344 6.7203 29.8809 7.4668L40.4443 18.0303C41.1908 18.7768 41.6238 19.7777 41.6611 20.8291H29.165C28.0146 20.8289 27.082 19.8966 27.082 18.7461V6.25Z"
+                      fill="#52CDFE" />
+                    <path d="M25.0026 27.0781V35.4115M29.1693 31.2448H20.8359" stroke="#A0DBFF" stroke-width="2.70833"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                  <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start with <br> Blank
+                    Document</h4>
+                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Start fresh and build
+                    your document from the ground up</p>
+                </div>
+              </div>
+              <div
+                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                <div class="p-5 pb-0">
+                  <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M19.0918 8.33594C20.3472 8.33594 21.5356 8.90194 22.3268 9.87662L24.0531 12.0033C24.8443 12.9779 26.0327 13.5439 27.2881 13.5439H39.5833C41.8845 13.5439 43.75 15.4094 43.75 17.7106V37.5029C43.7498 39.804 41.8841 41.6689 39.583 41.6689H10.417C8.11591 41.6689 6.25018 39.804 6.25 37.5029V12.5029C6.25 10.2017 8.11581 8.33594 10.417 8.33594H19.0918Z"
+                      fill="#15A679" />
+                    <path d="M29.2157 25.395L25.0004 21.1797L20.7852 25.395" stroke="#C7FBDB" stroke-width="2.70833"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M25 32.9922V21.3047" stroke="#D1FAE5" stroke-width="2.70833" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <rect x="12.5" y="35.4141" width="25" height="8.33333" rx="2.08333" fill="#6BEDBE" />
+                  </svg>
+
+                </div>
+                <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                  <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Upload
+                    <br> Your Document
+                  </h4>
+                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Bring in your file
+                    and turn it into a signable agreement</p>
+                </div>
+              </div>
+              <div
+                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                <div class="p-5 pb-0">
+
+                  <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 50 50" fill="none">
+                    <rect x="6.25" y="14.5859" width="37.5" height="29.1667" rx="4.16667" fill="#FDB526" />
+                    <rect x="6.25" y="6.25" width="29.1667" height="37.5" rx="4.16667" fill="#FE8944" />
+                    <path d="M12.5 25H29.1667" stroke="#FEEAE0" stroke-width="2.70833" stroke-linecap="round" />
+                    <path d="M12.5 31.25H20.8333" stroke="#FEEAE0" stroke-width="2.70833" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                  <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start<br> with a Template
+                  </h4>
+                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Start faster with
+                    proven agreements you can customize</p>
+                </div>
+              </div>
+              <div
+                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                <div class="p-5 pb-0">
+                  <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                    viewBox="0 0 50 50" fill="none">
+                    <rect x="6.25" y="6.25" width="37.5" height="37.5" rx="4.16667" fill="#6A5BDC" />
+                    <path
+                      d="M14.9297 35.4167L18.1274 25.8235C18.2913 25.3317 18.7515 25 19.27 25C19.7884 25 20.2486 25.3317 20.4125 25.8235L23.6102 35.4167M28.8185 25V35.4167M16.6658 31.9445H21.8741"
+                      stroke="#AEA4FB" stroke-width="2.70833" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M35.4167 10.4141C35.7243 10.4141 35.9995 10.6056 36.1063 10.8942L36.3591 11.5775C36.714 12.5367 36.8273 12.7973 37.0136 12.9837C37.2001 13.1702 37.4607 13.2833 38.4199 13.6383L39.1032 13.8911C39.3918 13.9979 39.5833 14.2731 39.5833 14.5807C39.5833 14.8884 39.3918 15.1636 39.1032 15.2703L38.4199 15.5232C37.4607 15.8781 37.2001 15.9913 37.0136 16.1777C36.8273 16.3642 36.714 16.6247 36.3591 17.5839L36.1063 18.2673C35.9995 18.5558 35.7243 18.7474 35.4167 18.7474C35.109 18.7474 34.8338 18.5558 34.7271 18.2673L34.4742 17.5839C34.1193 16.6247 34.0061 16.3642 33.8197 16.1777C33.6332 15.9913 33.3726 15.8781 32.4134 15.5232L31.7301 15.2703C31.4416 15.1636 31.25 14.8884 31.25 14.5807C31.25 14.2731 31.4416 13.9979 31.7301 13.8911L32.4134 13.6383C33.3726 13.2833 33.6332 13.1702 33.8197 12.9837C34.0061 12.7973 34.1193 12.5367 34.4742 11.5775L34.7271 10.8942C34.8338 10.6056 35.109 10.4141 35.4167 10.4141Z"
+                      fill="#E5E5FF" />
+                  </svg>
+                </div>
+                <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                  <h4 class=" text-base text-black font-inter-display-medium leading-[22px]">Generate Document<br> with
+                    AI</h4>
+                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Describe what you
+                    need and let AI create it instantly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modals-->
+  <!-- on boarding steps model -->
+  <div
+    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[584px]"
+    id="Delete-workspace">
+    <!-- modal header  -->
+    <div class="block">
+      <!--steps start-->
+      <ul class="flex items-center px-3.5 py-2.5  gap-1.5 border-b border-[#EEEEEC]">
+        <li>
+          <a href="#" class="flex items-center gap-2 is-completed">
+            <div
+              class="flex items-center justify-center w-[24px] h-[24px] rounded-full text-sm font-inter-display-semibold leading-[22px] step-number bg-[#A4A4A4] text-white">
+              1
+            </div>
+            <span class="step-text text-sm text-[#A4A4A4] ">Personal Details</span>
+          </a>
+        </li>
+        <li>
+          <div class="w-[22px] h-[22px] flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 is-completed">
+            <div
+              class="flex items-center justify-center w-[24px] h-[24px] rounded-full text-sm font-inter-display-semibold leading-[22px] step-number bg-[#A4A4A4] text-white">
+              2
+            </div>
+            <span class="step-text text-sm text-[#A4A4A4] ">Company Details</span>
+          </a>
+        </li>
+        <li>
+          <div class="w-[22px] h-[22px] flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 is-current">
+            <div
+              class="flex items-center justify-center w-[24px] h-[24px] rounded-full text-sm font-inter-display-semibold leading-[22px] step-number bg-[#A4A4A4] text-white">
+              3
+            </div>
+            <span class="step-text text-sm text-[#A4A4A4] ">Signature Details</span>
+          </a>
+        </li>
+      </ul>
+      <div class=" px-3.5 py-2.5">
+        <p class="text-xs leading-[22px] text-Theme-dark-gray">
+          We’ll securely save this information to help auto-fill your details in future documents. You can skip this
+          step and add it later anytime.
+        </p>
+      </div>
+
+
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
+      <div class="flex flex-col gap-3.5">
+        <div class="block tab-main flex flex-col gap-3.5">
+          <!--tab list-->
+          <ul class="flex items-center bg-[#EEEEEC] rounded-lg w-full p-[2px] gap-[2px]">
+            <li class="w-full">
+              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&.active]:bg-white
+            ">
+                Draw
+              </a>
+            </li>
+            <li class="w-full">
+              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&.active]:bg-white active
+            ">
+                Type
+              </a>
+            </li>
+            <li class="w-full">
+              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&.active]:bg-white
+            ">
+                Upload
+              </a>
+            </li>
+          </ul>
+          <!--tab content-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-[5px] border-b border-[#EEEEEC] mb-3.5 pb-3.5">
+          <label for="font" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Choose Font</label>
+          <div x-data="dropdownComponent('choose-font')" class="relative w-full ">
+            <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}" class="w-full bg-[#FAFAF9] border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:bg-[#f7f7f7] focus:bg-[#f7f7f7] focus:outline-none transition-all duration-300">
+              Inter - Display
+              <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.60156 0.601562L4.60156 4.60156L0.601562 0.601562" stroke="#020012" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+
+            </button>
+            <div x-ref="choose-font" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10 p-2 mt-2 w-full bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+              
+              <div class="bg-white rounded-lg p-2 ">
+                <!--list-->
+                <ul class="flex flex-col gap-0.5">
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-stylescript transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                     Style Script
+                    </button>
+                  </li>
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-birthstone transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                     Birthstone
+                    </button>
+                  </li>
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-grandhotel transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      Grand Hotel
+                    </button>
+                  </li>
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-petitformal transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      Petit Formal Script
+                    </button>
+                  </li>
+                
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="flex flex-col gap-[5px] ">
+              <label for="signature" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Your Signature</label>
+              <div class="relative">
+                <!-- <textarea type="text" id="signature" name="signature"  class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required=""></textarea> -->
+                <div class="flex justify-center items-end w-full h-[160px]  p-5 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500">
+                    <input type="text" class="border-b border-[#EEEEEC] w-full text-[34px] text-Theme-black font-stylescript focus:outline-none transition-all duration-500 hover:border-[#d3d3d3]" value="Ishita Jadav"/>
+                </div>
+                
+              </div>
+            </div>
+            <div class="flex flex-col gap-3.5">
+              <p class="text-sm leading-[24px] tracking-[0.28px] text-Theme-dark-gray">I understand that Agreed uses my name, email address, and limited information to complete the signing process and improve my experience. To learn more about how Agreed uses my information, please review our Privacy Policy.</p>
+
+<p class="text-sm leading-[24px] tracking-[0.28px] text-Theme-dark-gray">By signing this document electronically, I agree that my electronic signature is legally valid and equivalent to a handwritten signature, as permitted by applicable law.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end  w-full p-2 gap-2">
+       <button class="btn-black w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px]">Skip</button>
+      <a href="on-boarding-flow6.html" class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px]">Continue</a>
+    </div>
+  </div>
+  <!-- modal overlay  -->
+  <div
+    class="overlay-modal !block !opacity-100 !visible w-full h-screen !z-[500] bg-[linear-gradient(0deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.14)_100%)] fixed top-0 left-0 ">
+  </div>
+</body>
+<!-- MAIN JS-->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="assets/js/main.js"></script>
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('dropdown', {
+      openId: null,
+    });
+  });
+
+
+</script>
+<script>
+  function dropdownComponent(id) {
+    return {
+      id,
+      height: 'auto',
+      opacity: 0,
+
+      visible: false,
+      get isOpen() {
+        return Alpine.store('dropdown').openId === this.id;
+      },
+      toggle() {
+        if (this.isOpen) {
+          this.close();
+        } else {
+          Alpine.store('dropdown').openId = this.id;
+          this.$nextTick(() => {
+            this.visible = true;
+            // const scrollHeight = this.$refs.menu.scrollHeight;
+            // this.height = scrollHeight + 'px';
+            this.opacity = 1;
+          });
+        }
+      },
+      close() {
+        if (this.isOpen) {
+          this.opacity = 0;
+          // this.height = '0px';
+
+          setTimeout(() => {
+            this.visible = false;
+            Alpine.store('dropdown').openId = null;
+          }, 100); // match with transition duration
+        }
+      }
+    };
+  }
+</script>
+
+</html>

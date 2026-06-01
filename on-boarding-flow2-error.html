@@ -385,7 +385,7 @@
       </aside>
     </div>
     <!--Main Content-->
-     <div
+   <div
       class="xl:w-[calc(100%-270px)] lg:w-[calc(100%-250px)] md:w-[calc(100%-240px)] w-full ml-auto relative md:h-screen h-auto p-1 pl-0 h-full min-h-screen">
       <div class="bg-white border border-[#E9EDF2] rounded-xl h-full px-5 overflow-hidden">
         <!--header-->
@@ -1018,55 +1018,164 @@
   <!--Modals-->
   <!-- on boarding steps model -->
   <div
-    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0  md:h-auto max-h-[calc(100dvh-10px)] md:!max-w-[584px] !max-w-full md:w-auto !w-[calc(100%-10px)] overflow-y-auto overscroll-contain"
+    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0  md:h-auto max-h-[calc(100dvh-10px)] md:!max-w-[584px] !max-w-full md:w-auto !w-[calc(100%-10px)] overflow-y-auto overscroll-contain "
     id="Delete-workspace">
     <!-- modal header  -->
-    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
-      <div class="flex items-center gap-[15px] ">
-
-        <h4 class="text-sm  capitalize leading-140 text-Theme-black">
-          Crop Image
-        </h4>
+    <div class="block">
+      <!--steps start-->
+     <ul class="flex md:flex-row flex-col md:items-center items-start px-3.5 py-2.5  gap-1.5 border-b border-Theme-secondary-gray">
+        <li>
+          <a href="#" class="flex items-center gap-2 is-current">
+            <div
+              class="flex items-center justify-center w-[24px] h-[24px] rounded-full text-sm font-inter-display-semibold leading-[22px] step-number bg-[#A4A4A4] text-white">
+              1
+            </div>
+            <span class="step-text text-sm text-[#A4A4A4] ">Personal Details</span>
+          </a>
+        </li>
+        <li>
+          <div class="w-[22px] h-[22px] flex justify-center items-center md:rotate-0 rotate-90">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 ">
+            <div
+              class="flex items-center justify-center w-[24px] h-[24px] rounded-full text-sm font-inter-display-semibold leading-[22px] step-number bg-[#A4A4A4] text-white">
+              2
+            </div>
+            <span class="step-text text-sm text-[#A4A4A4] ">Company Details</span>
+          </a>
+        </li>
+        <li>
+          <div class="w-[22px] h-[22px] flex justify-center items-center md:rotate-0 rotate-90">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 ">
+            <div
+              class="flex items-center justify-center w-[24px] h-[24px] rounded-full text-sm font-inter-display-semibold leading-[22px] step-number bg-[#A4A4A4] text-white">
+              3
+            </div>
+            <span class="step-text text-sm text-[#A4A4A4] ">Signature Details</span>
+          </a>
+        </li>
+      </ul>
+      <div class=" px-3.5 py-2.5">
+        <p class="text-xs leading-[22px] text-Theme-dark-gray">
+          We’ll securely save this information to help auto-fill your details in future documents. You can skip this
+          step and add it later anytime.
+        </p>
       </div>
 
-      <button class="close-btn cursor-pointer">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 4L4.00054 11.9995M11.9995 12L4 4.00057" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
 
-      </button>
     </div>
-    <div class="w-full bg-white rounded-md border border-[#E2DCDC] p-[5px] flex flex-col px-[36px]">
-        <div class="fflex justify-center items-center md:w-[508px] w-full md:h-[390px] h-[290px] relative">
-           <img src="assets/images/signature-img3.png" alt="image" class="object-cover h-full w-full"/>
-            <!-- Crop Lines -->
-  <div class="absolute inset-0 pointer-events-none">
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
+      <div class="flex md:items-center items-start md:flex-row flex-col md:gap-0 gap-5">
+        <div class="md:border-r md:border-Theme-secondary-gray md:pr-5 md:mr-5 relative">
+          <div
+            class="relative w-[150px] h-[150px] bg-[#ECEBEF] rounded-10px text-center flex justify-center items-center">
+            <img src="assets/images/profile-img.png" alt="image" class="w-full h-full object-cover aspect-square" />
+            <div
+              class="absolute inset-0 rounded-10px bg-[rgba(0,0,0,0.12)] backdrop-blur-[1.5px] flex items-center gap-2.5 justify-center opacity-0 transition-opacity duration-500 hover:opacity-100 cursor-pointer">
+              <!--upload button-->
+              <label class="cursor-pointer">
 
-    <!-- TOP LEFT -->
-    <span class="absolute top-0 left-0 w-[60px] h-[60px] border-t-[2px] border-l-[2px] border-Theme-purple"></span>
+                <!-- Hidden Input -->
+                <input type="file" class="hidden">
 
-    <!-- TOP RIGHT -->
-    <span class="absolute top-0 right-0 w-[60px] h-[60px] border-t-[2px] border-r-[2px] border-Theme-purple"></span>
+                <!-- Upload UI -->
+                <div
+                  class="w-[34px] h-[34px] flex items-center justify-center p-[7px] rounded-[11.33px] bg-white hover:bg-[#eeeeee] transition-all duration-500">
 
-    <!-- BOTTOM LEFT -->
-    <span class="absolute bottom-0 left-0 w-[60px] h-[60px] border-b-[2px] border-l-[2px] border-Theme-purple"></span>
+                  <svg class="transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
 
-    <!-- BOTTOM RIGHT -->
-    <span class="absolute bottom-0 right-0 w-[60px] h-[60px] border-b-[2px] border-r-[2px] border-Theme-purple"></span>
+                    <path
+                      d="M2.47656 14.0469C2.47656 14.8154 2.47656 15.1997 2.56104 15.515C2.79028 16.3704 3.45854 17.0387 4.31407 17.268C4.62934 17.3524 5.0136 17.3524 5.78212 17.3524H14.046C14.8145 17.3524 15.1988 17.3524 15.5141 17.268C16.3696 17.0387 17.0378 16.3704 17.2671 15.515C17.3515 15.1997 17.3515 14.8154 17.3515 14.0469"
+                      stroke="#000A06" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round"></path>
 
-  </div>
+                    <path
+                      d="M13.6328 6.19529C13.6328 6.19529 10.894 2.47657 9.91405 2.47656C8.93403 2.47655 6.19531 6.19531 6.19531 6.19531M9.91405 3.30295V13.2197"
+                      stroke="#000A06" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round"></path>
+
+                  </svg>
+
+                </div>
+
+              </label>
+              <!--delete button-->
+              <button
+                class="w-[34px] h-[34px] flex items-center  p-[7px] rounded-[11.33px] bg-white hover:bg-[#eeeeee] transition-all duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M16.1146 4.54688L15.6025 12.8315C15.4716 14.9481 15.4062 16.0065 14.8757 16.7674C14.6133 17.1436 14.2756 17.4611 13.8839 17.6997C13.0917 18.1823 12.0314 18.1823 9.91063 18.1823C7.78716 18.1823 6.7254 18.1823 5.93269 17.6988C5.54077 17.4598 5.20294 17.1417 4.94071 16.7649C4.41034 16.0028 4.34635 14.9429 4.21839 12.8233L3.71875 4.54688"
+                    stroke="#DC3027" stroke-width="1.41667" stroke-linecap="round" />
+                  <path d="M7.4375 9.69531H12.3958" stroke="#DC3027" stroke-width="1.41667" stroke-linecap="round" />
+                  <path d="M8.67578 12.9375H11.1549" stroke="#DC3027" stroke-width="1.41667" stroke-linecap="round" />
+                  <path
+                    d="M2.48047 4.5408H17.3555M13.2694 4.5408L12.7053 3.37702C12.3305 2.60396 12.1431 2.21742 11.8199 1.97636C11.7483 1.92288 11.6723 1.87531 11.5929 1.83413C11.235 1.64844 10.8054 1.64844 9.94631 1.64844C9.06563 1.64844 8.62533 1.64844 8.26146 1.84191C8.18083 1.88479 8.10387 1.93429 8.03141 1.98988C7.70444 2.24071 7.5218 2.64138 7.15652 3.44274L6.65599 4.5408"
+                    stroke="#DC3027" stroke-width="1.41667" stroke-linecap="round" />
+                </svg>
+
+              </button>
+            </div>
+          </div>
+
         </div>
+        <form class="block w-full" action="">
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-[5px] ">
+              <label for="first-name"
+                class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">First Name*</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Enter your First name"
+                class="w-full py-[13px] px-4 border border-[#DC3027] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+                required="">
+                <span class="text-xs font-normal leading-[133%] text-[#DC3027]">Please Enter Your First Name</span>
+            </div>
+            <div class="flex flex-col gap-[5px] ">
+              <label for="last-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Last
+                Name*</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Enter your Last Name"
+                class="w-full py-[13px] px-4 border border-[#DC3027] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+                required="">
+                <span class="text-xs font-normal leading-[133%] text-[#DC3027]">Please Enter Your Last Name</span>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- modal footer  -->
-
-   <div class="flex items-center justify-end  w-full p-2 gap-2">
-       <button class="btn-black w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px]">Reset</button>
-      <a href="on-boarding-flow-crop4.html" class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px] rounded-lg">Save</a>
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <a href="on-boarding-flow3.html"
+        class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px] rounded-lg">Continue</a>
     </div>
   </div>
   <!-- modal overlay  -->
   <div
     class="overlay-modal !block !opacity-100 !visible w-full h-screen !z-[500] bg-[linear-gradient(0deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.14)_100%)] fixed top-0 left-0 ">
+  </div>
+  <!--toast message-->
+  <div class="fixed bottom-6  right-6 z-[1000]">
+    <div class="rounded-xl border-[2px] border-[rgba(238,238,236,0.80)] bg-white shadow-primary p-1">
+      <div class="bg-[rgba(239,68,8,0.10)] rounded-lg p-2.5 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M9.56112 14.625C11.2523 14.625 12.5874 14.625 13.5762 14.4778C14.5803 14.3282 15.3948 14.0038 15.8445 13.21C16.2938 12.4169 16.155 11.5499 15.7698 10.6084C15.3914 9.68355 14.7117 8.5371 13.8501 7.08472L13.8143 7.02465L12.3707 4.59082L12.3363 4.53223C11.5092 3.13785 10.8547 2.03496 10.2459 1.28613C9.62472 0.522112 8.95092 0 8.06255 0C7.17425 3e-05 6.50042 0.522112 5.87921 1.28613C5.27042 2.03492 4.61657 3.13797 3.78962 4.53223L3.75446 4.59082L2.31086 7.02465L2.27497 7.08472C1.41348 8.5371 0.73371 9.68355 0.35529 10.6084C-0.0299096 11.5499 -0.16863 12.4169 0.280583 13.21C0.730268 14.0038 1.54487 14.3282 2.54889 14.4778C3.53773 14.625 4.8728 14.625 6.56405 14.625H9.56112ZM8.06255 6C7.64832 6 7.31255 5.66421 7.31255 5.25C7.31255 4.83578 7.64832 4.5 8.06255 4.5C8.47677 4.5 8.81255 4.83578 8.81255 5.25C8.81255 5.66421 8.47677 6 8.06255 6ZM8.06255 11.8125C7.64832 11.8125 7.31255 11.4767 7.31255 11.0625V8.0625C7.31255 7.64828 7.64832 7.3125 8.06255 7.3125C8.47677 7.3125 8.81255 7.64828 8.81255 8.0625V11.0625C8.81255 11.4767 8.47677 11.8125 8.06255 11.8125Z"
+            fill="#EF4444" />
+        </svg>
+        <span class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Image is too large. Max size is
+          3 MB
+        </span>
+      </div>
+    </div>
   </div>
 </body>
 <!-- MAIN JS-->

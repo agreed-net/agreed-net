@@ -33,7 +33,54 @@
     <div class="btn-inner">invited</div>
   </div>
 
+<br>
+<!-- Preview -->
+<!-- Preview -->
+<!-- Preview -->
+<div class="relative h-[300px] bg-white rounded-[14px] border border-[#F3F3F3] ">
+<!-- Fold -->
+<div class="absolute top-[-1px] right-[-1px] z-20 w-[55px] h-[55px] overflow-hidden">
 
+  <!-- Fold Shape -->
+  <div
+    class="absolute inset-0 bg-[#FAFAF9]
+           before:content-['']
+           before:absolute
+           before:top-[53px]
+           before:right-0
+           before:w-[76px]
+           before:h-px
+           before:bg-[#F3F3F3]
+           before:origin-top-right
+           
+           before:rotate-45
+           [clip-path:polygon(100%_0,100%_100%,0_0)]">
+  </div>
+
+</div>
+
+<!-- Hide Border Behind Fold -->
+<div
+  class="absolute top-0 right-0 z-10 w-[35px] h-[35px] bg-white
+         [clip-path:polygon(100%_0,100%_100%,0_0)]">
+</div>
+
+<!-- Blue Dot -->
+<span
+  class="absolute z-30 w-[13px] h-[13px] rounded-full bg-[#2563EB]
+         top-[8px] right-[8px]">
+</span>
+  <!-- Content -->
+  <div class="relative z-0 flex items-center justify-center h-full w-full p-5">
+
+    <img
+      src="assets/images/document-img.png"
+      class="max-w-full max-h-full object-contain">
+
+  </div>
+
+</div>
+<br>
   <p class="font-inter-display">hi hello</p>
   <p class="font-inter-display-medium">hi hello</p>
   <br>
@@ -44,6 +91,63 @@
     <img src="assets/images/avatar-1.png" alt="User" class="w-10 h-10 rounded-xl object-cover">
 <br>
   
+  </div>
+  <br>
+   <!--toast date-->
+  <div class="fixed bottom-6 right-6">
+    <div class="rounded-xl border-[2px] border-[rgba(238,238,236,0.80)] bg-white shadow-primary p-1">
+      <div class="bg-[rgba(142,94,254,0.08)] rounded-lg p-2.5 flex items-center gap-2">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M8.0625 16.125C3.6097 16.125 0 12.5153 0 8.0625C0 3.6097 3.6097 0 8.0625 0C12.5153 0 16.125 3.6097 16.125 8.0625C16.125 12.5153 12.5153 16.125 8.0625 16.125ZM11.6386 6.29263C11.9038 5.97442 11.8609 5.5015 11.5427 5.23633C11.2244 4.97116 10.7515 5.01415 10.4864 5.33236L7.2621 9.20145L5.59283 7.53218C5.29994 7.2393 4.82507 7.2393 4.53217 7.53218C4.23928 7.82505 4.23928 8.29995 4.53217 8.59282L6.78218 10.8428C6.9312 10.9918 7.13595 11.0713 7.34647 11.0617C7.557 11.0521 7.7538 10.9545 7.88865 10.7927L11.6386 6.29263Z"
+            fill="#8E5EFE" />
+        </svg>
+        <span class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Due date set for May 12, 2026
+        </span>
+      </div>
+    </div>
+  </div>
+   <!--toast document-->
+  <div class="fixed bottom-20 right-6">
+    <div class="rounded-xl border-[2px] border-[rgba(238,238,236,0.80)] bg-white shadow-primary p-1">
+      <div class="bg-[rgba(142,94,254,0.08)] rounded-lg p-2.5 flex items-center gap-2">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M8.0625 16.125C3.6097 16.125 0 12.5153 0 8.0625C0 3.6097 3.6097 0 8.0625 0C12.5153 0 16.125 3.6097 16.125 8.0625C16.125 12.5153 12.5153 16.125 8.0625 16.125ZM11.6386 6.29263C11.9038 5.97442 11.8609 5.5015 11.5427 5.23633C11.2244 4.97116 10.7515 5.01415 10.4864 5.33236L7.2621 9.20145L5.59283 7.53218C5.29994 7.2393 4.82507 7.2393 4.53217 7.53218C4.23928 7.82505 4.23928 8.29995 4.53217 8.59282L6.78218 10.8428C6.9312 10.9918 7.13595 11.0713 7.34647 11.0617C7.557 11.0521 7.7538 10.9545 7.88865 10.7927L11.6386 6.29263Z"
+            fill="#8E5EFE" />
+        </svg>
+        <span class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Document duplicated successfully
+        </span>
+      </div>
+    </div>
+  </div>
+   <!--toast template-->
+  <div class="fixed bottom-34 right-6">
+    <div class="rounded-xl border-[2px] border-[rgba(238,238,236,0.80)] bg-white shadow-primary p-1">
+      <div class="bg-[rgba(142,94,254,0.08)] rounded-lg p-2.5 flex items-center gap-2">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M8.0625 16.125C3.6097 16.125 0 12.5153 0 8.0625C0 3.6097 3.6097 0 8.0625 0C12.5153 0 16.125 3.6097 16.125 8.0625C16.125 12.5153 12.5153 16.125 8.0625 16.125ZM11.6386 6.29263C11.9038 5.97442 11.8609 5.5015 11.5427 5.23633C11.2244 4.97116 10.7515 5.01415 10.4864 5.33236L7.2621 9.20145L5.59283 7.53218C5.29994 7.2393 4.82507 7.2393 4.53217 7.53218C4.23928 7.82505 4.23928 8.29995 4.53217 8.59282L6.78218 10.8428C6.9312 10.9918 7.13595 11.0713 7.34647 11.0617C7.557 11.0521 7.7538 10.9545 7.88865 10.7927L11.6386 6.29263Z"
+            fill="#8E5EFE" />
+        </svg>
+        <span class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Template created successfully
+        </span>
+      </div>
+    </div>
+  </div>
+  <!--toast moved-->
+  <div class="fixed bottom-48 right-6">
+    <div class="rounded-xl border-[2px] border-[rgba(238,238,236,0.80)] bg-white shadow-primary p-1">
+      <div class="bg-[rgba(142,94,254,0.08)] rounded-lg p-2.5 flex items-center gap-2">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M8.0625 16.125C3.6097 16.125 0 12.5153 0 8.0625C0 3.6097 3.6097 0 8.0625 0C12.5153 0 16.125 3.6097 16.125 8.0625C16.125 12.5153 12.5153 16.125 8.0625 16.125ZM11.6386 6.29263C11.9038 5.97442 11.8609 5.5015 11.5427 5.23633C11.2244 4.97116 10.7515 5.01415 10.4864 5.33236L7.2621 9.20145L5.59283 7.53218C5.29994 7.2393 4.82507 7.2393 4.53217 7.53218C4.23928 7.82505 4.23928 8.29995 4.53217 8.59282L6.78218 10.8428C6.9312 10.9918 7.13595 11.0713 7.34647 11.0617C7.557 11.0521 7.7538 10.9545 7.88865 10.7927L11.6386 6.29263Z"
+            fill="#8E5EFE" />
+        </svg>
+        <span class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Document moved successfully
+        </span>
+      </div>
+    </div>
   </div>
   <br>
   <!-- buttons -->

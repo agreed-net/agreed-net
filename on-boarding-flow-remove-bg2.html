@@ -9,36 +9,75 @@
   <!--Main CSS-->
   <link href="assets/css/output.css" rel="stylesheet" />
   <style>
-   
-          .stroke-base {
-        stroke: #DFDBE6;
+    .stroke-base {
+      stroke: #DFDBE6;
     }
 
     .stroke-cyan,
     .stroke-purple {
-        /* one moving visible segment */
-        stroke-dasharray: 380 1400;
-        stroke-dashoffset: 0;
+      /* one moving visible segment */
+      stroke-dasharray: 380 1400;
+      stroke-dashoffset: 0;
 
-        animation: flow 2.8s linear infinite;
+      animation: flow 2.8s linear infinite;
 
-      
-        filter: drop-shadow(0 0 6px rgba(55, 235, 255, 0.25));
+
+      filter: drop-shadow(0 0 6px rgba(55, 235, 255, 0.25));
     }
 
     .stroke-purple {
-        animation-delay: .22s;
-        filter: drop-shadow(0 0 6px rgba(142, 94, 254, 0.22));
+      animation-delay: .22s;
+      filter: drop-shadow(0 0 6px rgba(142, 94, 254, 0.22));
     }
 
     @keyframes flow {
-        from {
-            stroke-dashoffset: 1800;
-        }
+      from {
+        stroke-dashoffset: 1800;
+      }
 
-        to {
-            stroke-dashoffset: 0;
-        }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes scan {
+      0% {
+        top: -10%;
+      }
+
+      100% {
+        top: 110%;
+      }
+    }
+
+    .shimmer-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-effect::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          transparent 100%);
+      animation: shimmer 1.5s ease-in-out infinite;
+    }
+
+    .scan-line {
+      animation: scan 2s ease-in-out infinite;
     }
   </style>
 </head>
@@ -50,7 +89,7 @@
       <aside
         class="md:fixed relative bg-transparent top-0 xl:w-[270px] lg:w-[250px] w-full md:w-[240px] md:h-[100vh] overflow-y-auto px-2.5 z-50">
         <!--logo wrapper-->
-        <div class="py-2.5 flex items-center gap-1.5 border-b border-[#EEEEEC] mb-3">
+        <div class="py-2.5 flex items-center gap-1.5 border-b border-Theme-secondary-gray mb-3">
           <!--logo-->
           <a href="#" class="outline-none">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -171,7 +210,7 @@
             <ul class="flex flex-col">
               <li>
                 <a href="#"
-                  class="font-inter-display-medium py-2.5 px-3 rounded-lg flex items-center justify-between gap-3 text-sm leading-[170%] transition-all duration-500 border text-Theme-dark-gray bg-transparent border-transparent hover:text-Theme-black hover:bg-[#EEEEEC]  [&.active]:bg-white [&.active]:text-Theme-black [&.active]:border-[#EBEBEB] ">
+                  class="font-inter-display-medium py-2.5 px-3 rounded-lg flex items-center justify-between gap-3 text-sm leading-[170%] transition-all duration-500 border text-Theme-dark-gray bg-transparent border-transparent hover:text-Theme-black hover:bg-Theme-secondary-gray  [&.active]:bg-white [&.active]:text-Theme-black [&.active]:border-[#EBEBEB] ">
                   My Workspace
                 </a>
               </li>
@@ -420,8 +459,10 @@
     <!--Main Content-->
     <div
       class="xl:w-[calc(100%-270px)] lg:w-[calc(100%-250px)] md:w-[calc(100%-240px)] w-full ml-auto relative md:h-screen h-auto p-1 pl-0 h-full min-h-screen">
-      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full px-5">
-        <div class="py-3.5  pb-3.5 border-b border-[#EEEEEC] flex justify-between items-center relative z-10 bg-white">
+      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full px-5 overflow-hidden">
+        <!--header-->
+        <div class="py-3.5  pb-3.5 border-b border-Theme-secondary-gray flex justify-between items-center relative z-10 bg-white"
+          x-data="workspaceHeading()" @rename-workspace.window="startRename()" @click.outside="cancelRename()">
           <div class="flex items-center gap-2.5">
             <h1 class="text-2xl font-inter-display-medium leading-[34px] text-Theme-black">Personal Workspace</h1>
             <!--workspace dropdown -->
@@ -447,7 +488,7 @@
                   <!--list-->
                   <ul class="flex flex-col gap-0.5">
                     <li>
-                      <button
+                      <button data-modal-target="rename-workspace" @click="close()"
                         class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                         <svg
                           class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
@@ -499,7 +540,7 @@
                       <button data-modal-target="Delete-workspace" @click="close()"
                         class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                         <svg
-                          class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                          class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-300 ease-in-out"
                           xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                           <path
                             d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
@@ -523,9 +564,103 @@
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-2.5">
+          <div class="flex items-center gap-[9px]">
+            <div x-data="dropdownComponent('signer-menu1')" class="relative flex items-center">
+
+              <!-- Overlay -->
+              <div x-show="isOpen" x-transition.opacity="" @click="close"
+                class="fixed inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.12)_100%)] z-50"></div>
+
+              <!-- Trigger -->
+              <button @click.stop="toggle" class="group relative flex items-center -space-x-2 z-0 z-0">
+                <div class="relative z-10">
+                  <img src="assets/images/avatar-1.png" alt="User"
+                    class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                </div>
+
+                <div class="relative z-20">
+                  <img src="assets/images/avatar-4.png" alt="User"
+                    class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                </div>
+
+                <div class="relative z-20">
+                  <img src="assets/images/avatar-5.png" alt="User"
+                    class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                </div>
+
+                <div
+                  class="relative z-20 flex items-center justify-center w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-Theme-secondary-gray text-sm text-Theme-dark-gray">
+                  +8
+                </div>
+              </button>
+
+              <!-- Dropdown -->
+              <div x-ref="signer-menu1" x-show="isOpen" @click.outside="close"
+                x-transition:enter="transition-all duration-200 ease-out"
+                x-transition:enter-start="opacity-0 scale-[0.96] translate-y-1"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition-all duration-150 ease-in"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-[0.96] translate-y-1"
+                class="absolute top-full right-0 mt-2 w-[252px] bg-gradient-gray rounded-[10px] p-[2px] z-50 origin-top-right">
+
+                <span
+                  class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray tracking-[0.96px]">
+                  All Signers
+                </span>
+
+                <div class="bg-white rounded-lg p-2">
+
+                  <ul class="flex flex-col gap-0.5 max-h-[230px] overflow-y-auto custom-scrollbar pr-1">
+
+                    <li
+                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img1.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                      <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                        Ronald Richards
+                      </span>
+                    </li>
+
+                    <li
+                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img2.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                      <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                        Annette Black
+                      </span>
+                    </li>
+
+                    <li
+                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img3.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                      <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                        Bessie Cooper
+                      </span>
+                    </li>
+
+                    <li
+                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img4.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                      <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                        Floyd Miles
+                      </span>
+                    </li>
+
+                    <li
+                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img5.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                      <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                        Theresa Webb
+                      </span>
+                    </li>
+
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
             <!--invite dropdown -->
-            <div x-data="dropdownComponent('invite-menu')" class="relative w-max">
+            <div x-data="dropdownComponent('invite-menu')" class="relative w-max z-30">
               <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.9987 2.33203V11.6654M11.6654 6.9987H2.33203" stroke="white" stroke-width="1.4"
@@ -535,7 +670,7 @@
               </button>
               <div x-ref="invite-menu" x-show="isOpen" x-transition=""
                 x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
-                class="absolute right-0 z-10 p-2 mt-[15px] w-[440px] bg-gradient-gray rounded-10px p-[2px]"
+                class="absolute right-0 p-2 mt-[15px] w-[440px] bg-gradient-gray rounded-10px p-[2px] z-30"
                 style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                 <div class="flex flex-col gap-0.5 p-[14px]">
                   <h4 class="text-lg block text-Theme-black ">Invite Members</h4>
@@ -546,7 +681,7 @@
                     <!--email box-->
                     <div class="p-2 flex flex-row gap-2.5 w-full">
                       <div
-                        class="w-[336px] flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-[#EEEEEC] hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
+                        class="w-[336px] flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
                         <input type="text" id="email-address"
                           class="w-[246px] bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  "
                           placeholder="Enter Email Address" />
@@ -582,12 +717,7 @@
                                   Viewer
                                 </button>
                               </li>
-                              <li>
-                                <button
-                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                  Remove
-                                </button>
-                              </li>
+
 
                             </ul>
 
@@ -599,7 +729,7 @@
                       <!--invite button-->
                       <button class="btn-purple">Invite</button>
                     </div>
-                    <div class="flex flex-col gap-2 custom-scrollbar max-h-[428px]">
+                    <div class="flex flex-col gap-2 custom-scrollbar max-h-[428px] mr-[5px] pr-[5px]">
                       <!--members list-->
                       <div class="flex flex-col ">
                         <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Members with
@@ -671,7 +801,7 @@
                                     </button>
                                   </li>
                                   <li>
-                                    <button
+                                    <button data-modal-target="remove-member" @click="close()"
                                       class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
@@ -731,7 +861,7 @@
                                     </button>
                                   </li>
                                   <li>
-                                    <button
+                                    <button data-modal-target="remove-member" @click="close()"
                                       class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
@@ -788,7 +918,7 @@
                                     </button>
                                   </li>
                                   <li>
-                                    <button
+                                    <button data-modal-target="remove-member" @click="close()"
                                       class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
@@ -819,10 +949,8 @@
                               </div>
                             </div>
                             <!--access level-->
-                            <div class="btn-invited">
-                              <div class="btn-invited-inner">
-                                Invited
-                              </div>
+                            <div class="btn-invited-inner">
+                              Invited
                             </div>
                           </li>
                           <!--list-->
@@ -840,10 +968,8 @@
                               </div>
                             </div>
                             <!--access level-->
-                            <div class="btn-invited">
-                              <div class="btn-invited-inner">
-                                Invited
-                              </div>
+                            <div class="btn-invited-inner">
+                              Invited
                             </div>
                           </li>
                           <!--list-->
@@ -861,14 +987,9 @@
                               </div>
                             </div>
                             <!--access level-->
-                            <div class="btn-invited">
-                              <div class="btn-invited-inner">
-                                Invited
-                              </div>
+                            <div class="btn-invited-inner">
+                              Invited
                             </div>
-
-
-
                           </li>
                         </ul>
                       </div>
@@ -882,7 +1003,8 @@
         <div class="h-[calc(100%-62px)] flex justify-center items-center ">
           <div class="flex flex-col items-center justify-center gap-[87px]">
             <div class="flex flex-col items-center gap-[34px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="145" height="150" viewBox="0 0 145 150" fill="none">
+              <svg class="xl:w-[145px] w-[100px] xl:h-[150px] h-[100px]" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 145 150" fill="none">
                 <g clip-path="url(#clip0_7938_832)">
                   <path
                     d="M0 72.1428C0 32.2995 32.2995 0 72.1429 0V0C111.986 0 144.286 32.2995 144.286 72.1428V148.929C144.286 149.52 143.806 150 143.214 150H1.07143C0.479693 150 0 149.52 0 148.929V72.1428Z"
@@ -923,9 +1045,9 @@
               </div>
             </div>
             <!--grid-->
-            <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+            <div class="grid xl:grid-cols-4 min-[1367px]:grid-cols-4 min-[1367px]:grid-cols-4 grid-cols-2 gap-6">
               <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
                 <div class="p-5 pb-0">
                   <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -947,7 +1069,7 @@
                 </div>
               </div>
               <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
                 <div class="p-5 pb-0">
                   <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -971,7 +1093,7 @@
                 </div>
               </div>
               <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
                 <div class="p-5 pb-0">
 
                   <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
@@ -990,7 +1112,7 @@
                 </div>
               </div>
               <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
+                class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
                 <div class="p-5 pb-0">
                   <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                     viewBox="0 0 50 50" fill="none">
@@ -1019,12 +1141,12 @@
   <!--Modals-->
   <!-- on boarding steps model -->
   <div
-    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[584px]"
+    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0  md:h-auto max-h-[calc(100dvh-10px)] md:!max-w-[584px] !max-w-full md:w-auto !w-[calc(100%-10px)] overflow-y-auto overscroll-contain"
     id="Delete-workspace">
     <!-- modal header  -->
     <div class="block">
       <!--steps start-->
-      <ul class="flex items-center px-3.5 py-2.5  gap-1.5 border-b border-[#EEEEEC]">
+      <ul class="flex md:flex-row flex-col md:items-center items-start px-3.5 py-2.5  gap-1.5 border-b border-Theme-secondary-gray">
         <li>
           <a href="#" class="flex items-center gap-2 is-completed">
             <div
@@ -1035,7 +1157,7 @@
           </a>
         </li>
         <li>
-          <div class="w-[22px] h-[22px] flex justify-center items-center">
+          <div class="w-[22px] h-[22px] flex justify-center items-center md:rotate-0 rotate-90">
             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
               <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
                 stroke-linecap="round" stroke-linejoin="round" />
@@ -1052,7 +1174,7 @@
           </a>
         </li>
         <li>
-          <div class="w-[22px] h-[22px] flex justify-center items-center">
+          <div class="w-[22px] h-[22px] flex justify-center items-center md:rotate-0 rotate-90">
             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
               <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
                 stroke-linecap="round" stroke-linejoin="round" />
@@ -1082,7 +1204,7 @@
       <div class="flex flex-col gap-3.5">
         <div class="block tab-main flex flex-col gap-3.5">
           <!--tab list-->
-          <ul class="flex items-center bg-[#EEEEEC] rounded-lg w-full p-[2px] gap-[2px]">
+          <ul class="flex items-center bg-Theme-secondary-gray rounded-lg w-full p-[2px] gap-[2px]">
             <li class="w-full">
               <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&.active]:bg-white
             ">
@@ -1104,79 +1226,117 @@
           </ul>
           <!--tab content-->
           <div class="flex flex-col gap-3.5">
-            <div class="border border-[#EBEBEB] bg-Theme-Forground rounded-10px p-[5px] pr-0">
-              <div class="flex items-center w-full h-full ">
-                <div class="bg-white rounded-md border border-[#E2DCDC] w-full h-[210px] flex justify-center items-center flex-col tranision-all duration-300 hover:bg-white/50 cursor-pointer relative">
-                  <img src="assets/images/signature-img2.png" alt="image" class="object-contain w-full h-full "/>
-                  <!--overlay loading-->
-                  <div class="absolute w-full h-full bg-[rgba(87,83,78,0.18)] backdrop-blur-[1px] rounded-md flex justify-center items-center">
-                    <svg width="80" height="80" viewBox="0 0 598 598" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="border border-[#EBEBEB] bg-Theme-Forground rounded-10px  p-[5px] md:pr-0 pr-[5px]">
+              <div class="flex items-center md:flex-row flex-col w-full h-full rounded-10px">
+                <div class="bg-white rounded-md border border-[#E2DCDC] w-full h-[210px] flex justify-center items-center flex-col transition-all duration-300 hover:bg-white/50 cursor-pointer relative overflow-hidden">
+    
+    <!-- Image with shimmer -->
+    <div class="w-full h-full relative shimmer-effect rounded-lg ">
+        <img src="assets/images/signature-img2.png" alt="image" 
+            class="object-contain w-full h-full">
+    </div>
 
-    <rect width="598" height="598" rx="299" fill="white"></rect>
+    <!-- Overlay -->
+    <div class="absolute rounded-[5px] bg-[rgba(87,83,78,0.1)] w-full h-full backdrop-blur-[1px] flex justify-center items-center overflow-hidden">
+        
+        <!-- Scanning line — clipped by parent overflow-hidden -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="scan-line absolute w-full h-[1px] 
+                bg-[#8E5EFE]  blur-[1px]">
+            </div>
+        </div>
 
-    <!-- static gray -->
-    <path class="stroke-base" d="M128.822 351.963C174.126 380.882 256.526 360.75 274.338 294.556C286.274 250.2 254.639 220.996 232.686 218.389C210.733 215.782 174.126 226.195 174.126 278.992C174.126 328.468 224.846 380.882 298.544 380.882H299.278C372.977 380.882 423.696 328.468 423.696 278.992C423.696 226.195 387.089 215.782 365.136 218.389C343.184 220.996 311.548 250.2 323.484 294.556C341.296 360.75 423.696 380.882 469 351.963" stroke-width="36.9216"></path>
+        <!-- Glow icon -->
+        <div class="relative z-10">
+            <div class="absolute inset-0 bg-[#8E5EFE]/20 rounded-full blur-xl animate-pulse"></div>
+        </div>
 
-    <!-- cyan lead -->
-    <path class="stroke-cyan" d="M128.822 351.963C174.126 380.882 256.526 360.75 274.338 294.556C286.274 250.2 254.639 220.996 232.686 218.389C210.733 215.782 174.126 226.195 174.126 278.992C174.126 328.468 224.846 380.882 298.544 380.882H299.278C372.977 380.882 423.696 328.468 423.696 278.992C423.696 226.195 387.089 215.782 365.136 218.389C343.184 220.996 311.548 250.2 323.484 294.556C341.296 360.75 423.696 380.882 469 351.963" stroke="#37EBFF" stroke-width="36.9216"></path>
-
-    <!-- purple slightly behind -->
-    <path class="stroke-purple" d="M128.822 351.963C174.126 380.882 256.526 360.75 274.338 294.556C286.274 250.2 254.639 220.996 232.686 218.389C210.733 215.782 174.126 226.195 174.126 278.992C174.126 328.468 224.846 380.882 298.544 380.882H299.278C372.977 380.882 423.696 328.468 423.696 278.992C423.696 226.195 387.089 215.782 365.136 218.389C343.184 220.996 311.548 250.2 323.484 294.556C341.296 360.75 423.696 380.882 469 351.963" stroke="#8E5EFE" stroke-width="36.9216"></path>
-
-</svg>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-5 px-[15px]">
+    </div>
+</div>
+                <div class="flex md:flex-col flex-row gap-5 px-[15px] md:py-0 py-2.5 md:pb-0 pb-[5px]">
                   <div class="block">
-                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
-                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.39844 13.1875C8.39844 13.8853 8.39844 14.2342 8.48456 14.5181C8.67846 15.1573 9.17867 15.6575 9.81787 15.8514C10.1018 15.9375 10.4507 15.9375 11.1484 15.9375H17.6556" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M15.9414 18L17.9985 15.9436L15.9414 13.875" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18 11.8125C18 11.1147 18 10.7658 17.9139 10.4819C17.72 9.84273 17.2198 9.34252 16.5806 9.14862C16.2967 9.0625 15.9478 9.0625 15.25 9.0625L8.74286 9.0625" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10.457 7L8.39989 9.05641L10.457 11.125" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18 2L6 2C4.11438 2 3.17157 2 2.58579 2.58579C2 3.17157 2 4.11438 2 6L2 18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-</svg>
+                    <a href="#"
+                      class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple"
+                        width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8.39844 13.1875C8.39844 13.8853 8.39844 14.2342 8.48456 14.5181C8.67846 15.1573 9.17867 15.6575 9.81787 15.8514C10.1018 15.9375 10.4507 15.9375 11.1484 15.9375H17.6556"
+                          stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15.9414 18L17.9985 15.9436L15.9414 13.875" stroke="currentColor" stroke-width="1.2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M18 11.8125C18 11.1147 18 10.7658 17.9139 10.4819C17.72 9.84273 17.2198 9.34252 16.5806 9.14862C16.2967 9.0625 15.9478 9.0625 15.25 9.0625L8.74286 9.0625"
+                          stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.457 7L8.39989 9.05641L10.457 11.125" stroke="currentColor" stroke-width="1.2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M18 2L6 2C4.11438 2 3.17157 2 2.58579 2.58579C2 3.17157 2 4.11438 2 6L2 18"
+                          stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                      </svg>
 
                     </a>
                   </div>
                   <div class="block">
-                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
-                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M5.19922 2V10.8C5.19922 12.6856 5.19922 13.6284 5.78501 14.2142C6.37079 14.8 7.3136 14.8 9.19922 14.8H17.9992" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M14.2008 18C14.2008 18.3314 14.4694 18.6 14.8008 18.6C15.1322 18.6 15.4008 18.3314 15.4008 18L14.8008 18L14.2008 18ZM2.00078 4.6C1.66941 4.6 1.40078 4.86863 1.40078 5.2C1.40078 5.53137 1.66941 5.8 2.00078 5.8L2.00078 5.2L2.00078 4.6ZM8.40078 4.6C8.06941 4.6 7.80078 4.86863 7.80078 5.2C7.80078 5.53137 8.06941 5.8 8.40078 5.8L8.40078 5.2L8.40078 4.6ZM14.2008 11.6C14.2008 11.9314 14.4694 12.2 14.8008 12.2C15.1322 12.2 15.4008 11.9314 15.4008 11.6L14.8008 11.6L14.2008 11.6ZM13.7088 5.41799L13.4364 5.95259L13.7088 5.41799ZM2.00078 5.2L2.00078 5.8L5.20078 5.8L5.20078 5.2L5.20078 4.6L2.00078 4.6L2.00078 5.2ZM8.40078 5.2L8.40078 5.8L10.0008 5.8L10.0008 5.2L10.0008 4.6L8.40078 4.6L8.40078 5.2ZM10.0008 5.2L10.0008 5.8L11.6008 5.8L11.6008 5.2L11.6008 4.6L10.0008 4.6L10.0008 5.2ZM14.8008 8.4L14.2008 8.4L14.2008 11.6L14.8008 11.6L15.4008 11.6L15.4008 8.4L14.8008 8.4ZM14.8008 14.8L14.2008 14.8L14.2008 18L14.8008 18L15.4008 18L15.4008 14.8L14.8008 14.8ZM11.6008 5.2L11.6008 5.8C12.1707 5.8 12.5621 5.80047 12.8655 5.82526C13.1619 5.84947 13.3211 5.89388 13.4364 5.95259L13.7088 5.41799L13.9812 4.88338C13.6686 4.72411 13.3338 4.65952 12.9632 4.62924C12.5996 4.59953 12.1509 4.6 11.6008 4.6L11.6008 5.2ZM14.8008 8.4L15.4008 8.4C15.4008 7.84985 15.4012 7.40115 15.3715 7.03754C15.3413 6.66694 15.2767 6.33222 15.1174 6.01963L14.5828 6.29202L14.0482 6.56441C14.1069 6.67964 14.1513 6.83886 14.1755 7.13526C14.2003 7.43867 14.2008 7.83005 14.2008 8.4L14.8008 8.4ZM13.7088 5.41799L13.4364 5.95259C13.6998 6.08681 13.914 6.30099 14.0482 6.56441L14.5828 6.29202L15.1174 6.01963C14.8681 5.5304 14.4704 5.13265 13.9812 4.88338L13.7088 5.41799Z" fill="currentColor"/>
-</svg>
+                    <a href="#"
+                      class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple"
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M5.19922 2V10.8C5.19922 12.6856 5.19922 13.6284 5.78501 14.2142C6.37079 14.8 7.3136 14.8 9.19922 14.8H17.9992"
+                          stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                        <path
+                          d="M14.2008 18C14.2008 18.3314 14.4694 18.6 14.8008 18.6C15.1322 18.6 15.4008 18.3314 15.4008 18L14.8008 18L14.2008 18ZM2.00078 4.6C1.66941 4.6 1.40078 4.86863 1.40078 5.2C1.40078 5.53137 1.66941 5.8 2.00078 5.8L2.00078 5.2L2.00078 4.6ZM8.40078 4.6C8.06941 4.6 7.80078 4.86863 7.80078 5.2C7.80078 5.53137 8.06941 5.8 8.40078 5.8L8.40078 5.2L8.40078 4.6ZM14.2008 11.6C14.2008 11.9314 14.4694 12.2 14.8008 12.2C15.1322 12.2 15.4008 11.9314 15.4008 11.6L14.8008 11.6L14.2008 11.6ZM13.7088 5.41799L13.4364 5.95259L13.7088 5.41799ZM2.00078 5.2L2.00078 5.8L5.20078 5.8L5.20078 5.2L5.20078 4.6L2.00078 4.6L2.00078 5.2ZM8.40078 5.2L8.40078 5.8L10.0008 5.8L10.0008 5.2L10.0008 4.6L8.40078 4.6L8.40078 5.2ZM10.0008 5.2L10.0008 5.8L11.6008 5.8L11.6008 5.2L11.6008 4.6L10.0008 4.6L10.0008 5.2ZM14.8008 8.4L14.2008 8.4L14.2008 11.6L14.8008 11.6L15.4008 11.6L15.4008 8.4L14.8008 8.4ZM14.8008 14.8L14.2008 14.8L14.2008 18L14.8008 18L15.4008 18L15.4008 14.8L14.8008 14.8ZM11.6008 5.2L11.6008 5.8C12.1707 5.8 12.5621 5.80047 12.8655 5.82526C13.1619 5.84947 13.3211 5.89388 13.4364 5.95259L13.7088 5.41799L13.9812 4.88338C13.6686 4.72411 13.3338 4.65952 12.9632 4.62924C12.5996 4.59953 12.1509 4.6 11.6008 4.6L11.6008 5.2ZM14.8008 8.4L15.4008 8.4C15.4008 7.84985 15.4012 7.40115 15.3715 7.03754C15.3413 6.66694 15.2767 6.33222 15.1174 6.01963L14.5828 6.29202L14.0482 6.56441C14.1069 6.67964 14.1513 6.83886 14.1755 7.13526C14.2003 7.43867 14.2008 7.83005 14.2008 8.4L14.8008 8.4ZM13.7088 5.41799L13.4364 5.95259C13.6998 6.08681 13.914 6.30099 14.0482 6.56441L14.5828 6.29202L15.1174 6.01963C14.8681 5.5304 14.4704 5.13265 13.9812 4.88338L13.7088 5.41799Z"
+                          fill="currentColor" />
+                      </svg>
                     </a>
                   </div>
                   <div class="block">
-                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
-                      
-<svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M3.54657 16.9131C4.71544 17.9115 6.47783 17.9115 10.0026 17.9115C13.5274 17.9115 15.2898 17.9115 16.4586 16.9131C16.6246 16.7714 16.7792 16.6168 16.9209 16.4508C17.9193 15.282 17.9193 13.5195 17.9193 9.99479C17.9193 6.47002 17.9193 4.70763 16.9209 3.53876C16.7792 3.37278 16.6246 3.21819 16.4586 3.07643C15.2898 2.07812 13.5274 2.07812 10.0026 2.07812C6.47783 2.07812 4.71544 2.07812 3.54657 3.07643C3.38059 3.21819 3.226 3.37278 3.08425 3.53876C2.08594 4.70763 2.08594 6.47002 2.08594 9.99479C2.08594 13.5195 2.08594 15.282 3.08425 16.4508C3.226 16.6168 3.38059 16.7714 3.54657 16.9131Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M3.33594 16.6615L16.6693 3.32812" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M2 12L12 2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-  <path d="M9 18L18 9" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-</svg>
+                    <a href="#"
+                      class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple"
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M3.54657 16.9131C4.71544 17.9115 6.47783 17.9115 10.0026 17.9115C13.5274 17.9115 15.2898 17.9115 16.4586 16.9131C16.6246 16.7714 16.7792 16.6168 16.9209 16.4508C17.9193 15.282 17.9193 13.5195 17.9193 9.99479C17.9193 6.47002 17.9193 4.70763 16.9209 3.53876C16.7792 3.37278 16.6246 3.21819 16.4586 3.07643C15.2898 2.07812 13.5274 2.07812 10.0026 2.07812C6.47783 2.07812 4.71544 2.07812 3.54657 3.07643C3.38059 3.21819 3.226 3.37278 3.08425 3.53876C2.08594 4.70763 2.08594 6.47002 2.08594 9.99479C2.08594 13.5195 2.08594 15.282 3.08425 16.4508C3.226 16.6168 3.38059 16.7714 3.54657 16.9131Z"
+                          stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.33594 16.6615L16.6693 3.32812" stroke="currentColor" stroke-width="1.2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 12L12 2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+                        <path d="M9 18L18 9" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+                      </svg>
                     </a>
                   </div>
                   <div class="block">
-                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
-                      
-<svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-[#DC2626]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M4 5H16V14.5C16 16.1499 16 16.9749 15.4874 17.4874C14.9749 18 14.1499 18 12.5 18H7.5C5.85008 18 5.02513 18 4.51256 17.4874C4 16.9749 4 16.1499 4 14.5V5Z" stroke="currentColor" stroke-width="1.2"/>
-  <path d="M2 5H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M6 3.75C6 2.92504 6 2.51256 6.25628 2.25628C6.51256 2 6.92504 2 7.75 2H12.25C13.075 2 13.4874 2 13.7437 2.25628C14 2.51256 14 2.92504 14 3.75V5H6V3.75Z" stroke="currentColor" stroke-width="1.2"/>
-  <path d="M8 9V14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 9V14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+                    <a href="#"
+                      class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-[#DC2626]"
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M4 5H16V14.5C16 16.1499 16 16.9749 15.4874 17.4874C14.9749 18 14.1499 18 12.5 18H7.5C5.85008 18 5.02513 18 4.51256 17.4874C4 16.9749 4 16.1499 4 14.5V5Z"
+                          stroke="currentColor" stroke-width="1.2" />
+                        <path d="M2 5H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M6 3.75C6 2.92504 6 2.51256 6.25628 2.25628C6.51256 2 6.92504 2 7.75 2H12.25C13.075 2 13.4874 2 13.7437 2.25628C14 2.51256 14 2.92504 14 3.75V5H6V3.75Z"
+                          stroke="currentColor" stroke-width="1.2" />
+                        <path d="M8 9V14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path d="M12 9V14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="flex flex-col gap-3.5">
-              <p class="text-sm leading-[24px] tracking-[0.28px] text-Theme-dark-gray">I understand that Agreed uses my name, email address, and limited information to complete the signing process and improve my experience. To learn more about how Agreed uses my information, please review our Privacy Policy.</p>
+              <p class="text-sm leading-[24px] tracking-[0.28px] text-Theme-dark-gray">I understand that Agreed uses my
+                name, email address, and limited information to complete the signing process and improve my experience.
+                To learn more about how Agreed uses my information, please review our Privacy Policy.</p>
 
-<p class="text-sm leading-[24px] tracking-[0.28px] text-Theme-dark-gray">By signing this document electronically, I agree that my electronic signature is legally valid and equivalent to a handwritten signature, as permitted by applicable law.</p>
+              <p class="text-sm leading-[24px] tracking-[0.28px] text-Theme-dark-gray">By signing this document
+                electronically, I agree that my electronic signature is legally valid and equivalent to a handwritten
+                signature, as permitted by applicable law.</p>
             </div>
           </div>
         </div>
@@ -1184,8 +1344,10 @@
     </div>
     <!-- modal footer  -->
     <div class="flex items-center justify-end  w-full p-2 gap-2">
-       <button class="btn-black w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px]">Skip</button>
-      <a href="on-boarding-flow-crop2.html" class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px] rounded-lg">Save</a>
+      <button
+        class="btn-black w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px]">Skip</button>
+      <a href="on-boarding-flow-crop2.html"
+        class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px] rounded-lg">Save</a>
     </div>
   </div>
   <!-- modal overlay  -->

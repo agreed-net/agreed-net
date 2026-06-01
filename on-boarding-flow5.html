@@ -17,7 +17,7 @@
       <aside
         class="md:fixed relative bg-transparent top-0 xl:w-[270px] lg:w-[250px] w-full md:w-[240px] md:h-[100vh] overflow-y-auto px-2.5 z-50">
         <!--logo wrapper-->
-        <div class="py-2.5 flex items-center gap-1.5 border-b border-[#EEEEEC] mb-3">
+        <div class="py-2.5 flex items-center gap-1.5 border-b border-Theme-secondary-gray mb-3">
           <!--logo-->
           <a href="#" class="outline-none">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,7 @@
             <ul class="flex flex-col">
               <li>
                 <a href="#"
-                  class="font-inter-display-medium py-2.5 px-3 rounded-lg flex items-center justify-between gap-3 text-sm leading-[170%] transition-all duration-500 border text-Theme-dark-gray bg-transparent border-transparent hover:text-Theme-black hover:bg-[#EEEEEC]  [&.active]:bg-white [&.active]:text-Theme-black [&.active]:border-[#EBEBEB] ">
+                  class="font-inter-display-medium py-2.5 px-3 rounded-lg flex items-center justify-between gap-3 text-sm leading-[170%] transition-all duration-500 border text-Theme-dark-gray bg-transparent border-transparent hover:text-Theme-black hover:bg-Theme-secondary-gray  [&.active]:bg-white [&.active]:text-Theme-black [&.active]:border-[#EBEBEB] ">
                   My Workspace
                 </a>
               </li>
@@ -385,12 +385,13 @@
       </aside>
     </div>
     <!--Main Content-->
-    <div
+      <div
       class="xl:w-[calc(100%-270px)] lg:w-[calc(100%-250px)] md:w-[calc(100%-240px)] w-full ml-auto relative md:h-screen h-auto p-1 pl-0 h-full min-h-screen">
-      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full px-5">
-        <div class="py-3.5  pb-3.5 border-b border-[#EEEEEC] flex justify-between items-center relative z-10 bg-white">
+      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full px-5 overflow-hidden">
+        <!--header-->
+        <div class="py-3.5  pb-3.5 border-b border-Theme-secondary-gray flex justify-between items-center relative z-10 bg-white" x-data="workspaceHeading()" @rename-workspace.window="startRename()" @click.outside="cancelRename()">
           <div class="flex items-center gap-2.5">
-            <h1 class="text-2xl font-inter-display-medium leading-[34px] text-Theme-black">Personal Workspace</h1>
+              <h1 class="text-2xl font-inter-display-medium leading-[34px] text-Theme-black">Personal Workspace</h1>
             <!--workspace dropdown -->
             <div x-data="dropdownComponent('workspace-menu')" class="relative w-max">
               <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}" class="btn-white-icon-square">
@@ -414,7 +415,7 @@
                   <!--list-->
                   <ul class="flex flex-col gap-0.5">
                     <li>
-                      <button
+                      <button data-modal-target="rename-workspace" @click="close()"
                         class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                         <svg
                           class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
@@ -466,7 +467,7 @@
                       <button data-modal-target="Delete-workspace" @click="close()"
                         class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                         <svg
-                          class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-300 ease-in-out"
+                          class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-300 ease-in-out"
                           xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                           <path
                             d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
@@ -490,9 +491,85 @@
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-2.5">
+          <div class="flex items-center gap-[9px]">
+            <div x-data="dropdownComponent('signer-menu1')" class="relative flex items-center">
+
+                <!-- Overlay -->
+                <div x-show="isOpen" x-transition.opacity="" @click="close" class="fixed inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.12)_100%)] z-50"></div>
+
+                <!-- Trigger -->
+                <button @click.stop="toggle" class="group relative flex items-center -space-x-2 z-0 z-0">
+                  <div class="relative z-10">
+                    <img src="assets/images/avatar-1.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                  </div>
+
+                  <div class="relative z-20">
+                    <img src="assets/images/avatar-4.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                  </div>
+
+                  <div class="relative z-20">
+                    <img src="assets/images/avatar-5.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                  </div>
+
+                  <div class="relative z-20 flex items-center justify-center w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-Theme-secondary-gray text-sm text-Theme-dark-gray">
+                    +8
+                  </div>
+                </button>
+
+                <!-- Dropdown -->
+                <div x-ref="signer-menu1" x-show="isOpen" @click.outside="close" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="opacity-0 scale-[0.96] translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition-all duration-150 ease-in" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-[0.96] translate-y-1" class="absolute top-full right-0 mt-2 w-[252px] bg-gradient-gray rounded-[10px] p-[2px] z-50 origin-top-right">
+
+                  <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray tracking-[0.96px]">
+                    All Signers
+                  </span>
+
+                  <div class="bg-white rounded-lg p-2">
+
+                    <ul class="flex flex-col gap-0.5 max-h-[230px] overflow-y-auto custom-scrollbar pr-1">
+
+                      <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                        <img src="assets/images/signer-img1.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                        <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                          Ronald Richards
+                        </span>
+                      </li>
+
+                      <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                        <img src="assets/images/signer-img2.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                        <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                          Annette Black
+                        </span>
+                      </li>
+
+                      <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                        <img src="assets/images/signer-img3.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                        <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                          Bessie Cooper
+                        </span>
+                      </li>
+
+                      <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                        <img src="assets/images/signer-img4.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                        <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                          Floyd Miles
+                        </span>
+                      </li>
+
+                      <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                        <img src="assets/images/signer-img5.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="image">
+                        <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
+                          Theresa Webb
+                        </span>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </div>
+
+              </div>
             <!--invite dropdown -->
-            <div x-data="dropdownComponent('invite-menu')" class="relative w-max">
+            <div x-data="dropdownComponent('invite-menu')" class="relative w-max z-30">
               <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.9987 2.33203V11.6654M11.6654 6.9987H2.33203" stroke="white" stroke-width="1.4"
@@ -502,7 +579,7 @@
               </button>
               <div x-ref="invite-menu" x-show="isOpen" x-transition=""
                 x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
-                class="absolute right-0 z-10 p-2 mt-[15px] w-[440px] bg-gradient-gray rounded-10px p-[2px]"
+                class="absolute right-0 p-2 mt-[15px] w-[440px] bg-gradient-gray rounded-10px p-[2px] z-30"
                 style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                 <div class="flex flex-col gap-0.5 p-[14px]">
                   <h4 class="text-lg block text-Theme-black ">Invite Members</h4>
@@ -513,7 +590,7 @@
                     <!--email box-->
                     <div class="p-2 flex flex-row gap-2.5 w-full">
                       <div
-                        class="w-[336px] flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-[#EEEEEC] hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
+                        class="w-[336px] flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
                         <input type="text" id="email-address"
                           class="w-[246px] bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  "
                           placeholder="Enter Email Address" />
@@ -549,12 +626,7 @@
                                   Viewer
                                 </button>
                               </li>
-                              <li>
-                                <button
-                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                  Remove
-                                </button>
-                              </li>
+                             
 
                             </ul>
 
@@ -566,7 +638,7 @@
                       <!--invite button-->
                       <button class="btn-purple">Invite</button>
                     </div>
-                    <div class="flex flex-col gap-2 custom-scrollbar max-h-[428px]">
+                    <div class="flex flex-col gap-2 custom-scrollbar max-h-[428px] mr-[5px] pr-[5px]">
                       <!--members list-->
                       <div class="flex flex-col ">
                         <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Members with
@@ -638,7 +710,7 @@
                                     </button>
                                   </li>
                                   <li>
-                                    <button
+                                    <button data-modal-target="remove-member" @click="close()"
                                       class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
@@ -698,7 +770,7 @@
                                     </button>
                                   </li>
                                   <li>
-                                    <button
+                                    <button data-modal-target="remove-member" @click="close()"
                                       class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
@@ -755,7 +827,7 @@
                                     </button>
                                   </li>
                                   <li>
-                                    <button
+                                    <button data-modal-target="remove-member" @click="close()"
                                       class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
@@ -786,11 +858,9 @@
                               </div>
                             </div>
                             <!--access level-->
-                            <div class="btn-invited">
                               <div class="btn-invited-inner">
                                 Invited
                               </div>
-                            </div>
                           </li>
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
@@ -807,11 +877,9 @@
                               </div>
                             </div>
                             <!--access level-->
-                            <div class="btn-invited">
-                              <div class="btn-invited-inner">
+                           <div class="btn-invited-inner">
                                 Invited
                               </div>
-                            </div>
                           </li>
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
@@ -828,14 +896,9 @@
                               </div>
                             </div>
                             <!--access level-->
-                            <div class="btn-invited">
-                              <div class="btn-invited-inner">
+                            <div class="btn-invited-inner">
                                 Invited
                               </div>
-                            </div>
-
-
-
                           </li>
                         </ul>
                       </div>
@@ -849,7 +912,7 @@
         <div class="h-[calc(100%-62px)] flex justify-center items-center ">
           <div class="flex flex-col items-center justify-center gap-[87px]">
             <div class="flex flex-col items-center gap-[34px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="145" height="150" viewBox="0 0 145 150" fill="none">
+              <svg class="xl:w-[145px] w-[100px] xl:h-[150px] h-[100px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 145 150" fill="none">
                 <g clip-path="url(#clip0_7938_832)">
                   <path
                     d="M0 72.1428C0 32.2995 32.2995 0 72.1429 0V0C111.986 0 144.286 32.2995 144.286 72.1428V148.929C144.286 149.52 143.806 150 143.214 150H1.07143C0.479693 150 0 149.52 0 148.929V72.1428Z"
@@ -883,99 +946,68 @@
                 </defs>
               </svg>
               <div class="flex flex-col gap-3">
-                <h2 class="text-[26px] text-Theme-black font-inter-display-medium leading-[34px] text-center">No
-                  Documents in this workspace</h2>
-                <p class="text-sm text-Theme-dark-gray leading-[24px] tracking-[0.28px]">Create your first agreement and
-                  start collecting signatures in minutes</p>
+                <h2 class="text-[26px] text-Theme-black font-inter-display-medium leading-[34px] text-center">No Documents in this workspace</h2>
+                <p class="text-sm text-Theme-dark-gray leading-[24px] tracking-[0.28px]">Create your first agreement and start collecting signatures in minutes</p>
               </div>
             </div>
             <!--grid-->
-            <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
-              <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
-                <div class="p-5 pb-0">
-                  <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M40.4446 18.0345C41.2261 18.8159 41.665 19.8757 41.665 20.9808V39.583C41.665 41.8841 39.8001 43.7498 37.499 43.75H12.499C10.1978 43.75 8.33203 41.8842 8.33203 39.583V10.417C8.33203 8.11581 10.1978 6.25 12.499 6.25H26.9343C28.0393 6.25 29.0991 6.68899 29.8805 7.47039L40.4446 18.0345Z"
-                      fill="#327BEE" />
-                    <path
-                      d="M27.082 6.25C28.1334 6.28729 29.1344 6.7203 29.8809 7.4668L40.4443 18.0303C41.1908 18.7768 41.6238 19.7777 41.6611 20.8291H29.165C28.0146 20.8289 27.082 19.8966 27.082 18.7461V6.25Z"
-                      fill="#52CDFE" />
-                    <path d="M25.0026 27.0781V35.4115M29.1693 31.2448H20.8359" stroke="#A0DBFF" stroke-width="2.70833"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </div>
-                <div class="flex flex-col  gap-3.5 p-6 pt-0">
-                  <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start with <br> Blank
-                    Document</h4>
-                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Start fresh and build
-                    your document from the ground up</p>
-                </div>
+            <div class="grid xl:grid-cols-4 min-[1367px]:grid-cols-4 min-[1367px]:grid-cols-4 grid-cols-2 gap-6">
+              <div class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
+                  <div class="p-5 pb-0">
+                    <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M40.4446 18.0345C41.2261 18.8159 41.665 19.8757 41.665 20.9808V39.583C41.665 41.8841 39.8001 43.7498 37.499 43.75H12.499C10.1978 43.75 8.33203 41.8842 8.33203 39.583V10.417C8.33203 8.11581 10.1978 6.25 12.499 6.25H26.9343C28.0393 6.25 29.0991 6.68899 29.8805 7.47039L40.4446 18.0345Z" fill="#327BEE"/>
+                      <path d="M27.082 6.25C28.1334 6.28729 29.1344 6.7203 29.8809 7.4668L40.4443 18.0303C41.1908 18.7768 41.6238 19.7777 41.6611 20.8291H29.165C28.0146 20.8289 27.082 19.8966 27.082 18.7461V6.25Z" fill="#52CDFE"/>
+                      <path d="M25.0026 27.0781V35.4115M29.1693 31.2448H20.8359" stroke="#A0DBFF" stroke-width="2.70833" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                  </div>
+                  <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                      <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start with <br> Blank Document</h4>
+                      <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Start fresh and build your document from the ground up</p>
+                  </div>
               </div>
-              <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
-                <div class="p-5 pb-0">
-                  <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M19.0918 8.33594C20.3472 8.33594 21.5356 8.90194 22.3268 9.87662L24.0531 12.0033C24.8443 12.9779 26.0327 13.5439 27.2881 13.5439H39.5833C41.8845 13.5439 43.75 15.4094 43.75 17.7106V37.5029C43.7498 39.804 41.8841 41.6689 39.583 41.6689H10.417C8.11591 41.6689 6.25018 39.804 6.25 37.5029V12.5029C6.25 10.2017 8.11581 8.33594 10.417 8.33594H19.0918Z"
-                      fill="#15A679" />
-                    <path d="M29.2157 25.395L25.0004 21.1797L20.7852 25.395" stroke="#C7FBDB" stroke-width="2.70833"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M25 32.9922V21.3047" stroke="#D1FAE5" stroke-width="2.70833" stroke-miterlimit="10"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <rect x="12.5" y="35.4141" width="25" height="8.33333" rx="2.08333" fill="#6BEDBE" />
-                  </svg>
+              <div class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
+                  <div class="p-5 pb-0">
+                      <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.0918 8.33594C20.3472 8.33594 21.5356 8.90194 22.3268 9.87662L24.0531 12.0033C24.8443 12.9779 26.0327 13.5439 27.2881 13.5439H39.5833C41.8845 13.5439 43.75 15.4094 43.75 17.7106V37.5029C43.7498 39.804 41.8841 41.6689 39.583 41.6689H10.417C8.11591 41.6689 6.25018 39.804 6.25 37.5029V12.5029C6.25 10.2017 8.11581 8.33594 10.417 8.33594H19.0918Z" fill="#15A679"/>
+                    <path d="M29.2157 25.395L25.0004 21.1797L20.7852 25.395" stroke="#C7FBDB" stroke-width="2.70833" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M25 32.9922V21.3047" stroke="#D1FAE5" stroke-width="2.70833" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="12.5" y="35.4141" width="25" height="8.33333" rx="2.08333" fill="#6BEDBE"/>
+                    </svg>
 
-                </div>
-                <div class="flex flex-col  gap-3.5 p-6 pt-0">
-                  <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Upload
-                    <br> Your Document
-                  </h4>
-                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Bring in your file
-                    and turn it into a signable agreement</p>
-                </div>
+                  </div>
+                  <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                      <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Upload 
+ <br> Your Document</h4>
+                      <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Bring in your file and turn it into a signable agreement</p>
+                  </div>
               </div>
-              <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
-                <div class="p-5 pb-0">
-
-                  <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                    viewBox="0 0 50 50" fill="none">
-                    <rect x="6.25" y="14.5859" width="37.5" height="29.1667" rx="4.16667" fill="#FDB526" />
-                    <rect x="6.25" y="6.25" width="29.1667" height="37.5" rx="4.16667" fill="#FE8944" />
-                    <path d="M12.5 25H29.1667" stroke="#FEEAE0" stroke-width="2.70833" stroke-linecap="round" />
-                    <path d="M12.5 31.25H20.8333" stroke="#FEEAE0" stroke-width="2.70833" stroke-linecap="round" />
-                  </svg>
-                </div>
-                <div class="flex flex-col  gap-3.5 p-6 pt-0">
-                  <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start<br> with a Template
-                  </h4>
-                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Start faster with
-                    proven agreements you can customize</p>
-                </div>
+              <div class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
+                  <div class="p-5 pb-0">
+                    
+                      <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <rect x="6.25" y="14.5859" width="37.5" height="29.1667" rx="4.16667" fill="#FDB526"/>
+  <rect x="6.25" y="6.25" width="29.1667" height="37.5" rx="4.16667" fill="#FE8944"/>
+  <path d="M12.5 25H29.1667" stroke="#FEEAE0" stroke-width="2.70833" stroke-linecap="round"/>
+  <path d="M12.5 31.25H20.8333" stroke="#FEEAE0" stroke-width="2.70833" stroke-linecap="round"/>
+</svg>
+                  </div>
+                  <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                      <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start<br> with a Template</h4>
+                      <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Start faster with proven agreements you can customize</p>
+                  </div>
               </div>
-              <div
-                class="bg-white border border-[#EEEEEC] rounded-2xl flex flex-col  gap-3 w-[268px] h-[200px] transition-all duration-500 hover:border-[#dedede]">
-                <div class="p-5 pb-0">
-                  <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                    viewBox="0 0 50 50" fill="none">
-                    <rect x="6.25" y="6.25" width="37.5" height="37.5" rx="4.16667" fill="#6A5BDC" />
-                    <path
-                      d="M14.9297 35.4167L18.1274 25.8235C18.2913 25.3317 18.7515 25 19.27 25C19.7884 25 20.2486 25.3317 20.4125 25.8235L23.6102 35.4167M28.8185 25V35.4167M16.6658 31.9445H21.8741"
-                      stroke="#AEA4FB" stroke-width="2.70833" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M35.4167 10.4141C35.7243 10.4141 35.9995 10.6056 36.1063 10.8942L36.3591 11.5775C36.714 12.5367 36.8273 12.7973 37.0136 12.9837C37.2001 13.1702 37.4607 13.2833 38.4199 13.6383L39.1032 13.8911C39.3918 13.9979 39.5833 14.2731 39.5833 14.5807C39.5833 14.8884 39.3918 15.1636 39.1032 15.2703L38.4199 15.5232C37.4607 15.8781 37.2001 15.9913 37.0136 16.1777C36.8273 16.3642 36.714 16.6247 36.3591 17.5839L36.1063 18.2673C35.9995 18.5558 35.7243 18.7474 35.4167 18.7474C35.109 18.7474 34.8338 18.5558 34.7271 18.2673L34.4742 17.5839C34.1193 16.6247 34.0061 16.3642 33.8197 16.1777C33.6332 15.9913 33.3726 15.8781 32.4134 15.5232L31.7301 15.2703C31.4416 15.1636 31.25 14.8884 31.25 14.5807C31.25 14.2731 31.4416 13.9979 31.7301 13.8911L32.4134 13.6383C33.3726 13.2833 33.6332 13.1702 33.8197 12.9837C34.0061 12.7973 34.1193 12.5367 34.4742 11.5775L34.7271 10.8942C34.8338 10.6056 35.109 10.4141 35.4167 10.4141Z"
-                      fill="#E5E5FF" />
+              <div class="bg-white border border-Theme-secondary-gray rounded-2xl flex flex-col  gap-3 2xl:w-[268px] min-[1367px]:w-[258px] w-[228px] 2xl:h-[200px] min-[1367px]:h-[190px] h-[170px] transition-all duration-500 hover:border-[#dedede]">
+                  <div class="p-5 pb-0">
+                      <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <rect x="6.25" y="6.25" width="37.5" height="37.5" rx="4.16667" fill="#6A5BDC"/>
+                    <path d="M14.9297 35.4167L18.1274 25.8235C18.2913 25.3317 18.7515 25 19.27 25C19.7884 25 20.2486 25.3317 20.4125 25.8235L23.6102 35.4167M28.8185 25V35.4167M16.6658 31.9445H21.8741" stroke="#AEA4FB" stroke-width="2.70833" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M35.4167 10.4141C35.7243 10.4141 35.9995 10.6056 36.1063 10.8942L36.3591 11.5775C36.714 12.5367 36.8273 12.7973 37.0136 12.9837C37.2001 13.1702 37.4607 13.2833 38.4199 13.6383L39.1032 13.8911C39.3918 13.9979 39.5833 14.2731 39.5833 14.5807C39.5833 14.8884 39.3918 15.1636 39.1032 15.2703L38.4199 15.5232C37.4607 15.8781 37.2001 15.9913 37.0136 16.1777C36.8273 16.3642 36.714 16.6247 36.3591 17.5839L36.1063 18.2673C35.9995 18.5558 35.7243 18.7474 35.4167 18.7474C35.109 18.7474 34.8338 18.5558 34.7271 18.2673L34.4742 17.5839C34.1193 16.6247 34.0061 16.3642 33.8197 16.1777C33.6332 15.9913 33.3726 15.8781 32.4134 15.5232L31.7301 15.2703C31.4416 15.1636 31.25 14.8884 31.25 14.5807C31.25 14.2731 31.4416 13.9979 31.7301 13.8911L32.4134 13.6383C33.3726 13.2833 33.6332 13.1702 33.8197 12.9837C34.0061 12.7973 34.1193 12.5367 34.4742 11.5775L34.7271 10.8942C34.8338 10.6056 35.109 10.4141 35.4167 10.4141Z" fill="#E5E5FF"/>
                   </svg>
-                </div>
-                <div class="flex flex-col  gap-3.5 p-6 pt-0">
-                  <h4 class=" text-base text-black font-inter-display-medium leading-[22px]">Generate Document<br> with
-                    AI</h4>
-                  <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Describe what you
-                    need and let AI create it instantly</p>
-                </div>
+                  </div>
+                  <div class="flex flex-col  gap-3.5 p-6 pt-0">
+                      <h4 class=" text-base text-black font-inter-display-medium leading-[22px]">Generate Document<br> with AI</h4>
+                      <p class="text-xs font-inter-display-medium leading-[18px] text-Theme-dark-gray">Describe what you need and let AI create it instantly</p>
+                  </div>
               </div>
             </div>
           </div>
@@ -986,12 +1018,12 @@
   <!--Modals-->
   <!-- on boarding steps model -->
   <div
-    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[584px]"
+    class="modalTrigger !block opacity-100 visible flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0  md:h-auto max-h-[calc(100dvh-10px)] md:!max-w-[584px] !max-w-full md:w-auto !w-[calc(100%-10px)] overflow-y-auto overscroll-contain"
     id="Delete-workspace">
     <!-- modal header  -->
     <div class="block">
       <!--steps start-->
-      <ul class="flex items-center px-3.5 py-2.5  gap-1.5 border-b border-[#EEEEEC]">
+      <ul class="flex md:flex-row flex-col md:items-center items-start px-3.5 py-2.5  gap-1.5 border-b border-Theme-secondary-gray">
         <li>
           <a href="#" class="flex items-center gap-2 is-completed">
             <div
@@ -1002,7 +1034,7 @@
           </a>
         </li>
         <li>
-          <div class="w-[22px] h-[22px] flex justify-center items-center">
+          <div class="w-[22px] h-[22px] flex justify-center items-center md:rotate-0 rotate-90">
             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
               <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
                 stroke-linecap="round" stroke-linejoin="round" />
@@ -1019,7 +1051,7 @@
           </a>
         </li>
         <li>
-          <div class="w-[22px] h-[22px] flex justify-center items-center">
+          <div class="w-[22px] h-[22px] flex justify-center items-center md:rotate-0 rotate-90">
             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
               <path d="M0.804026 0.796875L6.30423 6.29714L0.800781 11.8005" stroke="#E0E0E0" stroke-width="1.6"
                 stroke-linecap="round" stroke-linejoin="round" />
@@ -1049,7 +1081,7 @@
       <div class="flex flex-col gap-3.5">
         <div class="block tab-main flex flex-col gap-3.5">
           <!--tab list-->
-          <ul class="flex items-center bg-[#EEEEEC] rounded-lg w-full p-[2px] gap-[2px]">
+          <ul class="flex items-center bg-Theme-secondary-gray rounded-lg w-full p-[2px] gap-[2px]">
             <li class="w-full">
               <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&.active]:bg-white
             ">
@@ -1117,7 +1149,7 @@
               <div class="relative">
                 <!-- <textarea type="text" id="signature" name="signature"  class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required=""></textarea> -->
                 <div class="flex justify-center items-end w-full h-[160px]  p-5 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500">
-                    <input type="text" class="border-b border-[#EEEEEC] w-full text-[34px] text-Theme-black font-stylescript focus:outline-none transition-all duration-500 hover:border-[#d3d3d3]" value="Ishita Jadav"/>
+                    <input type="text" class="border-b border-Theme-secondary-gray w-full text-[34px] text-Theme-black font-stylescript focus:outline-none transition-all duration-500 hover:border-[#d3d3d3]" value="Ishita Jadav"/>
                 </div>
                 
               </div>
@@ -1134,7 +1166,7 @@
     <!-- modal footer  -->
     <div class="flex items-center justify-end  w-full p-2 gap-2">
        <button class="btn-black w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px]">Skip</button>
-      <a href="on-boarding-flow6.html" class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px] rounded-lg">Continue</a>
+      <a href="on-boarding-flow6.html" class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-[20px] h-[38px] rounded-lg">Save</a>
     </div>
   </div>
   <!-- modal overlay  -->

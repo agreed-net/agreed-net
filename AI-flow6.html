@@ -55,7 +55,7 @@
 
 <body class="bg-Theme-Forground font-inter-display overflow-hidden">
   <div x-data class="block relative flex min-h-screen">
-    <!--Sidebar-->
+  <!--Sidebar-->
     <div class="relative flex h-full">
         <aside :class="$store.sidebar.open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
         class="fixed lg:bg-[#FAFAF9] bg-white top-0 left-0 xl:w-[270px] lg:w-[250px] w-[240px]  px-2.5 lg:z-0 z-[100]   py-[2px] transition-transform duration-500 ease-in-out">
@@ -570,10 +570,22 @@
     ? 'w-full lg:w-[calc(100%-250px)] xl:w-[calc(100%-270px)] ml-0' 
     : 'w-full lg:w-[calc(100%-250px)] xl:w-[calc(100%-270px)] lg:ml-auto'"
       class="relative h-dvh p-1 lg:pl-0  transition-all duration-300 ease-in-out">
-      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full pr-[4px] overflow-hidden py-2">
+      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full pr-[4px] overflow-hidden lg:py-2">
       
-        <div class="h-full w-full overflow-auto  pt-[9px] pb-[250px] overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#BCB8B4] [&::-webkit-scrollbar-thumb]:rounded-[3px] mr-[-4px]" style="scrollbar-gutter: stable;">
-            <div class="max-w-[866px] mx-auto w-full  ">
+        <div class="relative z-0 h-full w-full overflow-auto  lg:pt-[9px] pb-[250px] overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#BCB8B4] [&::-webkit-scrollbar-thumb]:rounded-[3px] mr-[-4px]" style="scrollbar-gutter: stable;">
+          <!--mobile header-->  
+          <div class="py-3.5  px-5  lg:hidden flex justify-between items-center relative z-10">
+        <!--toggle button for mobile only-->
+        <button @click="$store.sidebar.toggle(); console.log($store.sidebar.open)" class="block lg:hidden w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
+              <svg :class="$store.sidebar.open ? 'rotate-180' : ''" class="transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.5 5H5.83334" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 10H9.16667" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 15H5.83334" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.4987 6.66406L5.83203 9.9974L2.4987 13.3307" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+        </div> 
+          <div class="max-w-[850px] mx-auto w-full lg:px-0 px-3">
               <!--conversation main-->  
               <!--date-->
               <div class="flex justify-center mb-5">

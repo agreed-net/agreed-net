@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="assets/css/output.css" rel="stylesheet" />
+   
+  </head>
+  <body>
+  
+
+
+ <!--test-->
+<svg width="50" height="50" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <mask id="path-1-outside-1_2794_397" maskUnits="userSpaceOnUse" x="0" y="0" width="62" height="62" fill="black">
+        <rect fill="white" width="62" height="62"/>
+        <path d="M58 31C58 16.0883 45.9117 4 31 4C16.0883 4 4 16.0883 4 31C4 45.9117 16.0883 58 31 58C45.9117 58 58 45.9117 58 31Z"/>
+    </mask>
+
+    <path d="M58 31C58 16.0883 45.9117 4 31 4C16.0883 4 4 16.0883 4 31C4 45.9117 16.0883 58 31 58C45.9117 58 58 45.9117 58 31Z"
+          fill="white"/>
+
+    <!-- Spinning outer gradient -->
+    <g class="outer-spin"
+       clip-path="url(#paint0_angular_2794_397_clip_path)"
+       mask="url(#path-1-outside-1_2794_397)">
+
+        <g transform="matrix(0.0314357 0.0291457 -0.0314357 0.0291457 29.5886 31)">
+            <foreignObject x="-1047.33" y="-1047.33" width="2094.66" height="2094.66">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                     style="background:conic-gradient(from 90deg,#8E5EFE 0deg,#FE8FFC 91deg,#4AFFB0 180deg,#75C0FE 275deg,#8E5EFE 360deg);height:100%;width:100%;opacity:.5">
+                </div>
+            </foreignObject>
+        </g>
+
+    </g>
+
+    <!-- Base path -->
+    <path class="stroke-base"
+          d="M15.6328 35.7824C19.7238 38.3938 27.1646 36.5759 28.7731 30.5985C29.8509 26.5931 26.9942 23.956 25.0118 23.7206C23.0295 23.4851 19.7238 24.4255 19.7238 29.1931C19.7238 33.6608 24.3039 38.3938 30.9589 38.3938H31.0252C37.6803 38.3938 42.2602 33.6608 42.2602 29.1931C42.2602 24.4255 38.9546 23.4851 36.9722 23.7206C34.9899 23.956 32.1332 26.5931 33.211 30.5985C34.8194 36.5759 42.2602 38.3938 46.3512 35.7824"
+          stroke-width="3"/>
+
+    <!-- Cyan flow -->
+    <path class="stroke-cyan"
+          d="M15.6328 35.7824C19.7238 38.3938 27.1646 36.5759 28.7731 30.5985C29.8509 26.5931 26.9942 23.956 25.0118 23.7206C23.0295 23.4851 19.7238 24.4255 19.7238 29.1931C19.7238 33.6608 24.3039 38.3938 30.9589 38.3938H31.0252C37.6803 38.3938 42.2602 33.6608 42.2602 29.1931C42.2602 24.4255 38.9546 23.4851 36.9722 23.7206C34.9899 23.956 32.1332 26.5931 33.211 30.5985C34.8194 36.5759 42.2602 38.3938 46.3512 35.7824"
+          stroke="#37EBFF"
+          stroke-width="3"/>
+
+    <!-- Purple flow -->
+    <path class="stroke-purple"
+          d="M15.6328 35.7824C19.7238 38.3938 27.1646 36.5759 28.7731 30.5985C29.8509 26.5931 26.9942 23.956 25.0118 23.7206C23.0295 23.4851 19.7238 24.4255 19.7238 29.1931C19.7238 33.6608 24.3039 38.3938 30.9589 38.3938H31.0252C37.6803 38.3938 42.2602 33.6608 42.2602 29.1931C42.2602 24.4255 38.9546 23.4851 36.9722 23.7206C34.9899 23.956 32.1332 26.5931 33.211 30.5985C34.8194 36.5759 42.2602 38.3938 46.3512 35.7824"
+          stroke="#8E5EFE"
+          stroke-width="3"/>
+
+    <defs>
+        <clipPath id="paint0_angular_2794_397_clip_path">
+            <path d="M31 4V8C43.7025 8 54 18.2975 54 31H58H62C62 13.8792 48.1208 0 31 0V4ZM58 31H54C54 43.7025 43.7025 54 31 54V58V62C48.1208 62 62 48.1208 62 31H58ZM31 58V54C18.2975 54 8 43.7025 8 31H4H0C0 48.1208 13.8792 62 31 62V58ZM4 31H8C8 18.2975 18.2975 8 31 8V4V0C13.8792 0 0 13.8792 0 31H4Z"/>
+        </clipPath>
+    </defs>
+
+</svg>
+
+
+
+
+
+               <!-- MAIN JS-->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- alpinejs  -->
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.store('dropdown', {
+          openId: null
+        })
+      })
+    </script>
+     <!-- Drop down  -->
+    <script>
+      function dropdownComponent(id) {
+        return {
+          id,
+          height: 'auto',
+          opacity: 0,
+
+          visible: false,
+          get isOpen() {
+            return Alpine.store('dropdown').openId === this.id
+          },
+          toggle() {
+            if (this.isOpen) {
+              this.close()
+            } else {
+              Alpine.store('dropdown').openId = this.id
+              this.$nextTick(() => {
+                this.visible = true
+                // const scrollHeight = this.$refs.menu.scrollHeight;
+                // this.height = scrollHeight + 'px';
+                this.opacity = 1
+              })
+            }
+          },
+          close() {
+            if (this.isOpen) {
+              this.opacity = 0
+              // this.height = '0px';
+
+              setTimeout(() => {
+                this.visible = false
+                Alpine.store('dropdown').openId = null
+              }, 100) // match with transition duration
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

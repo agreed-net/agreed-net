@@ -400,3 +400,62 @@ input:-webkit-autofill:active {
       -webkit-box-decoration-break: clone;
       transition: background-color 180ms ease;
     }
+/*==========logo animation (for loader)===============*/
+ .outer-spin {
+    transform-origin: 31px 31px;
+    animation: spinGradient 2s linear infinite;
+}
+
+.stroke-base {
+    stroke: #DFDBE6;
+}
+
+.stroke-cyan,
+.stroke-purple {
+    fill: none;
+    stroke-dasharray: 35 120;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+
+    animation: flow 2.8s linear infinite;
+}
+
+.stroke-cyan {
+    filter: drop-shadow(0 0 3px rgba(55, 235, 255, .35));
+}
+
+.stroke-purple {
+    animation-delay: .22s;
+    filter: drop-shadow(0 0 3px rgba(142, 94, 254, .35));
+}
+
+@keyframes flow {
+    from {
+        stroke-dashoffset: 155;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes spinGradient {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+} 
+
+    /*========number arrow remove==============*/
+    input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -5039,7 +5039,7 @@
                   </div>
 
                   <!--panel body-->
-                  <div class="bg-white rounded-[12px] w-full h-[calc(100%-48px)] ">
+                  <div class="bg-white rounded-[12px] w-full h-[calc(100%-44px)] ">
                     <div :class="rightPanelOpen
             ? 'opacity-100 transition-opacity duration-200 delay-200'
             : 'opacity-100 transition-opacity duration-100'" class="  flex flex-col flex-1 flex flex-col ">
@@ -5047,7 +5047,7 @@
                         <div class="flex flex-col gap-3.5">
                           <div class="flex flex-col gap-2">
                             <label
-                              class="text-sm leading-5 font-inter-display-medium text-Theme-light tracking-[0.56px] uppercase">Pages
+                              class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">Pages
                               size</label>
 
                             <div
@@ -5072,8 +5072,6 @@
                                     </svg>
                                   </div>
                                 </button>
-
-
                                 <div x-ref="page-size-dropdown" x-show="isOpen" x-transition=""
                                   x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height"
                                   @click.outside="close"
@@ -5086,16 +5084,111 @@
                                     <ul class="flex flex-col gap-0.5">
                                       <li>
                                         <a href="#"
-                                          class="group w-full py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
-                                          <span class="text-Theme-dark-gray font-inter-display-medium leading-5 ">US Letter</span>
-                                          <span class="text-Theme-dark-gray leading-[22px] text-right">8.5 in * 11 in</span>
+                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
+                                          <span class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">US Letter</span>
+                                          <span class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">8.5 in * 11 in</span>
                                         </a>
                                       </li>
-                                     
+                                     <li>
+                                        <a href="#"
+                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
+                                          <span class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">US Legal</span>
+                                          <span class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">8.5 in * 14 in</span>
+                                        </a>
+                                      </li>
+                                        <li>
+                                        <a href="#"
+                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
+                                          <span class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">A4</span>
+                                          <span class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">8.3 in * 11.7 in</span>
+                                        </a>
+                                      </li>
+                                       <li>
+                                        <a href="#"
+                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
+                                          <span class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">A3</span>
+                                          <span class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">11.7 in * 16.5 in</span>
+                                        </a>
+                                      </li>
+                                       <li>
+                                        <a href="#"
+                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
+                                          <span class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">Slide</span>
+                                          <span class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">16:9</span>
+                                        </a>
+                                      </li>
                                     </ul>
                                   </div>
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                           <div class="flex flex-col gap-2">
+                            <label
+                              class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">Page margins</label>
+                            <!--size box-->
+                            <div class="relative border border-Theme-secondary-gray rounded-10px w-full h-[300px] flex justify-center items-center">
+                              <div class="relative w-[248px] h-[208px]"> 
+                              <!-- Top -->
+                                <div class="absolute left-1/2 top-0 -translate-x-1/2">
+                                  <div class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
+                                    <input
+                                      type="number"
+                                      value="2"
+                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray "
+                                    >
+                                    <span class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">T</span>
+                                  </div>
+                                </div>
+
+                                <!-- Left -->
+                                <div class="absolute left-0 top-1/2 -translate-y-1/2">
+                                  <div class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
+                                    <input
+                                      type="number"
+                                      value="4"
+                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray"
+                                    >
+                                    <span class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">L</span>
+                                  </div>
+                                </div>
+
+                                <!-- Right -->
+                                <div class="absolute right-0 top-1/2 -translate-y-1/2">
+                                  <div class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
+                                    <input
+                                      type="number"
+                                      value="4"
+                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray"
+                                    >
+                                    <span class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">R</span>
+                                  </div>
+                                </div>
+
+                                <!-- Bottom -->
+                                <div class="absolute left-1/2 bottom-0 -translate-x-1/2">
+                                  <div class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
+                                    <input
+                                      type="number"
+                                      value="4"
+                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray"
+                                    >
+                                    <span class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">B</span>
+                                  </div>
+                                </div>
+
+                                <!-- Center box -->
+                                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                                  <div class="w-[80px] h-[120px] bg-Theme-Forground rounded-lg p-[10px]">
+                                  <div class="relative h-full border border-[#8E5EFE] bg-[rgba(142,94,254,0.14)] rounded-[4px]">
+                                    <div class="absolute left-1/2 -top-2 w-px h-2 bg-[#8E5EFE] -translate-x-1/2"></div>
+                                    <div class="absolute left-1/2 -bottom-2 w-px h-2 bg-[#8E5EFE] -translate-x-1/2"></div>
+                                    <div class="absolute top-1/2 -left-2 h-px w-2 bg-[#8E5EFE] -translate-y-1/2"></div>
+                                    <div class="absolute top-1/2 -right-2 h-px w-2 bg-[#8E5EFE] -translate-y-1/2"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
                             </div>
                           </div>
                         </div>

@@ -394,7 +394,7 @@
       </div>
         <div class="h-dvh flex justify-center items-center ">
             <div class="max-w-[850px] w-full  ">
-                <div class="flex flex-col gap-[50px]">
+                <div class="flex flex-col gap-[50px]" x-data="aiPromptRotator()" x-init="startPromptRotator()">
                   <!--chat top-->  
                   <div class="flex flex-col gap-[36px]">
                       <div class="flex flex-col gap-4">
@@ -449,14 +449,14 @@
                       </ul>
                   </div>
                   <!--chat box-->
-                  <div x-data="{ hasText: false }"
+                  <div
                   :class="hasText 
                     ? 'bg-transparent hover:bg-transparent' 
                     : 'bg-[rgba(142,94,254,0.12)] hover:bg-[rgba(142,94,254,0.30)]'"
-                    class=" p-1 rounded-[12px] h-[122px] transition-all duration-500 hover:bg-[rgba(142,94,254,0.30)] cursor-pointer">
+                    class=" p-1 rounded-[12px] h-[122px] transition-all duration-500 cursor-pointer">
                     <div class="bg-white rounded-lg flex flex-col  ">
                       <div class="relative flex-1">
-                        <textarea @input="hasText = $event.target.value.trim().length > 0" class="py-3 px-2.5 resize-none  w-full h-[54px] overflow-y-auto outline-0 focus:outline-0 bg-transparent relative custom-scrollbar text-base leading-[22px] text-Theme-black placeholder:text-Theme-light-gray" rows="1" placeholder="What would you like to create?"></textarea>
+                        <textarea @input="handlePromptInput($event)" :placeholder="hasText ? '' : placeholderText()" class="py-3 px-2.5 resize-none  w-full h-[54px] overflow-y-auto outline-0 focus:outline-0 bg-transparent relative custom-scrollbar text-base leading-[22px] text-Theme-black placeholder:text-Theme-light-gray" rows="1" placeholder="What would you like to create?"></textarea>
                       </div>  
                       <div class="flex items-center justify-between gap-2.5 p-2.5">
                          <!--upload file dropdown-->
@@ -522,11 +522,11 @@
                             </button>
                             <button :class="hasText 
             ? 'bg-Theme-purple' 
-            : 'bg-Theme-secondary-gray hover:bg-Theme-purple'" class="group w-[34px] h-[34px] flex items-center rounded-lg justify-center  transition-all duration-500 hover:bg-Theme-purple">
+            : 'bg-Theme-secondary-gray hover:bg-Theme-purple'" class="group w-[34px] h-[34px] flex items-center rounded-lg justify-center  transition-all duration-500">
                               
 <svg  :class="hasText 
               ? 'text-white' 
-              : 'text-Theme-dark-gray group-hover:text-white'" class="text-Theme-dark-gray transition-all duration-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              : 'text-Theme-dark-gray group-hover:text-white'" class="transition-all duration-500" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M5 9.16927L10 4.16927L15 9.16927M10 4.58594L10 15.8359" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
                             </button>
@@ -606,6 +606,82 @@
 
 </script>
 <script>
+  function aiPromptRotator() {
+    return {
+      hasText: false,
+      promptPhrases: [
+        'What would you like to create?',
+        'Create a contract, NDA or Agreements ',
+        'Review this document ',
+        'Rewrite your document '
+      ],
+      activePromptIndex: 0,
+      typedPrompt: '',
+      typingPosition: 0,
+      isDeleting: false,
+      promptTimer: null,
+      placeholderText() {
+        return this.typedPrompt;
+      },
+      startPromptRotator() {
+        if (this.promptTimer) {
+          clearTimeout(this.promptTimer);
+        }
+
+        this.hasText = false;
+        this.activePromptIndex = 0;
+        this.typedPrompt = '';
+        this.typingPosition = 0;
+        this.isDeleting = false;
+        this.tickPrompt();
+      },
+      stopPromptRotator() {
+        if (this.promptTimer) {
+          clearTimeout(this.promptTimer);
+          this.promptTimer = null;
+        }
+
+        this.typedPrompt = '';
+      },
+      tickPrompt() {
+        const currentPhrase = this.promptPhrases[this.activePromptIndex];
+
+        if (this.isDeleting) {
+          this.typingPosition -= 1;
+        } else {
+          this.typingPosition += 1;
+        }
+
+        this.typedPrompt = currentPhrase.slice(0, this.typingPosition);
+
+        let delay = this.isDeleting ? 35 : 70;
+
+        if (!this.isDeleting && this.typingPosition === currentPhrase.length) {
+          this.isDeleting = true;
+          delay = 1100;
+        } else if (this.isDeleting && this.typingPosition === 0) {
+          this.isDeleting = false;
+          this.activePromptIndex = (this.activePromptIndex + 1) % this.promptPhrases.length;
+          delay = 250;
+        }
+
+        this.promptTimer = setTimeout(() => this.tickPrompt(), delay);
+      },
+      handlePromptInput(event) {
+        this.hasText = event.target.value.trim().length > 0;
+
+        if (this.hasText) {
+          this.stopPromptRotator();
+          return;
+        }
+
+        if (!this.promptTimer) {
+          this.startPromptRotator();
+        }
+      }
+    };
+  }
+
   function dropdownComponent(id) {
     return {
       id,

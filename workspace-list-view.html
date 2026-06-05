@@ -1223,7 +1223,7 @@
                 </div>
               </div>
             </label>
-            <button class="btn-purple-icon-text py-2.5  rounded-10px  md:w-[200px] w-10 md:h-auto h-10 shrink-0 "><svg
+            <button data-modal-target="create-document"  class="btn-purple-icon-text py-2.5  rounded-10px  md:w-[200px] w-10 md:h-auto h-10 shrink-0 "><svg
                 xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path
                   d="M0.601562 5.60156H5.60156M5.60156 5.60156H10.6016M5.60156 5.60156V0.601562M5.60156 5.60156V10.6016"
@@ -6644,6 +6644,189 @@
       </button>
     </div>
   </div>
+   <!--create new document -->
+  <div
+    class="modalTrigger  flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0  md:h-auto max-h-[calc(100dvh-10px)] md:!max-w-[600px] !max-w-full md:w-auto !w-[calc(100%-10px)] overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:w-[2px]
+[&::-webkit-scrollbar-track]:bg-transparent
+[&::-webkit-scrollbar-thumb]:bg-Theme-secondary-gray
+[&::-webkit-scrollbar-thumb]:rounded-full"
+    id="create-document">
+
+
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Create New Form
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col pb-5 pt-10 px-5">
+      
+      <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-2.5 items-center">
+           <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="50" cy="50" r="50" fill="#FAFAF9"></circle>
+<g clip-path="url(#clip0_8458_1790)">
+  <path class="star-big" d="M44.8718 35.2578C44.0671 35.2578 43.3475 35.7588 43.0682 36.5135L41.7456 40.088C39.9501 44.9401 39.2205 46.7935 37.8781 48.136C36.5357 49.4783 34.6824 50.2078 29.8302 52.0035L26.2557 53.326C25.501 53.6052 25 54.325 25 55.1296C25 55.9342 25.501 56.654 26.2557 56.9332L29.8302 58.2558C34.6824 60.0514 36.5357 60.7809 37.8781 62.1232C39.2205 63.4658 39.9501 65.3191 41.7456 70.1711L43.0682 73.7458C43.3475 74.5004 44.0671 75.0014 44.8718 75.0014C45.6764 75.0014 46.3962 74.5004 46.6754 73.7458L47.9979 70.1711C49.7936 65.3191 50.5231 63.4658 51.8654 62.1232C53.2079 60.7809 55.0613 60.0514 59.9133 58.2558L63.4879 56.9332C64.2426 56.654 64.7436 55.9342 64.7436 55.1296C64.7436 54.325 64.2426 53.6052 63.4879 53.326L59.9133 52.0035C55.0613 50.2078 53.2079 49.4783 51.8654 48.136C50.5231 46.7935 49.7936 44.9401 47.9979 40.088L46.6754 36.5135C46.3962 35.7588 45.6764 35.2578 44.8718 35.2578Z" fill="#8E5EFE"></path>
+  <path d="M65.3849 25C64.5803 25 63.8606 25.501 63.5813 26.2557L63.0144 27.7876C62.21 29.9614 61.9759 30.4756 61.6106 30.841C61.2452 31.2065 60.7311 31.4406 58.5572 32.2449L57.0252 32.8118C56.2706 33.0911 55.7695 33.8107 55.7695 34.6154C55.7695 35.4201 56.2706 36.1397 57.0252 36.4189L58.5572 36.9858C60.7311 37.7902 61.2452 38.0243 61.6106 38.3897C61.9759 38.7552 62.21 39.2694 63.0144 41.4432L63.5813 42.9751C63.8606 43.7297 64.5803 44.2308 65.3849 44.2308C66.1895 44.2308 66.9093 43.7297 67.1885 42.9751L67.7554 41.4432C68.5598 39.2694 68.7939 38.7552 69.1593 38.3897C69.5247 38.0243 70.039 37.7902 72.2126 36.9858L73.7447 36.4189C74.4993 36.1397 75.0003 35.4201 75.0003 34.6154C75.0003 33.8107 74.4993 33.0911 73.7447 32.8118L72.2126 32.2449C70.039 31.4406 69.5247 31.2065 69.1593 30.841C68.7939 30.4756 68.5598 29.9614 67.7554 27.7876L67.1885 26.2557C66.9093 25.501 66.1895 25 65.3849 25Z" fill="#382563"></path>
+</g>
+<defs>
+  <clipPath id="clip0_8458_1790">
+    <rect width="50" height="50" fill="white" transform="translate(25 25)"></rect>
+  </clipPath>
+</defs>
+</svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="120" height="34" viewBox="0 0 120 34" fill="none">
+                <path d="M16.3347 10.4215V8.04766H21.5248V28.1649H16.3347V25.791C14.779 27.7491 12.593 28.7281 9.7767 28.7281C7.09448 28.7281 4.78777 27.7089 2.85657 25.6703C0.952189 23.605 0 21.0836 0 18.1063C0 15.1557 0.952189 12.6478 2.85657 10.5824C4.78777 8.51706 7.09448 7.48438 9.7767 7.48438C12.593 7.48438 14.779 8.46341 16.3347 10.4215ZM6.7592 22.2102C7.80527 23.2563 9.13297 23.7793 10.7423 23.7793C12.3516 23.7793 13.6793 23.2563 14.7254 22.2102C15.7983 21.1373 16.3347 19.7693 16.3347 18.1063C16.3347 16.4432 15.7983 15.0887 14.7254 14.0426C13.6793 12.9697 12.3516 12.4332 10.7423 12.4332C9.13297 12.4332 7.80527 12.9697 6.7592 14.0426C5.71314 15.0887 5.1901 16.4432 5.1901 18.1063C5.1901 19.7693 5.71314 21.1373 6.7592 22.2102Z" fill="#090536"/>
+                <path d="M51.1356 8.04766V11.5078C51.5916 10.2471 52.3695 9.29492 53.4692 8.65117C54.5689 7.9806 55.8295 7.64531 57.2511 7.64531V13.4391C55.6686 13.2245 54.247 13.5464 52.9864 14.4047C51.7525 15.2362 51.1356 16.6176 51.1356 18.5488V28.1649H45.9455V8.04766H51.1356Z" fill="#090536"/>
+                <path d="M114.053 10.4207V0H119.244V28.1641H114.053V25.7903C112.525 27.7483 110.352 28.7274 107.536 28.7274C104.827 28.7274 102.507 27.7081 100.575 25.6696C98.6709 23.6042 97.7188 21.0828 97.7188 18.1055C97.7188 15.155 98.6709 12.647 100.575 10.5817C102.507 8.51628 104.827 7.4836 107.536 7.4836C110.352 7.4836 112.525 8.46264 114.053 10.4207ZM104.478 22.2094C105.578 23.2555 106.919 23.7785 108.501 23.7785C110.111 23.7785 111.438 23.2555 112.484 22.2094C113.53 21.1365 114.053 19.7685 114.053 18.1055C114.053 16.4425 113.53 15.0879 112.484 14.0418C111.438 12.9689 110.111 12.4324 108.501 12.4324C106.892 12.4324 105.551 12.9689 104.478 14.0418C103.432 15.0879 102.909 16.4425 102.909 18.1055C102.909 19.7685 103.432 21.1365 104.478 22.2094Z" fill="#090536"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M42.5973 12.7361H40.463C41.0027 13.8522 41.3053 15.1044 41.3053 16.4273C41.3053 21.1161 37.5044 24.9171 32.8157 24.9171C28.1271 24.9171 24.3262 21.1161 24.3261 16.4273C24.3261 11.7385 28.1271 7.93752 32.8157 7.9375H42.5973V12.7361ZM32.8157 12.7361C30.7772 12.7361 29.1246 14.3887 29.1246 16.4273C29.1246 18.4659 30.7772 20.1185 32.8157 20.1185C34.8543 20.1185 36.5069 18.4659 36.5069 16.4273C36.5069 14.3887 34.8543 12.7361 32.8157 12.7361Z" fill="#090536"/>
+                <path d="M29.4014 21.0414C31.5836 21.0414 33.4659 22.3253 34.3343 24.1789H30.0473C29.2319 24.179 28.5709 24.84 28.5709 25.6554C28.5709 26.4708 29.2319 27.1319 30.0473 27.1319H38.1494C38.157 27.1319 38.1645 27.1322 38.172 27.1326C38.7176 27.1238 39.2651 27.1969 39.7954 27.3528C40.9237 27.6845 41.9143 28.3727 42.619 29.3143C43.3236 30.2559 43.7045 31.4004 43.7045 32.5765L39.1405 33.9995C38.7844 32.8631 37.7601 32.0224 36.5279 31.9377L36.5191 31.9305H29.8813C29.8467 31.9305 29.8131 31.9258 29.7811 31.9173C29.6557 31.926 29.5291 31.9305 29.4014 31.9305C26.3946 31.9305 23.957 29.4929 23.957 26.4859C23.957 23.479 26.3946 21.0414 29.4014 21.0414Z" fill="#090536"/>
+                <path d="M89.8108 15.8813C89.8108 13.2453 88.9301 12.0575 88.1584 11.4816C87.2845 10.8295 86.1252 10.6471 85.2126 10.7555C83.8474 10.9176 80.9822 13.1825 82.0596 17.1868C82.7242 19.6564 84.325 21.4859 86.3659 22.6395C88.6305 20.6517 89.8108 18.1303 89.8108 15.8813ZM64.026 15.8813C64.0261 18.1303 65.2063 20.6518 67.4709 22.6395C69.5119 21.4859 71.1127 19.6564 71.7772 17.1868C72.8547 13.1825 69.9895 10.9176 68.6243 10.7555C67.7117 10.6471 66.5524 10.8295 65.6785 11.4816C64.9067 12.0575 64.026 13.2453 64.026 15.8813ZM94.2878 15.8813C94.2878 18.7919 93.146 21.6465 91.2101 24.037C93.138 24.1362 94.9714 23.7152 96.3383 22.8427L98.747 26.6164C95.3822 28.7644 90.8787 29.039 86.9361 27.755C84.1757 29.4409 80.7746 30.4747 76.9629 30.4747H76.874C73.0622 30.4747 69.6611 29.441 66.9007 27.755C62.9581 29.039 58.4547 28.7643 55.0898 26.6164L57.4986 22.8427C58.8655 23.7152 60.6989 24.1362 62.6267 24.037C60.6908 21.6465 59.5491 18.7919 59.5491 15.8813C59.5491 12.1152 60.8878 9.4705 63.0009 7.89354C65.0119 6.39284 67.4029 6.10184 69.1522 6.30959C73.1108 6.7797 77.9174 11.5975 76.1004 18.3501C75.3298 21.2141 73.7339 23.4736 71.7295 25.1257C73.2635 25.6771 74.99 25.9977 76.874 25.9977H76.9629C78.8469 25.9977 80.5733 25.677 82.1073 25.1257C80.103 23.4736 78.5071 21.2141 77.7365 18.3501C75.9195 11.5976 80.7261 6.7797 84.6847 6.30959C86.434 6.10185 88.825 6.39284 90.836 7.89354C92.9491 9.4705 94.2878 12.1152 94.2878 15.8813Z" fill="#8E5EFE"/>
+              </svg>  
+            </div>
+            <div class="flex flex-col gap-2.5 items-center">
+              <h3 class="text-xl text-Theme-black leading-[140%] text-center">What kind of document would you like to create?</h3>
+              <p class="text-base leading-6 text-Theme-dark-gray text-center">Describe the document you'd like to create.<br>
+Agreed AI will draft a customized document for you</p>
+            </div>
+            <div class="flex justify-center">
+              <!--chatbox-->
+              <div x-data="aiPromptRotator()" x-init="startPromptRotator()" :class="hasText 
+                    ? 'bg-Theme-Forground hover:bg-Theme-Forground' 
+                    : 'bg-[rgba(142,94,254,0.12)] hover:bg-[rgba(142,94,254,0.30)]'" class="p-1 rounded-[12px] w-full h-[122px] transition-all duration-500 ">
+                    <div class="bg-white rounded-lg flex flex-col  ">
+                      <div class="relative flex-1" >
+                       <textarea @input="handlePromptInput($event)" :placeholder="hasText ? '' : placeholderText()" class="py-3 px-2.5 resize-none  w-full h-[54px] overflow-y-auto outline-0 focus:outline-0 bg-transparent relative custom-scrollbar text-base leading-[22px] text-Theme-black placeholder:text-Theme-light-gray" rows="1" placeholder="What would you like to create?"></textarea>
+                      </div>  
+                      <div class="flex items-center justify-between gap-2.5 p-2.5">
+                         <!--upload file dropdown-->
+                      <div x-data="dropdownComponent('upload-file')" class="relative w-max">
+
+                            <button @click="toggle" :class="{'bg-[#f6f6f6]': isOpen}" class="group w-[34px] h-[34px] flex items-center rounded-lg justify-center transition-all duration-500 hover:bg-[#F6F6F6] ">
+                              <svg class="text-Theme-light-gray transition-all duration-500 group-hover:text-Theme-dark-gray" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.800781 6.35243H6.35634M6.35634 6.35243H11.9119M6.35634 6.35243V0.796875M6.35634 6.35243V11.908" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="upload-file" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 bottom-0 mb-[42px] z-10  mt-[10px] w-[252px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Upload
+                                File</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M1.77048 11.3841C1.48877 9.9717 1.34791 9.2655 1.74813 8.78693C1.77482 8.75505 1.80304 8.72423 1.83271 8.69453C2.27765 8.25 3.06506 8.25 4.63988 8.25H13.3601C14.935 8.25 15.7223 8.25 16.1673 8.69453C16.1969 8.72423 16.2252 8.75505 16.2519 8.78693C16.6521 9.2655 16.5113 9.9717 16.2296 11.3841C15.8245 13.4149 15.6219 14.4303 14.8582 15.0541C14.8061 15.0966 14.7524 15.1375 14.6971 15.1765C13.8872 15.75 12.7551 15.75 10.4907 15.75H7.5093C5.24492 15.75 4.11275 15.75 3.3029 15.1765C3.24767 15.1375 3.19395 15.0966 3.14186 15.0541C2.37806 14.4303 2.17554 13.4149 1.77048 11.3841Z" stroke="currentColor" stroke-width="1.6"></path>
+                                        <path d="M3 8.25V4.125C3 3.08947 3.83947 2.25 4.875 2.25H6.69722C7.19876 2.25 7.6671 2.50065 7.94528 2.91795L9 4.5M9 4.5H6.375M9 4.5H13.125C14.1605 4.5 15 5.33947 15 6.375V8.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+
+                                      My Device
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M9 4.875L13.125 7.125L9 9.375L4.875 7.125L9 4.875Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M4.5 11.25V12.5995C4.5 13.3741 4.63814 13.6156 5.32918 13.9681L8.3292 15.4982C8.98755 15.8339 9.01245 15.8339 9.6708 15.4982L12.6708 13.9681C13.3618 13.6156 13.5 13.3741 13.5 12.5995V11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.7525 3.12029L9 4.70481L7.24754 3.12029C6.62969 2.56165 6.32077 2.28234 5.94287 2.25259C5.56499 2.22283 5.21867 2.45056 4.52605 2.90601L3.27158 3.73091C2.59889 4.17325 2.26256 4.39443 2.25034 4.72306C2.23813 5.05168 2.55706 5.29886 3.19493 5.79322L4.8261 7.05737L3.19493 8.32155C2.55707 8.81587 2.23813 9.06307 2.25034 9.39165C2.26256 9.7203 2.59889 9.94147 3.27158 10.3838L5.1973 11.6501C5.5667 11.893 5.7514 12.0145 5.95294 11.9986C6.15448 11.9827 6.31924 11.8338 6.64876 11.5358L9 9.40995L10.7525 10.9945C11.3703 11.5531 11.6792 11.8324 12.0572 11.8621C12.435 11.8919 12.7813 11.6641 13.474 11.2087L14.7284 10.3838C15.4011 9.94147 15.7375 9.7203 15.7497 9.39165C15.7618 9.06307 15.443 8.81587 14.8051 8.32155L13.1739 7.05737L14.8051 5.79322C15.443 5.29886 15.7618 5.05168 15.7497 4.72306C15.7375 4.39443 15.4011 4.17325 14.7284 3.73091L13.474 2.90601C12.7813 2.45056 12.435 2.22283 12.0572 2.25259C11.6792 2.28234 11.3703 2.56165 10.7525 3.12029Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+
+                                      Dropbox
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M15.0124 14.5589L16.0677 12.622C16.3582 12.0886 16.5036 11.8219 16.4999 11.5332C16.4963 11.2445 16.3442 10.9815 16.0402 10.4553L11.9586 3.39222C11.6366 2.83502 11.4757 2.55642 11.2073 2.40321C10.9389 2.25 10.612 2.25 9.95797 2.25H8.04203C7.38806 2.25 7.06106 2.25 6.79271 2.40321C6.52435 2.55642 6.36335 2.83502 6.04136 3.39222L1.9598 10.4553C1.65575 10.9815 1.50373 11.2445 1.50007 11.5332C1.49641 11.8219 1.64171 12.0886 1.93232 12.622L2.98763 14.5589C3.30384 15.1392 3.46194 15.4294 3.73491 15.5896C4.00788 15.75 4.34385 15.75 5.01579 15.75H12.9842C13.6561 15.75 13.9921 15.75 14.2651 15.5896C14.5381 15.4294 14.6962 15.1392 15.0124 14.5589Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M6.75 3L12 11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M4.125 15.375L9 6.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M15.75 11.25H6.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                      Google Drive
+                                    </button>
+                                  </li>
+
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex  gap-2.5">
+                            <button class="group  flex items-center  justify-center bg-transparent transition-all duration-500 ">
+                              <svg class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M14.1693 5.83073V9.16406C14.1693 11.4652 12.3038 13.3307 10.0026 13.3307C7.70142 13.3307 5.83594 11.4652 5.83594 9.16406V5.83073C5.83594 3.52955 7.70142 1.66406 10.0026 1.66406C12.3038 1.66406 14.1693 3.52955 14.1693 5.83073Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M16.6693 9.16406C16.6693 12.846 13.6845 15.8307 10.0026 15.8307M10.0026 15.8307C6.3207 15.8307 3.33594 12.846 3.33594 9.16406M10.0026 15.8307V18.3307M10.0026 18.3307H12.0859M10.0026 18.3307H7.91927" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                            </button>
+                            <button :class="hasText 
+            ? 'bg-Theme-purple' 
+            : 'bg-Theme-secondary-gray hover:bg-Theme-purple'" class="group w-[34px] h-[34px] flex items-center rounded-lg justify-center transition-all duration-500 ">
+                              
+<svg :class="hasText 
+              ? 'text-white' 
+              : 'text-Theme-dark-gray group-hover:text-white'" class="transition-all duration-500" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M5 9.16927L10 4.16927L15 9.16927M10 4.58594L10 15.8359" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                            </button>
+
+
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+           
+        </div>
+         <div class="my-5 flex items-center gap-5">
+              <div class="h-px flex-1 bg-[#EBEBEB]"></div>
+              <p class="text-base leading-[150%] text-Theme-light-gray">Or
+                </p>
+                <div class="h-px flex-1 bg-[#EBEBEB]"></div>
+            </div>
+            <div class="flex md:flex-row flex-col items-center gap-5">
+              <a href="#" class="bg-white border border-Theme-secondary-gray rounded-2xl flex items-center  gap-3  w-full md:w-1/2 h-auto transition-all duration-500 hover:bg-Theme-Forground p-5">
+                
+                  <svg class="w-[50px] h-[50px]" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40.4446 18.0345C41.2261 18.8159 41.665 19.8757 41.665 20.9808V39.583C41.665 41.8841 39.8001 43.7498 37.499 43.75H12.499C10.1978 43.75 8.33203 41.8842 8.33203 39.583V10.417C8.33203 8.11581 10.1978 6.25 12.499 6.25H26.9343C28.0393 6.25 29.0991 6.68899 29.8805 7.47039L40.4446 18.0345Z" fill="#327BEE"></path>
+                    <path d="M27.082 6.25C28.1334 6.28729 29.1344 6.7203 29.8809 7.4668L40.4443 18.0303C41.1908 18.7768 41.6238 19.7777 41.6611 20.8291H29.165C28.0146 20.8289 27.082 19.8966 27.082 18.7461V6.25Z" fill="#52CDFE"></path>
+                    <path d="M25.0026 27.0781V35.4115M29.1693 31.2448H20.8359" stroke="#A0DBFF" stroke-width="2.70833" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                   <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Start with <br> Blank
+                    Document</h4>
+               
+              
+              </a>
+              <a href="#" class="bg-white border border-Theme-secondary-gray rounded-2xl flex items-center  gap-3  w-full md:w-1/2 h-auto transition-all duration-500 hover:bg-Theme-Forground p-5">
+                <svg class="w-[50px] h-[50px]" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <path d="M19.0918 8.33594C20.3472 8.33594 21.5356 8.90194 22.3268 9.87662L24.0531 12.0033C24.8443 12.9779 26.0327 13.5439 27.2881 13.5439H39.5833C41.8845 13.5439 43.75 15.4094 43.75 17.7106V37.5029C43.7498 39.804 41.8841 41.6689 39.583 41.6689H10.417C8.11591 41.6689 6.25018 39.804 6.25 37.5029V12.5029C6.25 10.2017 8.11581 8.33594 10.417 8.33594H19.0918Z" fill="#15A679"/>
+  <path d="M29.2157 25.395L25.0004 21.1797L20.7852 25.395" stroke="#C7FBDB" stroke-width="2.70833" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 32.9922V21.3047" stroke="#D1FAE5" stroke-width="2.70833" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="12.5" y="35.4141" width="25" height="8.33333" rx="2.08333" fill="#6BEDBE"/>
+</svg>
+              
+                   <h4 class="  text-base text-black font-inter-display-medium leading-[22px]">Upload <br> Your Documen</h4>
+               
+              
+              </a>
+            </div>
+           
+    </div>
+   
+  </div>
   <!-- modal overlay  -->
   <div
     class="overlay-modal w-full h-screen z-[500] bg-[rgba(9,5,54,0.20)] backdrop-blur-[7.5px] fixed top-0 left-0 opacity-0 invisible">
@@ -6664,6 +6847,84 @@
 
 </script>
 <script>
+  function aiPromptRotator() {
+    return {
+      hasText: false,
+      promptPhrases: [
+        'What would you like to create?',
+        'Create a contract, NDA or Agreements ',
+        'Review this document ',
+        'Rewrite your document '
+      ],
+      activePromptIndex: 0,
+      typedPrompt: '',
+      typingPosition: 0,
+      isDeleting: false,
+      promptTimer: null,
+      placeholderText() {
+        return this.typedPrompt;
+      },
+      startPromptRotator() {
+        if (this.promptTimer) {
+          clearTimeout(this.promptTimer);
+        }
+
+        this.hasText = false;
+        this.activePromptIndex = 0;
+        this.typedPrompt = '';
+        this.typingPosition = 0;
+        this.isDeleting = false;
+        this.tickPrompt();
+      },
+      stopPromptRotator() {
+        if (this.promptTimer) {
+          clearTimeout(this.promptTimer);
+          this.promptTimer = null;
+        }
+
+        this.typedPrompt = '';
+      },
+      tickPrompt() {
+        const currentPhrase = this.promptPhrases[this.activePromptIndex];
+
+        if (this.isDeleting) {
+          this.typingPosition -= 1;
+        } else {
+          this.typingPosition += 1;
+        }
+
+        this.typedPrompt = currentPhrase.slice(0, this.typingPosition);
+
+        let delay = this.isDeleting ? 35 : 70;
+
+        if (!this.isDeleting && this.typingPosition === currentPhrase.length) {
+          this.isDeleting = true;
+          delay = 1100;
+        } else if (this.isDeleting && this.typingPosition === 0) {
+          this.isDeleting = false;
+          this.activePromptIndex = (this.activePromptIndex + 1) % this.promptPhrases.length;
+          delay = 150;
+        }
+
+        this.promptTimer = setTimeout(() => this.tickPrompt(), delay);
+      },
+      handlePromptInput(event) {
+        this.hasText = event.target.value.trim().length > 0;
+
+        if (this.hasText) {
+          this.stopPromptRotator();
+          return;
+        }
+
+        if (!this.promptTimer) {
+          this.startPromptRotator();
+        }
+      }
+    };
+  }
+</script>
+<script>
+ 
   function dropdownComponent(id) {
     return {
       id,

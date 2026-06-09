@@ -846,25 +846,39 @@
             </button>
             <!--share document dropdown -->
             <div x-data="dropdownComponent('invite-menu')" class="relative w-max z-30">
-              <div x-show="isOpen" x-transition.opacity="" @click="close" class="fixed inset-0 bg-[rgba(0,0,0,0.14)] z-20 xl:hidden" style="display: none;"></div>
-              <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}" class="md:py-[7px] md:pl-3 md:pr-3.5 md:w-fit w-[34px] rounded-lg gap-1.5">
+              <div x-show="isOpen" x-transition.opacity="" @click="close"
+                class="fixed inset-0 bg-[rgba(0,0,0,0.14)] z-20 xl:hidden" style="display: none;"></div>
+              <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}"
+                class="md:py-[7px] md:pl-3 md:pr-3.5 md:w-fit w-[34px] rounded-lg gap-1.5">
                 <span class="md:block hidden">Share</span>
-                <svg class="md:hidden block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_2873_328)">
-                <path d="M6.75 3.375C4.12832 4.27578 2.25 6.70631 2.25 9.56332C2.25 10.4684 2.4385 11.3307 2.77943 12.1151M11.25 3.375C13.8717 4.27578 15.75 6.70631 15.75 9.56332C15.75 10.3302 15.6146 11.0664 15.3659 11.7506M12.375 15.2472C11.3822 15.8055 10.2295 16.125 9 16.125C7.77053 16.125 6.61783 15.8055 5.625 15.2472" stroke="white" stroke-width="1.4"/>
-                <path d="M11.25 3.75C11.25 4.99264 10.2427 6 9 6C7.75732 6 6.75 4.99264 6.75 3.75C6.75 2.50736 7.75732 1.5 9 1.5C10.2427 1.5 11.25 2.50736 11.25 3.75Z" stroke="white" stroke-width="1.4"/>
-                <path d="M3.75 16.5C4.99264 16.5 6 15.4926 6 14.25C6 13.0074 4.99264 12 3.75 12C2.50736 12 1.5 13.0074 1.5 14.25C1.5 15.4926 2.50736 16.5 3.75 16.5Z" stroke="white" stroke-width="1.4"/>
-                <path d="M14.25 16.5C15.4926 16.5 16.5 15.4926 16.5 14.25C16.5 13.0074 15.4926 12 14.25 12C13.0074 12 12 13.0074 12 14.25C12 15.4926 13.0074 16.5 14.25 16.5Z" stroke="white" stroke-width="1.4"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_2873_328">
-                <rect width="18" height="18" fill="white"/>
-                </clipPath>
-                </defs>
+                <svg class="md:hidden block" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_2873_328)">
+                    <path
+                      d="M6.75 3.375C4.12832 4.27578 2.25 6.70631 2.25 9.56332C2.25 10.4684 2.4385 11.3307 2.77943 12.1151M11.25 3.375C13.8717 4.27578 15.75 6.70631 15.75 9.56332C15.75 10.3302 15.6146 11.0664 15.3659 11.7506M12.375 15.2472C11.3822 15.8055 10.2295 16.125 9 16.125C7.77053 16.125 6.61783 15.8055 5.625 15.2472"
+                      stroke="white" stroke-width="1.4" />
+                    <path
+                      d="M11.25 3.75C11.25 4.99264 10.2427 6 9 6C7.75732 6 6.75 4.99264 6.75 3.75C6.75 2.50736 7.75732 1.5 9 1.5C10.2427 1.5 11.25 2.50736 11.25 3.75Z"
+                      stroke="white" stroke-width="1.4" />
+                    <path
+                      d="M3.75 16.5C4.99264 16.5 6 15.4926 6 14.25C6 13.0074 4.99264 12 3.75 12C2.50736 12 1.5 13.0074 1.5 14.25C1.5 15.4926 2.50736 16.5 3.75 16.5Z"
+                      stroke="white" stroke-width="1.4" />
+                    <path
+                      d="M14.25 16.5C15.4926 16.5 16.5 15.4926 16.5 14.25C16.5 13.0074 15.4926 12 14.25 12C13.0074 12 12 13.0074 12 14.25C12 15.4926 13.0074 16.5 14.25 16.5Z"
+                      stroke="white" stroke-width="1.4" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2873_328">
+                      <rect width="18" height="18" fill="white" />
+                    </clipPath>
+                  </defs>
                 </svg>
 
               </button>
-              <div x-ref="invite-menu" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-gradient-gray rounded-10px p-[2px] z-30" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+              <div x-ref="invite-menu" x-show="isOpen" x-transition=""
+                x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
+                class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-gradient-gray rounded-10px p-[2px] z-30"
+                style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                 <div class="flex flex-col gap-0.5 p-[14px]">
                   <h4 class="text-lg block text-Theme-black ">Share this document</h4>
                   <p class="text-xs text-Theme-light-gray leading-[130%]">Manage who has access this document</p>
@@ -873,30 +887,40 @@
                   <div class="flex flex-col gap-2">
                     <!--email box-->
                     <div class="p-2 flex flex-row gap-2.5 w-full">
-                      <div class="md:w-[336px] w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
-                        <input type="text" id="email-address" class="md:w-[246px] w-full bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  " placeholder="Enter Email Address">
+                      <div
+                        class="md:w-[336px] w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
+                        <input type="text" id="email-address"
+                          class="md:w-[246px] w-full bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  "
+                          placeholder="Enter Email Address">
                         <div class="custom-dropdown relative w-max" data-style="design1">
-                          <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-transparent transition-all duration-300 hover:bg-white/70">
+                          <button
+                            class="dropdown-button p-[7px] pl-2 cursor-pointer rounded flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-transparent transition-all duration-300 hover:bg-white/70">
                             <span class="selected-option">Editor</span>
 
-                            <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10"
+                              viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
 
                           </button>
 
-                          <div class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5">
-                            <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                          <div
+                            class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5">
+                            <span
+                              class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                             <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                               <li>
-                                <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                <button
+                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                   Editor
                                 </button>
                               </li>
                               <li>
-                                <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                <button
+                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                   Viewer
                                 </button>
                               </li>
@@ -915,63 +939,77 @@
                     <div class="flex flex-col gap-2 custom-scrollbar md:max-h-[390px] max-h-[328px] mr-[5px] pr-[5px]">
                       <!--members list-->
                       <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Who has access</h5>
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Who has
+                          access</h5>
                         <ul class="flex flex-col  divide-y divide-[#EEEEEC] px-2">
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-1.png" alt="image">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
+                                src="assets/images/avatar-1.png" alt="image">
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ankur
                                   Kanasagara</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
-                            <span class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
+                            <span
+                              class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
                           </li>
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
                                 AF
                               </div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Albert
                                   Flores</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                              <button
+                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
                                 <span class="selected-option">Editor</span>
 
-                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
+                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
 
                               </button>
 
-                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                              <div
+                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span
+                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                                 <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()"
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -987,41 +1025,51 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-2.png" alt="image">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
+                                src="assets/images/avatar-2.png" alt="image">
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Cameron
                                   Williamson</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                              <button
+                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
                                 <span class="selected-option">Editor</span>
 
-                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
+                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
 
                               </button>
 
-                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                              <div
+                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span
+                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                                 <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()"
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -1034,41 +1082,51 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-3.png" alt="image">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
+                                src="assets/images/avatar-3.png" alt="image">
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ralph
                                   Edwards</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                              <button
+                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
                                 <span class="selected-option">Editor</span>
 
-                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
+                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
+                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
 
                               </button>
 
-                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                              <div
+                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span
+                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                                 <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()"
+                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -1087,12 +1145,14 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
                                 RR</div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ronald
                                   Richards</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">ronaldrichards@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">ronaldrichards@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
@@ -1104,12 +1164,14 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
                                 DR</div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
                                   Russell</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
@@ -1121,12 +1183,14 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                              <div
+                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
                                 DR</div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
                                   Russell</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
+                                <span
+                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
@@ -1170,10 +1234,10 @@
         <div x-data="{ rightPanelOpen: false }" class="relative max-[1370px]:gap-2 flex  h-[calc(100vh-75px)] overflow-auto [&::-webkit-scrollbar]:w-[4px]
 [&::-webkit-scrollbar-track]:bg-transparent
 [&::-webkit-scrollbar-thumb]:bg-transparent
-[&::-webkit-scrollbar-thumb]:rounded-full  lg:pl-5 lg:pr-4 px-2 pb-10" style="scrollbar-gutter: stable;">
+[&::-webkit-scrollbar-thumb]:rounded-full  lg:pl-5 lg:pr-4 px-1.5 pb-10" style="scrollbar-gutter: stable;">
 
           <!--document area-->
-          <div class="lg:block flex  relative flex-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          <div class="flex-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
             :class="rightPanelOpen ? 'pr-[0px]' : 'pr-[0px]'" style="will-change: padding;">
 
             <!--document start-->
@@ -4658,202 +4722,12 @@
               </div>
 
             </div>
-          <!--comment area-->
-          <div class="lg:absolute relative left-auto lg:right-[134px] right-[60px] lg:top-5 top-20">
-            <div class="flex flex-col gap-5">
-              <!--only button-->
-              <button
-                class="w-[36px] h-[36px] bg-[rgba(142,94,254,0.10)] border-[1px] border-Theme-purple rounded-[100px] rounded-bl-[2px] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path
-                    d="M0.800781 5.79688H5.80078M5.80078 5.79688H10.8008M5.80078 5.79688V0.796875M5.80078 5.79688V10.7969"
-                    stroke="#8E5EFE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <!--button with textarea-->
-              <div class="flex items-center gap-[2px] ">
-                <div
-                  class="w-[36px] h-[36px] bg-Theme-purple rounded-[100px] rounded-bl-[2px] flex items-center justify-center shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]">
-                </div>
-                <div
-                  class="relative bg-Theme-Forground rounded-10px border border-Theme-secondary-gray p-[7px] pl-4  w-[300px] flex items-center gap-1 hover:border-[#e0e0dd] transition-all duration-300">
-                  <textarea type="text" placeholder="Add a comment"
-                    class="w-full bg-transparent text-sm leading-[22px] text-Theme-black outline-none focus:outline-none placeholder:text-Theme-light-gray resize-none"
-                    rows="1"></textarea>
-                  <button
-                    class="group w-[34px] h-[34px] rounded-lg bg-Theme-secondary-gray hover:bg-Theme-purple flex justify-center items-center transition-all duration-300 shrink-0">
-                    <svg class=" transition-all duration-300 text-Theme-dark-gray  group-hover:text-white"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M5 9.16927L10 4.16927L15 9.16927M10 4.58594L10 15.8359" stroke="currentColor"
-                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <!--button with textarea when start typing-->
-              <div class="flex items-start gap-[2px] ">
-                <div
-                  class="w-[36px] h-[36px] bg-Theme-purple rounded-[100px] rounded-bl-[2px] flex items-center justify-center shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]">
-                </div>
-                <div
-                  class="relative bg-Theme-Forground rounded-10px border border-Theme-secondary-gray p-2.5  w-[300px] flex flex-col items-center gap-1 hover:border-[#e0e0dd] transition-all duration-300">
-                  <textarea placeholder="Add a comment"
-                    class="w-full bg-transparent text-sm leading-[22px] text-Theme-black outline-none focus:outline-none placeholder:text-Theme-light-gray resize-none [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#BCB8B4] [&::-webkit-scrollbar-thumb]:rounded-[3px] ">Create a Non-Disclosure Agreement between and to protect confidential ..</textarea>
-                  <button
-                    class="ml-auto bg-Theme-purple group w-[34px] h-[34px] flex items-center rounded-lg justify-center  transition-all duration-500 hover:bg-[#7b53d7]">
 
-                    <svg class="text-white transition-all duration-500 group-hover:text-white"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M5 9.16927L10 4.16927L15 9.16927M10 4.58594L10 15.8359" stroke="currentColor"
-                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-               <!--button with textarea reply-->
-              <div class="flex items-start gap-[2px] ">
-                <div
-                  class="w-[36px] h-[36px] bg-white rounded-[100px] rounded-bl-[2px] flex items-center justify-center shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]">
-                    <img src="assets/images/avatar-1.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover border border-white">
-                </div>
-                <div
-                  class="relative bg-gradient-gray rounded-10px p-[2px]  w-[300px] transition-all duration-300">
-                    <div class="p-1 pl-5 flex items-center justify-between">
-                        <span class="text-sm font-inter-display-medium leading-[16px] capitalize text-Theme-light-gray">Comment</span>
-                        <div class="flex items-center gap-1">
-                          <button class="w-6 h-6 flex items-center justify-center bg-transparent transition-all duration-300 hover:bg-Theme-secondary-gray rounded">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <g clip-path="url(#clip0_8318_4584)">
-                              <path d="M16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9Z" stroke="black" stroke-width="1.2"/>
-                              <path d="M6 9.375L7.875 11.25L12 6.75" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                              </g>
-                              <defs>
-                              <clipPath id="clip0_8318_4584">
-                              <rect width="18" height="18" fill="white"/>
-                              </clipPath>
-                              </defs>
-                              </svg>
-                          </button>
-                            <button class="w-6 h-6 flex items-center justify-center bg-transparent transition-all duration-300 hover:bg-Theme-secondary-gray rounded">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M12 4L4.00054 11.9995M11.9995 12L4 4.00057" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                          </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg p-3.5 flex flex-col gap-3.5">
-                      <!--sender--> 
-                      <div class="flex flex-col gap-1.5 ">
-                          <div class="flex items-center gap-2">
-                             <img src="assets/images/avatar-1.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover">
-                                <h6 class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Ankur Kanasagara</h6>
-                                <span class="text-xs text-Theme-light-gray leading-[18px]">22 minutes ago</span>
-                              </div>
-                              <div class="pl-[35px]">                        
-                                <p class="text-sm leading-[22px] text-Theme-black">Create a Non-Disclosure Agreement betw een and to Create a Non Disclo sure Agreement betw een and to </p>
-                              </div>
-                        </div>
-                         <!--reply box--> 
-                          <div class="flex items-center gap-2">
-                             <img src="assets/images/avatar-1.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover">
-                               <div class="relative bg-Theme-Forground rounded-10px border border-Theme-secondary-gray p-[7px] pl-4  w-full flex items-center gap-1 hover:border-[#e0e0dd] transition-all duration-300">
-                                <textarea type="text" placeholder="Reply" class="w-full bg-transparent text-sm leading-[22px] text-Theme-black outline-none focus:outline-none placeholder:text-Theme-light-gray resize-none" rows="1"></textarea>
-                                <button class="group w-[28px] h-[28px] rounded-lg bg-Theme-secondary-gray hover:bg-Theme-purple flex justify-center items-center transition-all duration-300 shrink-0">
-                                  <svg class=" transition-all duration-300 text-Theme-dark-gray  group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                                    <path d="M5 9.16927L10 4.16927L15 9.16927M10 4.58594L10 15.8359" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
-                                 
-                                </button>
-                              </div>
-                            </div>
-                    </div>
-                </div>
-              </div>
-                <!--button with textarea reply-->
-              <div class="flex items-start gap-[2px] ">
-                <div
-                  class="w-[36px] h-[36px] bg-white rounded-[100px] rounded-bl-[2px] flex items-center justify-center shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]">
-                    <img src="assets/images/avatar-3.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover border border-white">
-                </div>
-                <div
-                  class="relative bg-gradient-gray rounded-10px p-[2px]  w-[300px] transition-all duration-300">
-                    <div class="p-1 pl-5 flex items-center justify-between">
-                        <span class="text-sm font-inter-display-medium leading-[16px] capitalize text-Theme-light-gray">Comment</span>
-                        <div class="flex items-center gap-1">
-                          <button class="w-6 h-6 flex items-center justify-center bg-transparent transition-all duration-300 hover:bg-Theme-secondary-gray rounded">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <g clip-path="url(#clip0_8318_4584)">
-                              <path d="M16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5C13.1421 16.5 16.5 13.1421 16.5 9Z" stroke="black" stroke-width="1.2"/>
-                              <path d="M6 9.375L7.875 11.25L12 6.75" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                              </g>
-                              <defs>
-                              <clipPath id="clip0_8318_4584">
-                              <rect width="18" height="18" fill="white"/>
-                              </clipPath>
-                              </defs>
-                              </svg>
-                          </button>
-                            <button class="w-6 h-6 flex items-center justify-center bg-transparent transition-all duration-300 hover:bg-Theme-secondary-gray rounded">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M12 4L4.00054 11.9995M11.9995 12L4 4.00057" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                          </button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg p-3.5 flex flex-col gap-3.5">
-                      <!--sender--> 
-                      <div class="flex flex-col gap-1.5 ">
-                          <div class="flex items-center gap-2">
-                             <img src="assets/images/avatar-1.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover">
-                                <h6 class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Ankur Kanasagara</h6>
-                                <span class="text-xs text-Theme-light-gray leading-[18px]">22 minutes ago</span>
-                              </div>
-                              <div class="pl-[35px]">                        
-                                <p class="text-sm  leading-[22px] text-Theme-black">Create a Non-Disclosure Agreement betw een and to Create a Non Disclo sure Agreement betw een and to </p>
-                              </div>
-                        </div>
-                       <!--sender--> 
-                      <div class="flex flex-col gap-1.5 ">
-                          <div class="flex items-center gap-2">
-                             <img src="assets/images/avatar-3.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover">
-                                <h6 class="text-sm font-inter-display-medium leading-[18px] text-Theme-black">Ishita Jadav</h6>
-                                <span class="text-xs text-Theme-light-gray leading-[18px]">22 minutes ago</span>
-                              </div>
-                              <div class="pl-[35px]">                        
-                                <p class="text-sm  leading-[22px] text-Theme-black">Create a Non-Disclosure Agreement between</p>
-                              </div>
-                        </div>  
-                         <!--reply box--> 
-                          <div class="flex items-center gap-2">
-                             <img src="assets/images/avatar-1.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover">
-                             <div class="relative bg-Theme-Forground rounded-10px border border-Theme-secondary-gray p-[7px]  w-full flex flex-col items-center gap-1 hover:border-[#e0e0dd] transition-all duration-300">
-                  <textarea placeholder="Add a comment" class="w-full bg-transparent text-sm leading-[22px] text-Theme-black outline-none focus:outline-none placeholder:text-Theme-light-gray resize-none [&amp;::-webkit-scrollbar]:w-[2px] [&amp;::-webkit-scrollbar-track]:bg-transparent [&amp;::-webkit-scrollbar-thumb]:bg-[#BCB8B4] [&amp;::-webkit-scrollbar-thumb]:rounded-[3px] p-[3px]">Create a Non-Disclosure Agreement between and to protect confidential ..</textarea>
-                  <button class="ml-auto bg-Theme-purple group w-[28px] h-[28px] flex items-center rounded-lg justify-center  transition-all duration-500 hover:bg-[#7b53d7]">
-
-                    <svg class="text-white transition-all duration-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
-                      <path d="M5 9.16927L10 4.16927L15 9.16927M10 4.58594L10 15.8359" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </button>
-                </div>
-                            </div>
-                    </div>
-                </div>
-              </div>
-                <!--only button when comment done-->
-              <div class="relative">
-                <button
-                class="w-[36px] h-[36px] bg-Theme-purple rounded-[100px] rounded-bl-[2px] flex items-center justify-center">
-                 <img src="assets/images/avatar-3.png" alt="User Avatar" class="w-[28px] h-[28px] rounded-[100px] object-cover border border-white">
-                </button>
-               
-              </div>
-            </div>
-          </div>
           </div>
 
           <!--right side wrapper-->
           <div
-            class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 hidden  md:flex items-start gap-0 ">
+            class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 hidden  md:flex items-start gap-0  ">
 
             <!--toolbar-->
             <div class="bg-[#FAFAF9] min-w-[50px] border border-[#EEEEEC] rounded-10px p-1 ">
@@ -5025,7 +4899,7 @@
                 </li>
                 <li>
                   <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)] "
+                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
                     :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
                             : 'hover:bg-[#EEEEEC]'">
@@ -5161,18 +5035,19 @@
             <!--right panel-->
             <div class="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" :class="rightPanelOpen
                 ? 'w-[350px] min-[1650px]:w-[420px] opacity-100 translate-x-0 ml-1'
-                : 'w-[0px] min-[1650px]:w-[0px] opacity-0 translate-x-10 ml-0'" style="will-change: width, transform;">
+                : 'w-[350px] opacity-100 min-[1650px]:w-[420px] translate-x-0 ml-1'"
+              style="will-change: width, transform;">
 
               <div class="w-full">
 
                 <div
-                  class="bg-Theme-Forground p-1 rounded-[12px] h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)] overflow-hidden">
+                  class="bg-[#FAFAF9] p-1 rounded-[12px] h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)] overflow-hidden">
 
                   <!--panel header-->
                   <div class="flex items-center justify-between bg-transparent pb-2 pt-1 pl-4 pr-1.5">
 
                     <h3 class="text-lg font-inter-display-medium leading-[26px] text-Theme-black">
-                      Layout Setup
+                      Agreement Lifecycle
                     </h3>
 
                     <button @click="rightPanelOpen = false"
@@ -5187,172 +5062,132 @@
                   </div>
 
                   <!--panel body-->
-                  <div class="bg-white rounded-[12px] w-full h-[calc(100%-44px)] ">
+                  <div class="bg-white rounded-[12px] w-full pr-[2px] py-[2px] h-[calc(100%-44px)]">
                     <div :class="rightPanelOpen
             ? 'opacity-100 transition-opacity duration-200 delay-200'
-            : 'opacity-100 transition-opacity duration-100'" class="  flex flex-col flex-1 flex flex-col ">
-                      <div class="p-3.5">
-                        <div class="flex flex-col gap-3.5">
-                          <div class="flex flex-col gap-2">
-                            <label
-                              class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">Pages
-                              size</label>
+            : 'opacity-100 transition-opacity duration-100'" class=" h-[calc(100vh-156px)]  overflow-y-auto overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px]
+[&::-webkit-scrollbar-track]:bg-transparent
+[&::-webkit-scrollbar-thumb]:bg-[#EEEEEC]
+[&::-webkit-scrollbar-thumb]:rounded-[3px]  w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                      <!--tab content main-->
+                      <div class="py-3.5  h-full">
+                        <div class="px-3.5">
+                          <!--tab list-->
+                          <ul
+                            class="flex items-center bg-Theme-secondary-gray rounded-lg w-full p-[2px] gap-[2px] mb-5 ">
+                            <li class="w-full">
+                              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&amp;.active]:bg-white
+                            active">
+                                Due Date
+                              </a>
+                            </li>
+                            <li class="w-full">
+                              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&amp;.active]:bg-white
+                            ">
+                                Renewal
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!--tab content-->
+                        <div class="relative block">
+                          <div class="relative px-3.5 border-b border-[#EEEEEC] pb-3.5 mb-5">
+                            <p class="text-sm font-inter-display-medium leading-5 text-Theme-dark-gray">Sets a deadline
+                              for signers. Document can’t be signed after this date.</p>
+                          </div>
+                          <!--toggle wrap-->
+                          <div class="relative px-3.5 flex flex-col gap-3.5" x-data="{ dueDateEnabled: false }">
+                            <!--toggle-->
+                            <label for="due-date" class="w-full flex items-center justify-between gap-2 cursor-pointer">
+                              <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Due
+                                Date</span>
 
-                            <div
-                              class="bg-Theme-Forground rounded-10px border border-Theme-secondary-gray transition-all duration-300 flex items-center justify-between gap-1 py-[13px] px-4 hover:border-[#dbdbdb]">
-                              <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-black">US
-                                Letter</span>
-                              <!--pages size dropdown-->
-                              <div x-data="dropdownComponent('page-size-dropdown')"
-                                class="relative md:w-max relative md:w-max w-full min-w-0">
-                                <button @click="toggle"
-                                  class="transition-all duration-300  flex items-center gap-2.5  text-sm  leading-[22px] text-Theme-dark-gray w-full">
-
-                                  <span>8.5 in * 11 in</span>
-
-                                  <!-- arrow -->
-                                  <div class="w-4 h-4 flex items-center justify-center">
-                                    <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out"
-                                      width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                      xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M8.80078 0.799234L4.80062 4.7994L0.798097 0.796875" stroke="#000A06"
-                                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                  </div>
-                                </button>
-                                <div x-ref="page-size-dropdown" x-show="isOpen" x-transition=""
-                                  x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height"
-                                  @click.outside="close"
-                                  class="absolute -right-5 z-10 p-2 mt-5 w-[252px] bg-gradient-gray rounded-10px p-[2px]"
-                                  style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
-                                  <span
-                                    class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Pages
-                                    size</span>
-                                  <div class="bg-white rounded-lg p-2">
-                                    <!--list-->
-                                    <ul class="flex flex-col gap-0.5">
-                                      <li>
-                                        <a href="#"
-                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
-                                          <span
-                                            class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">US
-                                            Letter</span>
-                                          <span
-                                            class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">8.5
-                                            in * 11 in</span>
-                                        </a>
-                                      </li>
-                                      <li>
-                                        <a href="#"
-                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
-                                          <span
-                                            class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">US
-                                            Legal</span>
-                                          <span
-                                            class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">8.5
-                                            in * 14 in</span>
-                                        </a>
-                                      </li>
-                                      <li>
-                                        <a href="#"
-                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
-                                          <span
-                                            class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">A4</span>
-                                          <span
-                                            class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">8.3
-                                            in * 11.7 in</span>
-                                        </a>
-                                      </li>
-                                      <li>
-                                        <a href="#"
-                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
-                                          <span
-                                            class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">A3</span>
-                                          <span
-                                            class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">11.7
-                                            in * 16.5 in</span>
-                                        </a>
-                                      </li>
-                                      <li>
-                                        <a href="#"
-                                          class="group w-full py-2 px-3 flex items-center justify-between gap-2 rounded-[2px] text-sm font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground ">
-                                          <span
-                                            class="text-Theme-dark-gray font-inter-display-medium leading-5 transition-all duration-300 ease-in-out group-hover:text-Theme-purple">Slide</span>
-                                          <span
-                                            class="text-Theme-dark-gray leading-[22px] text-right transition-all duration-300 ease-in-out group-hover:text-Theme-black">16:9</span>
-                                        </a>
-                                      </li>
-                                    </ul>
-                                  </div>
+                              <div class="flex items-center">
+                                <input type="checkbox" id="due-date" class="sr-only peer" x-model="dueDateEnabled">
+                                <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
+                      peer-checked:bg-[#8E5EFE]
+                      peer-checked:hover:bg-[#8E5EFE]
+                      
+                      after:content-['']
+                      after:absolute
+                      after:top-[2px]
+                      after:left-[2px]
+                      after:w-[20px]
+                      after:h-[16px]
+                      after:bg-white
+                      after:rounded-[16px]
+                      after:shadow-secondary
+                      after:transition-all
+                      after:duration-300
+                      peer-checked:after:translate-x-[16px]">
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          <div class="flex flex-col gap-2">
-                            <label
-                              class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">Page
-                              margins</label>
-                            <!--size box-->
-                            <div
-                              class="relative border border-Theme-secondary-gray rounded-10px w-full h-[300px] flex justify-center items-center">
-                              <div class="relative w-[248px] h-[208px]">
-                                <!-- Top -->
-                                <div class="absolute left-1/2 top-0 -translate-x-1/2">
-                                  <div
-                                    class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
-                                    <input type="number" value="2"
-                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray ">
-                                    <span
-                                      class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">T</span>
-                                  </div>
+                            </label>
+                           <div x-show="dueDateEnabled" 
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 -translate-y-2"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 -translate-y-2"
+     class="flex flex-col gap-3.5">
+                              <!--input-->
+                              <div class="flex flex-col gap-[5px] ">
+                                <label for="date"
+                                  class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px] capitalize">Expires
+                                  on</label>
+                                <div class="relative">
+                                  <input type="text" id="date" name="date" placeholder="Enter Due Date"
+                                    value="30 June, 2026"
+                                    class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+                                    required="">
+                                  <button class="absolute right-4 top-4" data-modal-target="date-picker">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                      fill="none">
+                                      <path d="M10.6654 1.33594V4.0026M5.33203 1.33594V4.0026" stroke="#57534E"
+                                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                      <path
+                                        d="M8.66667 2.66406H7.33333C4.81917 2.66406 3.5621 2.66406 2.78105 3.44511C2 4.22616 2 5.48324 2 7.9974V9.33073C2 11.8449 2 13.102 2.78105 13.883C3.5621 14.6641 4.81917 14.6641 7.33333 14.6641H8.66667C11.1808 14.6641 12.4379 14.6641 13.2189 13.883C14 13.102 14 11.8449 14 9.33073V7.9974C14 5.48324 14 4.22616 13.2189 3.44511C12.4379 2.66406 11.1808 2.66406 8.66667 2.66406Z"
+                                        stroke="#57534E" stroke-width="1.2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path d="M2 6.66406H14" stroke="#57534E" stroke-width="1.2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path
+                                        d="M8.08256 9.33073H7.99923M8.08256 11.9974H7.99923M5.08203 9.33073H4.9987M5.08203 11.9974H4.9987M11.082 9.33073H10.9987M8.1659 9.33073C8.1659 9.4228 8.0913 9.4974 7.99923 9.4974C7.90723 9.4974 7.83256 9.4228 7.83256 9.33073C7.83256 9.23866 7.90723 9.16406 7.99923 9.16406C8.0913 9.16406 8.1659 9.23866 8.1659 9.33073ZM8.1659 11.9974C8.1659 12.0895 8.0913 12.1641 7.99923 12.1641C7.90723 12.1641 7.83256 12.0895 7.83256 11.9974C7.83256 11.9053 7.90723 11.8307 7.99923 11.8307C8.0913 11.8307 8.1659 11.9053 8.1659 11.9974ZM5.16536 9.33073C5.16536 9.4228 5.09074 9.4974 4.9987 9.4974C4.90665 9.4974 4.83203 9.4228 4.83203 9.33073C4.83203 9.23866 4.90665 9.16406 4.9987 9.16406C5.09074 9.16406 5.16536 9.23866 5.16536 9.33073ZM5.16536 11.9974C5.16536 12.0895 5.09074 12.1641 4.9987 12.1641C4.90665 12.1641 4.83203 12.0895 4.83203 11.9974C4.83203 11.9053 4.90665 11.8307 4.9987 11.8307C5.09074 11.8307 5.16536 11.9053 5.16536 11.9974ZM11.1654 9.33073C11.1654 9.4228 11.0908 9.4974 10.9987 9.4974C10.9066 9.4974 10.832 9.4228 10.832 9.33073C10.832 9.23866 10.9066 9.16406 10.9987 9.16406C11.0908 9.16406 11.1654 9.23866 11.1654 9.33073Z"
+                                        stroke="#57534E" stroke-width="1.2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
                                 </div>
+                              </div>
+                              <!--select-->
+                              <div class="flex flex-col gap-[5px] ">
+                                <label for="reminder"
+                                  class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px] capitalize">reminders before deadline</label>
+                                <div x-data="dropdownComponent('reminder')" class="relative w-full ">
+                                  <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}" class="w-full bg-[#FAFAF9] border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:bg-[#f7f7f7] focus:bg-[#f7f7f7] focus:outline-none transition-all duration-300">
+                                    1 Day
+                                    <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M8.60156 0.601562L4.60156 4.60156L0.601562 0.601562" stroke="#020012" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
 
-                                <!-- Left -->
-                                <div class="absolute left-0 top-1/2 -translate-y-1/2">
-                                  <div
-                                    class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
-                                    <input type="number" value="4"
-                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray">
-                                    <span
-                                      class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">L</span>
-                                  </div>
-                                </div>
-
-                                <!-- Right -->
-                                <div class="absolute right-0 top-1/2 -translate-y-1/2">
-                                  <div
-                                    class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
-                                    <input type="number" value="4"
-                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray">
-                                    <span
-                                      class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">R</span>
-                                  </div>
-                                </div>
-
-                                <!-- Bottom -->
-                                <div class="absolute left-1/2 bottom-0 -translate-x-1/2">
-                                  <div
-                                    class="w-[80px] h-[40px] flex items-center justify-between gap-2 bg-Theme-Forground rounded-lg px-3 py-2.5">
-                                    <input type="number" value="4"
-                                      class="w-8 bg-transparent  text-sm font-inter-display-medium leading-5 text-Theme-black  outline-none focus:outline-none placeholder:text-Theme-light-gray">
-                                    <span
-                                      class="text-Theme-dark-gray/50 uppercase text-sm font-inter-display-medium leading-5">B</span>
-                                  </div>
-                                </div>
-
-                                <!-- Center box -->
-                                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                                  <div class="w-[80px] h-[120px] bg-Theme-Forground rounded-lg p-[10px]">
-                                    <div
-                                      class="relative h-full border border-[#8E5EFE] bg-[rgba(142,94,254,0.14)] rounded-[4px]">
-                                      <div class="absolute left-1/2 -top-2 w-px h-2 bg-[#8E5EFE] -translate-x-1/2">
-                                      </div>
-                                      <div class="absolute left-1/2 -bottom-2 w-px h-2 bg-[#8E5EFE] -translate-x-1/2">
-                                      </div>
-                                      <div class="absolute top-1/2 -left-2 h-px w-2 bg-[#8E5EFE] -translate-y-1/2">
-                                      </div>
-                                      <div class="absolute top-1/2 -right-2 h-px w-2 bg-[#8E5EFE] -translate-y-1/2">
-                                      </div>
+                                  </button>
+                                  <div x-ref="reminder" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10 p-2 mt-2 w-full bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                                    
+                                    <div class="bg-white rounded-lg p-2 ">
+                                      <!--list-->
+                                      <ul class="flex flex-col gap-0.5">
+                                        <li>
+                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                          1 Day
+                                          </button>
+                                        </li>
+                                        <li>
+                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                        2 Day
+                                          </button>
+                                        </li>
+                                      </ul>
                                     </div>
                                   </div>
                                 </div>
@@ -5361,8 +5196,14 @@
                           </div>
                         </div>
                       </div>
+                      <!--button bottom-->
+                      <div class="flex items-center justify-end w-full p-3.5 gap-2">
+      <button class="btn-gray w-full text-center ">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+         Save
+      </button>
+    </div>
                     </div>
-
                   </div>
 
                 </div>
@@ -5373,103 +5214,379 @@
 
           </div>
 
-          
         </div>
       </div>
     </div>
+  </div>
 
-    <!------------Modals---------------->
-    <!-- Delete workspace -->
-    <div
-      class="modalTrigger flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[420px]"
-      id="Delete-workspace">
-      <!-- modal header  -->
-      <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
-        <div class="flex items-center gap-[15px] ">
+  <!------------Modals---------------->
+  <!-- Delete workspace -->
+  <div
+    class="modalTrigger flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[420px]"
+    id="Delete-workspace">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
 
-          <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
-            Delete Workspace?
-          </h4>
-        </div>
-
-        <button class="close-btn cursor-pointer">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
-              stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-
-        </button>
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Delete Workspace?
+        </h4>
       </div>
-      <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
-        <div class="flex flex-col gap-3">
-          <p class="text-base font-normal leading-6 text-Theme-black">You’re about to delete <span
-              class="font-inter-display-medium">Ronald Richards</span></p>
-          <p class="text-base font-normal leading-6 text-Theme-black">All agreed and collected responses in this
-            workspace
-            will be permanently deleted.</span></p>
-        </div>
-      </div>
-      <!-- modal footer  -->
-      <div class="flex items-center justify-end w-full p-2 gap-2">
-        <button class="btn-white w-full text-center">Cancel</button>
-        <button class="btn-red w-full text-center">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
-              stroke="white" stroke-width="1.6" stroke-linecap="round" />
-            <path d="M6.75 8.80078H11.25" stroke="white" stroke-width="1.6" stroke-linecap="round" />
-            <path d="M7.875 11.7422H10.125" stroke="white" stroke-width="1.6" stroke-linecap="round" />
-            <path
-              d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
-              stroke="white" stroke-width="1.6" stroke-linecap="round" />
-          </svg>
-          Remove
-        </button>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
+      <div class="flex flex-col gap-3">
+        <p class="text-base font-normal leading-6 text-Theme-black">You’re about to delete <span
+            class="font-inter-display-medium">Ronald Richards</span></p>
+        <p class="text-base font-normal leading-6 text-Theme-black">All agreed and collected responses in this workspace
+          will be permanently deleted.</span></p>
       </div>
     </div>
-    <!-- restore version -->
-    <div class="modalTrigger modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[420px]"
-      id="restore-version">
-      <!-- modal header  -->
-      <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
-        <div class="flex items-center gap-[15px] ">
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-red w-full text-center">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
+            stroke="white" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M6.75 8.80078H11.25" stroke="white" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M7.875 11.7422H10.125" stroke="white" stroke-width="1.6" stroke-linecap="round" />
+          <path
+            d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
+            stroke="white" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+        Remove
+      </button>
+    </div>
+  </div>
+  <!-- Duplicate document -->
+  <div class="modalTrigger modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[420px]"
+    id="duplicate-document">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
 
-          <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
-            Restore this version?
-          </h4>
-        </div>
-
-        <button class="close-btn cursor-pointer">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
-              stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-
-        </button>
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Duplicate Document
+        </h4>
       </div>
-      <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
-        <div class="flex flex-col gap-3">
-          <p class="text-base font-normal leading-6 text-Theme-black">You’re about to restore the version from <span
-              class="font-inter-display-medium">May 19, 12:18 PM </span></p>
-          <p class="text-base font-normal leading-6 text-Theme-black">Restore your workspace to the selected version
-            while
-            keeping your current versions in history.</p>
-        </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
+      <div class="flex flex-col gap-[5px] border-b border-[#EEEEEC] mb-3.5 pb-3.5">
+        <label for="doc-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Document
+          Name</label>
+        <input type="text" id="doc-name" name="doc-name" placeholder="Enter Document Name"
+          value="Service Agreement – Marketing Project - Copy"
+          class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+          required="">
       </div>
-      <!-- modal footer  -->
-      <div class="flex items-center justify-end w-full p-2 gap-2">
-        <button class="btn-white w-full text-center">Cancel</button>
-        <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
-          Restore
-        </button>
+      <div class="flex flex-col gap-2.5">
+        <!--checkbox-->
+        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
+          <!-- Checkbox -->
+          <input type="checkbox"
+            class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
+          <!-- SVG Checkmark -->
+          <div
+            class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
+            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <!-- Label text -->
+          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
+    peer-checked:text-Theme-black">
+            Include recipients
+          </span>
+        </label>
+        <!--checkbox-->
+        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
+          <!-- Checkbox -->
+          <input type="checkbox"
+            class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
+          <!-- SVG Checkmark -->
+          <div
+            class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
+            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <!-- Label text -->
+          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
+    peer-checked:text-Theme-black">
+            Include signature fields
+          </span>
+        </label>
+        <!--checkbox-->
+        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
+          <!-- Checkbox -->
+          <input type="checkbox"
+            class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
+          <!-- SVG Checkmark -->
+          <div
+            class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
+            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <!-- Label text -->
+          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
+    peer-checked:text-Theme-black">
+            Include completed signatures
+          </span>
+        </label>
       </div>
     </div>
-
-
-    <!-- modal overlay  -->
-    <div
-      class="overlay-modal w-full h-screen z-[500] bg-[linear-gradient(0deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.14)_100%)] fixed top-0 left-0 opacity-0 invisible">
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+        Duplicate
+      </button>
     </div>
+  </div>
+  <!-- Datepicker model -->
+  <div
+    class="modalTrigger  flex modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto md:!max-w-[392px] !max-w-[350px]"
+    id="date-picker">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-140 text-Theme-light-gray">
+          Set a due date
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L4.00054 11.9995M11.9995 12L4 4.00057" stroke="black" stroke-width="1.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 md:px-5 px-3">
+      <!-- DATE PICKER -->
+      <div x-data="datePicker()" class="w-full ">
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-4 gap-1 mb-3 bg-Theme-secondary-gray rounded-lg p-[2px]">
+          <button @click="setQuickDate(0)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white active">
+            Today
+          </button>
+
+          <button @click="setQuickDate(1)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
+            Tomorrow
+          </button>
+
+          <button @click="setQuickDate(3)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
+            In 3 Days
+          </button>
+
+          <button @click="setQuickDate(7)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
+            In 1 Week
+          </button>
+        </div>
+
+        <!-- Calendar Header -->
+        <!-- Calendar Header -->
+        <div class="flex items-center gap-2 mb-2">
+
+          <!-- Month Navigation -->
+          <div class="flex items-center h-[36px] justify-between flex-1 border border-[#EBEBEB]
+  rounded-lg px-1 py-1.5 transition-all duration-300 hover:border-[#D8D8D8]">
+
+            <!-- Prev -->
+            <button @click="prevMonth" class="w-[28px] h-[28px] rounded-md hover:bg-Theme-secondary-gray
+      flex items-center justify-center transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                <path d="M4.80094 8.79956L0.800781 4.7994L4.8033 0.796875" stroke="#000A06" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <!-- Month Name -->
+            <div class="flex-1 text-center">
+              <span class="text-sm font-inter-display-medium
+        leading-[22px] text-Theme-black" x-text="months[month]"></span>
+            </div>
+
+            <!-- Next -->
+            <button @click="nextMonth" class="w-[28px] h-[28px] rounded-md hover:bg-Theme-secondary-gray
+      flex items-center justify-center transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                <path d="M0.803141 0.796875L4.8033 4.79704L0.800781 8.79956" stroke="#000A06" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- Year Select -->
+          <div x-data="dropdownComponent('year-menu')" class="relative w-[78px] shrink-0">
+            <button @click="toggle" :class="{'border-[#D8D8D8]': isOpen}"
+              class="border border-[#EBEBEB]
+  rounded-lg  transition-all duration-300  p-[6px] flex items-center gap-1 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:border-[#D8D8D8]">
+              <div class="flex items-center gap-1.5 hover">
+
+                2023
+              </div>
+              <!-- arrow -->
+              <div class="w-4 h-4 flex items-center justify-center">
+                <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out rotate-180"
+                  width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.60156 0.601562L4.60156 4.60156L0.601562 0.601562" stroke="#020012" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </button>
+
+
+            <div x-ref="year-menu" x-show="isOpen" x-transition=""
+              x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
+              class="absolute left-0 z-10 p-2 mt-[5px] w-[78px] bg-gradient-gray rounded-10px p-[2px]"
+              style="overflow: hidden; transition: height 300ms; height: auto;">
+              <span
+                class="py-1.5 px-3.5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Year</span>
+              <div class="bg-white rounded-lg p-1">
+                <!--list-->
+                <ul class="flex flex-col gap-0.5 max-h-[150px] overflow-y-auto custom-scrollbar pr-1">
+                  <li>
+                    <a href="#"
+                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      2023
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      2024
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      2025
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      2026
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      2027
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                      2028
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Days -->
+        <div class="grid grid-cols-7 gap-x-3 mb-2">
+          <template x-for="day in weekDays" :key="day">
+            <div class="h-10 w-10 flex items-center justify-center
+        text-sm font-inter-display-medium leading-[22px] text-Theme-black" x-text="day"></div>
+          </template>
+        </div>
+
+        <!-- Dates -->
+        <div class="grid grid-cols-7 gap-y-3 gap-x-3 mb-3">
+
+          <template x-for="(date,index) in calendarDays" :key="index">
+
+            <button @click="selectDate(date)" :disabled="!date.currentMonth"
+              class="w-10 h-10 mx-auto rounded-lg text-sm font-inter-display-medium leading-[22px] transition-all duration-200"
+              :class="{
+          'text-[#9C9C9C]': !date.currentMonth,
+          'hover:bg-Theme-secondary-gray text-Theme-black': date.currentMonth && !date.selected,
+          'bg-[#8B5CF6] text-white': date.selected,
+          'bg-Theme-purple text-white': date.today && !date.selected
+        }">
+              <span x-text="date.day"></span>
+            </button>
+
+          </template>
+
+        </div>
+
+        <!-- Reminder -->
+        <div class="space-y-3 border-t border-Theme-secondary-gray pt-3">
+          <!--checkbox-->
+          <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
+            <!-- Checkbox -->
+            <input type="checkbox"
+              class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
+            <!-- SVG Checkmark -->
+            <div
+              class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
+              <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
+                  stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <!-- Label text -->
+            <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
+                  peer-checked:text-Theme-black">
+              Enable reminders before deadline
+            </span>
+          </label>
+
+        </div>
+
+
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+
+        Set Due Date
+      </button>
+    </div>
+  </div>
+
+  <!-- modal overlay  -->
+  <div
+    class="overlay-modal w-full h-screen z-[500] bg-[rgba(9,5,54,0.20)] backdrop-blur-[7.5px] fixed top-0 left-0 opacity-0 invisible">
+
+  </div>
 </body>
 <!-- MAIN JS-->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
@@ -5670,5 +5787,165 @@
     }
   }
 </script>
+<!--datepicekr-->
+<script>
+  function datePicker() {
+    return {
 
+      today: new Date(),
+
+      selectedDate: null,
+
+      month: new Date().getMonth(),
+
+      year: new Date().getFullYear(),
+
+      yearDropdownOpen: false,
+
+      weekDays: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+
+      months: [
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
+      ],
+
+      calendarDays: [],
+
+      get yearRange() {
+        return Array.from(
+          { length: 20 },
+          (_, i) => this.today.getFullYear() - 5 + i
+        )
+      },
+
+      init() {
+
+        this.generateCalendar()
+
+        // close arrow state when clicking outside
+        document.addEventListener('click', (e) => {
+
+          if (!e.target.closest('.year-select-wrapper')) {
+            this.yearDropdownOpen = false
+          }
+
+        })
+      },
+
+      generateCalendar() {
+
+        this.calendarDays = []
+
+        const firstDay = new Date(this.year, this.month, 1)
+        const lastDay = new Date(this.year, this.month + 1, 0)
+
+        let startDay = firstDay.getDay()
+        startDay = startDay === 0 ? 6 : startDay - 1
+
+        const totalDays = lastDay.getDate()
+
+        // Previous month days
+        const prevMonthLastDate = new Date(
+          this.year,
+          this.month,
+          0
+        ).getDate()
+
+        for (let i = startDay; i > 0; i--) {
+
+          this.calendarDays.push({
+            day: prevMonthLastDate - i + 1,
+            currentMonth: false
+          })
+
+        }
+
+        // Current month days
+        for (let day = 1; day <= totalDays; day++) {
+
+          const isToday =
+            day === this.today.getDate() &&
+            this.month === this.today.getMonth() &&
+            this.year === this.today.getFullYear()
+
+          const isSelected =
+            this.selectedDate &&
+            day === this.selectedDate.getDate() &&
+            this.month === this.selectedDate.getMonth() &&
+            this.year === this.selectedDate.getFullYear()
+
+          this.calendarDays.push({
+            day,
+            currentMonth: true,
+            today: isToday,
+            selected: isSelected
+          })
+
+        }
+
+        // Fill remaining cells
+        while (this.calendarDays.length % 7 !== 0) {
+
+          this.calendarDays.push({
+            day: this.calendarDays.length % 7 + 1,
+            currentMonth: false
+          })
+
+        }
+      },
+
+      selectDate(date) {
+
+        if (!date.currentMonth) return
+
+        this.selectedDate = new Date(
+          this.year,
+          this.month,
+          date.day
+        )
+
+        this.generateCalendar()
+      },
+
+      prevMonth() {
+
+        if (this.month === 0) {
+          this.month = 11
+          this.year--
+        } else {
+          this.month--
+        }
+
+        this.generateCalendar()
+      },
+
+      nextMonth() {
+
+        if (this.month === 11) {
+          this.month = 0
+          this.year++
+        } else {
+          this.month++
+        }
+
+        this.generateCalendar()
+      },
+
+      setQuickDate(days) {
+
+        const date = new Date()
+
+        date.setDate(date.getDate() + days)
+
+        this.selectedDate = date
+
+        this.month = date.getMonth()
+        this.year = date.getFullYear()
+
+        this.generateCalendar()
+      }
+    }
+  }
+</script>
 </html>

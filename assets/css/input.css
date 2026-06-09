@@ -120,6 +120,11 @@
   .btn-white {
       @apply py-2 px-3 bg-white rounded-lg transition-all duration-500 hover:bg-white/70 text-sm font-inter-display-medium leading-[20px] text-Theme-black;
   }
+    .btn-gray {
+      @apply py-2 px-3 bg-Theme-Forground rounded-lg transition-all duration-500 hover:bg-[#efefed]  text-sm font-inter-display-medium leading-[20px] text-Theme-black;
+  }
+  
+
   .btn-black {
       @apply py-2 px-3 bg-Theme-black rounded-lg transition-all duration-500 hover:bg-black/90 text-sm font-inter-display-medium leading-[20px] text-white;
   }

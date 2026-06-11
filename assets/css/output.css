@@ -25,6 +25,7 @@
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
+    --tracking-wide: 0.025em;
     --leading-tight: 1.25;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
@@ -419,12 +420,6 @@
   .left-8 {
     left: calc(var(--spacing) * 8);
   }
-  .left-\[-12px\] {
-    left: -12px;
-  }
-  .left-\[-24px\] {
-    left: -24px;
-  }
   .left-\[-40px\] {
     left: -40px;
   }
@@ -578,9 +573,6 @@
   .mt-\[15px\] {
     margin-top: 15px;
   }
-  .mt-\[20px\] {
-    margin-top: 20px;
-  }
   .mt-auto {
     margin-top: auto;
   }
@@ -611,8 +603,17 @@
   .mr-\[5px\] {
     margin-right: 5px;
   }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
+  .mb-0\.5 {
+    margin-bottom: calc(var(--spacing) * 0.5);
+  }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-1\.5 {
+    margin-bottom: calc(var(--spacing) * 1.5);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -740,6 +741,9 @@
   }
   .h-6 {
     height: calc(var(--spacing) * 6);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
   }
   .h-8 {
     height: calc(var(--spacing) * 8);
@@ -1089,6 +1093,9 @@
   .w-\[36px\] {
     width: 36px;
   }
+  .w-\[38px\] {
+    width: 38px;
+  }
   .w-\[40px\] {
     width: 40px;
   }
@@ -1110,6 +1117,9 @@
   .w-\[60px\] {
     width: 60px;
   }
+  .w-\[65px\] {
+    width: 65px;
+  }
   .w-\[78px\] {
     width: 78px;
   }
@@ -1122,6 +1132,9 @@
   .w-\[100px\] {
     width: 100px;
   }
+  .w-\[130px\] {
+    width: 130px;
+  }
   .w-\[140px\] {
     width: 140px;
   }
@@ -1131,14 +1144,8 @@
   .w-\[170px\] {
     width: 170px;
   }
-  .w-\[177px\] {
-    width: 177px;
-  }
   .w-\[180px\] {
     width: 180px;
-  }
-  .w-\[190px\] {
-    width: 190px;
   }
   .w-\[198px\] {
     width: 198px;
@@ -1272,11 +1279,17 @@
   .max-w-\[122px\] {
     max-width: 122px;
   }
+  .max-w-\[140px\] {
+    max-width: 140px;
+  }
   .max-w-\[170px\] {
     max-width: 170px;
   }
   .max-w-\[200px\] {
     max-width: 200px;
+  }
+  .max-w-\[234px\] {
+    max-width: 234px;
   }
   .max-w-\[248px\] {
     max-width: 248px;
@@ -1289,9 +1302,6 @@
   }
   .max-w-\[280px\] {
     max-width: 280px;
-  }
-  .max-w-\[290px\] {
-    max-width: 290px;
   }
   .max-w-\[295px\] {
     max-width: 295px;
@@ -1313,9 +1323,6 @@
   }
   .max-w-full {
     max-width: 100%;
-  }
-  .max-w-max {
-    max-width: max-content;
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
@@ -1437,6 +1444,9 @@
   .animate-spin {
     animation: var(--animate-spin);
   }
+  .cursor-ew-resize {
+    cursor: ew-resize;
+  }
   .cursor-grabbing {
     cursor: grabbing;
   }
@@ -1490,6 +1500,9 @@
   }
   .flex-row-reverse {
     flex-direction: row-reverse;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -1780,6 +1793,10 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
   }
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
   .border-l-\[2px\] {
     border-left-style: var(--tw-border-style);
     border-left-width: 2px;
@@ -1787,6 +1804,13 @@
   .border-dashed {
     --tw-border-style: dashed;
     border-style: dashed;
+  }
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
+  }
+  .\!border-Theme-purple {
+    border-color: var(--color-Theme-purple) !important;
   }
   .border-Theme-dark-gray {
     border-color: var(--color-Theme-dark-gray);
@@ -1811,6 +1835,9 @@
   }
   .border-\[\#60a5fa\] {
     border-color: #60a5fa;
+  }
+  .border-\[\#D0D0CD\] {
+    border-color: #D0D0CD;
   }
   .border-\[\#D8D8D8\] {
     border-color: #D8D8D8;
@@ -1988,9 +2015,6 @@
   }
   .bg-\[\#ebe8e5\]\/95 {
     background-color: color-mix(in oklab, #ebe8e5 95%, transparent);
-  }
-  .bg-\[\#f0f0ec\] {
-    background-color: #f0f0ec;
   }
   .bg-\[\#f6f6f6\] {
     background-color: #f6f6f6;
@@ -2629,6 +2653,10 @@
   .tracking-\[0\.96px\] {
     --tw-tracking: 0.96px;
     letter-spacing: 0.96px;
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
   }
   .text-ellipsis {
     text-overflow: ellipsis;
@@ -3301,6 +3329,13 @@
       }
     }
   }
+  .hover\:border-\[\[\#dcdcdc\]\] {
+    &:hover {
+      @media (hover: hover) {
+        border-color: [#dcdcdc];
+      }
+    }
+  }
   .hover\:bg-Theme-Forground {
     &:hover {
       @media (hover: hover) {
@@ -3531,6 +3566,13 @@
       }
     }
   }
+  .hover\:opacity-80 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 80%;
+      }
+    }
+  }
   .hover\:opacity-100 {
     &:hover {
       @media (hover: hover) {
@@ -3545,6 +3587,11 @@
           background-color: #8E5EFE;
         }
       }
+    }
+  }
+  .focus\:cursor-text {
+    &:focus {
+      cursor: text;
     }
   }
   .focus\:border-Theme-purple {
@@ -3567,6 +3614,12 @@
       background-color: var(--color-white);
     }
   }
+  .focus\:ring-0 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
   .focus\:outline-0 {
     &:focus {
       outline-style: var(--tw-outline-style);
@@ -3582,6 +3635,18 @@
   .focus-visible\:underline {
     &:focus-visible {
       text-decoration-line: underline;
+    }
+  }
+  .focus-visible\:ring-0 {
+    &:focus-visible {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus-visible\:outline-none {
+    &:focus-visible {
+      --tw-outline-style: none;
+      outline-style: none;
     }
   }
   .disabled\:cursor-not-allowed {
@@ -4374,6 +4439,11 @@
   .\[\&\.active\]\:bg-Theme-Forground {
     &.active {
       background-color: var(--color-Theme-Forground);
+    }
+  }
+  .\[\&\.active\]\:bg-\[\#EEEEEC\] {
+    &.active {
+      background-color: #EEEEEC;
     }
   }
   .\[\&\.active\]\:bg-\[\#F6F2FF\] {

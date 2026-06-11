@@ -735,51 +735,36 @@
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-2">
+         <div class="flex items-center gap-2">
             <!--signer dropdown-->
             <div x-data="dropdownComponent('signer-menu1')" class="relative hidden md:flex items-center">
 
               <!-- Overlay -->
-              <div x-show="isOpen" x-transition.opacity="" @click="close"
-                class="fixed inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.12)_100%)] z-50"
-                style="display: none;"></div>
+              <div x-show="isOpen" x-transition.opacity="" @click="close" class="fixed inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.12)_0%,rgba(0,0,0,0.12)_100%)] z-50" style="display: none;"></div>
 
               <!-- Trigger -->
               <button @click.stop="toggle" class="group relative flex items-center -space-x-2 z-0 z-0">
                 <div class="relative z-10 ">
-                  <img src="assets/images/avatar-1.png" alt="User"
-                    class="w-[32px] h-[32px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                  <img src="assets/images/avatar-1.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
                 </div>
 
                 <div class="relative z-20 md:block hidden">
-                  <img src="assets/images/avatar-4.png" alt="User"
-                    class="w-[32px] h-[32px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                  <img src="assets/images/avatar-4.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
                 </div>
 
                 <div class="relative z-20 md:block hidden">
-                  <img src="assets/images/avatar-5.png" alt="User"
-                    class="w-[32px] h-[32px] rounded-lg border-[1.5px] border-white bg-white object-cover">
+                  <img src="assets/images/avatar-5.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
                 </div>
 
-                <div
-                  class="relative z-20 flex items-center justify-center w-[32px] h-[32px] rounded-lg border-[1.5px] border-white bg-Theme-secondary-gray text-sm text-Theme-dark-gray">
+                <div class="relative z-20 flex items-center justify-center w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-Theme-secondary-gray text-sm text-Theme-dark-gray">
                   +8
                 </div>
               </button>
 
               <!-- Dropdown -->
-              <div x-ref="signer-menu1" x-show="isOpen" @click.outside="close"
-                x-transition:enter="transition-all duration-200 ease-out"
-                x-transition:enter-start="opacity-0 scale-[0.96] translate-y-1"
-                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                x-transition:leave="transition-all duration-150 ease-in"
-                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                x-transition:leave-end="opacity-0 scale-[0.96] translate-y-1"
-                class="absolute top-full right-0 mt-2 w-[252px] bg-gradient-gray rounded-[10px] p-[2px] z-50 origin-top-right"
-                style="display: none;">
+              <div x-ref="signer-menu1" x-show="isOpen" @click.outside="close" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="opacity-0 scale-[0.96] translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition-all duration-150 ease-in" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-[0.96] translate-y-1" class="absolute top-full right-0 mt-2 w-[252px] bg-gradient-gray rounded-[10px] p-[2px] z-50 origin-top-right" style="display: none;">
 
-                <span
-                  class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray tracking-[0.96px]">
+                <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray tracking-[0.96px]">
                   All Signers
                 </span>
 
@@ -787,41 +772,36 @@
 
                   <ul class="flex flex-col gap-0.5 max-h-[230px] overflow-y-auto custom-scrollbar pr-1">
 
-                    <li
-                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
-                      <img src="assets/images/signer-img1.png" class="w-[32px] h-[32px] rounded-md object-cover" alt="">
+                    <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img1.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="">
                       <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
                         Ronald Richards
                       </span>
                     </li>
 
-                    <li
-                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
-                      <img src="assets/images/signer-img2.png" class="w-[32px] h-[32px] rounded-md object-cover" alt="">
+                    <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img2.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="">
                       <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
                         Annette Black
                       </span>
                     </li>
 
-                    <li
-                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
-                      <img src="assets/images/signer-img3.png" class="w-[32px] h-[32px] rounded-md object-cover" alt="">
+                    <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img3.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="">
                       <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
                         Bessie Cooper
                       </span>
                     </li>
 
-                    <li
-                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
-                      <img src="assets/images/signer-img4.png" class="w-[32px] h-[32px] rounded-md object-cover" alt="">
+                    <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img4.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="">
                       <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
                         Floyd Miles
                       </span>
                     </li>
 
-                    <li
-                      class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
-                      <img src="assets/images/signer-img5.png" class="w-[32px] h-[32px] rounded-md object-cover" alt="">
+                    <li class="group w-full py-2 px-3 flex items-center gap-2.5 rounded-[2px] transition-all duration-300 hover:bg-Theme-Forground cursor-pointer">
+                      <img src="assets/images/signer-img5.png" class="w-[34px] h-[34px] rounded-md object-cover" alt="">
                       <span class="text-sm text-Theme-dark-gray font-inter-display-medium">
                         Theresa Webb
                       </span>
@@ -835,49 +815,32 @@
             </div>
 
             <!--play button-->
-            <button
-              class="w-[32px] h-[32px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
+            <button class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-                <path
-                  d="M11.1172 6.96262C10.852 7.96987 9.59924 8.68163 7.09349 10.1052C4.67122 11.4813 3.46012 12.1694 2.48409 11.8928C2.08057 11.7784 1.71291 11.5613 1.4164 11.2621C0.699219 10.5385 0.699219 9.13508 0.699219 6.32813C0.699219 3.52118 0.699219 2.1177 1.4164 1.39412C1.71291 1.09496 2.08057 0.877785 2.48409 0.76344C3.46012 0.486863 4.67122 1.17493 7.09349 2.55107C9.59924 3.9746 10.852 4.68638 11.1172 5.69363C11.2266 6.10943 11.2266 6.54682 11.1172 6.96262Z"
-                  stroke="#020012" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.1172 6.96262C10.852 7.96987 9.59924 8.68163 7.09349 10.1052C4.67122 11.4813 3.46012 12.1694 2.48409 11.8928C2.08057 11.7784 1.71291 11.5613 1.4164 11.2621C0.699219 10.5385 0.699219 9.13508 0.699219 6.32813C0.699219 3.52118 0.699219 2.1177 1.4164 1.39412C1.71291 1.09496 2.08057 0.877785 2.48409 0.76344C3.46012 0.486863 4.67122 1.17493 7.09349 2.55107C9.59924 3.9746 10.852 4.68638 11.1172 5.69363C11.2266 6.10943 11.2266 6.54682 11.1172 6.96262Z" stroke="#020012" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </button>
-            <!--share document dropdown -->
+             <!--share document dropdown -->
             <div x-data="dropdownComponent('invite-menu')" class="relative w-max z-30">
-              <div x-show="isOpen" x-transition.opacity="" @click="close"
-                class="fixed inset-0 bg-[rgba(0,0,0,0.14)] z-20 xl:hidden" style="display: none;"></div>
-              <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}"
-                class="md:py-[7px] md:pl-3 md:pr-3.5 md:w-fit w-[34px] rounded-lg gap-1.5">
+              <div x-show="isOpen" x-transition.opacity="" @click="close" class="fixed inset-0 bg-[rgba(0,0,0,0.14)] z-20 xl:hidden" style="display: none;"></div>
+              <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}">
                 <span class="md:block hidden">Share</span>
-                <svg class="md:hidden block" width="18" height="18" viewBox="0 0 18 18" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2873_328)">
-                    <path
-                      d="M6.75 3.375C4.12832 4.27578 2.25 6.70631 2.25 9.56332C2.25 10.4684 2.4385 11.3307 2.77943 12.1151M11.25 3.375C13.8717 4.27578 15.75 6.70631 15.75 9.56332C15.75 10.3302 15.6146 11.0664 15.3659 11.7506M12.375 15.2472C11.3822 15.8055 10.2295 16.125 9 16.125C7.77053 16.125 6.61783 15.8055 5.625 15.2472"
-                      stroke="white" stroke-width="1.4" />
-                    <path
-                      d="M11.25 3.75C11.25 4.99264 10.2427 6 9 6C7.75732 6 6.75 4.99264 6.75 3.75C6.75 2.50736 7.75732 1.5 9 1.5C10.2427 1.5 11.25 2.50736 11.25 3.75Z"
-                      stroke="white" stroke-width="1.4" />
-                    <path
-                      d="M3.75 16.5C4.99264 16.5 6 15.4926 6 14.25C6 13.0074 4.99264 12 3.75 12C2.50736 12 1.5 13.0074 1.5 14.25C1.5 15.4926 2.50736 16.5 3.75 16.5Z"
-                      stroke="white" stroke-width="1.4" />
-                    <path
-                      d="M14.25 16.5C15.4926 16.5 16.5 15.4926 16.5 14.25C16.5 13.0074 15.4926 12 14.25 12C13.0074 12 12 13.0074 12 14.25C12 15.4926 13.0074 16.5 14.25 16.5Z"
-                      stroke="white" stroke-width="1.4" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2873_328">
-                      <rect width="18" height="18" fill="white" />
-                    </clipPath>
-                  </defs>
+                <svg class="md:hidden block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2873_328)">
+                <path d="M6.75 3.375C4.12832 4.27578 2.25 6.70631 2.25 9.56332C2.25 10.4684 2.4385 11.3307 2.77943 12.1151M11.25 3.375C13.8717 4.27578 15.75 6.70631 15.75 9.56332C15.75 10.3302 15.6146 11.0664 15.3659 11.7506M12.375 15.2472C11.3822 15.8055 10.2295 16.125 9 16.125C7.77053 16.125 6.61783 15.8055 5.625 15.2472" stroke="white" stroke-width="1.4"></path>
+                <path d="M11.25 3.75C11.25 4.99264 10.2427 6 9 6C7.75732 6 6.75 4.99264 6.75 3.75C6.75 2.50736 7.75732 1.5 9 1.5C10.2427 1.5 11.25 2.50736 11.25 3.75Z" stroke="white" stroke-width="1.4"></path>
+                <path d="M3.75 16.5C4.99264 16.5 6 15.4926 6 14.25C6 13.0074 4.99264 12 3.75 12C2.50736 12 1.5 13.0074 1.5 14.25C1.5 15.4926 2.50736 16.5 3.75 16.5Z" stroke="white" stroke-width="1.4"></path>
+                <path d="M14.25 16.5C15.4926 16.5 16.5 15.4926 16.5 14.25C16.5 13.0074 15.4926 12 14.25 12C13.0074 12 12 13.0074 12 14.25C12 15.4926 13.0074 16.5 14.25 16.5Z" stroke="white" stroke-width="1.4"></path>
+                </g>
+                <defs>
+                <clipPath id="clip0_2873_328">
+                <rect width="18" height="18" fill="white"></rect>
+                </clipPath>
+                </defs>
                 </svg>
 
               </button>
-              <div x-ref="invite-menu" x-show="isOpen" x-transition=""
-                x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
-                class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-gradient-gray rounded-10px p-[2px] z-30"
-                style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+              <div x-ref="invite-menu" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-gradient-gray rounded-10px p-[2px] z-30" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                 <div class="flex flex-col gap-0.5 p-[14px]">
                   <h4 class="text-lg block text-Theme-black ">Share this document</h4>
                   <p class="text-xs text-Theme-light-gray leading-[130%]">Manage who has access this document</p>
@@ -886,40 +849,30 @@
                   <div class="flex flex-col gap-2">
                     <!--email box-->
                     <div class="p-2 flex flex-row gap-2.5 w-full">
-                      <div
-                        class="md:w-[336px] w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
-                        <input type="text" id="email-address"
-                          class="md:w-[246px] w-full bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  "
-                          placeholder="Enter Email Address">
+                      <div class="md:w-[336px] w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
+                        <input type="text" id="email-address" class="md:w-[246px] w-full bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  " placeholder="Enter Email Address">
                         <div class="custom-dropdown relative w-max" data-style="design1">
-                          <button
-                            class="dropdown-button p-[7px] pl-2 cursor-pointer rounded flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-transparent transition-all duration-300 hover:bg-white/70">
+                          <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-transparent transition-all duration-300 hover:bg-white/70">
                             <span class="selected-option">Editor</span>
 
-                            <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10"
-                              viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
-                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
 
                           </button>
 
-                          <div
-                            class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5">
-                            <span
-                              class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                          <div class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5">
+                            <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                             <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                               <li>
-                                <button
-                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                   Editor
                                 </button>
                               </li>
                               <li>
-                                <button
-                                  class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                   Viewer
                                 </button>
                               </li>
@@ -938,77 +891,63 @@
                     <div class="flex flex-col gap-2 custom-scrollbar md:max-h-[390px] max-h-[328px] mr-[5px] pr-[5px]">
                       <!--members list-->
                       <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Who has
-                          access</h5>
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Who has access</h5>
                         <ul class="flex flex-col  divide-y divide-[#EEEEEC] px-2">
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <img class="w-[32px] h-[32px] aspect-square object-cover rounded-lg"
-                                src="assets/images/avatar-1.png" alt="image">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-1.png" alt="image">
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ankur
                                   Kanasagara</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
-                            <span
-                              class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
+                            <span class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
                           </li>
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div
-                                class="w-[32px] h-[32px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
+                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
                                 AF
                               </div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Albert
                                   Flores</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button
-                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
                                 <span class="selected-option">Editor</span>
 
-                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
-                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
-                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
 
                               </button>
 
-                              <div
-                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span
-                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                                 <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                                   <li>
-                                    <button
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()"
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -1024,51 +963,41 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <img class="w-[32px] h-[32px] aspect-square object-cover rounded-lg"
-                                src="assets/images/avatar-2.png" alt="image">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-2.png" alt="image">
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Cameron
                                   Williamson</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button
-                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
                                 <span class="selected-option">Editor</span>
 
-                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
-                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
-                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
 
                               </button>
 
-                              <div
-                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span
-                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                                 <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                                   <li>
-                                    <button
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()"
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -1081,51 +1010,41 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <img class="w-[32px] h-[32px] aspect-square object-cover rounded-lg"
-                                src="assets/images/avatar-3.png" alt="image">
+                              <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-3.png" alt="image">
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ralph
                                   Edwards</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">ankurkanasagara@gmail.com</span>
                               </div>
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button
-                                class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
+                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
                                 <span class="selected-option">Editor</span>
 
-                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10"
-                                  height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06"
-                                    stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
 
                               </button>
 
-                              <div
-                                class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span
-                                  class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
+                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
+                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
 
                                 <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
 
                                   <li>
-                                    <button
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()"
-                                      class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -1144,14 +1063,12 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div
-                                class="w-[32px] h-[32px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
                                 RR</div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Ronald
                                   Richards</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">ronaldrichards@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">ronaldrichards@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
@@ -1163,14 +1080,12 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div
-                                class="w-[32px] h-[32px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
                                 DR</div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
                                   Russell</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
@@ -1182,14 +1097,12 @@
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
-                              <div
-                                class="w-[32px] h-[32px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
+                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
                                 DR</div>
                               <div class="flex flex-col">
                                 <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
                                   Russell</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
+                                <span class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
                               </div>
                             </div>
                             <!--access level-->
@@ -1208,25 +1121,20 @@
             <button class="btn-purple-icon-text md:py-[7px] md:pl-3 md:pr-3.5 md:w-fit w-[34px] rounded-lg gap-1.5">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_8174_5284)">
-                  <path d="M5.53906 8.75L9.91406 4.375" stroke="white" stroke-width="1.4" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M4.67016 4.48195L8.94055 2.46358C10.7149 1.62492 11.6021 1.20559 12.168 1.62626C12.7339 2.04692 12.5722 3.0056 12.2489 4.92294L11.6918 8.22574C11.4804 9.47944 11.3747 10.1062 10.9075 10.3796C10.4402 10.6529 9.83328 10.443 8.61943 10.0231L4.90608 8.73872C2.63598 7.9535 1.50093 7.56091 1.45824 6.79056C1.41555 6.02021 2.50042 5.50747 4.67016 4.48195Z"
-                    stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M5.53906 9.03906V10.3384C5.53906 11.723 5.53906 12.4153 5.95334 12.5257C6.36762 12.6361 6.8039 12.0601 7.67645 10.908L8.16406 10.2057"
-                    stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M5.53906 8.75L9.91406 4.375" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M4.67016 4.48195L8.94055 2.46358C10.7149 1.62492 11.6021 1.20559 12.168 1.62626C12.7339 2.04692 12.5722 3.0056 12.2489 4.92294L11.6918 8.22574C11.4804 9.47944 11.3747 10.1062 10.9075 10.3796C10.4402 10.6529 9.83328 10.443 8.61943 10.0231L4.90608 8.73872C2.63598 7.9535 1.50093 7.56091 1.45824 6.79056C1.41555 6.02021 2.50042 5.50747 4.67016 4.48195Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M5.53906 9.03906V10.3384C5.53906 11.723 5.53906 12.4153 5.95334 12.5257C6.36762 12.6361 6.8039 12.0601 7.67645 10.908L8.16406 10.2057" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
                 </g>
                 <defs>
                   <clipPath id="clip0_8174_5284">
-                    <rect width="14" height="14" fill="white" />
+                    <rect width="14" height="14" fill="white"></rect>
                   </clipPath>
                 </defs>
               </svg>
 
               <span class="md:block hidden"> Send</span>
 
-            </button>
+              </button>
           </div>
         </div>
         <!--content-->

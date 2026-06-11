@@ -4847,7 +4847,7 @@
                 </li>
                 <li>
                   <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
+                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)] active"
                     :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
                             : 'hover:bg-[#EEEEEC]'">
@@ -4918,7 +4918,7 @@
                 </li>
                 <li>
                   <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)] active"
+                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
                     :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
                             : 'hover:bg-[#EEEEEC]'">
@@ -5047,7 +5047,7 @@
                   <div class="flex items-center justify-between bg-transparent pb-2 pt-1 pl-4 pr-1.5">
 
                     <h3 class="text-lg font-inter-display-medium leading-[26px] text-Theme-black">
-                      Agreement Lifecycle
+                      Headings
                     </h3>
 
                     <button @click="rightPanelOpen = false"
@@ -5069,140 +5069,776 @@
 [&::-webkit-scrollbar-track]:bg-transparent
 [&::-webkit-scrollbar-thumb]:bg-[#EEEEEC]
 [&::-webkit-scrollbar-thumb]:rounded-[3px]  w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-                      <!--tab content main-->
-                      <div class="py-3.5  h-full">
-                        <div class="px-3.5">
-                          <!--tab list-->
-                          <ul
-                            class="flex items-center bg-Theme-secondary-gray rounded-lg w-full p-[2px] gap-[2px] mb-5 ">
-                            <li class="w-full">
-                              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&amp;.active]:bg-white
-                            active">
-                                Due Date
-                              </a>
-                            </li>
-                            <li class="w-full">
-                              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&amp;.active]:bg-white
-                            ">
-                                Renewal
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <!--tab content-->
-                        <div class="relative block">
-                          <div class="relative px-3.5 border-b border-[#EEEEEC] pb-3.5 mb-5">
-                            <p class="text-sm font-inter-display-medium leading-5 text-Theme-dark-gray">Sets a deadline
-                              for signers. Document can’t be signed after this date.</p>
-                          </div>
-                          <!--toggle wrap-->
-                          <div class="relative px-3.5 flex flex-col gap-3.5" x-data="{ dueDateEnabled: false }">
-                            <!--toggle-->
-                            <label for="due-date" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                              <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Due
-                                Date</span>
+                      <!--content-->
+                      <div class="p-3.5 mb-1.5">
+                        <div class="flex flex-col gap-3.5">
+                          <label
+                            class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">General
+                            Typography</label>
+                          <div class="flex flex-col gap-2.5">
+                            <!--font family-->
+                            <div x-data="dropdownComponent('choose-font')" class="relative w-full ">
+                              <button @click="toggle"
+                                :class="isOpen ? 'bg-white !border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'"
+                                class="w-full  border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black outline-none  focus:outline-none transition-all duration-500">
+                                Inter - Display
+                                <svg class="transition-all duration-500" :class="{'rotate-180': isOpen}"
+                                  xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"
+                                  fill="none">
+                                  <path d="M8.80273 0.799234L4.80257 4.7994L0.80005 0.796875" stroke="#000A06"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
 
-                              <div class="flex items-center">
-                                <input type="checkbox" id="due-date" class="sr-only peer" x-model="dueDateEnabled">
-                                <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                      peer-checked:bg-[#8E5EFE]
-                      peer-checked:hover:bg-[#8E5EFE]
-                      
-                      after:content-['']
-                      after:absolute
-                      after:top-[2px]
-                      after:left-[2px]
-                      after:w-[20px]
-                      after:h-[16px]
-                      after:bg-white
-                      after:rounded-[16px]
-                      after:shadow-secondary
-                      after:transition-all
-                      after:duration-300
-                      peer-checked:after:translate-x-[16px]">
+                              </button>
+                              <div x-ref="choose-font" x-show="isOpen" x-transition=""
+                                x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height"
+                                @click.outside="close" @keydown.escape.window="close()"
+                                class="absolute left-0 z-10 p-2 mt-2 w-full bg-gradient-gray rounded-10px p-[2px]"
+                                style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+
+                                <div class="bg-white rounded-lg p-2 ">
+                                  <!--list-->
+                                  <ul class="flex flex-col gap-0.5">
+                                    <li>
+                                      <button
+                                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-stylescript transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                        Style Script
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button
+                                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-birthstone transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                        Birthstone
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button
+                                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-grandhotel transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                        Grand Hotel
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button
+                                        class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-petitformal transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                        Petit Formal Script
+                                      </button>
+                                    </li>
+
+                                  </ul>
                                 </div>
                               </div>
-                            </label>
-                           <div x-show="dueDateEnabled" 
-     x-transition:enter="transition ease-out duration-300"
-     x-transition:enter-start="opacity-0 -translate-y-2"
-     x-transition:enter-end="opacity-100 translate-y-0"
-     x-transition:leave="transition ease-in duration-200"
-     x-transition:leave-start="opacity-100 translate-y-0"
-     x-transition:leave-end="opacity-0 -translate-y-2"
-     class="flex flex-col gap-3.5">
-                              <!--input-->
-                              <div class="flex flex-col gap-[5px] ">
-                                <label for="date"
-                                  class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px] capitalize">Expires
-                                  on</label>
-                                <div class="relative">
-                                  <input type="text" id="date" name="date" placeholder="Enter Due Date"
-                                    value="30 June, 2026"
-                                    class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
-                                    required="">
-                                  <button class="absolute right-4 top-4" data-modal-target="date-picker">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                            </div>
+                            <div class="flex items-center gap-2.5 ">
+                              <!--color picker-->
+                              <div x-data="{ opacity: 100, hex: '8E5EFE', dragging: false, startX: 0, startVal: 0 }"
+                                @mousemove.window="dragging && (opacity = Math.max(0, Math.min(100, startVal + Math.round((($event.clientX - startX) / 2)))))"
+                                @mouseup.window="dragging = false; document.body.style.cursor = ''"
+                                class="border border-[#EBEBEB] bg-Theme-Forground rounded-10px max-w-[234px]">
+                                <div class="flex">
+
+                                  <!-- colorpicker box-->
+                                  <div class="flex items-center gap-1.5 p-[5px]">
+                                    <button
+                                      class="w-[38px] h-[38px] rounded-lg shrink-0 bg-Theme-purple transition-all duration-300">
+                                    </button>
+                                    <input type="text" class="sr-only">
+                                    <input type="text" :value="'#'+hex"
+                                      @input="hex = $event.target.value.replace('#','').toUpperCase()"
+                                      class="w-full bg-transparent outline-none text-sm text-Theme-dark-gray font-inter-display-medium leading-5">
+                                  </div>
+
+                                  <!-- Opacity -->
+                                  <div
+                                    class="flex items-center border-l border-[#D0D0CD] flex-1 gap-[2px] pl-2.5 pr-3.5">
+                                    <input type="text" :value="opacity"
+                                      @input="opacity = Math.max(0, Math.min(100, parseInt($event.target.value) || 0))"
+                                      class="bg-transparent outline-none text-sm text-Theme-dark-gray font-inter-display-medium leading-5 w-[24px]">
+                                    <span
+                                      @mousedown.prevent="if(document.activeElement !== $el) { dragging = true; startX = $event.clientX; startVal = opacity; document.body.style.cursor = 'ew-resize'; }"
+                                      class="text-sm text-Theme-dark-gray font-inter-display-medium cursor-ew-resize select-none">%</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <!--lineheight-->
+                              <div x-data="dropdownComponent('global-lineheight')"
+                                class="relative w-full max-w-[140px]">
+                                <button @click="toggle"
+                                  :class="isOpen ? 'bg-white !border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'"
+                                  class="w-full border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5
+text-sm font-inter-display-medium leading-[22px] text-Theme-black
+outline-none focus:outline-none focus:ring-0 focus-visible:outline-none
+focus-visible:ring-0 appearance-none transition-all duration-500">
+                                  <div class="flex items-center gap-2.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                       fill="none">
-                                      <path d="M10.6654 1.33594V4.0026M5.33203 1.33594V4.0026" stroke="#57534E"
-                                        stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M9.16797 5H17.5013" stroke="#020012" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M9.16797 10H17.5013" stroke="#020012" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M9.16797 15H17.5013" stroke="#020012" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                       <path
-                                        d="M8.66667 2.66406H7.33333C4.81917 2.66406 3.5621 2.66406 2.78105 3.44511C2 4.22616 2 5.48324 2 7.9974V9.33073C2 11.8449 2 13.102 2.78105 13.883C3.5621 14.6641 4.81917 14.6641 7.33333 14.6641H8.66667C11.1808 14.6641 12.4379 14.6641 13.2189 13.883C14 13.102 14 11.8449 14 9.33073V7.9974C14 5.48324 14 4.22616 13.2189 3.44511C12.4379 2.66406 11.1808 2.66406 8.66667 2.66406Z"
-                                        stroke="#57534E" stroke-width="1.2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                      <path d="M2 6.66406H14" stroke="#57534E" stroke-width="1.2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                      <path
-                                        d="M8.08256 9.33073H7.99923M8.08256 11.9974H7.99923M5.08203 9.33073H4.9987M5.08203 11.9974H4.9987M11.082 9.33073H10.9987M8.1659 9.33073C8.1659 9.4228 8.0913 9.4974 7.99923 9.4974C7.90723 9.4974 7.83256 9.4228 7.83256 9.33073C7.83256 9.23866 7.90723 9.16406 7.99923 9.16406C8.0913 9.16406 8.1659 9.23866 8.1659 9.33073ZM8.1659 11.9974C8.1659 12.0895 8.0913 12.1641 7.99923 12.1641C7.90723 12.1641 7.83256 12.0895 7.83256 11.9974C7.83256 11.9053 7.90723 11.8307 7.99923 11.8307C8.0913 11.8307 8.1659 11.9053 8.1659 11.9974ZM5.16536 9.33073C5.16536 9.4228 5.09074 9.4974 4.9987 9.4974C4.90665 9.4974 4.83203 9.4228 4.83203 9.33073C4.83203 9.23866 4.90665 9.16406 4.9987 9.16406C5.09074 9.16406 5.16536 9.23866 5.16536 9.33073ZM5.16536 11.9974C5.16536 12.0895 5.09074 12.1641 4.9987 12.1641C4.90665 12.1641 4.83203 12.0895 4.83203 11.9974C4.83203 11.9053 4.90665 11.8307 4.9987 11.8307C5.09074 11.8307 5.16536 11.9053 5.16536 11.9974ZM11.1654 9.33073C11.1654 9.4228 11.0908 9.4974 10.9987 9.4974C10.9066 9.4974 10.832 9.4228 10.832 9.33073C10.832 9.23866 10.9066 9.16406 10.9987 9.16406C11.0908 9.16406 11.1654 9.23866 11.1654 9.33073Z"
-                                        stroke="#57534E" stroke-width="1.2" stroke-linecap="round"
+                                        d="M4.16667 15.8307V4.16406M5.83333 13.7474L4.16667 15.8307L2.5 13.7474M5.83333 5.83073L4.16667 4.16406L2.5 5.83073"
+                                        stroke="#020012" stroke-width="1.4" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                     </svg>
-                                  </button>
-                                </div>
-                              </div>
-                              <!--select-->
-                              <div class="flex flex-col gap-[5px] ">
-                                <label for="reminder"
-                                  class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px] capitalize">reminders before deadline</label>
-                                <div x-data="dropdownComponent('reminder')" class="relative w-full ">
-                                  <button @click="toggle" :class="isOpen ? 'bg-white border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'"  class="w-full  border  rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black   focus:outline-none transition-all duration-500">
-                                    1 Day
-                                    <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M8.60156 0.601562L4.60156 4.60156L0.601562 0.601562" stroke="#020012" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
+                                    <span>1.25</span>
+                                  </div>
 
-                                  </button>
-                                  <div x-ref="reminder" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10 p-2 mt-2 w-full bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
-                                    
-                                    <div class="bg-white rounded-lg p-2 ">
-                                      <!--list-->
-                                      <ul class="flex flex-col gap-0.5">
-                                        <li>
-                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                          1 Day
-                                          </button>
-                                        </li>
-                                        <li>
-                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                        2 Day
-                                          </button>
-                                        </li>
-                                      </ul>
-                                    </div>
+                                  <svg class="transition-all duration-500" :class="{'rotate-180': isOpen}"
+                                    xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"
+                                    fill="none">
+                                    <path d="M8.80273 0.799234L4.80257 4.7994L0.80005 0.796875" stroke="#000A06"
+                                      stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                                </button>
+                                <div x-ref="global-lineheight" x-show="isOpen" x-transition=""
+                                  x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height"
+                                  @click.outside="close" @keydown.escape.window="close()"
+                                  class="absolute right-0 z-10  mt-[5px] w-[130px] bg-gradient-gray rounded-10px p-[2px]"
+                                  style="overflow: hidden; transition: height 300ms; height: auto;">
+                                  <span
+                                    class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Line
+                                    Height</span>
+                                  <div class="bg-white rounded-lg p-2 ">
+                                    <!--list-->
+                                    <ul class="flex flex-col gap-0.5">
+                                      <li>
+                                        <button
+                                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                          1
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button data-modal-target="convert-to-template" @click="close()"
+                                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                          1.25
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button
+                                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                          1.5
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button
+                                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                          2
+                                        </button>
+                                      </li>
+
+                                    </ul>
                                   </div>
                                 </div>
                               </div>
                             </div>
+                            <div class="flex items-center gap-2.5 ">
+                              <!--alignment-->
+                              <ul class="bg-Theme-Forground rounded-lg p-1 flex items-center gap-1.5">
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC]">
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path d="M2.5 5.83594H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M2.5 10H10.3917" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M2.5 14.1719H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC]">
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path d="M2.5 5.83594H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M6.05078 10H13.9508" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M2.5 14.1719H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC]">
+
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path d="M2.5 5.83594H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M9.60742 10H17.4991" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M2.5 14.1719H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC] active">
+
+
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path d="M2.5 5.83594H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M2.5 10H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M2.5 14.1719H17.5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
+                                </li>
+                              </ul>
+                              <!--font style-->
+                              <ul class="bg-Theme-Forground rounded-lg p-1 flex items-center gap-1.5">
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC]">
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path d="M16.6654 10H3.33203" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC]">
+
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path
+                                        d="M15.4167 5.83594H13.75C13.3617 5.83594 13.1676 5.83594 13.0144 5.89937C12.8103 5.98395 12.648 6.14618 12.5634 6.35037C12.5 6.50351 12.5 6.69765 12.5 7.08594V10.0026H15.4167C16.5672 10.0026 17.5 9.06985 17.5 7.91927C17.5 6.76868 16.5672 5.83594 15.4167 5.83594Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path
+                                        d="M16.25 10H12.5V13C12.5 13.3103 12.5 13.4653 12.5407 13.5908C12.6232 13.8446 12.8221 14.0434 13.0758 14.1259C13.2013 14.1667 13.3564 14.1667 13.6667 14.1667H16.25C17.4006 14.1667 18.3333 13.2339 18.3333 12.0833C18.3333 10.9327 17.4006 10 16.25 10Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path
+                                        d="M1.08208 13.9469C0.959267 14.2695 1.12123 14.6306 1.44382 14.7534C1.76641 14.8762 2.12748 14.7143 2.25028 14.3916L1.66618 14.1693L1.08208 13.9469ZM8.5821 14.3916C8.70485 14.7143 9.06593 14.8762 9.38852 14.7534C9.71118 14.6306 9.8731 14.2695 9.75027 13.9469L9.16618 14.1693L8.5821 14.3916ZM2.91618 11.0443C2.57101 11.0443 2.29118 11.3241 2.29118 11.6693C2.29118 12.0144 2.57101 12.2943 2.91618 12.2943V11.6693V11.0443ZM7.91618 12.2943C8.26136 12.2943 8.54118 12.0144 8.54118 11.6693C8.54118 11.3241 8.26136 11.0443 7.91618 11.0443V11.6693V12.2943ZM3.85563 8.41819L3.27153 8.19578L1.08208 13.9469L1.66618 14.1693L2.25028 14.3916L4.43974 8.64052L3.85563 8.41819ZM9.16618 14.1693L9.75027 13.9469L7.56083 8.19578L6.97673 8.41819L6.39262 8.64052L8.5821 14.3916L9.16618 14.1693ZM3.85563 8.41819L4.43974 8.64052C4.7748 7.7604 5.00304 7.16505 5.21311 6.78203C5.43997 6.36839 5.50746 6.46094 5.41618 6.46094V5.83594V5.21094C4.74741 5.21094 4.36231 5.73386 4.11711 6.18095C3.85512 6.65866 3.59183 7.35444 3.27153 8.19578L3.85563 8.41819ZM6.97673 8.41819L7.56083 8.19578C7.24053 7.35443 6.97725 6.65866 6.71526 6.18095C6.47006 5.73386 6.08496 5.21094 5.41618 5.21094V5.83594V6.46094C5.32491 6.46094 5.3924 6.36839 5.61926 6.78203C5.82932 7.16505 6.05757 7.76039 6.39262 8.64052L6.97673 8.41819ZM2.91618 11.6693V12.2943H7.91618V11.6693V11.0443H2.91618V11.6693Z"
+                                        fill="currentColor" />
+                                    </svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC]">
+
+
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path
+                                        d="M5.41667 14.1693C7.0275 14.1693 8.33333 12.8634 8.33333 11.2526C8.33333 9.64177 7.0275 8.33594 5.41667 8.33594C3.80583 8.33594 2.5 9.64177 2.5 11.2526C2.5 12.8634 3.80583 14.1693 5.41667 14.1693Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path
+                                        d="M14.5846 14.1693C16.1955 14.1693 17.5013 12.8634 17.5013 11.2526C17.5013 9.64177 16.1955 8.33594 14.5846 8.33594C12.9738 8.33594 11.668 9.64177 11.668 11.2526C11.668 12.8634 12.9738 14.1693 14.5846 14.1693Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path d="M8.33203 8.33594V14.1693" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                      <path d="M11.668 5.83594V14.1693" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&.active]:bg-[#EEEEEC] active">
+
+                                    <svg
+                                      class="text-Theme-dark-gray transition-all duration-500 group-[&.active]:text-Theme-black"
+                                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                      fill="none">
+                                      <path
+                                        d="M17.9154 8.33594V14.1693M17.9154 11.2526C17.9154 12.8634 16.6095 14.1693 14.9987 14.1693C13.3879 14.1693 12.082 12.8634 12.082 11.2526C12.082 9.64177 13.3879 8.33594 14.9987 8.33594C16.6095 8.33594 17.9154 9.64177 17.9154 11.2526Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path
+                                        d="M1.4981 13.9469C1.37528 14.2695 1.53724 14.6306 1.85983 14.7534C2.18242 14.8762 2.54349 14.7143 2.6663 14.3916L2.0822 14.1693L1.4981 13.9469ZM8.99812 14.3916C9.12087 14.7143 9.48195 14.8762 9.80453 14.7534C10.1272 14.6306 10.2891 14.2695 10.1663 13.9469L9.5822 14.1693L8.99812 14.3916ZM3.3322 11.0443C2.98702 11.0443 2.7072 11.3241 2.7072 11.6693C2.7072 12.0144 2.98702 12.2943 3.3322 12.2943V11.6693V11.0443ZM8.3322 12.2943C8.67737 12.2943 8.9572 12.0144 8.9572 11.6693C8.9572 11.3241 8.67737 11.0443 8.3322 11.0443V11.6693V12.2943ZM4.27165 8.41819L3.68755 8.19578L1.4981 13.9469L2.0822 14.1693L2.6663 14.3916L4.85576 8.64052L4.27165 8.41819ZM9.5822 14.1693L10.1663 13.9469L7.97685 8.19578L7.39275 8.41819L6.80864 8.64052L8.99812 14.3916L9.5822 14.1693ZM4.27165 8.41819L4.85576 8.64052C5.19082 7.7604 5.41906 7.16505 5.62912 6.78203C5.85598 6.36839 5.92347 6.46094 5.8322 6.46094V5.83594V5.21094C5.16342 5.21094 4.77832 5.73386 4.53312 6.18095C4.27113 6.65866 4.00785 7.35444 3.68755 8.19578L4.27165 8.41819ZM7.39275 8.41819L7.97685 8.19578C7.65655 7.35443 7.39327 6.65866 7.13127 6.18095C6.88607 5.73386 6.50097 5.21094 5.8322 5.21094V5.83594V6.46094C5.74092 6.46094 5.80842 6.36839 6.03527 6.78203C6.24534 7.16505 6.47358 7.76039 6.80864 8.64052L7.39275 8.41819ZM3.3322 11.6693V12.2943H8.3322V11.6693V11.0443H3.3322V11.6693Z"
+                                        fill="currentColor" />
+                                    </svg>
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <!--button bottom-->
-                      <div class="flex items-center justify-end w-full p-3.5 gap-2">
-      <button class="btn-gray w-full text-center ">Cancel</button>
-      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
-         Save
-      </button>
-    </div>
+                      <!--content-->
+                      <div class="px-3.5">
+                        <!--accordion-->
+                        <div x-data="{ open: false }" class="py-3.5 pt-0 border-b border-[#EEEEEC]">
+                        <!--accordion header-->
+                        <div class="flex items-center justify-between">
+                          <h5 class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Heading 1</h5>
+                          <button @click="open = !open" :class="open ? 'bg-Theme-secondary-gray' : 'bg-transparent'" class="w-[30px] h-[30px] p-1.5 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray bg-transparent">
+                            <svg :class="open ? 'rotate-180' : ''" class="transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                              <path d="M9.70312 0.705779L5.20294 5.20596L0.700104 0.703125" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </button>
+                        </div>
+                        <!--accordion content-->
+                        <div x-ref="panel" :style="'max-height: ' + (open ? $refs.panel.scrollHeight : 0) + 'px'" class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" style="max-height: 0px">
+                          <div class="pt-3.5 flex flex-col gap-3.5">
+                             <!--box-->
+                      <div class="flex flex-col gap-3 p-2.5 pt-3.5 border border-Theme-secondary-gray bg-white rounded-xl">
+                        <div class="flex justify-between items-center">
+                          <div class="flex items-center gap-2">
+                            <h5 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Doc.CreatedBy</h5>
+                            <span class="w-6 h-6 rounded-md bg-Theme-secondary-gray p-[2px] flex items-center justify-center text-sm font-inter-display-medium leading-[140%] text-Theme-dark-gray text-center">
+                              01
+                            </span>
+                          </div>
+                          <!--variable setting dropdown-->
+                          <div x-data="dropdownComponent('variable-setting')" class="relative w-max">
+                            <button @click="toggle" :class="{'bg-Theme-secondary-gray': isOpen}" class="w-6 h-6 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray ">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9748 7.99881H12.9859" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.9943 7.99881H8.00547" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3.01383 7.99881H3.02501" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="variable-setting" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[170px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Variable
+                                Setting</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2129)">
+                                          <path d="M6.75 11.25C6.75 9.1287 6.75 8.06805 7.40901 7.40901C8.06805 6.75 9.1287 6.75 11.25 6.75H12C14.1213 6.75 15.1819 6.75 15.841 7.40901C16.5 8.06805 16.5 9.1287 16.5 11.25V12C16.5 14.1213 16.5 15.1819 15.841 15.841C15.1819 16.5 14.1213 16.5 12 16.5H11.25C9.1287 16.5 8.06805 16.5 7.40901 15.841C6.75 15.1819 6.75 14.1213 6.75 12V11.25Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.7499 6.75C12.7481 4.53218 12.7146 3.38341 12.069 2.59682C11.9443 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59062 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59062 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9443 2.59682 12.069C3.38341 12.7146 4.53218 12.7481 6.75 12.7499" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2129">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Copy
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2135)">
+                                          <path d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2135">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Edit
+                                    </button>
+                                  </li>
+
+                                  <li>
+                                    <button data-modal-target="Delete-workspace" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                      </svg>
+
+
+
+                                      Delete
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--input-->
+                        <div class="relative">
+                          <input type="text" id="first-name" name="first-name" placeholder="Ankur Kanasagara" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                      </div>
+                      <!--box-->
+                      <div class="flex flex-col gap-3 p-2.5 pt-3.5 border border-Theme-secondary-gray bg-white rounded-xl">
+                        <div class="flex justify-between items-center">
+                          <div class="flex items-center gap-2">
+                            <h5 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Doc.CreatedDate
+                            </h5>
+                            <span class="w-6 h-6 rounded-md bg-Theme-secondary-gray p-[2px] flex items-center justify-center text-sm font-inter-display-medium leading-[140%] text-Theme-dark-gray text-center">
+                              00
+                            </span>
+                          </div>
+                          <!--variable setting dropdown-->
+                          <div x-data="dropdownComponent('variable-setting1')" class="relative w-max">
+                            <button @click="toggle" :class="{'bg-Theme-secondary-gray': isOpen}" class="w-6 h-6 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray ">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9748 7.99881H12.9859" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.9943 7.99881H8.00547" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3.01383 7.99881H3.02501" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="variable-setting1" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[170px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Variable
+                                Setting</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2129)">
+                                          <path d="M6.75 11.25C6.75 9.1287 6.75 8.06805 7.40901 7.40901C8.06805 6.75 9.1287 6.75 11.25 6.75H12C14.1213 6.75 15.1819 6.75 15.841 7.40901C16.5 8.06805 16.5 9.1287 16.5 11.25V12C16.5 14.1213 16.5 15.1819 15.841 15.841C15.1819 16.5 14.1213 16.5 12 16.5H11.25C9.1287 16.5 8.06805 16.5 7.40901 15.841C6.75 15.1819 6.75 14.1213 6.75 12V11.25Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.7499 6.75C12.7481 4.53218 12.7146 3.38341 12.069 2.59682C11.9443 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59062 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59062 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9443 2.59682 12.069C3.38341 12.7146 4.53218 12.7481 6.75 12.7499" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2129">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Copy
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2135)">
+                                          <path d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2135">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Edit
+                                    </button>
+                                  </li>
+
+                                  <li>
+                                    <button data-modal-target="Delete-workspace" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                      </svg>
+
+
+
+                                      Delete
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--input-->
+                        <div class="relative">
+                          <input type="text" id="date" name="date" placeholder="May 15, 2026" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                      </div>
+
+                      <!--box-->
+                      <div class="flex flex-col gap-3 p-2.5 pt-3.5 border border-Theme-secondary-gray bg-white rounded-xl">
+                        <div class="flex justify-between items-center">
+                          <div class="flex items-center gap-2">
+                            <h5 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Doc.Id</h5>
+                            <span class="w-6 h-6 rounded-md bg-Theme-secondary-gray p-[2px] flex items-center justify-center text-sm font-inter-display-medium leading-[140%] text-Theme-dark-gray text-center">
+                              01
+                            </span>
+                          </div>
+                          <!--variable setting dropdown-->
+                          <div x-data="dropdownComponent('variable-setting2')" class="relative w-max">
+                            <button @click="toggle" :class="{'bg-Theme-secondary-gray': isOpen}" class="w-6 h-6 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray ">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9748 7.99881H12.9859" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.9943 7.99881H8.00547" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3.01383 7.99881H3.02501" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="variable-setting2" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[170px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Variable
+                                Setting</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2129)">
+                                          <path d="M6.75 11.25C6.75 9.1287 6.75 8.06805 7.40901 7.40901C8.06805 6.75 9.1287 6.75 11.25 6.75H12C14.1213 6.75 15.1819 6.75 15.841 7.40901C16.5 8.06805 16.5 9.1287 16.5 11.25V12C16.5 14.1213 16.5 15.1819 15.841 15.841C15.1819 16.5 14.1213 16.5 12 16.5H11.25C9.1287 16.5 8.06805 16.5 7.40901 15.841C6.75 15.1819 6.75 14.1213 6.75 12V11.25Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.7499 6.75C12.7481 4.53218 12.7146 3.38341 12.069 2.59682C11.9443 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59062 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59062 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9443 2.59682 12.069C3.38341 12.7146 4.53218 12.7481 6.75 12.7499" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2129">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Copy
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2135)">
+                                          <path d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2135">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Edit
+                                    </button>
+                                  </li>
+
+                                  <li>
+                                    <button data-modal-target="Delete-workspace" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                      </svg>
+
+
+
+                                      Delete
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--input-->
+                        <div class="relative">
+                          <input type="text" id="doc-id" name="doc-id" placeholder="6a2s5f7g6820dtgy541" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                      </div>
+
+                      <!--box-->
+                      <div class="flex flex-col gap-3 p-2.5 pt-3.5 border border-Theme-secondary-gray bg-white rounded-xl">
+                        <div class="flex justify-between items-center">
+                          <div class="flex items-center gap-2">
+                            <h5 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Doc.LastModifedBy
+                            </h5>
+                            <span class="w-6 h-6 rounded-md bg-Theme-secondary-gray p-[2px] flex items-center justify-center text-sm font-inter-display-medium leading-[140%] text-Theme-dark-gray text-center">
+                              00
+                            </span>
+                          </div>
+                          <!--variable setting dropdown-->
+                          <div x-data="dropdownComponent('variable-setting3')" class="relative w-max">
+                            <button @click="toggle" :class="{'bg-Theme-secondary-gray': isOpen}" class="w-6 h-6 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray ">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9748 7.99881H12.9859" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.9943 7.99881H8.00547" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3.01383 7.99881H3.02501" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="variable-setting3" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[170px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Variable
+                                Setting</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2129)">
+                                          <path d="M6.75 11.25C6.75 9.1287 6.75 8.06805 7.40901 7.40901C8.06805 6.75 9.1287 6.75 11.25 6.75H12C14.1213 6.75 15.1819 6.75 15.841 7.40901C16.5 8.06805 16.5 9.1287 16.5 11.25V12C16.5 14.1213 16.5 15.1819 15.841 15.841C15.1819 16.5 14.1213 16.5 12 16.5H11.25C9.1287 16.5 8.06805 16.5 7.40901 15.841C6.75 15.1819 6.75 14.1213 6.75 12V11.25Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.7499 6.75C12.7481 4.53218 12.7146 3.38341 12.069 2.59682C11.9443 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59062 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59062 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9443 2.59682 12.069C3.38341 12.7146 4.53218 12.7481 6.75 12.7499" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2129">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Copy
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2135)">
+                                          <path d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2135">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Edit
+                                    </button>
+                                  </li>
+
+                                  <li>
+                                    <button data-modal-target="Delete-workspace" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                      </svg>
+
+
+
+                                      Delete
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--input-->
+                        <div class="relative">
+                          <input type="text" id="doc-name" name="doc-name" placeholder="Ankur Kanasagara" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                      </div>
+                      <!--box-->
+                      <div class="flex flex-col gap-3 p-2.5 pt-3.5 border border-Theme-secondary-gray bg-white rounded-xl">
+                        <div class="flex justify-between items-center">
+                          <div class="flex items-center gap-2">
+                            <h5 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Doc.LastModifedDate
+                            </h5>
+                            <span class="w-6 h-6 rounded-md bg-Theme-secondary-gray p-[2px] flex items-center justify-center text-sm font-inter-display-medium leading-[140%] text-Theme-dark-gray text-center">
+                              00
+                            </span>
+                          </div>
+                          <!--variable setting dropdown-->
+                          <div x-data="dropdownComponent('variable-setting5')" class="relative w-max">
+                            <button @click="toggle" :class="{'bg-Theme-secondary-gray': isOpen}" class="w-6 h-6 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray ">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9748 7.99881H12.9859" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M7.9943 7.99881H8.00547" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3.01383 7.99881H3.02501" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="variable-setting5" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[170px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Variable
+                                Setting</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2129)">
+                                          <path d="M6.75 11.25C6.75 9.1287 6.75 8.06805 7.40901 7.40901C8.06805 6.75 9.1287 6.75 11.25 6.75H12C14.1213 6.75 15.1819 6.75 15.841 7.40901C16.5 8.06805 16.5 9.1287 16.5 11.25V12C16.5 14.1213 16.5 15.1819 15.841 15.841C15.1819 16.5 14.1213 16.5 12 16.5H11.25C9.1287 16.5 8.06805 16.5 7.40901 15.841C6.75 15.1819 6.75 14.1213 6.75 12V11.25Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M12.7499 6.75C12.7481 4.53218 12.7146 3.38341 12.069 2.59682C11.9443 2.44492 11.8051 2.30563 11.6532 2.18097C10.8234 1.5 9.59062 1.5 7.125 1.5C4.65939 1.5 3.42658 1.5 2.59682 2.18097C2.44492 2.30563 2.30563 2.44492 2.18097 2.59682C1.5 3.42658 1.5 4.65939 1.5 7.125C1.5 9.59062 1.5 10.8234 2.18097 11.6532C2.30563 11.8051 2.44492 11.9443 2.59682 12.069C3.38341 12.7146 4.53218 12.7481 6.75 12.7499" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2129">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Copy
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                      <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <g clip-path="url(#clip0_8512_2135)">
+                                          <path d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                                          <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_8512_2135">
+                                            <rect width="18" height="18" fill="white"></rect>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                      Edit
+                                    </button>
+                                  </li>
+
+                                  <li>
+                                    <button data-modal-target="Delete-workspace" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      <svg class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                        <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                      </svg>
+
+
+
+                                      Delete
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--input-->
+                        <div class="relative">
+                          <input type="text" id="date" name="date" placeholder="May 15, 2026" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
                     </div>
                   </div>
 
@@ -5364,223 +6000,7 @@
       </button>
     </div>
   </div>
-  <!-- Datepicker model -->
-  <div
-    class="modalTrigger  flex modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto md:!max-w-[392px] !max-w-[350px]"
-    id="date-picker">
-    <!-- modal header  -->
-    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
-      <div class="flex items-center gap-[15px] ">
 
-        <h4 class="text-sm font-inter-display-medium capitalize leading-140 text-Theme-light-gray">
-          Set a due date
-        </h4>
-      </div>
-
-      <button class="close-btn cursor-pointer">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 4L4.00054 11.9995M11.9995 12L4 4.00057" stroke="black" stroke-width="1.2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-
-      </button>
-    </div>
-    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 md:px-5 px-3">
-      <!-- DATE PICKER -->
-      <div x-data="datePicker()" class="w-full ">
-        <!-- Quick Actions -->
-        <div class="grid grid-cols-4 gap-1 mb-3 bg-Theme-secondary-gray rounded-lg p-[2px]">
-          <button @click="setQuickDate(0)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white active">
-            Today
-          </button>
-
-          <button @click="setQuickDate(1)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
-            Tomorrow
-          </button>
-
-          <button @click="setQuickDate(3)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
-            In 3 Days
-          </button>
-
-          <button @click="setQuickDate(7)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
-            In 1 Week
-          </button>
-        </div>
-
-        <!-- Calendar Header -->
-        <!-- Calendar Header -->
-        <div class="flex items-center gap-2 mb-2">
-
-          <!-- Month Navigation -->
-          <div class="flex items-center h-[36px] justify-between flex-1 border border-[#EBEBEB]
-  rounded-lg px-1 py-1.5 transition-all duration-300 hover:border-[#D8D8D8]">
-
-            <!-- Prev -->
-            <button @click="prevMonth" class="w-[28px] h-[28px] rounded-md hover:bg-Theme-secondary-gray
-      flex items-center justify-center transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
-                <path d="M4.80094 8.79956L0.800781 4.7994L4.8033 0.796875" stroke="#000A06" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-
-            <!-- Month Name -->
-            <div class="flex-1 text-center">
-              <span class="text-sm font-inter-display-medium
-        leading-[22px] text-Theme-black" x-text="months[month]"></span>
-            </div>
-
-            <!-- Next -->
-            <button @click="nextMonth" class="w-[28px] h-[28px] rounded-md hover:bg-Theme-secondary-gray
-      flex items-center justify-center transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
-                <path d="M0.803141 0.796875L4.8033 4.79704L0.800781 8.79956" stroke="#000A06" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-
-          </div>
-
-          <!-- Year Select -->
-          <div x-data="dropdownComponent('year-menu')" class="relative w-[78px] shrink-0">
-            <button @click="toggle" :class="{'border-[#D8D8D8]': isOpen}"
-              class="border border-[#EBEBEB]
-  rounded-lg  transition-all duration-300  p-[6px] flex items-center gap-1 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:border-[#D8D8D8]">
-              <div class="flex items-center gap-1.5 hover">
-
-                2023
-              </div>
-              <!-- arrow -->
-              <div class="w-4 h-4 flex items-center justify-center">
-                <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out rotate-180"
-                  width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.60156 0.601562L4.60156 4.60156L0.601562 0.601562" stroke="#020012" stroke-width="1.2"
-                    stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </div>
-            </button>
-
-
-            <div x-ref="year-menu" x-show="isOpen" x-transition=""
-              x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
-              class="absolute left-0 z-10 p-2 mt-[5px] w-[78px] bg-gradient-gray rounded-10px p-[2px]"
-              style="overflow: hidden; transition: height 300ms; height: auto;">
-              <span
-                class="py-1.5 px-3.5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Year</span>
-              <div class="bg-white rounded-lg p-1">
-                <!--list-->
-                <ul class="flex flex-col gap-0.5 max-h-[150px] overflow-y-auto custom-scrollbar pr-1">
-                  <li>
-                    <a href="#"
-                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                      2023
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                      2024
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                      2025
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                      2026
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                      2027
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                      2028
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Days -->
-        <div class="grid grid-cols-7 gap-x-3 mb-2">
-          <template x-for="day in weekDays" :key="day">
-            <div class="h-10 w-10 flex items-center justify-center
-        text-sm font-inter-display-medium leading-[22px] text-Theme-black" x-text="day"></div>
-          </template>
-        </div>
-
-        <!-- Dates -->
-        <div class="grid grid-cols-7 gap-y-3 gap-x-3 mb-3">
-
-          <template x-for="(date,index) in calendarDays" :key="index">
-
-            <button @click="selectDate(date)" :disabled="!date.currentMonth"
-              class="w-10 h-10 mx-auto rounded-lg text-sm font-inter-display-medium leading-[22px] transition-all duration-200"
-              :class="{
-          'text-[#9C9C9C]': !date.currentMonth,
-          'hover:bg-Theme-secondary-gray text-Theme-black': date.currentMonth && !date.selected,
-          'bg-[#8B5CF6] text-white': date.selected,
-          'bg-Theme-purple text-white': date.today && !date.selected
-        }">
-              <span x-text="date.day"></span>
-            </button>
-
-          </template>
-
-        </div>
-
-        <!-- Reminder -->
-        <div class="space-y-3 border-t border-Theme-secondary-gray pt-3">
-          <!--checkbox-->
-          <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
-            <!-- Checkbox -->
-            <input type="checkbox"
-              class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
-            <!-- SVG Checkmark -->
-            <div
-              class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
-              <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
-                  stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-            <!-- Label text -->
-            <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
-                  peer-checked:text-Theme-black">
-              Enable reminders before deadline
-            </span>
-          </label>
-
-        </div>
-
-
-      </div>
-    </div>
-    <!-- modal footer  -->
-    <div class="flex items-center justify-end w-full p-2 gap-2">
-      <button class="btn-white w-full text-center">Cancel</button>
-      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
-
-        Set Due Date
-      </button>
-    </div>
-  </div>
 
   <!-- modal overlay  -->
   <div
@@ -5787,165 +6207,5 @@
     }
   }
 </script>
-<!--datepicekr-->
-<script>
-  function datePicker() {
-    return {
 
-      today: new Date(),
-
-      selectedDate: null,
-
-      month: new Date().getMonth(),
-
-      year: new Date().getFullYear(),
-
-      yearDropdownOpen: false,
-
-      weekDays: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
-
-      months: [
-        'January', 'February', 'March', 'April',
-        'May', 'June', 'July', 'August',
-        'September', 'October', 'November', 'December'
-      ],
-
-      calendarDays: [],
-
-      get yearRange() {
-        return Array.from(
-          { length: 20 },
-          (_, i) => this.today.getFullYear() - 5 + i
-        )
-      },
-
-      init() {
-
-        this.generateCalendar()
-
-        // close arrow state when clicking outside
-        document.addEventListener('click', (e) => {
-
-          if (!e.target.closest('.year-select-wrapper')) {
-            this.yearDropdownOpen = false
-          }
-
-        })
-      },
-
-      generateCalendar() {
-
-        this.calendarDays = []
-
-        const firstDay = new Date(this.year, this.month, 1)
-        const lastDay = new Date(this.year, this.month + 1, 0)
-
-        let startDay = firstDay.getDay()
-        startDay = startDay === 0 ? 6 : startDay - 1
-
-        const totalDays = lastDay.getDate()
-
-        // Previous month days
-        const prevMonthLastDate = new Date(
-          this.year,
-          this.month,
-          0
-        ).getDate()
-
-        for (let i = startDay; i > 0; i--) {
-
-          this.calendarDays.push({
-            day: prevMonthLastDate - i + 1,
-            currentMonth: false
-          })
-
-        }
-
-        // Current month days
-        for (let day = 1; day <= totalDays; day++) {
-
-          const isToday =
-            day === this.today.getDate() &&
-            this.month === this.today.getMonth() &&
-            this.year === this.today.getFullYear()
-
-          const isSelected =
-            this.selectedDate &&
-            day === this.selectedDate.getDate() &&
-            this.month === this.selectedDate.getMonth() &&
-            this.year === this.selectedDate.getFullYear()
-
-          this.calendarDays.push({
-            day,
-            currentMonth: true,
-            today: isToday,
-            selected: isSelected
-          })
-
-        }
-
-        // Fill remaining cells
-        while (this.calendarDays.length % 7 !== 0) {
-
-          this.calendarDays.push({
-            day: this.calendarDays.length % 7 + 1,
-            currentMonth: false
-          })
-
-        }
-      },
-
-      selectDate(date) {
-
-        if (!date.currentMonth) return
-
-        this.selectedDate = new Date(
-          this.year,
-          this.month,
-          date.day
-        )
-
-        this.generateCalendar()
-      },
-
-      prevMonth() {
-
-        if (this.month === 0) {
-          this.month = 11
-          this.year--
-        } else {
-          this.month--
-        }
-
-        this.generateCalendar()
-      },
-
-      nextMonth() {
-
-        if (this.month === 11) {
-          this.month = 0
-          this.year++
-        } else {
-          this.month++
-        }
-
-        this.generateCalendar()
-      },
-
-      setQuickDate(days) {
-
-        const date = new Date()
-
-        date.setDate(date.getDate() + days)
-
-        this.selectedDate = date
-
-        this.month = date.getMonth()
-        this.year = date.getFullYear()
-
-        this.generateCalendar()
-      }
-    }
-  }
-</script>
 </html>

@@ -5878,8 +5878,7 @@
           <label for="doc-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Select
             Template</label>
           <div x-data="dropdownComponent('choose-workspace-menu')" class="relative w-full ">
-            <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}"
-              class="w-full bg-[#FAFAF9] border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:bg-[#f7f7f7] focus:bg-[#f7f7f7] focus:outline-none transition-all duration-300">
+            <button @click="toggle" :class="isOpen ? 'bg-white border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'"  class="w-full  border  rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black   focus:outline-none transition-all duration-500">
               Personal Workspace
               <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out" width="10" height="6"
                 viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6041,8 +6040,7 @@
         <div class="flex flex-col gap-[5px] ">
           <label class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Select Workspace</label>
           <div x-data="dropdownComponent('choose-workspace-menu')" class="relative w-full ">
-            <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}"
-              class="w-full bg-[#FAFAF9] border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:bg-[#f7f7f7] focus:bg-[#f7f7f7] focus:outline-none transition-all duration-300">
+            <button @click="toggle" :class="isOpen ? 'bg-white border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'"  class="w-full  border  rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black   focus:outline-none transition-all duration-500">
               Personal Workspace
               <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out" width="10" height="6"
                 viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">

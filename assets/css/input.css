@@ -465,3 +465,45 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/*==========range slider===========*/
+        .range-wrap {
+        width: 100%;
+        height: 8px;
+        background: #EEEEEC;
+        border-radius: 10px;
+        padding: 2px;        
+        position: relative;
+        }
+
+        /* Real input covers the inner area */
+        .range {
+        position: absolute;
+        appearance: none;
+        width: 100%;
+        height: 4px;         
+        background: transparent;
+        border-radius: 10px;
+        outline: none;
+
+        /* inner filled part fully rounded */
+        background-image: linear-gradient(#57534E, #57534E);
+        background-size: var(--val, 0%) 100%;
+        background-repeat: no-repeat;
+        background-position: left center;
+        width: calc(100% - 4px);
+        }
+
+        /* hollow thumb */
+        .range::-webkit-slider-thumb {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border: 4px solid #57534E;
+        border-radius: 50%;
+        cursor: pointer;
+
+        /* align thumb */
+        margin-top: -2px;  
+        }

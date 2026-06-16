@@ -559,7 +559,6 @@
       <div x-show="$store.sidebar.open" @click="$store.sidebar.open = false" x-transition.opacity
         class="fixed inset-0 z-40 bg-[rgba(0,0,0,0.14)] min-[1441px]:hidden"></div>
 
-
     </div>
     <!--Main Content-->
     <div :class="$store.sidebar.open 
@@ -1888,6 +1887,359 @@ Link to Page
                       </li>
                        
                     </ul>
+                  </div>
+                </div>
+
+                <!--dropdown design-->
+                <div class="grid grid-cols-5 gap-5">
+                  <!--text-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px]  justify-center p-5">
+                        <span class="w-full h-2 rounded-[2px] bg-[#D9D9D9]/20"></span>
+                        <span class="w-full h-2 rounded-[2px] bg-[#D9D9D9]/20"></span>
+                        <span class="w-[80%] h-2 rounded-[2px] bg-[#D9D9D9]/20"></span>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Text</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Just start with writing plain text</p>
+                      </div>
+                  </div>
+                   <!--heading 1-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px]  justify-center p-5">
+                        <span class="w-[95px] h-3.5 rounded-[2px] bg-[#ECECEC]"></span>
+                        <span class="w-full h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                        <span class="w-[80%] h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Heading 1</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Big section heading</p>
+                      </div>
+                  </div>
+                   <!--heading 2-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px]  justify-center p-5">
+                        <span class="w-[95px] h-3.5 rounded-[2px] bg-[#ECECEC]"></span>
+                        <span class="w-full h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                        <span class="w-[80%] h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Heading 2</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Medium section heading</p>
+                      </div>
+                  </div>
+                   <!--heading 3-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px]  justify-center p-5">
+                        <span class="w-[95px] h-3.5 rounded-[2px] bg-[#ECECEC]"></span>
+                        <span class="w-full h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                        <span class="w-[80%] h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Heading 3</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Small section heading</p>
+                      </div>
+                  </div>
+                   <!--heading 4-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px]  justify-center p-5">
+                        <span class="w-[95px] h-3.5 rounded-[2px] bg-[#ECECEC]"></span>
+                        <span class="w-full h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                        <span class="w-[80%] h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Heading 4</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Smallest section heading</p>
+                      </div>
+                  </div>
+                   <!--signature-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px] items-center  justify-center p-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="88" height="45" viewBox="0 0 88 45" fill="none">
+  <path d="M80.6693 23.6895C66.0026 30.2747 63.9049 19.9144 56.2845 20.6559C47.6693 21.4944 42.1693 30.8334 47.6693 30.8334C53.1693 30.8334 45.8359 19.6875 38.5026 23.5418C31.1693 27.3958 28.8203 32.4274 22.8652 28.6922C-5.4974 10.9021 18.3359 -2.15613 29.9344 6.4816C37.2754 11.9486 23.8359 31.8317 7.33594 41.25" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25.5508 39.375H42.583" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Signature</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Get recipient signature</p>
+                      </div>
+                  </div>
+                  <!--initial-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[5px] items-center  justify-center p-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="88" height="45" viewBox="0 0 88 45" fill="none">
+  <path d="M80.6693 23.6895C66.0026 30.2747 63.9049 19.9144 56.2845 20.6559C47.6693 21.4944 42.1693 30.8334 47.6693 30.8334C53.1693 30.8334 45.8359 19.6875 38.5026 23.5418C31.1693 27.3958 28.8203 32.4274 22.8652 28.6922C-5.4974 10.9021 18.3359 -2.15613 29.9344 6.4816C37.2754 11.9486 23.8359 31.8317 7.33594 41.25" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25.5508 39.375H42.583" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Initial</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Get recipient initials</p>
+                      </div>
+                  </div>
+                   <!--stamp-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[25px]   justify-center p-5">
+                          <div class="flex flex-col gap-[5px] w-full">
+                              <span class="w-full h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                              <span class="w-[80%] h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                          </div>
+                           <span class="w-[95px] h-3.5 rounded-[2px] bg-[#ECECEC] ml-auto"></span>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Stamp</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Add official stamp</p>
+                      </div>
+                  </div>
+                   <!--date-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[25px]   justify-center p-5">
+                          <div class="flex gap-[4px] items-center justify-end w-full">
+                              <span class="w-[13px] h-2.5 rounded-[3px] bg-[#F0F0F0]"></span>
+                              <span class="text-xs text-[#CBCBCB] font-inter-display-medium">/</span>
+                               <span class="w-[13px] h-2.5 rounded-[3px] bg-[#F0F0F0]"></span>
+                                <span class="text-xs text-[#CBCBCB] font-inter-display-medium">/</span>
+                                <span class="w-[13px] h-2.5 rounded-[3px] bg-[#F0F0F0]"></span>
+                          </div>
+                          <div class="flex flex-col gap-[5px]">
+                             <span class="w-full h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                              <span class="w-[80%] h-2 rounded-[2px] bg-[#F7F7F7]"></span>
+                          </div>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Date</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Select signing date</p>
+                      </div>
+                  </div>
+                   <!--quote-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                          <div class="flex  w-full">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M9.16537 7.33073C9.16537 9.05921 9.16537 9.92343 8.62839 10.4604C8.09143 10.9974 7.22718 10.9974 5.4987 10.9974C3.77021 10.9974 2.90597 10.9974 2.36901 10.4604C1.83203 9.92343 1.83203 9.05921 1.83203 7.33073C1.83203 5.60224 1.83203 4.738 2.36901 4.20104C2.90597 3.66406 3.77021 3.66406 5.4987 3.66406C7.22718 3.66406 8.09143 3.66406 8.62839 4.20104C9.16537 4.738 9.16537 5.60224 9.16537 7.33073Z" stroke="#CBCBCB" stroke-width="2"/>
+  <path d="M9.16797 6.41406V10.5227C9.16797 14.1642 6.8619 17.2525 3.66797 18.3307" stroke="#CBCBCB" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20.1654 7.33073C20.1654 9.05921 20.1654 9.92343 19.6284 10.4604C19.0914 10.9974 18.2272 10.9974 16.4987 10.9974C14.7702 10.9974 13.906 10.9974 13.369 10.4604C12.832 9.92343 12.832 9.05921 12.832 7.33073C12.832 5.60224 12.832 4.738 13.369 4.20104C13.906 3.66406 14.7702 3.66406 16.4987 3.66406C18.2272 3.66406 19.0914 3.66406 19.6284 4.20104C20.1654 4.738 20.1654 5.60224 20.1654 7.33073Z" stroke="#CBCBCB" stroke-width="2"/>
+  <path d="M20.168 6.41406V10.5227C20.168 14.1642 17.8619 17.2525 14.668 18.3307" stroke="#CBCBCB" stroke-width="2" stroke-linecap="round"/>
+</svg>
+                          </div>
+                          <div class="flex flex-col gap-[5px]">
+                             <span class="w-full h-2 rounded-[2px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[80%] h-2 rounded-[2px] bg-[#D9D9D9]/30"></span>
+                          </div>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Quote / Blockquote
+</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Highlight important text</p>
+                      </div>
+                  </div>
+                   <!--bullet list-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                          <div class="flex flex-col gap-[5px] w-full">
+                              <div class="flex items-center gap-[5px]">
+                                  <span class="w-2 h-2 bg-[#D9D9D9]/30 rounded-full"></span>
+                                   <span class="w-full h-2 rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              </div>
+                              <div class="flex items-center gap-[5px]">
+                                  <span class="w-2 h-2 bg-[#D9D9D9]/30 rounded-full"></span>
+                                   <span class="w-full h-2 rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              </div>
+                              <div class="flex items-center gap-[5px]">
+                                  <span class="w-2 h-2 bg-[#D9D9D9]/30 rounded-full"></span>
+                                   <span class="w-full h-2 rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              </div>
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Bullet List
+</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Create bullet points</p>
+                      </div>
+                  </div>
+                   <!--number list-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                          <div class="flex flex-col gap-[9px] w-full">
+                              <div class="flex items-center gap-[5px]">
+                                  <span class="text-[10px] font-inter-display-semibold text-[#CBCBCB]">1</span>
+                                   <span class="w-full h-2 rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              </div>
+                              <div class="flex items-center gap-[5px]">
+                                  <span class="text-[10px] font-inter-display-semibold text-[#CBCBCB]">2</span>
+                                   <span class="w-full h-2 rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              </div>
+                              <div class="flex items-center gap-[5px]">
+                                  <span class="text-[10px] font-inter-display-semibold text-[#CBCBCB]">3</span>
+                                   <span class="w-full h-2 rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              </div>
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Number List</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Create numbered items</p>
+                      </div>
+                  </div>
+                   <!--table-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                          <div class="flex flex-col gap-[1.26px] w-full">
+                              <div class="flex items-center gap-[1px] my-[1.78px]">
+                                <span class="w-[40px] h-[14px] bg-[#ECECEC] rounded-[3px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[#ECECEC] rounded-[3px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[#ECECEC] rounded-[3px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[#ECECEC] rounded-[3px]"></span>
+                              </div>
+                              <div class="flex items-center gap-[1px] ">
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                              </div>
+                              <div class="flex items-center gap-[1px] ">
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                              </div>
+                              <div class="flex items-center gap-[1px] ">
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                                <span class="w-[40px] h-[14px] bg-[rgba(217,217,217,0.20)] rounded-[2px]"></span>
+                              </div>
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Table</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Organize data neatly</p>
+                      </div>
+                  </div>
+                    <!--image-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-2.5">
+                          <div class="w-full h-[80px] rounded-[4px] bg-[#F7F7F7] flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <g opacity="0.5">
+    <path d="M2.5 13.3307L6.22472 9.60598C6.50769 9.32306 6.89148 9.16406 7.29167 9.16406C7.69185 9.16406 8.07564 9.32306 8.35858 9.60598L11.6667 12.9141M11.6667 12.9141L12.9167 14.1641M11.6667 12.9141L13.3081 11.2726C13.591 10.9897 13.9748 10.8307 14.375 10.8307C14.7752 10.8307 15.159 10.9897 15.4419 11.2726L17.5 13.3307" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.9167 6.66927C13.1467 6.66927 13.3333 6.48272 13.3333 6.2526C13.3333 6.02249 13.1467 5.83594 12.9167 5.83594M12.9167 6.66927C12.6866 6.66927 12.5 6.48272 12.5 6.2526C12.5 6.02249 12.6866 5.83594 12.9167 5.83594M12.9167 6.66927V5.83594" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M3.08034 16.4586C2.08203 15.2898 2.08203 13.5274 2.08203 10.0026C2.08203 6.47783 2.08203 4.71544 3.08034 3.54657C3.2221 3.38059 3.37668 3.226 3.54266 3.08425C4.71153 2.08594 6.47392 2.08594 9.9987 2.08594C13.5234 2.08594 15.2859 2.08594 16.4547 3.08425C16.6207 3.226 16.7753 3.38059 16.917 3.54657C17.9154 4.71544 17.9154 6.47783 17.9154 10.0026C17.9154 13.5274 17.9154 15.2898 16.917 16.4586C16.7753 16.6246 16.6207 16.7792 16.4547 16.9209C15.2859 17.9193 13.5234 17.9193 9.9987 17.9193C6.47392 17.9193 4.71153 17.9193 3.54266 16.9209C3.37668 16.7792 3.2221 16.6246 3.08034 16.4586Z" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Image</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Insert an image</p>
+                      </div>
+                  </div>
+                   <!--divider-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                         <div class="flex flex-col gap-[9px]">
+                             <span class="w-full h-2 rounded-[1px] bg-[#F4F4F4]"></span>
+                              <span class="w-full h-[1px] rounded-[1px] bg-[#CBCBCB]/30"></span>
+                               <span class="w-full h-2 rounded-[1px] bg-[#F4F4F4]"></span>
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Divider</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Separate content sections</p>
+                      </div>
+                  </div>
+                   <!--2 columns-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                         <div class="flex items-center gap-[6px]">
+                             <span class="w-[80px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[80px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">2 Columns</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Two-column layout</p>
+                      </div>
+                  </div>
+                   <!--3 columns-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                         <div class="flex items-center gap-[6px]">
+                             <span class="w-[50px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[50px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[50px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">3 Columns</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Three-column layout</p>
+                      </div>
+                  </div>
+                   <!--4 columns-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-2.5  justify-center p-5">
+                         <div class="flex items-center gap-[6px]">
+                             <span class="w-[37px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[37px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[37px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              <span class="w-[37px] h-[60px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                              
+                          </div>
+                          
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">4 Columns</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Four-column layout</p>
+                      </div>
+                  </div>
+                   <!--variable-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[4px]  justify-center p-5">
+                       <span class="w-[80px] h-2 rounded-[2px] bg-[#D9D9D9]/30"></span>
+                        <div class="rounded-[2px] h-[48px] bg-[#D9D9D9]/30 p-2.5">
+                          <div class="flex items-center justify-center flex-wrap gap-x-[3px] gap-y-[7px] ">
+                             <span class="w-[71px] h-[3px] rounded-[1px] bg-[#D9D9D9]/50"></span>
+                             <span class="w-[34px] h-[3px] rounded-[1px] bg-[#D9D9D9]/50"></span>
+                             <span class="w-[34px] h-[3px] rounded-[1px] bg-[#D9D9D9]/50"></span>
+                             <span class="w-[34px] h-[3px] rounded-[1px] bg-[#D9D9D9]/50"></span>
+                             <span class="w-[71px] h-[3px] rounded-[1px] bg-[#D9D9D9]/50"></span>
+                              <span class="w-[34px] h-[3px] rounded-[1px] bg-[#D9D9D9]/50"></span>
+                           </div>  
+                          </div>
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Variables</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Insert reusable values</p>
+                      </div>
+                  </div>
+                   <!--link to page-->
+                  <div class="bg-[rgba(245,245,244,0.50)] p-[2px] rounded-10px w-[210px] h-[160px]">
+                      <div class="bg-white h-[100px] rounded-lg flex flex-col gap-[4px]  justify-center p-5">
+                      
+                          <div class="flex flex-col items-center gap-[6px] ">
+                            <div class="flex items-center gap-[6px]">
+                               <span class="w-[80px] h-[14px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                               <span class="w-[80px] h-[14px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                            </div>
+                             <span class="w-full h-[27px] rounded-[1px] bg-[#D9D9D9]/30"></span>
+                             <span class="w-full h-[3px] rounded-[1px] bg-[#CBCBCB]/30"></span>
+                            
+                           </div>  
+                        
+                      </div>
+                      <div class="py-2.5 px-[15px] flex flex-col gap-[2px]">
+                          <h5 class="text-sm font-inter-display-medium text-Theme-black">Link to Page</h5>
+                          <p class="text-xs leading-[18px] text-Theme-dark-gray">Connect to a page</p>
+                      </div>
                   </div>
                 </div>
           </div>

@@ -549,9 +549,6 @@
   .my-5 {
     margin-block: calc(var(--spacing) * 5);
   }
-  .my-\[1\.78\] {
-    margin-block: 1.78;
-  }
   .my-\[1\.78px\] {
     margin-block: 1.78px;
   }
@@ -804,6 +801,9 @@
   }
   .h-\[15px\] {
     height: 15px;
+  }
+  .h-\[16px\] {
+    height: 16px;
   }
   .h-\[18px\] {
     height: 18px;
@@ -1168,6 +1168,9 @@
   .w-\[60px\] {
     width: 60px;
   }
+  .w-\[70px\] {
+    width: 70px;
+  }
   .w-\[71px\] {
     width: 71px;
   }
@@ -1183,11 +1186,17 @@
   .w-\[82px\] {
     width: 82px;
   }
+  .w-\[90px\] {
+    width: 90px;
+  }
   .w-\[95px\] {
     width: 95px;
   }
   .w-\[100px\] {
     width: 100px;
+  }
+  .w-\[115px\] {
+    width: 115px;
   }
   .w-\[130px\] {
     width: 130px;
@@ -1642,12 +1651,6 @@
   .gap-\[2px\] {
     gap: 2px;
   }
-  .gap-\[3px\] {
-    gap: 3px;
-  }
-  .gap-\[4p\] {
-    gap: 4p;
-  }
   .gap-\[4px\] {
     gap: 4px;
   }
@@ -1716,9 +1719,6 @@
   }
   .gap-y-3 {
     row-gap: calc(var(--spacing) * 3);
-  }
-  .gap-y-\[3px\] {
-    row-gap: 3px;
   }
   .gap-y-\[7px\] {
     row-gap: 7px;
@@ -1807,9 +1807,6 @@
   }
   .rounded-\[24px\] {
     border-radius: 24px;
-  }
-  .rounded-\[32px\] {
-    border-radius: 32px;
   }
   .rounded-\[99px\] {
     border-radius: 99px;
@@ -1922,6 +1919,12 @@
   .border-Theme-dark-gray {
     border-color: var(--color-Theme-dark-gray);
   }
+  .border-Theme-dark-gray\/50 {
+    border-color: color-mix(in srgb, #57534E 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-Theme-dark-gray) 50%, transparent);
+    }
+  }
   .border-Theme-primary-gray {
     border-color: var(--color-Theme-primary-gray);
   }
@@ -2033,6 +2036,9 @@
   .bg-\[\#000\] {
     background-color: #000;
   }
+  .bg-\[\#000000\] {
+    background-color: #000000;
+  }
   .bg-\[\#1e186f\] {
     background-color: #1e186f;
   }
@@ -2111,9 +2117,6 @@
   .bg-\[\#D0D0CD\] {
     background-color: #D0D0CD;
   }
-  .bg-\[\#D9D9D9\] {
-    background-color: #D9D9D9;
-  }
   .bg-\[\#D9D9D9\]\/20 {
     background-color: color-mix(in oklab, #D9D9D9 20%, transparent);
   }
@@ -2186,6 +2189,9 @@
   .bg-\[\#FAFAF9\] {
     background-color: #FAFAF9;
   }
+  .bg-\[\#FAFAFA\] {
+    background-color: #FAFAFA;
+  }
   .bg-\[\#FE5EAE\] {
     background-color: #FE5EAE;
   }
@@ -2209,6 +2215,9 @@
   }
   .bg-\[\#fff\] {
     background-color: #fff;
+  }
+  .bg-\[ECECEC\] {
+    background-color: ECECEC;
   }
   .bg-\[rgba\(0\,0\,0\,0\.05\)\] {
     background-color: rgba(0,0,0,0.05);
@@ -2302,21 +2311,6 @@
   }
   .bg-\[linear-gradient\(270deg\,rgba\(2\,0\,18\,0\)_54\.5\%\,rgba\(142\,94\,254\,0\.14\)_100\%\)\] {
     background-image: linear-gradient(270deg,rgba(2,0,18,0) 54.5%,rgba(142,94,254,0.14) 100%);
-  }
-  .bg-\[url\(\'\.\.\/\'\)\] {
-    background-image: url('../');
-  }
-  .bg-\[url\(\'\.\.\/assets\/images\/doc-bg-image\.png\'\)\] {
-    background-image: url('../assets/images/doc-bg-image.png');
-  }
-  .bg-\[url\(\'\.\/assets\/images\/doc-bg-image\.png\'\)\] {
-    background-image: url('./assets/images/doc-bg-image.png');
-  }
-  .bg-\[url\(\'\/assets\/images\/doc-bg-image\.png\'\)\] {
-    background-image: url('/assets/images/doc-bg-image.png');
-  }
-  .bg-\[url\(\'assets\/images\/doc-bg-image\.png\'\)\] {
-    background-image: url('assets/images/doc-bg-image.png');
   }
   .bg-\[url\(\.\.\/images\/doc-bg-image\.png\)\] {
     background-image: url(../images/doc-bg-image.png);
@@ -2428,6 +2422,9 @@
   }
   .px-20 {
     padding-inline: calc(var(--spacing) * 20);
+  }
+  .px-\[7px\] {
+    padding-inline: 7px;
   }
   .px-\[14px\] {
     padding-inline: 14px;
@@ -4735,6 +4732,12 @@
   .\[\&\.active\]\:text-Theme-purple {
     &.active {
       color: var(--color-Theme-purple);
+    }
+  }
+  .\[\&\.active\]\:shadow-\[0_1px_9px_0_rgba\(0\,0\,0\,0\.08\)\] {
+    &.active {
+      --tw-shadow: 0 1px 9px 0 var(--tw-shadow-color, rgba(0,0,0,0.08));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .lg\:\[\&\.active\]\:bg-white {

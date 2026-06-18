@@ -8,6 +8,11 @@
   <title>Agreed</title>
   <!--Main CSS-->
   <link href="assets/css/output.css" rel="stylesheet" />
+ <style>
+        .custom-scroll-gap::-webkit-scrollbar { width: 2px; margin-top: 10px; }
+        .custom-scroll-gap::-webkit-scrollbar-track { background: transparent; margin-top: 10px; margin-bottom:5px; }
+        .custom-scroll-gap::-webkit-scrollbar-thumb { background: #EEEEEC; border-radius: 3px; }
+    </style>
 
 </head>
 
@@ -1407,7 +1412,7 @@
                                     class="absolute left-0 z-10  mt-[10px] w-[200px] bg-white border border-Theme-secondary-gray rounded-10px p-[2px]"
                                     style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                                     <div class="block pr-1">
-        <div class="max-h-[300px] overflow-y-auto custom-scrollbar ">
+        <div class="max-h-[300px] overflow-y-auto custom-scroll-gap " >
           <!--list main-->
           <div class="p-2">
             <span class="py-1 px-3 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] mb-1">Change to</span>
@@ -1825,11 +1830,10 @@
                               class=" absolute left-0 top-full mt-2 z-50 w-[226px] bg-white border border-[#F1F1F1] rounded-10px  overflow-hidden"
                               style="display: none;">
 
-
-
+                            
                               <!-- Commands list -->
                               <div class="block p-[2px] pr-1">
-                                <div class="max-h-[300px] overflow-y-auto custom-scrollbar ">
+                                <div class="max-h-[300px] overflow-y-auto custom-scroll-gap" style="scrollbar-gutter: stable; padding-right: 4px;">
                                   <!--list main-->
                                   <div class="p-2">
                                     <span

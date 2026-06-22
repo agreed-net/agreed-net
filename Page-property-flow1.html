@@ -5083,7 +5083,7 @@
                               <div x-data="{ opacity: 100, hex: '8E5EFE', dragging: false, startX: 0, startVal: 0 }"
                                 @mousemove.window="dragging && (opacity = Math.max(0, Math.min(100, startVal + Math.round((($event.clientX - startX) / 2)))))"
                                 @mouseup.window="dragging = false; document.body.style.cursor = ''"
-                                class="h-[48px] border border-[#EBEBEB] bg-Theme-Forground rounded-10px w-full">
+                                class="h-[48px] border border-[#EBEBEB] bg-Theme-Forground rounded-10px w-full hover:bg-white hover:border-[#dcdcdc] transition-all duration-500">
                                 <div class="flex">
 
                                   <!-- colorpicker box-->
@@ -5170,241 +5170,28 @@
                           </div>
                           <div class="flex flex-col gap-2">
                               <label class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">Background image</label>
-                              <div class="flex flex-col gap-2.5">
-                                <div class="bg-Theme-Forground border border-[#EBEBEB] rounded-10px py-[5px] pl-[5px] pr-[9px] flex items-center justify-between">
-                                  <div class="flex items-center gap-2.5">
-                                    <img src="assets/images/bg-img.png" alt="image" class="w-[38px] h-[38px] rounded-lg object-cover"/>
-                                    <span class="text-sm font-medium leading-[22px] text-Theme-black">christmas.jpg</span>
-                                  </div>
-                                  <div class="flex items-center gap-2.5">
-                                    <a href="#" class="w-[30px] h-[30px] flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path d="M8.3999 13.1875C8.3999 13.8853 8.3999 14.2342 8.48602 14.5181C8.67992 15.1573 9.18013 15.6575 9.81933 15.8514C10.1032 15.9375 10.4521 15.9375 11.1499 15.9375H17.657" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M15.9429 18L18 15.9436L15.9429 13.875" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M18 11.8125C18 11.1147 18 10.7658 17.9139 10.4819C17.72 9.84273 17.2198 9.34252 16.5806 9.14862C16.2967 9.0625 15.9478 9.0625 15.25 9.0625L8.74286 9.0625" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M10.457 7L8.39989 9.05641L10.457 11.125" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M18 2L6 2C4.11438 2 3.17157 2 2.58579 2.58579C2 3.17157 2 4.11438 2 6L2 18" stroke="#57534E" stroke-width="1.2" stroke-linecap="round"/>
-  </svg>
-                                    </a>
-                                    <a href="#" class="w-[30px] h-[30px] flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-                                    
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path d="M5.2002 2V10.8C5.2002 12.6856 5.2002 13.6284 5.78598 14.2142C6.37177 14.8 7.31458 14.8 9.2002 14.8H18.0002" stroke="#57534E" stroke-width="1.2" stroke-linecap="round"/>
-    <path d="M14.2003 18C14.2003 18.3314 14.4689 18.6 14.8003 18.6C15.1317 18.6 15.4003 18.3314 15.4003 18L14.8003 18L14.2003 18ZM2.00029 4.6C1.66892 4.6 1.40029 4.86863 1.40029 5.2C1.40029 5.53137 1.66892 5.8 2.00029 5.8L2.00029 5.2L2.00029 4.6ZM8.40029 4.6C8.06892 4.6 7.80029 4.86863 7.80029 5.2C7.80029 5.53137 8.06892 5.8 8.40029 5.8L8.40029 5.2L8.40029 4.6ZM14.2003 11.6C14.2003 11.9314 14.4689 12.2 14.8003 12.2C15.1317 12.2 15.4003 11.9314 15.4003 11.6L14.8003 11.6L14.2003 11.6ZM13.7083 5.41799L13.4359 5.95259L13.7083 5.41799ZM2.00029 5.2L2.00029 5.8L5.20029 5.8L5.20029 5.2L5.20029 4.6L2.00029 4.6L2.00029 5.2ZM8.40029 5.2L8.40029 5.8L10.0003 5.8L10.0003 5.2L10.0003 4.6L8.40029 4.6L8.40029 5.2ZM10.0003 5.2L10.0003 5.8L11.6003 5.8L11.6003 5.2L11.6003 4.6L10.0003 4.6L10.0003 5.2ZM14.8003 8.4L14.2003 8.4L14.2003 11.6L14.8003 11.6L15.4003 11.6L15.4003 8.4L14.8003 8.4ZM14.8003 14.8L14.2003 14.8L14.2003 18L14.8003 18L15.4003 18L15.4003 14.8L14.8003 14.8ZM11.6003 5.2L11.6003 5.8C12.1702 5.8 12.5616 5.80047 12.865 5.82526C13.1614 5.84947 13.3206 5.89388 13.4359 5.95259L13.7083 5.41799L13.9807 4.88338C13.6681 4.72411 13.3334 4.65952 12.9627 4.62924C12.5991 4.59953 12.1504 4.6 11.6003 4.6L11.6003 5.2ZM14.8003 8.4L15.4003 8.4C15.4003 7.84985 15.4008 7.40115 15.3711 7.03754C15.3408 6.66694 15.2762 6.33222 15.1169 6.01963L14.5823 6.29202L14.0477 6.56441C14.1064 6.67964 14.1508 6.83886 14.175 7.13526C14.1998 7.43867 14.2003 7.83005 14.2003 8.4L14.8003 8.4ZM13.7083 5.41799L13.4359 5.95259C13.6993 6.08681 13.9135 6.30099 14.0477 6.56441L14.5823 6.29202L15.1169 6.01963C14.8676 5.5304 14.4699 5.13265 13.9807 4.88338L13.7083 5.41799Z" fill="#57534E"/>
-  </svg>
-                                    </a>
-                                    <a href="#" class="w-[30px] h-[30px] flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-                                    
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path d="M4 5H16V14.5C16 16.1499 16 16.9749 15.4874 17.4874C14.9749 18 14.1499 18 12.5 18H7.5C5.85008 18 5.02513 18 4.51256 17.4874C4 16.9749 4 16.1499 4 14.5V5Z" stroke="#57534E" stroke-width="1.2"/>
-    <path d="M2 5H18" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M6 3.75C6 2.92504 6 2.51256 6.25628 2.25628C6.51256 2 6.92504 2 7.75 2H12.25C13.075 2 13.4874 2 13.7437 2.25628C14 2.51256 14 2.92504 14 3.75V5H6V3.75Z" stroke="#57534E" stroke-width="1.2"/>
-    <path d="M8 9V14" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12 9V14" stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-                                    </a>
-                                  </div>
+                             <div class="">
+                              <button data-modal-target="upload-document" class="w-full h-[50px] bg-Theme-Forground rounded-10px p-[5px]  transition-all duration-500 hover:bg-[rgba(157,157,157,0.15)] flex items-center gap-5 text-sm font-inter-display-medium leading-6 text-Theme-black">
+                                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <g clip-path="url(#clip0_8174_4684)">
+                                  <path d="M8.63211 2.24219C5.26999 2.24219 3.58894 2.24219 2.54446 3.28625C1.5 4.33032 1.5 6.01071 1.5 9.37154C1.5 12.7323 1.5 14.4127 2.54446 15.4568C3.58894 16.5008 5.26999 16.5008 8.63211 16.5008C11.9941 16.5008 13.6752 16.5008 14.7197 15.4568C15.7642 14.4127 15.7642 12.7323 15.7642 9.37154V8.99631" stroke="#020012" stroke-width="1.2" stroke-linecap="round"></path>
+                                  <path d="M3.75 15.7422C6.90749 12.1787 10.4559 7.45277 15.75 10.9972" stroke="#020012" stroke-width="1.2"></path>
+                                  <path d="M13.4964 1.5V7.50608M16.5006 4.48424L10.4922 4.49541" stroke="#020012" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_8174_4684">
+                                    <rect width="18" height="18" fill="white"></rect>
+                                  </clipPath>
+                                </defs>
+                              </svg>
                                 </div>
-                                <div class="flex  gap-2.5">
-                                    <div class="bg-Theme-Forground rounded-lg p-1 flex items-center gap-1.5 flex-wrap max-w-[140px] shrink-0">
-                                        <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-                                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M7.5 5H15.8333" stroke=""  stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M7.5 10H11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M7.5 15H11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M4.1665 2.5V17.5" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                                        </a>
-                                        <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-                                          
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M15 7.5L15 11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M10 7.5L10 15.8333" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M5 7.5L5 11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M17.5 4.16406L2.5 4.16406" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                                        </a>
-                                        <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-                                          
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M12.5 5H4.16667" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M12.5 10H8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M12.5 15H8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M15.8335 2.5V17.5" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                                        </a>
-                                         <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M7.5 5H11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M7.5 10H15.8333" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M7.5 15H11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M4.1665 2.5V17.5" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-
-                                        </a>
-                                        <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M8.1665 5H12.1665" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M6 10H14.3333" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M8.1665 15H12.1665" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-</svg>
-
-                                        </a>
-                                          <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M12.5 5H8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M12.5 10H4.16667" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M12.5 15H8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M15.8335 2.5V17.5" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                                        </a>
-                                         <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M7.5 5H11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M7.5 10H11.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M7.5 15H15.8333" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M4.1665 2.5V17.5" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                                        </a>
-                                         <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M5 12.5L5 8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M10 12.5L10 4.16667" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M15 12.5L15 8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M2.5 15.8359L17.5 15.8359" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                                        </a>
-                                          <a href="#" class="group w-10 h-10 flex items-center justify-center rounded-md transition-all duration-500 hover:bg-[#EEEEEC]">
-
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M12.5 5H8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M12.5 10H8.5" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#8E5EFE] transition-all duration-500" d="M12.5 15H4.16667" stroke="" stroke-width="1.4" stroke-linecap="round"/>
-<path class="stroke-[#57534E] group-hover:stroke-[#020012] transition-all duration-500" d="M15.8335 2.5V17.5" stroke="" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-
-                                        </a>
-                                    </div>
-                                    <div class="flex flex-col gap-2.5 w-full">
-                                      <!--fill image-->
-                                      <div x-data="dropdownComponent('fill-image')" class="relative w-full ">
-                                <button @click="toggle" :class="isOpen ? 'bg-white !border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'" class="w-full border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[20px] text-Theme-black outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 appearance-none transition-all duration-500 bg-[#FAFAF9] hover:bg-white hover:border-[#dcdcdc]">
-                                  
-                                  Fill Image
-                                
-                                  <svg class="transition-all duration-500" :class="{'rotate-180': isOpen}" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                    <path d="M8.80273 0.799234L4.80257 4.7994L0.80005 0.796875" stroke="#000A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
-                                </button>
-                                <div x-ref="fill-image" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[187px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
-                                  <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">image scaling</span>
-                                  <div class="bg-white rounded-lg p-2 ">
-                                    <!--list-->
-                                    <ul class="flex flex-col gap-0.5">
-                                      <li>
-                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                          Fill Image
-                                        </button>
-                                      </li>
-                                      <li>
-                                        <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                          Fit Image
-                                        </button>
-                                      </li>
-                                      <li>
-                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                                          Original Image
-                                        </button>
-                                      </li>
-                                      
-
-                                    </ul>
-                                  </div>
-                                </div>
-                                      </div>
-                                      <div class="py-[13px] px-4 bg-Theme-Forground rounded-10px">
-                                        <label for="border-setting" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                              <span class="text-sm leading-5 font-inter-display-medium text-Theme-black ">Repeat image</span>
-
-                              <div class="flex items-center">
-                                <input type="checkbox" id="border-setting" class="sr-only peer" x-model="bordersettingEnabled">
-                                <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                                    peer-checked:bg-[#8E5EFE]
-                                    peer-checked:hover:bg-[#8E5EFE]
-                                    
-                                    after:content-['']
-                                    after:absolute
-                                    after:top-[2px]
-                                    after:left-[2px]
-                                    after:w-[20px]
-                                    after:h-[16px]
-                                    after:bg-white
-                                    after:rounded-[16px]
-                                    after:shadow-secondary
-                                    after:transition-all
-                                    after:duration-300
-                                    peer-checked:after:translate-x-[16px]">
-                                              </div>
-                                            </div>
-                                          </label>
-                                      </div>
-                                    </div>
-                                </div>
-                              </div>
+                                Add Image
+                              </button>
+                             </div>
                           </div>
                           
-                           <!--Range Slider (Custom CSS is inside style tag)-->
-                                      <div 
-                                            x-data="{ 
-                                                val: 50,
-                                                min: 0, 
-                                                max: 100,
-                                                get percent() {
-                                                    return ((this.val - this.min) / (this.max - this.min)) * 100 ;
-                                                }
-                                            }"
-                                            class="w-full bg-Theme-Forground rounded-10px p-4 flex flex-col "
-                                        >
-                                            <!-- Label + Value -->
-                                            <div class="flex items-center justify-between mb-3.5">
-                                                <label class="text-sm font-inter-display-medium leading-[22px] text-Theme-black">
-                                                    Image Brightness
-                                                </label>
-
-                                                <!-- Value Box -->
-                                                <span 
-                                                    class="range-value text-sm font-inter-display-medium leading-[22px] text-Theme-black"
-                                                    x-text="`${val}%`"
-                                                ></span>
-                                            </div>
-
-                                            <!-- Outer bar (8px height) -->
-                                            <div class="range-wrap w-full h-2 bg-Theme-Gray rounded-[10px] p-[2px]">
-
-                                                <!-- Inner range (4px fill) -->
-                                                <input 
-                                                    type="range" 
-                                                    x-model="val"
-                                                    :min="min"
-                                                    :max="max"
-                                                    class="range w-full"
-                                                    :style="`--val:${percent}%`"
-                                                >
-                                            </div>
-                                        </div>
+                      
                       </div>
                    
                     </div>
@@ -5568,7 +5355,145 @@
       </button>
     </div>
   </div>
+<!-- upload image document -->
+  <div class="modalTrigger modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 md:w-auto !w-[calc(100%-10px)] md:h-auto max-h-[calc(100dvh-10px)]  md:!max-w-[750px] !max-w-full overflow-y-auto overscroll-contain custom-scroll-gap "
+    id="upload-document">
 
+   
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Upload Image
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+   <div class="w-full bg-white rounded-lg flex flex-col py-5 px-5">
+      <div class="flex flex-col gap-3.5">
+        <div class="block tab-main flex flex-col gap-3.5">
+          <!--tab list-->
+          <ul class="flex items-center bg-Theme-secondary-gray rounded-lg w-full p-[2px] gap-[2px]">
+            <li class="w-full">
+              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&amp;.active]:bg-white active
+            ">
+                My Device
+              </a>
+            </li>
+            <li class="w-full">
+              <a href="#" class="flex justify-center items-center text-sm text-Theme-black font-inter-display-medium leading-[22px] transition-all duration-500 ease-in-out text-center py-[7px] rounded-md hover:bg-white [&amp;.active]:bg-white 
+            ">
+                Google Drive
+              </a>
+            </li>
+           
+          </ul>
+          <!--tab content-->
+          <div class="flex flex-col gap-3.5">
+            <div class="border border-[#EBEBEB] bg-Theme-Forground rounded-10px p-[5px] md:pr-0 pr-[5px]">
+              <div class="flex items-center md:flex-row flex-col w-full h-full ">
+                <div class="bg-white rounded-md border border-[#E2DCDC] w-full md:h-[434px] h-[334px] flex justify-center items-center flex-col tranision-all duration-300 hover:bg-white/50 cursor-pointer">
+                  <label class="cursor-pointer w-full h-full flex justify-center items-center flex-col">
+                    <!-- Hidden Input -->
+                    <input type="file" class="hidden">
+                    <!-- upload area -->
+                    <div class="flex justify-center items-center flex-col gap-[5px]">
+                     
+                      <h5 class="text-sm font-inter-display-medium leading-[22px] text-Theme-black">Drop your files here or <a href="#" class="text-Theme-purple">click to browse</a></h5>
+                      <p class="text-xs text-Theme-light-gray leading-[14px]">Supported files: JPG, PNG, GIF, WebP
+                      </p>
+                    </div>
+
+
+                  </label>
+                </div>
+                <div class="flex md:flex-col flex-row gap-5 px-[15px] md:py-0 py-2.5 md:pb-0 pb-[5px]">
+                  <div class="block relative">
+                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.39844 13.1875C8.39844 13.8853 8.39844 14.2342 8.48456 14.5181C8.67846 15.1573 9.17867 15.6575 9.81787 15.8514C10.1018 15.9375 10.4507 15.9375 11.1484 15.9375H17.6556" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15.9414 18L17.9985 15.9436L15.9414 13.875" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M18 11.8125C18 11.1147 18 10.7658 17.9139 10.4819C17.72 9.84273 17.2198 9.34252 16.5806 9.14862C16.2967 9.0625 15.9478 9.0625 15.25 9.0625L8.74286 9.0625" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M10.457 7L8.39989 9.05641L10.457 11.125" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M18 2L6 2C4.11438 2 3.17157 2 2.58579 2.58579C2 3.17157 2 4.11438 2 6L2 18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path>
+                      </svg>
+
+                    </a>
+                    <!--tooltip box design1-->
+                    <div class="absolute z-[100] md:right-full md:top-1/2 md:-translate-y-1/2 md:mr-2 md:bottom-auto md:left-auto md:translate-x-0 bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none">
+                      <!-- Tooltip -->
+                      <div class="relative bg-[#3A375E] py-1 px-1.5 rounded-md h-[24px]">
+                        <p class="text-xs leading-[16px] text-white whitespace-nowrap">
+                          Change
+                        </p>
+                        <!-- Arrow -->
+                        <div class="absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:translate-x-0 top-full left-1/2 -translate-x-1/2">
+                          <svg class="w-3 h-3 fill-[#3A375E] md:rotate-[-90deg] rotate-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0C5.48483 8 6.5 8 12 0Z"></path>
+
+                          </svg>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="block">
+                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5.19922 2V10.8C5.19922 12.6856 5.19922 13.6284 5.78501 14.2142C6.37079 14.8 7.3136 14.8 9.19922 14.8H17.9992" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path>
+                        <path d="M14.2008 18C14.2008 18.3314 14.4694 18.6 14.8008 18.6C15.1322 18.6 15.4008 18.3314 15.4008 18L14.8008 18L14.2008 18ZM2.00078 4.6C1.66941 4.6 1.40078 4.86863 1.40078 5.2C1.40078 5.53137 1.66941 5.8 2.00078 5.8L2.00078 5.2L2.00078 4.6ZM8.40078 4.6C8.06941 4.6 7.80078 4.86863 7.80078 5.2C7.80078 5.53137 8.06941 5.8 8.40078 5.8L8.40078 5.2L8.40078 4.6ZM14.2008 11.6C14.2008 11.9314 14.4694 12.2 14.8008 12.2C15.1322 12.2 15.4008 11.9314 15.4008 11.6L14.8008 11.6L14.2008 11.6ZM13.7088 5.41799L13.4364 5.95259L13.7088 5.41799ZM2.00078 5.2L2.00078 5.8L5.20078 5.8L5.20078 5.2L5.20078 4.6L2.00078 4.6L2.00078 5.2ZM8.40078 5.2L8.40078 5.8L10.0008 5.8L10.0008 5.2L10.0008 4.6L8.40078 4.6L8.40078 5.2ZM10.0008 5.2L10.0008 5.8L11.6008 5.8L11.6008 5.2L11.6008 4.6L10.0008 4.6L10.0008 5.2ZM14.8008 8.4L14.2008 8.4L14.2008 11.6L14.8008 11.6L15.4008 11.6L15.4008 8.4L14.8008 8.4ZM14.8008 14.8L14.2008 14.8L14.2008 18L14.8008 18L15.4008 18L15.4008 14.8L14.8008 14.8ZM11.6008 5.2L11.6008 5.8C12.1707 5.8 12.5621 5.80047 12.8655 5.82526C13.1619 5.84947 13.3211 5.89388 13.4364 5.95259L13.7088 5.41799L13.9812 4.88338C13.6686 4.72411 13.3338 4.65952 12.9632 4.62924C12.5996 4.59953 12.1509 4.6 11.6008 4.6L11.6008 5.2ZM14.8008 8.4L15.4008 8.4C15.4008 7.84985 15.4012 7.40115 15.3715 7.03754C15.3413 6.66694 15.2767 6.33222 15.1174 6.01963L14.5828 6.29202L14.0482 6.56441C14.1069 6.67964 14.1513 6.83886 14.1755 7.13526C14.2003 7.43867 14.2008 7.83005 14.2008 8.4L14.8008 8.4ZM13.7088 5.41799L13.4364 5.95259C13.6998 6.08681 13.914 6.30099 14.0482 6.56441L14.5828 6.29202L15.1174 6.01963C14.8681 5.5304 14.4704 5.13265 13.9812 4.88338L13.7088 5.41799Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="block">
+                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-Theme-purple" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3.54657 16.9131C4.71544 17.9115 6.47783 17.9115 10.0026 17.9115C13.5274 17.9115 15.2898 17.9115 16.4586 16.9131C16.6246 16.7714 16.7792 16.6168 16.9209 16.4508C17.9193 15.282 17.9193 13.5195 17.9193 9.99479C17.9193 6.47002 17.9193 4.70763 16.9209 3.53876C16.7792 3.37278 16.6246 3.21819 16.4586 3.07643C15.2898 2.07812 13.5274 2.07812 10.0026 2.07812C6.47783 2.07812 4.71544 2.07812 3.54657 3.07643C3.38059 3.21819 3.226 3.37278 3.08425 3.53876C2.08594 4.70763 2.08594 6.47002 2.08594 9.99479C2.08594 13.5195 2.08594 15.282 3.08425 16.4508C3.226 16.6168 3.38059 16.7714 3.54657 16.9131Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M3.33594 16.6615L16.6693 3.32812" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M2 12L12 2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path>
+                        <path d="M9 18L18 9" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="block">
+                    <a href="#" class="group w-[30px] h-[30px] rounded-md flex justify-center items-center hover:bg-white">
+
+                      <svg class="w-5 h-5 text-Theme-black transition-all duration-500 group-hover:text-[#DC2626]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 5H16V14.5C16 16.1499 16 16.9749 15.4874 17.4874C14.9749 18 14.1499 18 12.5 18H7.5C5.85008 18 5.02513 18 4.51256 17.4874C4 16.9749 4 16.1499 4 14.5V5Z" stroke="currentColor" stroke-width="1.2"></path>
+                        <path d="M2 5H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M6 3.75C6 2.92504 6 2.51256 6.25628 2.25628C6.51256 2 6.92504 2 7.75 2H12.25C13.075 2 13.4874 2 13.7437 2.25628C14 2.51256 14 2.92504 14 3.75V5H6V3.75Z" stroke="currentColor" stroke-width="1.2"></path>
+                        <path d="M8 9V14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 9V14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+        Upload Image
+      </button>
+    </div>
+  </div>
 
   <!-- modal overlay  -->
   <div

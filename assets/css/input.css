@@ -236,7 +236,7 @@
 /*=========custom scroll gap===========*/
  .custom-scroll-gap::-webkit-scrollbar { width: 2px; margin-top: 10px; }
   .custom-scroll-gap::-webkit-scrollbar-track { background: transparent; margin-top: 10px; margin-bottom:5px; }
-  .custom-scroll-gap::-webkit-scrollbar-thumb { background: #EEEEEC; border-radius: 3px; }
+  .custom-scroll-gap::-webkit-scrollbar-thumb { background: #BCB8B4; border-radius: 3px; }
 /*=======modal============*/
 .overlay-modal {
     position: fixed;

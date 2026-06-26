@@ -4737,278 +4737,233 @@
                     <div :class="rightPanelOpen
             ? 'opacity-100 transition-opacity duration-200 delay-200'
             : 'opacity-0 transition-opacity duration-100'" 
-                    class=" h-[calc(100vh-156px)]  overflow-y-auto overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px]
-[&::-webkit-scrollbar-track]:bg-transparent
-[&::-webkit-scrollbar-thumb]:bg-[#EEEEEC]
-[&::-webkit-scrollbar-thumb]:rounded-[3px]  w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" >
-                      <!--content-->
-                      <div class="p-3.5  border-b border-[#EEEEEC]">
-                        <div class="flex flex-col  gap-2.5 border-b border-[#EEEEEC] mb-3.5 pb-3.5">
-                          <h5 class="text-base leading-[22px] font-inter-display-medium text-Theme-light-gray">Add people
-                            to view or sign document</h5>
-                          <!--search-->
-                          <div class="relative w-full">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-[12px] pointer-events-none">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.332 11.3359L13.9987 14.0026" stroke="#57534E" stroke-width="1.2"
-                                  stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                  d="M12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333Z"
-                                  stroke="#57534E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
+                    class=" h-[calc(100vh-156px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&::-webkit-scrollbar-thumb]:rounded-[3px] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-100" >
+                     <div class="p-3.5  pt-0">
+                        <div class="flex flex-col  gap-2.5">
+                   
+                          <!--added user-->
+                          <div class="flex flex-col">
+                            <div class="flex items-center justify-between w-full border-b border-[#EEEEEC] py-3">
+                              <div class="flex items-center gap-2.5 transition-all duration-300 rounded-[2px] ">
+                                <img src="assets/images/search-avatar1.png" alt="image" class="w-[34px] h-[34px] object-cover">
+                                <div class="flex flex-col">
+                                  <h6 class="text-sm font-inter-display-medium leading-[20px] text-Theme-black">Jenny
+                                    Wilson</h6>
+                                  <p class="text-xs text-Theme-light-gray leading-[14px]">jennywilson@gmail.com</p>
+                                </div>
+                              </div>
+                              <div class="flex items-center gap-2.5">
+                                <!--tag-->
+                                <span class="w-[35px] h-[22px] bg-[#F1EBFF] rounded-md text-xs font-medium text-[#773CFF] leading-[14px] flex items-center justify-center">You</span>
+                                <div x-data="dropdownComponent('user-added-settings-menu1')" class="relative w-max">
+                                  <button @click="toggle" :class="{'bg-[#EEEEEC]': isOpen}" class="w-[28px] h-[28px] rounded-lg  hover:bg-[#EEEEEC] flex items-center justify-center transition-all duration-500">
+                                    <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12.204 0.997687H12.2166" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M6.60247 0.997687H6.61504" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M1.00091 0.997687H1.01348" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
 
+                                  </button>
+                                  <div x-ref="user-added-settings-menu1" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[8px] w-[220px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                                    <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">quick
+                                      action</span>
+                                    <div class="bg-white rounded-lg p-2 ">
+                                      <!--list-->
+                                      <ul class="flex flex-col gap-0.5">
+                                        <li>
+                                          <button data-modal-target="edit-detail" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                            <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                              <path d="M7.125 10.875L10.875 7.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                              <path d="M12.6347 10.9572L14.5918 9.00003C16.136 7.45584 16.136 4.95227 14.5918 3.40811C13.0477 1.86396 10.5442 1.86396 9 3.40811L7.04284 5.36528M10.9571 12.6348L9 14.5919C7.45585 16.1361 4.95227 16.1361 3.40812 14.5919C1.86396 13.0477 1.86396 10.5441 3.40812 9.00003L5.36527 7.04284" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                            Edit Details
+                                          </button>
+                                        </li>
+                                        <li>
+                                          <button data-modal-target="remove-receipient" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+
+                                            <svg class="text-Theme-dark-gray group-hover:text-[#DC2626]  transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                              <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                              <path d="M6.75 8.79688H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                              <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                              <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            </svg>
+                                            Remove
+                                          </button>
+                                        </li>
+
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
                             </div>
-                            <input placeholder="Search name or email"
-                              class="block w-full h-[40px] pr-3.5 pl-[36px] py-2.5 text-sm leading-[20px] font-normal text-Theme-black bg-white rounded-lg border border-[#EEEEEC] placeholder:text-Theme-dark-gray focus:outline-none transition-all duration-500 hover:border-[#dcdcdc] focus:border-Theme-purple"
-                              type="text" value="">
-                          </div>
+                              <div class="flex items-center justify-between w-full border-b border-[#EEEEEC] py-3">
+                              <div class="flex items-center gap-2.5 transition-all duration-300 rounded-[2px] ">
+                                <img src="assets/images/search-avatar2.png" alt="image" class="w-[34px] h-[34px] object-cover">
+                                <div class="flex flex-col">
+                                  <h6 class="text-sm font-inter-display-medium leading-[20px] text-Theme-black">Albert Flores</h6>
+                                  <p class="text-xs text-Theme-light-gray leading-[14px]">albertflores@gmail.com</p>
+                                </div>
+                              </div>
+                              <div x-data="dropdownComponent('user-added-settings-menu2')" class="relative w-max">
+                                <button @click="toggle" :class="{'bg-[#EEEEEC]': isOpen}" class="w-[28px] h-[28px] rounded-lg  hover:bg-[#EEEEEC] flex items-center justify-center transition-all duration-500">
+                                  <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.204 0.997687H12.2166" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M6.60247 0.997687H6.61504" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M1.00091 0.997687H1.01348" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
 
-                        </div>
-                        <!--toggle wrap-->
-                        <div class="relative">
-                          <!--toggle-->
-                          <label for="signs-first" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                            <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Set who
-                              signs first</span>
+                                </button>
+                                <div x-ref="user-added-settings-menu2" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[8px] w-[220px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                                  <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">quick
+                                    action</span>
+                                  <div class="bg-white rounded-lg p-2 ">
+                                    <!--list-->
+                                    <ul class="flex flex-col gap-0.5">
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
 
-                            <div class="flex items-center">
-                              <input type="checkbox" id="signs-first" class="sr-only peer">
-                              <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                      peer-checked:bg-[#8E5EFE]
-                      peer-checked:hover:bg-[#8E5EFE]
-                      
-                      after:content-['']
-                      after:absolute
-                      after:top-[2px]
-                      after:left-[2px]
-                      after:w-[20px]
-                      after:h-[16px]
-                      after:bg-white
-                      after:rounded-[16px]
-                      after:shadow-secondary
-                      after:transition-all
-                      after:duration-300
-                      peer-checked:after:translate-x-[16px]">
+                                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M7.125 10.875L10.875 7.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.6347 10.9572L14.5918 9.00003C16.136 7.45584 16.136 4.95227 14.5918 3.40811C13.0477 1.86396 10.5442 1.86396 9 3.40811L7.04284 5.36528M10.9571 12.6348L9 14.5919C7.45585 16.1361 4.95227 16.1361 3.40812 14.5919C1.86396 13.0477 1.86396 10.5441 3.40812 9.00003L5.36527 7.04284" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          </svg>
+                                          Edit Details
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+
+                                          <svg class="text-Theme-dark-gray group-hover:text-[#DC2626]  transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M6.75 8.79688H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                          </svg>
+                                          Remove
+                                        </button>
+                                      </li>
+
+                                    </ul>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </label>
-                        </div>
-                      </div>
-                      <!--content-->
-                      <div class="p-3.5  border-b border-[#EEEEEC]">
-                        <div class="flex flex-col  gap-3.5">
-                          <h6 class="text-sm font-inter-display-medium leading-[20px] text-Theme-purple">Signature Type</h6>
-                          <div class="flex flex-col gap-2">
-                            <!--toggle wrap-->
-                            <div class="relative">
-                              <!--toggle-->
-                              <label for="secure-sign" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                                <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">
-                                  Secure signature (QES)</span>
+                             <div class="flex items-center justify-between w-full border-b border-[#EEEEEC] py-3">
+                              <div class="flex items-center gap-2.5 transition-all duration-300 rounded-[2px] ">
+                                <img src="assets/images/search-avatar2.png" alt="image" class="w-[34px] h-[34px] object-cover">
+                                <div class="flex flex-col">
+                                  <h6 class="text-sm font-inter-display-medium leading-[20px] text-Theme-black">Albert Flores</h6>
+                                  <p class="text-xs text-Theme-light-gray leading-[14px]">albertflores@gmail.com</p>
+                                </div>
+                              </div>
+                              <div x-data="dropdownComponent('user-added-settings-menu3')" class="relative w-max">
+                                <button @click="toggle" :class="{'bg-[#EEEEEC]': isOpen}" class="w-[28px] h-[28px] rounded-lg  hover:bg-[#EEEEEC] flex items-center justify-center transition-all duration-500">
+                                  <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.204 0.997687H12.2166" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M6.60247 0.997687H6.61504" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M1.00091 0.997687H1.01348" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
 
-                                <div class="flex items-center">
-                                  <input type="checkbox" id="secure-sign" class="sr-only peer">
-                                  <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                          peer-checked:bg-[#8E5EFE]
-                          peer-checked:hover:bg-[#8E5EFE]
-                          
-                          after:content-['']
-                          after:absolute
-                          after:top-[2px]
-                          after:left-[2px]
-                          after:w-[20px]
-                          after:h-[16px]
-                          after:bg-white
-                          after:rounded-[16px]
-                          after:shadow-secondary
-                          after:transition-all
-                          after:duration-300
-                          peer-checked:after:translate-x-[16px]">
+                                </button>
+                                <div x-ref="user-added-settings-menu3" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[8px] w-[220px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                                  <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">quick
+                                    action</span>
+                                  <div class="bg-white rounded-lg p-2 ">
+                                    <!--list-->
+                                    <ul class="flex flex-col gap-0.5">
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M7.125 10.875L10.875 7.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.6347 10.9572L14.5918 9.00003C16.136 7.45584 16.136 4.95227 14.5918 3.40811C13.0477 1.86396 10.5442 1.86396 9 3.40811L7.04284 5.36528M10.9571 12.6348L9 14.5919C7.45585 16.1361 4.95227 16.1361 3.40812 14.5919C1.86396 13.0477 1.86396 10.5441 3.40812 9.00003L5.36527 7.04284" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          </svg>
+                                          Edit Details
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+
+                                          <svg class="text-Theme-dark-gray group-hover:text-[#DC2626]  transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M6.75 8.79688H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                          </svg>
+                                          Remove
+                                        </button>
+                                      </li>
+
+                                    </ul>
                                   </div>
                                 </div>
-                              </label>
+                              </div>
                             </div>
-                            <p class="text-sm leading-[20px] text-Theme-dark-gray">Provides secure, verified signatures from trusted European services</p>
-                          </div>
-                        </div>
-                      
-                      </div>
-                      <!--content-->
-                      <div class="p-3.5 ">
-                        <div class="flex flex-col  gap-3.5">
-                          <h6 class="text-sm font-inter-display-medium leading-[20px] text-Theme-purple">Permissions</h6>
-                          <div class="relative">
-                          <!--inner content-->
-                          <div class="flex flex-col gap-2 border-b border-[#EEEEEC] mb-3.5 pb-3.5">
-                            <!--toggle wrap-->
-                            <div class="relative">
-                              <!--toggle-->
-                              <label for="secure-sign1" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                                <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">
-                                  Secure signature (QES)</span>
+                             <div class="flex items-center justify-between w-full border-b border-[#EEEEEC] py-3">
+                              <div class="flex items-center gap-2.5 transition-all duration-300 rounded-[2px] ">
+                                <img src="assets/images/search-avatar2.png" alt="image" class="w-[34px] h-[34px] object-cover">
+                                <div class="flex flex-col">
+                                  <h6 class="text-sm font-inter-display-medium leading-[20px] text-Theme-black">Albert Flores</h6>
+                                  <p class="text-xs text-Theme-light-gray leading-[14px]">albertflores@gmail.com</p>
+                                </div>
+                              </div>
+                              <div x-data="dropdownComponent('user-added-settings-menu4')" class="relative w-max">
+                                <button @click="toggle" :class="{'bg-[#EEEEEC]': isOpen}" class="w-[28px] h-[28px] rounded-lg  hover:bg-[#EEEEEC] flex items-center justify-center transition-all duration-500">
+                                  <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.204 0.997687H12.2166" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M6.60247 0.997687H6.61504" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M1.00091 0.997687H1.01348" stroke="#020012" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
 
-                                <div class="flex items-center">
-                                  <input type="checkbox" id="secure-sign1" class="sr-only peer">
-                                  <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                          peer-checked:bg-[#8E5EFE]
-                          peer-checked:hover:bg-[#8E5EFE]
-                          
-                          after:content-['']
-                          after:absolute
-                          after:top-[2px]
-                          after:left-[2px]
-                          after:w-[20px]
-                          after:h-[16px]
-                          after:bg-white
-                          after:rounded-[16px]
-                          after:shadow-secondary
-                          after:transition-all
-                          after:duration-300
-                          peer-checked:after:translate-x-[16px]">
+                                </button>
+                                <div x-ref="user-added-settings-menu4" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[8px] w-[220px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                                  <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">quick
+                                    action</span>
+                                  <div class="bg-white rounded-lg p-2 relative">
+                                    <!--list-->
+                                    <ul class="flex flex-col gap-0.5">
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+                                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M7.125 10.875L10.875 7.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.6347 10.9572L14.5918 9.00003C16.136 7.45584 16.136 4.95227 14.5918 3.40811C13.0477 1.86396 10.5442 1.86396 9 3.40811L7.04284 5.36528M10.9571 12.6348L9 14.5919C7.45585 16.1361 4.95227 16.1361 3.40812 14.5919C1.86396 13.0477 1.86396 10.5441 3.40812 9.00003L5.36527 7.04284" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          </svg>
+                                          Edit Details
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+
+
+                                          <svg class="text-Theme-dark-gray group-hover:text-[#DC2626]  transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M6.75 8.79688H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                            <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                                          </svg>
+                                          Remove
+                                        </button>
+                                      </li>
+
+                                    </ul>
+                                   
                                   </div>
                                 </div>
-                              </label>
+                              </div>
                             </div>
-                            <p class="text-sm leading-[20px] text-Theme-dark-gray">Provides secure, verified signatures from trusted European services</p>
-                          </div>
-                          <!--inner content-->
-                          <div class="flex flex-col gap-2 border-b border-[#EEEEEC] mb-3.5 pb-3.5">
-                            <!--toggle wrap-->
-                            <div class="relative">
-                              <!--toggle-->
-                              <label for="secure-edit" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                                <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">
-                                  Suggest edits</span>
-
-                                <div class="flex items-center">
-                                  <input type="checkbox" id="secure-edit" class="sr-only peer">
-                                  <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                          peer-checked:bg-[#8E5EFE]
-                          peer-checked:hover:bg-[#8E5EFE]
-                          
-                          after:content-['']
-                          after:absolute
-                          after:top-[2px]
-                          after:left-[2px]
-                          after:w-[20px]
-                          after:h-[16px]
-                          after:bg-white
-                          after:rounded-[16px]
-                          after:shadow-secondary
-                          after:transition-all
-                          after:duration-300
-                          peer-checked:after:translate-x-[16px]">
-                                  </div>
-                                </div>
-                              </label>
-                            </div>
-                            <p class="text-sm leading-[20px] text-Theme-dark-gray">Let recipients suggest changes</p>
-                          </div>
-                          <!--inner content-->
-                          <div class="flex flex-col gap-2 border-b border-[#EEEEEC] mb-3.5 pb-3.5">
-                            <!--toggle wrap-->
-                            <div class="relative">
-                              <!--toggle-->
-                              <label for="resolve-edit" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                                <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">
-                                  Resolve edits</span>
-
-                                <div class="flex items-center">
-                                  <input type="checkbox" id="resolve-edit" class="sr-only peer">
-                                  <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                          peer-checked:bg-[#8E5EFE]
-                          peer-checked:hover:bg-[#8E5EFE]
-                          
-                          after:content-['']
-                          after:absolute
-                          after:top-[2px]
-                          after:left-[2px]
-                          after:w-[20px]
-                          after:h-[16px]
-                          after:bg-white
-                          after:rounded-[16px]
-                          after:shadow-secondary
-                          after:transition-all
-                          after:duration-300
-                          peer-checked:after:translate-x-[16px]">
-                                  </div>
-                                </div>
-                              </label>
-                            </div>
-                            <p class="text-sm leading-[20px] text-Theme-dark-gray">Let recipients approve changes</p>
-                          </div>
-                            <!--inner content-->
-                          <div class="flex flex-col gap-2 border-b border-[#EEEEEC] mb-3.5 pb-3.5">
-                            <!--toggle wrap-->
-                            <div class="relative">
-                              <!--toggle-->
-                              <label for="allow-download" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                                <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">
-                                  Allow Download</span>
-
-                                <div class="flex items-center">
-                                  <input type="checkbox" id="allow-download" class="sr-only peer">
-                                  <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                          peer-checked:bg-[#8E5EFE]
-                          peer-checked:hover:bg-[#8E5EFE]
-                          
-                          after:content-['']
-                          after:absolute
-                          after:top-[2px]
-                          after:left-[2px]
-                          after:w-[20px]
-                          after:h-[16px]
-                          after:bg-white
-                          after:rounded-[16px]
-                          after:shadow-secondary
-                          after:transition-all
-                          after:duration-300
-                          peer-checked:after:translate-x-[16px]">
-                                  </div>
-                                </div>
-                              </label>
-                            </div>
-                          
-                          </div>
-                          <!--inner content-->
-                          <div class="flex flex-col gap-2 ">
-                            <!--toggle wrap-->
-                            <div class="relative">
-                              <!--toggle-->
-                              <label for="send-pdf-copy" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                                <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">
-                                Send PDF Copy</span>
-
-                                <div class="flex items-center">
-                                  <input type="checkbox" id="send-pdf-copy" class="sr-only peer">
-                                  <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
-                          peer-checked:bg-[#8E5EFE]
-                          peer-checked:hover:bg-[#8E5EFE]
-                          
-                          after:content-['']
-                          after:absolute
-                          after:top-[2px]
-                          after:left-[2px]
-                          after:w-[20px]
-                          after:h-[16px]
-                          after:bg-white
-                          after:rounded-[16px]
-                          after:shadow-secondary
-                          after:transition-all
-                          after:duration-300
-                          peer-checked:after:translate-x-[16px]">
-                                  </div>
-                                </div>
-                              </label>
-                            </div>
-                            <p class="text-sm leading-[20px] text-Theme-dark-gray">Send a PDF copy by email when completed</p>
-                          </div>
                           </div>
                         </div>
                       
                       </div>
                     </div>
+                    <button data-modal-target="add-detail" class="sticky bottom-3.5 flex justify-center btn-purple w-[calc(100%-28px)] left-0 right-0 mx-auto py-2 px-3 leading-5 rounded-lg h-[38px]">Add new recipient</button>
                   </div>
 
                 </div>
@@ -5025,16 +4980,78 @@
   </div>
 
   <!------------Modals---------------->
-  <!-- Delete workspace -->
-  <div
-    class="modalTrigger flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[420px]"
-    id="Delete-workspace">
+   <!-- add detail document -->
+  <div class="modalTrigger  modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[580px]"
+    id="add-detail">
     <!-- modal header  -->
     <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
       <div class="flex items-center gap-[15px] ">
 
         <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
-          Delete Workspace?
+         Add New Recipient
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col gap-4 py-3.5 px-5">
+      <!-- content  -->
+    
+      <div class="flex items-center gap-4 w-full">
+        <div class="flex flex-col gap-[5px] w-full">
+          <label for="first-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">First Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Enter First Name"
+            value="Ajay"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+         <div class="flex flex-col gap-[5px] w-full">
+          <label for="last-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Last Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name"
+            value="Bhimani"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+      </div>
+       <div class="flex flex-col gap-[5px] w-full">
+          <label for="email" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter Your Email"
+            value="ajubhimani@gmail.com"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+         <div class="flex flex-col gap-[5px] w-full">
+          <label for="phone" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number"
+            value="8645975265"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+        Add Recipient
+      </button>
+    </div>
+  </div>
+  <!-- remove recipient -->
+  <div
+    class="modalTrigger flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[426px]"
+    id="remove-receipient">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Remove recipient
         </h4>
       </div>
 
@@ -5048,10 +5065,8 @@
     </div>
     <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
       <div class="flex flex-col gap-3">
-        <p class="text-base font-normal leading-6 text-Theme-black">You’re about to delete <span
-            class="font-inter-display-medium">Ronald Richards</span></p>
-        <p class="text-base font-normal leading-6 text-Theme-black">All agreed and collected responses in this workspace
-          will be permanently deleted.</span></p>
+        <p class="text-base font-normal leading-6 text-Theme-black">Removing this recipient will also clear any fields assigned to them.</p>
+        <p class="text-base font-normal leading-6 text-Theme-black">You can reassign those fields to another recipient later.</p>
       </div>
     </div>
     <!-- modal footer  -->
@@ -5068,19 +5083,19 @@
             d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
             stroke="white" stroke-width="1.6" stroke-linecap="round" />
         </svg>
-        Remove
+        Delete
       </button>
     </div>
   </div>
-  <!-- Duplicate document -->
-  <div class="modalTrigger modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[420px]"
-    id="duplicate-document">
+  <!-- edit detail document -->
+  <div class="modalTrigger  modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[580px]"
+    id="edit-detail">
     <!-- modal header  -->
     <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
       <div class="flex items-center gap-[15px] ">
 
         <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
-          Duplicate Document
+          Edit Recipient details
         </h4>
       </div>
 
@@ -5092,84 +5107,48 @@
 
       </button>
     </div>
-    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
-      <div class="flex flex-col gap-[5px] border-b border-[#EEEEEC] mb-3.5 pb-3.5">
-        <label for="doc-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Document
-          Name</label>
-        <input type="text" id="doc-name" name="doc-name" placeholder="Enter Document Name"
-          value="Service Agreement – Marketing Project - Copy"
-          class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
-          required="">
+    <div class="w-full bg-white rounded-lg flex flex-col gap-4 py-3.5 px-5">
+      <!-- content  -->
+    
+      <div class="flex items-center gap-4 w-full">
+        <div class="flex flex-col gap-[5px] w-full">
+          <label for="first-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">First Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Enter First Name"
+            value="Ajay"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+         <div class="flex flex-col gap-[5px] w-full">
+          <label for="last-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Last Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name"
+            value="Bhimani"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
       </div>
-      <div class="flex flex-col gap-2.5">
-        <!--checkbox-->
-        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
-          <!-- Checkbox -->
-          <input type="checkbox"
-            class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
-          <!-- SVG Checkmark -->
-          <div
-            class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
-            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
-                stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <!-- Label text -->
-          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
-    peer-checked:text-Theme-black">
-            Include recipients
-          </span>
-        </label>
-        <!--checkbox-->
-        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
-          <!-- Checkbox -->
-          <input type="checkbox"
-            class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
-          <!-- SVG Checkmark -->
-          <div
-            class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
-            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
-                stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <!-- Label text -->
-          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
-    peer-checked:text-Theme-black">
-            Include signature fields
-          </span>
-        </label>
-        <!--checkbox-->
-        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
-          <!-- Checkbox -->
-          <input type="checkbox"
-            class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
-          <!-- SVG Checkmark -->
-          <div
-            class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
-            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2"
-                stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <!-- Label text -->
-          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
-    peer-checked:text-Theme-black">
-            Include completed signatures
-          </span>
-        </label>
-      </div>
+       <div class="flex flex-col gap-[5px] w-full">
+          <label for="email" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter Your Email"
+            value="ajubhimani@gmail.com"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+         <div class="flex flex-col gap-[5px] w-full">
+          <label for="phone" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number"
+            value="8645975265"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
     </div>
     <!-- modal footer  -->
     <div class="flex items-center justify-end w-full p-2 gap-2">
       <button class="btn-white w-full text-center">Cancel</button>
       <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
-        Duplicate
+        Edit Recipient
       </button>
     </div>
   </div>
-
 
   <!-- modal overlay  -->
    <div

@@ -920,6 +920,219 @@
 
 </div>
 <br>
+
+<!------------select----------->
+<div class="max-w-[400px]">
+
+<div class="flex flex-col  gap-2  ">
+                          <h5 class="text-sm leading-[22px] font-inter-display-medium text-Theme-light-gray">
+                            Authentication Type</h5>
+                          <!--Auth dropdown-->
+                          <div x-data="dropdownComponent('auth-dropdown')" class="relative w-full ">
+                            <button @click="toggle" :class="isOpen ? 'bg-white !border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'" class="w-full border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[22px] text-Theme-black outline-none focus:outline-none transition-all duration-500 bg-[#FAFAF9] hover:bg-white hover:border-[#dcdcdc]">
+                              No Authentication
+                              <svg class="transition-all duration-500" :class="{'rotate-180': isOpen}" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M8.80273 0.799234L4.80257 4.7994L0.80005 0.796875" stroke="#000A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+
+                            </button>
+                            <div x-ref="auth-dropdown" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10 p-2 mt-2 w-full bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                              <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Authentication
+                                Type</span>
+                              <div class="bg-white rounded-lg p-2 ">
+                                <!--list-->
+                                <ul class="flex flex-col gap-0.5">
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      No Authentication
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Password
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                      Text Message(SMS)
+                                    </button>
+                                  </li>
+
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+  </div>
+<br>
+  <!--input-->    
+    <div class="flex flex-col gap-[5px] border-b border-Theme-secondary-gray mb-3.5 pb-3.5">
+        <label for="doc-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Document
+          Name</label>
+        <input type="text" id="doc-name" name="doc-name" placeholder="Enter Document Name" value="Service Agreement – Marketing Project - Copy" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+      </div>
+
+      <br>
+      <!----toggle content open-->
+<div class="relative  flex flex-col gap-2" x-data="{ bordersettingEnabled: false }">
+                            <!--toggle-->
+                            <label for="border-setting" class="w-full flex items-center justify-between gap-2 cursor-pointer">
+                              <span class="text-sm leading-5 font-inter-display-medium text-Theme-light-gray tracking-[0.56px] uppercase">Border Settings</span>
+
+                              <div class="flex items-center">
+                                <input type="checkbox" id="border-setting" class="sr-only peer" x-model="bordersettingEnabled">
+                                <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
+                      peer-checked:bg-[#8E5EFE]
+                      peer-checked:hover:bg-[#8E5EFE]
+                      
+                      after:content-['']
+                      after:absolute
+                      after:top-[2px]
+                      after:left-[2px]
+                      after:w-[20px]
+                      after:h-[16px]
+                      after:bg-white
+                      after:rounded-[16px]
+                      after:shadow-secondary
+                      after:transition-all
+                      after:duration-300
+                      peer-checked:after:translate-x-[16px]">
+                                </div>
+                              </div>
+                            </label>
+                           <div x-show="bordersettingEnabled" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="relative flex flex-col gap-2.5" style="display: none;">
+                            <div class="flex items-center gap-2.5">
+                              <!--border radius-->
+                              <ul class="bg-Theme-Forground rounded-lg p-1 flex items-center gap-1.5 w-1/2">
+                                <li>
+                                  <button class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&amp;.active]:bg-[#EEEEEC]">
+                                   
+                                    <svg class="text-Theme-dark-gray transition-all duration-500 group-[&amp;.active]:text-Theme-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M2.29448 14.7248C2.45555 15.5985 2.74044 16.2414 3.24433 16.7497C3.74822 17.2581 4.38559 17.5454 5.25163 17.7079M2.08909 8.33594C2.08496 8.82722 2.08496 9.35822 2.08496 9.93314C2.08496 10.5081 2.08496 11.0391 2.08909 11.5304M8.41829 17.9151C8.90529 17.9193 9.4317 17.9193 10.0016 17.9193C10.5715 17.9193 11.098 17.9193 11.585 17.9151M14.7516 17.7079C15.6176 17.5454 16.255 17.2581 16.759 16.7497C17.2628 16.2414 17.5477 15.5985 17.7088 14.7248M17.9142 8.33594C17.9183 8.82705 17.9183 9.35847 17.9183 9.93314C17.9183 10.5081 17.9183 11.039 17.9142 11.5302" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M2.08301 5.41927C2.24845 4.50765 2.54108 3.83674 3.05867 3.30632C4.24956 2.08594 6.16627 2.08594 9.99971 2.08594C13.833 2.08594 15.7498 2.08594 16.9407 3.30633C17.4583 3.83674 17.7509 4.50765 17.9164 5.41927" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&amp;.active]:bg-[#EEEEEC]">
+                                   
+                                    <svg class="text-Theme-dark-gray transition-all duration-500 group-[&amp;.active]:text-Theme-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M14.7219 17.7098C15.5955 17.5487 16.2385 17.2638 16.7468 16.7599C17.2551 16.256 17.5425 15.6186 17.705 14.7526M8.33301 17.9151C8.82434 17.9193 9.35534 17.9193 9.93026 17.9193C10.5052 17.9193 11.0362 17.9193 11.5275 17.9151M17.9122 11.5859C17.9163 11.0989 17.9163 10.5725 17.9163 10.0026C17.9163 9.43269 17.9163 8.90627 17.9122 8.41919M17.705 5.2526C17.5425 4.38657 17.2551 3.7492 16.7468 3.24531C16.2385 2.74142 15.5955 2.45653 14.7219 2.29546M8.33301 2.09007C8.82409 2.08594 9.35559 2.08594 9.93026 2.08594C10.5051 2.08594 11.0361 2.08594 11.5273 2.09007" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M5.41634 17.9193C4.50472 17.7539 3.83381 17.4612 3.3034 16.9436C2.08301 15.7527 2.08301 13.836 2.08301 10.0026C2.08301 6.1692 2.08301 4.2525 3.3034 3.06161C3.83381 2.54402 4.50472 2.25139 5.41634 2.08594" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&amp;.active]:bg-[#EEEEEC]">
+
+                                    <svg class="text-Theme-dark-gray transition-all duration-500 group-[&amp;.active]:text-Theme-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M5.27745 2.29546C4.40382 2.45653 3.76086 2.74141 3.25255 3.2453C2.74423 3.7492 2.45685 4.38657 2.29437 5.2526M11.6663 2.09007C11.1751 2.08594 10.644 2.08594 10.0691 2.08594C9.49417 2.08594 8.96317 2.08594 8.47184 2.09007M2.08717 8.41927C2.08301 8.90627 2.08301 9.43269 2.08301 10.0026C2.08301 10.5725 2.08301 11.0989 2.08717 11.586M2.29437 14.7526C2.45685 15.6186 2.74423 16.256 3.25255 16.7599C3.76086 17.2638 4.40382 17.5487 5.27745 17.7098M11.6663 17.9151C11.1753 17.9193 10.6438 17.9193 10.0691 17.9193C9.49426 17.9193 8.96326 17.9193 8.47201 17.9151" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M14.583 2.08594C15.4946 2.25139 16.1655 2.54401 16.6959 3.0616C17.9163 4.2525 17.9163 6.1692 17.9163 10.0026C17.9163 13.836 17.9163 15.7527 16.6959 16.9436C16.1655 17.4612 15.4946 17.7539 14.583 17.9193" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="group w-[40px] h-[40px] p-2 rounded-md bg-transparent transition-all duration-500 flex items-center justify-center [&amp;.active]:bg-[#EEEEEC] active">
+                                   
+                                    <svg class="text-Theme-dark-gray transition-all duration-500 group-[&amp;.active]:text-Theme-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M17.7068 5.28038C17.5458 4.40675 17.2608 3.76379 16.757 3.25548C16.2531 2.74716 15.6157 2.45978 14.7497 2.2973M17.9122 11.6693C17.9163 11.178 17.9163 10.6469 17.9163 10.072C17.9163 9.4971 17.9163 8.9661 17.9122 8.47477M11.583 2.0901C11.096 2.08594 10.5696 2.08594 9.99967 2.08594C9.42976 2.08594 8.90334 2.08594 8.41626 2.0901M5.24967 2.2973C4.38364 2.45978 3.74627 2.74716 3.24237 3.25548C2.73848 3.76379 2.4536 4.40675 2.29253 5.28038M2.08713 11.6693C2.08301 11.1782 2.08301 10.6467 2.08301 10.072C2.08301 9.49719 2.08301 8.96619 2.08713 8.47494" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M17.9163 14.5859C17.7509 15.4975 17.4583 16.1684 16.9407 16.6989C15.7498 17.9193 13.8331 17.9193 9.99967 17.9193C6.16627 17.9193 4.24957 17.9193 3.05867 16.6989C2.54108 16.1684 2.24846 15.4975 2.08301 14.5859" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                                  </button>
+                                </li>
+                              </ul>
+                              <div class="relative w-1/2">
+                           
+<svg class="absolute left-4 top-3.5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M5.24967 2.29546C4.38364 2.45653 3.74627 2.74141 3.24237 3.2453C2.73848 3.7492 2.4536 4.38657 2.29253 5.2526M14.7497 2.29546C15.6157 2.45653 16.2531 2.74141 16.757 3.2453C17.2608 3.7492 17.5458 4.38657 17.7068 5.2526M11.583 2.09006C11.096 2.08594 10.5696 2.08594 9.99967 2.08594C9.42976 2.08594 8.90334 2.08594 8.41634 2.09006M17.9122 8.41927C17.9163 8.90627 17.9163 9.43269 17.9163 10.0026C17.9163 10.5725 17.9163 11.0989 17.9122 11.586M2.08713 8.41927C2.08301 8.90627 2.08301 9.43269 2.08301 10.0026C2.08301 10.5725 2.08301 11.0989 2.08714 11.586M2.29253 14.7526C2.4536 15.6186 2.73848 16.256 3.24237 16.7599C3.74627 17.2638 4.38364 17.5487 5.24967 17.7098M17.7068 14.7526C17.5458 15.6186 17.2608 16.256 16.757 16.7599C16.2531 17.2638 15.6157 17.5487 14.7497 17.7098M11.583 17.9151C11.096 17.9193 10.5696 17.9193 9.99967 17.9193C9.42984 17.9193 8.90342 17.9193 8.41651 17.9151" stroke="#020012" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                               <input type="text" class="w-full py-[13px] px-4 pl-[46px] bg-Theme-Forground rounded-10px h-[48px] outline-none focus:outline-none text-sm leading-[22px] font-inter-display-medium text-Theme-black transition-all duration-500 border border-transparent hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white " value="2 px">
+                              </div>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                              <!--border color picker-->
+                              <div x-data="{ opacity: 100, hex: '8E5EFE', dragging: false, startX: 0, startVal: 0 }" @mousemove.window="dragging &amp;&amp; (opacity = Math.max(0, Math.min(100, startVal + Math.round((($event.clientX - startX) / 2)))))" @mouseup.window="dragging = false; document.body.style.cursor = ''" class="h-[48px] border border-[#EBEBEB] bg-Theme-Forground rounded-10px w-1/2">
+                                <div class="flex">
+
+                                  <!-- colorpicker box-->
+                                  <div class="flex items-center gap-1.5 p-[5px]">
+                                    <button class="w-[38px] h-[38px] rounded-lg shrink-0 bg-Theme-black transition-all duration-300">
+                                    </button>
+                                    <input type="text" class="sr-only">
+                                    <input type="text" :value="'#'+hex" @input="hex = $event.target.value.replace('#','').toUpperCase()" class="w-full bg-transparent outline-none text-sm text-Theme-dark-gray font-inter-display-medium leading-5">
+                                  </div>
+
+                                  <!-- Opacity -->
+                                  <div class="flex items-center border-l border-[#D0D0CD] flex-1 gap-[2px] pl-2.5 pr-3.5">
+                                    <input type="number" :value="opacity" @input="opacity = Math.max(0, Math.min(100, parseInt($event.target.value) || 0))" class="bg-transparent outline-none text-sm text-Theme-dark-gray font-inter-display-medium leading-5 w-[24px]">
+                                    <span @mousedown.prevent="if(document.activeElement !== $el) { dragging = true; startX = $event.clientX; startVal = opacity; document.body.style.cursor = 'ew-resize'; }" class="text-sm text-Theme-dark-gray font-inter-display-medium cursor-ew-resize select-none">%</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <!--border style-->
+                              <div x-data="dropdownComponent('border-style-dropdown')" class="relative  w-1/2">
+                                  <button @click="toggle" :class="isOpen ? 'bg-white !border-Theme-purple' : 'bg-[#FAFAF9] border-[#EBEBEB] hover:bg-white hover:border-[#dcdcdc]'" class="w-full border border-[#EBEBEB] rounded-10px py-[13px] px-4 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[20px] text-Theme-black outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 appearance-none transition-all duration-500 bg-[#FAFAF9] hover:bg-white hover:border-[#dcdcdc]">
+                                    Solid
+                                    <svg class="transition-all duration-500" :class="{'rotate-180': isOpen}" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                      <path d="M8.80273 0.799234L4.80257 4.7994L0.80005 0.796875" stroke="#000A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </button>
+                                  <div x-ref="border-style-dropdown" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute right-0 z-10  mt-[5px] w-[150px] bg-gradient-gray rounded-10px p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                                    <span class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Border Style</span>
+                                    <div class="bg-white rounded-lg p-2 ">
+                                      <!--list-->
+                                      <ul class="flex flex-col gap-0.5 ">
+                                        <li>
+                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                           Solid
+                                          </button>
+                                        </li>
+                                        <li>
+                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                           Dashed
+                                          </button>
+                                        </li>
+                                        <li>
+                                          <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                           Dotted
+                                          </button>
+                                        </li>
+                                       
+                                     
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div> 
+                            </div>
+                          </div>
+</div>
+
+<br>
+
+
+<br>
+
+<!--checkbox-->
+<label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer">
+          <!-- Checkbox -->
+          <input type="checkbox" class="peer appearance-none w-[14.25px] h-[14.25px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-Theme-purple checked:border-Theme-purple relative z-10 cursor-pointer">
+          <!-- SVG Checkmark -->
+          <div class="absolute w-[10px] h-[12px] left-[2px] z-10 pointer-events-none checkmark flex items-center justify-center">
+            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <!-- Label text -->
+          <span class="text-sm font-inter-display-medium leading-[22px] text-Theme-dark-gray transition-colors duration-200
+    peer-checked:text-Theme-black">
+            Include recipients
+          </span>
+        </label>
+
+
+    
   <!--Modals-->
   <!-- Delete workspace -->
   <div

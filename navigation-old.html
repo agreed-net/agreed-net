@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+      @keyframes slideInStagger {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .menu-item {
+        animation: slideInStagger 0.3s ease-out forwards;
+      }
+
+      .menu-item:nth-child(1) { animation-delay: 0ms; }
+      .menu-item:nth-child(2) { animation-delay: 50ms; }
+      .menu-item:nth-child(3) { animation-delay: 100ms; }
+      .menu-item:nth-child(4) { animation-delay: 150ms; }
+      .menu-item:nth-child(5) { animation-delay: 200ms; }
+      .menu-item:nth-child(6) { animation-delay: 250ms; }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .menu-featured {
+        animation: fadeInScale 0.4s ease-out 0.1s forwards;
+      }
+    </style>
+  </head>
+
+  <body class="font-Inter-disp box-border">
+    <!-- navigation  -->
+    <header
+      class="fixed left-0 top-0 z-[1000] w-full bg-white px-2.5"
+      x-data="{ 
+        drawerOpen: false, 
+        activeSubmenu: null,
+        closeMenuOnEscape() { 
+          document.addEventListener('keydown', (e) => { 
+            if(e.key === 'Escape') {
+              this.drawerOpen = false;
+              this.activeSubmenu = null;
+            }
+          }); 
+        }
+      }"
+      @init="closeMenuOnEscape()"
+    >
+      <div
+        class="w-full max-w-[1170px] mx-auto border-b border-[#EEEEEC] bg-white py-3.5"
+      >
+        <div class="mx-auto flex items-center justify-between">
+          <!--logo-->
+          <a href="#" class="flex items-center" aria-label="Agreed home">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="89"
+              height="26"
+              viewBox="0 0 89 26"
+              fill="none"
+            >
+              <path
+                d="M12.1813 7.78858V6.01468H16.0517V21.0478H12.1813V19.2739C11.0212 20.7371 9.39101 21.4687 7.29078 21.4687C5.29057 21.4687 3.57038 20.707 2.13023 19.1837C0.710076 17.6403 0 15.7561 0 13.5312C0 11.3264 0.710076 9.45224 2.13023 7.90885C3.57038 6.36545 5.29057 5.59375 7.29078 5.59375C9.39101 5.59375 11.0212 6.32536 12.1813 7.78858ZM5.04054 16.598C5.82062 17.3797 6.81073 17.7706 8.01086 17.7706C9.21099 17.7706 10.2011 17.3797 10.9812 16.598C11.7813 15.7962 12.1813 14.774 12.1813 13.5312C12.1813 12.2885 11.7813 11.2763 10.9812 10.4945C10.2011 9.69277 9.21099 9.29189 8.01086 9.29189C6.81073 9.29189 5.82062 9.69277 5.04054 10.4945C4.26046 11.2763 3.87042 12.2885 3.87042 13.5312C3.87042 14.774 4.26046 15.7962 5.04054 16.598Z"
+                fill="#090536"
+              />
+              <path
+                d="M38.1334 6.01468V8.60037C38.4734 7.65829 39.0535 6.94673 39.8736 6.46567C40.6937 5.96457 41.6338 5.71401 42.6939 5.71401V10.0435C41.5137 9.88319 40.4536 10.1237 39.5135 10.7651C38.5934 11.3865 38.1334 12.4188 38.1334 13.862V21.0478H34.263V6.01468H38.1334Z"
+                fill="#090536"
+              />
+              <path
+                d="M85.0563 7.78714V0H88.9267V21.0463H85.0563V19.2724C83.9162 20.7357 82.296 21.4673 80.1958 21.4673C78.1756 21.4673 76.4454 20.7056 75.0052 19.1822C73.5851 17.6388 72.875 15.7547 72.875 13.5298C72.875 11.3249 73.5851 9.45081 75.0052 7.90741C76.4454 6.36401 78.1756 5.59231 80.1958 5.59231C82.296 5.59231 83.9162 6.32392 85.0563 7.78714ZM77.9155 16.5965C78.7356 17.3783 79.7357 17.7691 80.9159 17.7691C82.116 17.7691 83.1061 17.3783 83.8862 16.5965C84.6663 15.7948 85.0563 14.7725 85.0563 13.5298C85.0563 12.2871 84.6663 11.2748 83.8862 10.4931C83.1061 9.69134 82.116 9.29045 80.9159 9.29045C79.7157 9.29045 78.7156 9.69134 77.9155 10.4931C77.1355 11.2748 76.7454 12.2871 76.7454 13.5298C76.7454 14.7725 77.1355 15.7948 77.9155 16.5965Z"
+                fill="#090536"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M31.7678 9.51556H30.1762C30.5787 10.3496 30.8043 11.2854 30.8043 12.2739C30.8043 15.7777 27.9699 18.6182 24.4734 18.6182C20.9769 18.6181 18.1425 15.7777 18.1424 12.2739C18.1424 8.7701 20.9769 5.9297 24.4734 5.92969H31.7678V9.51556ZM24.4734 9.51556C22.9532 9.51558 21.7208 10.7505 21.7208 12.2739C21.7208 13.7973 22.9532 15.0323 24.4734 15.0323C25.9936 15.0323 27.226 13.7973 27.226 12.2739C27.226 10.7505 25.9936 9.51556 24.4734 9.51556Z"
+                fill="#090536"
+              />
+              <path
+                d="M21.9272 15.7219C23.5546 15.7219 24.9583 16.6813 25.6058 18.0665H22.4089C21.8008 18.0665 21.3079 18.5605 21.3079 19.1698C21.3079 19.7792 21.8008 20.2732 22.4089 20.2732H28.4509C28.4565 20.2732 28.4621 20.2734 28.4677 20.2737C28.8746 20.2671 29.2828 20.3218 29.6783 20.4383C30.5198 20.6861 31.2585 21.2004 31.784 21.904C32.3094 22.6077 32.5934 23.4629 32.5934 24.3418L29.1899 25.4052C28.9244 24.556 28.1606 23.9278 27.2417 23.8644L27.2351 23.8591H22.2851C22.2593 23.8591 22.2342 23.8556 22.2104 23.8492C22.1168 23.8557 22.0224 23.8591 21.9272 23.8591C19.6849 23.8591 17.8672 22.0375 17.8672 19.7905C17.8672 17.5434 19.6849 15.7219 21.9272 15.7219Z"
+                fill="#090536"
+              />
+              <path
+                d="M66.9706 11.8691C66.9706 9.8993 66.3139 9.01171 65.7384 8.58134C65.0867 8.094 64.2221 7.95773 63.5416 8.03871C62.5235 8.15986 60.3868 9.85234 61.1903 12.8447C61.6859 14.6901 62.8796 16.0573 64.4016 16.9193C66.0904 15.4339 66.9706 13.5497 66.9706 11.8691ZM47.7421 11.8691C47.7421 13.5497 48.6223 15.434 50.3111 16.9193C51.8331 16.0573 53.0269 14.6902 53.5224 12.8447C54.3259 9.85234 52.1892 8.15986 51.1711 8.03871C50.4907 7.95773 49.6261 8.094 48.9744 8.58134C48.3989 9.01171 47.7421 9.8993 47.7421 11.8691ZM70.3092 11.8691C70.3092 14.0441 69.4578 16.1773 68.0141 17.9637C69.4518 18.0378 70.819 17.7232 71.8383 17.0712L73.6346 19.8912C71.1254 21.4963 67.7669 21.7016 64.8268 20.742C62.7683 22.0019 60.2321 22.7744 57.3895 22.7744H57.3232C54.4807 22.7744 51.9443 22.0019 49.8859 20.742C46.9457 21.7015 43.5874 21.4963 41.0781 19.8912L42.8744 17.0712C43.8937 17.7232 45.2609 18.0378 46.6986 17.9637C45.2549 16.1773 44.4035 14.0441 44.4035 11.8691C44.4035 9.05483 45.4018 7.07848 46.9776 5.90005C48.4773 4.77861 50.2603 4.56116 51.5649 4.71641C54.5169 5.06771 58.1013 8.66797 56.7463 13.714C56.1716 15.8542 54.9815 17.5427 53.4868 18.7772C54.6308 19.1892 55.9183 19.4288 57.3232 19.4288H57.3895C58.7944 19.4288 60.0819 19.1892 61.2258 18.7772C59.7312 17.5427 58.5411 15.8542 57.9664 13.714C56.6114 8.66797 60.1958 5.06771 63.1479 4.71641C64.4524 4.56116 66.2355 4.77861 67.7351 5.90005C69.3109 7.07848 70.3092 9.05483 70.3092 11.8691Z"
+                fill="#8E5EFE"
+              />
+            </svg>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden items-center gap-[34px] pl-[50px] lg:flex w-full">
+            <!-- Product Menu -->
+            <div class="relative group">
+              <button
+                @mouseenter="openMenu = 'product'; $dispatch('open-menu', 'product')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black transition-colors"
+              >
+                Product
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <!-- Product Dropdown - Stripe Style -->
+              <div
+                x-show="openMenu === 'product'"
+                @mouseenter="openMenu = 'product'; $dispatch('open-menu', 'product')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-95 -translate-y-8"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-95 -translate-y-8"
+                class="absolute left-0 mt-2 w-[420px] bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden backdrop-blur-sm"
+                style="display: none; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15)"
+              >
+                <!-- Two Column Layout like Stripe -->
+                <div class="grid grid-cols-2">
+                  <!-- Left Column - Products List -->
+                  <div class="border-r border-gray-100 p-6 space-y-1">
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Products</p>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-blue-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Automation</p>
+                          <p class="text-xs text-gray-600">Smart workflows</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-purple-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-purple-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Analytics</p>
+                          <p class="text-xs text-gray-600">Track & measure</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-green-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-green-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Integrations</p>
+                          <p class="text-xs text-gray-600">Connect tools</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-orange-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-orange-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Performance</p>
+                          <p class="text-xs text-gray-600">Lightning fast</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <!-- Right Column - Featured Content -->
+                  <div class="menu-featured bg-gradient-to-br from-gray-50 to-gray-25 p-6 flex flex-col justify-between">
+                    <div>
+                      <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-4 mb-4 text-white">
+                        <p class="font-bold text-base mb-1">New: Automation Suite</p>
+                        <p class="text-xs opacity-90">Streamline your workflows automatically</p>
+                      </div>
+                      <div class="space-y-2">
+                        <p class="text-xs text-gray-600">Other resources:</p>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          Documentation
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          API Reference
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Solutions Menu -->
+            <div class="relative group">
+              <button
+                @mouseenter="openMenu = 'solutions'; $dispatch('open-menu', 'solutions')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black transition-colors"
+              >
+                Solutions
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <!-- Solutions Dropdown - Stripe Style -->
+              <div
+                x-show="openMenu === 'solutions'"
+                @mouseenter="openMenu = 'solutions'; $dispatch('open-menu', 'solutions')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-95 -translate-y-8"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-95 -translate-y-8"
+                class="absolute left-0 mt-2 w-[420px] bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden backdrop-blur-sm"
+                style="display: none; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15)"
+              >
+                <div class="grid grid-cols-2">
+                  <!-- Left Column -->
+                  <div class="border-r border-gray-100 p-6 space-y-1">
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">By Use Case</p>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-indigo-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-indigo-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Enterprise</p>
+                          <p class="text-xs text-gray-600">For large teams</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-pink-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Startup</p>
+                          <p class="text-xs text-gray-600">Growing businesses</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-cyan-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-cyan-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Agencies</p>
+                          <p class="text-xs text-gray-600">Freelancers</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-rose-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-rose-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Non-profits</p>
+                          <p class="text-xs text-gray-600">Community driven</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <!-- Right Column -->
+                  <div class="bg-gradient-to-br from-gray-50 to-gray-25 p-6 flex flex-col justify-between">
+                    <div>
+                      <div class="bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl p-4 mb-4 text-white">
+                        <p class="font-bold text-base mb-1">Perfect for Your Scale</p>
+                        <p class="text-xs opacity-90">Choose the right plan for your business</p>
+                      </div>
+                      <div class="space-y-2">
+                        <p class="text-xs text-gray-600">Popular choices:</p>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          Compare Plans
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          View Case Studies
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resources Menu -->
+            <div class="relative group">
+              <button
+                @mouseenter="openMenu = 'resources'; $dispatch('open-menu', 'resources')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black transition-colors"
+              >
+                Resources
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <!-- Resources Dropdown - Stripe Style -->
+              <div
+                x-show="openMenu === 'resources'"
+                @mouseenter="openMenu = 'resources'; $dispatch('open-menu', 'resources')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-95 -translate-y-8"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-95 -translate-y-8"
+                class="absolute left-0 mt-2 w-[420px] bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden backdrop-blur-sm"
+                style="display: none; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15)"
+              >
+                <div class="grid grid-cols-2">
+                  <!-- Left Column -->
+                  <div class="border-r border-gray-100 p-6 space-y-1">
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Learn</p>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-blue-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Documentation</p>
+                          <p class="text-xs text-gray-600">Step-by-step guides</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-purple-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-purple-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">API Reference</p>
+                          <p class="text-xs text-gray-600">Developer docs</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-green-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-green-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Blog</p>
+                          <p class="text-xs text-gray-600">Latest updates</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gradient-to-r hover:from-orange-50 hover:to-transparent transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-2 h-2 rounded-full bg-orange-500 mt-1.5 group-hover/link:scale-125 transition-transform"></div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Support</p>
+                          <p class="text-xs text-gray-600">Get help 24/7</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <!-- Right Column -->
+                  <div class="menu-featured bg-gradient-to-br from-gray-50 to-gray-25 p-6 flex flex-col justify-between">
+                    <div>
+                      <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl p-4 mb-4 text-white">
+                        <p class="font-bold text-base mb-1">Learning Center</p>
+                        <p class="text-xs opacity-90">Master our platform with video tutorials</p>
+                      </div>
+                      <div class="space-y-2">
+                        <p class="text-xs text-gray-600">Quick links:</p>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          Video Tutorials
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          FAQ
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Integrations Menu -->
+            <div class="relative group">
+              <button
+                @mouseenter="openMenu = 'integrations'; $dispatch('open-menu', 'integrations')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black transition-colors"
+              >
+                Integrations
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <!-- Integrations Dropdown - Stripe Style Showcase -->
+              <div
+                x-show="openMenu === 'integrations'"
+                @mouseenter="openMenu = 'integrations'; $dispatch('open-menu', 'integrations')"
+                @mouseleave="openMenu = null; $dispatch('close-menu')"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-95 -translate-y-8"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-95 -translate-y-8"
+                class="absolute left-0 mt-2 w-[500px] bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden backdrop-blur-sm"
+                style="display: none; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15)"
+              >
+                <div class="grid grid-cols-2">
+                  <!-- Left Column -->
+                  <div class="border-r border-gray-100 p-6 space-y-1">
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Popular</p>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-red-50 transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-red-500 rounded flex items-center justify-center text-white text-xs font-bold group-hover/link:scale-110 transition-transform">S</div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Slack</p>
+                          <p class="text-xs text-gray-600">Team messaging</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-blue-50 transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-blue-500 rounded flex items-center justify-center text-white text-xs font-bold group-hover/link:scale-110 transition-transform">L</div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">LinkedIn</p>
+                          <p class="text-xs text-gray-600">Social network</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-gray-900 hover:bg-opacity-5 transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-gray-900 rounded flex items-center justify-center text-white text-xs font-bold group-hover/link:scale-110 transition-transform">G</div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">GitHub</p>
+                          <p class="text-xs text-gray-600">Code repository</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-yellow-50 transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-yellow-500 rounded flex items-center justify-center text-white text-xs font-bold group-hover/link:scale-110 transition-transform">Z</div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Zapier</p>
+                          <p class="text-xs text-gray-600">Workflow automation</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="menu-item group/link block px-4 py-3 rounded-lg hover:bg-green-50 transition-all duration-200">
+                      <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-green-500 rounded flex items-center justify-center text-white text-xs font-bold group-hover/link:scale-110 transition-transform">T</div>
+                        <div>
+                          <p class="font-semibold text-gray-900 text-sm">Twilio</p>
+                          <p class="text-xs text-gray-600">SMS & calls</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  <!-- Right Column -->
+                  <div class="menu-featured bg-gradient-to-br from-gray-50 to-gray-25 p-6 flex flex-col justify-between">
+                    <div>
+                      <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-4 mb-4 text-white">
+                        <p class="font-bold text-base mb-1">2000+ Integrations</p>
+                        <p class="text-xs opacity-90">Connect with your favorite tools</p>
+                      </div>
+                      <div class="space-y-2">
+                        <p class="text-xs text-gray-600">Explore more:</p>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          Browse All Apps
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#" class="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+                          Custom Integration
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <a href="#" class="text-sm leading-5 font-inter-display-medium text-[#090536] hover:text-black transition-colors">Pricing</a>
+          </nav>
+
+          <a
+            href="#"
+            class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7] hidden lg:inline-block"
+          >
+            Get Started
+          </a>
+
+          <!--mobile toggle button-->
+          <button
+            @click="mobileMenu = !mobileMenu"
+            class="inline-flex h-7 w-7 items-center justify-center text-[#110a3f] lg:hidden"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              x-show="!mobileMenu"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 7H20M4 12H20M4 17H20"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <svg
+              x-show="mobileMenu"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              style="display: none"
+            >
+              <path
+                d="M6 6L18 18M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav
+          x-show="mobileMenu"
+          x-transition
+          class="bg-white px-4 py-3 pt-4 flex flex-col gap-2 lg:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
+          style="display: none"
+        >
+          <!-- Product Mobile Menu -->
+          <div class="border-b border-gray-200">
+            <button
+              @click="openMenu = openMenu === 'product' ? null : 'product'"
+              class="w-full text-left py-3 text-sm leading-5 font-inter-display-medium flex items-center justify-between text-[#090536] hover:text-black"
+            >
+              Product
+              <svg
+                class="transition-transform duration-300"
+                :class="openMenu === 'product' ? 'rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M14 8L10 12L6 8"
+                  stroke="black"
+                  stroke-opacity="0.6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openMenu === 'product'"
+              x-transition
+              class="bg-gray-50 space-y-2 px-2 py-2"
+              style="display: none"
+            >
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Automation</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Analytics</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Integrations</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Performance</a>
+            </div>
+          </div>
+
+          <!-- Solutions Mobile Menu -->
+          <div class="border-b border-gray-200">
+            <button
+              @click="openMenu = openMenu === 'solutions' ? null : 'solutions'"
+              class="w-full text-left py-3 text-sm leading-5 font-inter-display-medium flex items-center justify-between text-[#090536] hover:text-black"
+            >
+              Solutions
+              <svg
+                class="transition-transform duration-300"
+                :class="openMenu === 'solutions' ? 'rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M14 8L10 12L6 8"
+                  stroke="black"
+                  stroke-opacity="0.6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openMenu === 'solutions'"
+              x-transition
+              class="bg-gray-50 space-y-2 px-2 py-2"
+              style="display: none"
+            >
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Enterprise</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Startup</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Agencies</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Non-profits</a>
+            </div>
+          </div>
+
+          <!-- Resources Mobile Menu -->
+          <div class="border-b border-gray-200">
+            <button
+              @click="openMenu = openMenu === 'resources' ? null : 'resources'"
+              class="w-full text-left py-3 text-sm leading-5 font-inter-display-medium flex items-center justify-between text-[#090536] hover:text-black"
+            >
+              Resources
+              <svg
+                class="transition-transform duration-300"
+                :class="openMenu === 'resources' ? 'rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M14 8L10 12L6 8"
+                  stroke="black"
+                  stroke-opacity="0.6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openMenu === 'resources'"
+              x-transition
+              class="bg-gray-50 space-y-2 px-2 py-2"
+              style="display: none"
+            >
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Documentation</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Blog</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">API Reference</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Support</a>
+            </div>
+          </div>
+
+          <!-- Integrations Mobile Menu -->
+          <div class="border-b border-gray-200">
+            <button
+              @click="openMenu = openMenu === 'integrations' ? null : 'integrations'"
+              class="w-full text-left py-3 text-sm leading-5 font-inter-display-medium flex items-center justify-between text-[#090536] hover:text-black"
+            >
+              Integrations
+              <svg
+                class="transition-transform duration-300"
+                :class="openMenu === 'integrations' ? 'rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M14 8L10 12L6 8"
+                  stroke="black"
+                  stroke-opacity="0.6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="openMenu === 'integrations'"
+              x-transition
+              class="bg-gray-50 space-y-2 px-2 py-2"
+              style="display: none"
+            >
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Slack</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">LinkedIn</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">GitHub</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Zapier</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Stripe</a>
+              <a href="#" class="block py-2 px-3 text-sm text-gray-700 hover:text-purple-600 rounded transition">Twilio</a>
+            </div>
+          </div>
+
+          <a href="#" class="block py-3 text-sm leading-5 font-medium text-[#090536] hover:text-purple-600 transition border-b border-gray-200">Pricing</a>
+          
+          <a
+            href="#"
+            class="rounded-lg bg-Theme-purple px-4 py-3 text-sm font-medium leading-5 text-white text-center transition-all duration-500 hover:bg-[#7b53d7] my-2"
+          >
+            Get Started
+          </a>
+        </nav>
+      </div>
+    </header>
+        <div class="mx-auto flex items-center justify-between">
+          <!--logo-->
+          <a href="#" class="flex items-center" aria-label="Agreed home">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="89"
+              height="26"
+              viewBox="0 0 89 26"
+              fill="none"
+            >
+              <path
+                d="M12.1813 7.78858V6.01468H16.0517V21.0478H12.1813V19.2739C11.0212 20.7371 9.39101 21.4687 7.29078 21.4687C5.29057 21.4687 3.57038 20.707 2.13023 19.1837C0.710076 17.6403 0 15.7561 0 13.5312C0 11.3264 0.710076 9.45224 2.13023 7.90885C3.57038 6.36545 5.29057 5.59375 7.29078 5.59375C9.39101 5.59375 11.0212 6.32536 12.1813 7.78858ZM5.04054 16.598C5.82062 17.3797 6.81073 17.7706 8.01086 17.7706C9.21099 17.7706 10.2011 17.3797 10.9812 16.598C11.7813 15.7962 12.1813 14.774 12.1813 13.5312C12.1813 12.2885 11.7813 11.2763 10.9812 10.4945C10.2011 9.69277 9.21099 9.29189 8.01086 9.29189C6.81073 9.29189 5.82062 9.69277 5.04054 10.4945C4.26046 11.2763 3.87042 12.2885 3.87042 13.5312C3.87042 14.774 4.26046 15.7962 5.04054 16.598Z"
+                fill="#090536"
+              />
+              <path
+                d="M38.1334 6.01468V8.60037C38.4734 7.65829 39.0535 6.94673 39.8736 6.46567C40.6937 5.96457 41.6338 5.71401 42.6939 5.71401V10.0435C41.5137 9.88319 40.4536 10.1237 39.5135 10.7651C38.5934 11.3865 38.1334 12.4188 38.1334 13.862V21.0478H34.263V6.01468H38.1334Z"
+                fill="#090536"
+              />
+              <path
+                d="M85.0563 7.78714V0H88.9267V21.0463H85.0563V19.2724C83.9162 20.7357 82.296 21.4673 80.1958 21.4673C78.1756 21.4673 76.4454 20.7056 75.0052 19.1822C73.5851 17.6388 72.875 15.7547 72.875 13.5298C72.875 11.3249 73.5851 9.45081 75.0052 7.90741C76.4454 6.36401 78.1756 5.59231 80.1958 5.59231C82.296 5.59231 83.9162 6.32392 85.0563 7.78714ZM77.9155 16.5965C78.7356 17.3783 79.7357 17.7691 80.9159 17.7691C82.116 17.7691 83.1061 17.3783 83.8862 16.5965C84.6663 15.7948 85.0563 14.7725 85.0563 13.5298C85.0563 12.2871 84.6663 11.2748 83.8862 10.4931C83.1061 9.69134 82.116 9.29045 80.9159 9.29045C79.7157 9.29045 78.7156 9.69134 77.9155 10.4931C77.1355 11.2748 76.7454 12.2871 76.7454 13.5298C76.7454 14.7725 77.1355 15.7948 77.9155 16.5965Z"
+                fill="#090536"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M31.7678 9.51556H30.1762C30.5787 10.3496 30.8043 11.2854 30.8043 12.2739C30.8043 15.7777 27.9699 18.6182 24.4734 18.6182C20.9769 18.6181 18.1425 15.7777 18.1424 12.2739C18.1424 8.7701 20.9769 5.9297 24.4734 5.92969H31.7678V9.51556ZM24.4734 9.51556C22.9532 9.51558 21.7208 10.7505 21.7208 12.2739C21.7208 13.7973 22.9532 15.0323 24.4734 15.0323C25.9936 15.0323 27.226 13.7973 27.226 12.2739C27.226 10.7505 25.9936 9.51556 24.4734 9.51556Z"
+                fill="#090536"
+              />
+              <path
+                d="M21.9272 15.7219C23.5546 15.7219 24.9583 16.6813 25.6058 18.0665H22.4089C21.8008 18.0665 21.3079 18.5605 21.3079 19.1698C21.3079 19.7792 21.8008 20.2732 22.4089 20.2732H28.4509C28.4565 20.2732 28.4621 20.2734 28.4677 20.2737C28.8746 20.2671 29.2828 20.3218 29.6783 20.4383C30.5198 20.6861 31.2585 21.2004 31.784 21.904C32.3094 22.6077 32.5934 23.4629 32.5934 24.3418L29.1899 25.4052C28.9244 24.556 28.1606 23.9278 27.2417 23.8644L27.2351 23.8591H22.2851C22.2593 23.8591 22.2342 23.8556 22.2104 23.8492C22.1168 23.8557 22.0224 23.8591 21.9272 23.8591C19.6849 23.8591 17.8672 22.0375 17.8672 19.7905C17.8672 17.5434 19.6849 15.7219 21.9272 15.7219Z"
+                fill="#090536"
+              />
+              <path
+                d="M66.9706 11.8691C66.9706 9.8993 66.3139 9.01171 65.7384 8.58134C65.0867 8.094 64.2221 7.95773 63.5416 8.03871C62.5235 8.15986 60.3868 9.85234 61.1903 12.8447C61.6859 14.6901 62.8796 16.0573 64.4016 16.9193C66.0904 15.4339 66.9706 13.5497 66.9706 11.8691ZM47.7421 11.8691C47.7421 13.5497 48.6223 15.434 50.3111 16.9193C51.8331 16.0573 53.0269 14.6902 53.5224 12.8447C54.3259 9.85234 52.1892 8.15986 51.1711 8.03871C50.4907 7.95773 49.6261 8.094 48.9744 8.58134C48.3989 9.01171 47.7421 9.8993 47.7421 11.8691ZM70.3092 11.8691C70.3092 14.0441 69.4578 16.1773 68.0141 17.9637C69.4518 18.0378 70.819 17.7232 71.8383 17.0712L73.6346 19.8912C71.1254 21.4963 67.7669 21.7016 64.8268 20.742C62.7683 22.0019 60.2321 22.7744 57.3895 22.7744H57.3232C54.4807 22.7744 51.9443 22.0019 49.8859 20.742C46.9457 21.7015 43.5874 21.4963 41.0781 19.8912L42.8744 17.0712C43.8937 17.7232 45.2609 18.0378 46.6986 17.9637C45.2549 16.1773 44.4035 14.0441 44.4035 11.8691C44.4035 9.05483 45.4018 7.07848 46.9776 5.90005C48.4773 4.77861 50.2603 4.56116 51.5649 4.71641C54.5169 5.06771 58.1013 8.66797 56.7463 13.714C56.1716 15.8542 54.9815 17.5427 53.4868 18.7772C54.6308 19.1892 55.9183 19.4288 57.3232 19.4288H57.3895C58.7944 19.4288 60.0819 19.1892 61.2258 18.7772C59.7312 17.5427 58.5411 15.8542 57.9664 13.714C56.6114 8.66797 60.1958 5.06771 63.1479 4.71641C64.4524 4.56116 66.2355 4.77861 67.7351 5.90005C69.3109 7.07848 70.3092 9.05483 70.3092 11.8691Z"
+                fill="#8E5EFE"
+              />
+            </svg>
+          </a>
+
+
+      </div>
+    </header>
+   
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

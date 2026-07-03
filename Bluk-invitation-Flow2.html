@@ -1,0 +1,1402 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- REQUIRED META TAGS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Agreed</title>
+  <!--Main CSS-->
+  <link href="assets/css/output.css" rel="stylesheet" />
+
+</head>
+
+<body class="bg-Theme-Forground font-inter-display overflow-hidden">
+  <div x-data class="block relative">
+
+    <!--Main Content-->
+    <div class=" w-full  relative md:h-screen h-auto p-1 h-full min-h-screen">
+      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full md:px-5 px-3 overflow-hidden">
+        <div class="py-3.5   border-b border-[#EEEEEC] flex justify-between items-center relative z-10 bg-white">
+          <!--top bar-->
+          <div class="flex items-center gap-3">
+            <!-- Toggle button — put this in your header -->
+            <button
+              class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9.16732 15L4.16732 10L9.16732 5M4.58398 10L15.834 10" stroke="#57534E" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <!--breadcrumbs-->
+            <ul class="flex items-center gap-3.5 bg-[#F6F6F6] rounded-lg py-[2px] px-3.5 h-[34px]">
+
+              <a href="#"
+                class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Document</a>
+
+              <span class="py-[5px] block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path d="M0.700195 0.699219L4.7002 4.69922L0.700195 8.69922" stroke="#57534E" stroke-width="1.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+
+              <a href="#"
+                class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Recipients</a>
+              <span class="py-[5px] block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path d="M0.700195 0.699219L4.7002 4.69922L0.700195 8.69922" stroke="#57534E" stroke-width="1.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <a href="#"
+                class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Send</a>
+            </ul>
+          </div>
+
+        </div>
+
+        <div x-data="{ rightPanelOpen: true }"
+          class="relative max-[1370px]:gap-2 flex lg:flex-row flex-col md:h-auto h-[calc(100vh-74px)] overflow-y lg:overflow-hidden">
+
+          <!--left accordion panel-->
+          <div
+            class="lg:sticky relative lg:top-[70px] top-0 flex flex-col shrink-0 min-[1500px]:w-[420px] min-[1200px]:w-[350px] min-[990px]:w-[320px] w-full  pt-3.5">
+            <!--accordion-->
+            <div
+              x-data="{ open: (window.innerWidth >= 776), panelHeight: '0px', init() { this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); window.addEventListener('resize', () => { this.open = (window.innerWidth >= 776); this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); }); }, toggle() { this.open = !this.open; this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); } }"
+              :class="open ? 'accordion-open h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)]' : 'h-auto'"
+              class="bg-[#FAFAF9] p-1 rounded-[12px] transition-all duration-300 overflow-hidden">
+              <!--accordion header-->
+              <div class="flex items-center justify-between p-1.5 pl-[18px]">
+                <h5 class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Document Preview</h5>
+                <button @click="toggle()" :class="{ 'bg-transparent': open, 'bg-transparent': !open }"
+                  class="w-[30px] h-[30px] p-1.5 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray">
+
+                  <svg :class="open ? 'rotate-180' : ''" class="transition-transform duration-300"
+                    xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                    <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <!--accordion content-->
+              <div x-ref="panel" :style="open ? 'max-height: calc(100vh - 150px);' : 'max-height: 0px;'"
+                class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ">
+
+                <div class="bg-white rounded-lg h-[calc(100vh-150px)] ">
+                  <div class=" h-full min-h-full custom-scroll-gap overflow-y-auto mr-[4px] pr-[2px]">
+                    <div class="flex flex-col gap-3.5 p-3.5">
+                      <!--doc-->
+                      <div class="flex flex-col gap-2">
+                        <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
+                        <img src="assets/images/document-img3.png" class="" alt="image" />
+                      </div>
+                      <!--doc-->
+                      <div class="flex flex-col gap-2">
+                        <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
+                        <img src="assets/images/document-img3.png" class="" alt="image" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--middle area-->
+          <div class="flex-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[calc(100vh-75px)] overflow-auto md:pb-0 pb-10 [&::-webkit-scrollbar]:w-[4px]
+[&::-webkit-scrollbar-track]:bg-transparent
+[&::-webkit-scrollbar-thumb]:bg-transparent
+[&::-webkit-scrollbar-thumb]:rounded-full" :class="rightPanelOpen ? 'pr-[0px]' : 'pr-[0px]'"
+            style="will-change: padding;">
+
+            <!--middle start-->
+            <div class="xl:pt-[56px] lg:pt-10 pt-2 relative min-h-full w-full">
+              <div class="min-[1500px]:max-w-[670px] min-[990px]:max-w-[580px] max-w-full mx-auto">
+                <div class="flex flex-col gap-3 border-b border-[#EEEEEC] mb-[18px] pb-[18px]">
+                  <h3 class="text-[26px] font-inter-display-medium leading-8 text-Theme-black">Invite Bulk</h3>
+                  <span class="text-base font-inter-display-medium leading-[22px] text-Theme-dark-gray">Send invitations
+                    to many recipients in one step.</span>
+                </div>
+                <div class="flex flex-col gap-3.5 border-b border-[#EEEEEC] mb-[18px] pb-[18px]">
+
+                  <!--recipient list-->
+                  <div class="flex flex-col gap-3.5">
+                    <!--card-->
+                    <div class="flex justify-between items-center">
+                      <!--name-->
+                      <div class="flex items-center gap-3 transition-all duration-300 ">
+                        <div class="w-[54px] h-[54px] rounded-xl bg-Theme-Forground flex justify-center items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
+                            fill="none">
+                            <path d="M8.66602 18.418H17.3327" stroke="#57534E" stroke-width="1.6" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M8.66602 14.082H12.9993" stroke="#57534E" stroke-width="1.6" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path
+                              d="M14.084 2.70964V3.2513C14.084 6.31543 14.084 7.8475 15.0359 8.7994C15.9878 9.7513 17.5199 9.7513 20.584 9.7513H21.1257M21.6673 11.5463V15.168C21.6673 19.2534 21.6673 21.2963 20.3981 22.5654C19.129 23.8346 17.0861 23.8346 13.0007 23.8346C8.91514 23.8346 6.8724 23.8346 5.60319 22.5654C4.33398 21.2963 4.33398 19.2534 4.33398 15.168V10.2451C4.33398 6.72969 4.33398 4.97197 5.29389 3.78141C5.48782 3.54089 5.7069 3.32181 5.94743 3.12788C7.13799 2.16797 8.89571 2.16797 12.4111 2.16797C13.1755 2.16797 13.5576 2.16797 13.9076 2.29148C13.9804 2.31717 14.0517 2.34672 14.1214 2.38003C14.4562 2.54015 14.7264 2.81039 15.2669 3.35084L20.3981 8.4821C21.0244 9.10833 21.3374 9.42145 21.5024 9.81962C21.6673 10.2178 21.6673 10.6606 21.6673 11.5463Z"
+                              stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </div>
+                        <h6 class="text-base font-inter-display-medium leading-[22px] text-Theme-black md:max-w-full max-w-[150px] truncate">Service
+                          Agreement – Marketing Project</h6>
+                      </div>
+                      <!--buttons-->
+                      <div class="flex items-center gap-1.5">
+                        <button
+                          class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-Forground hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
+
+                          <svg class="text-Theme-dark-gray group-[&amp;.active]:text-Theme-purple"
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M6.71729 10.5508C6.71729 11.109 6.71729 11.3881 6.78618 11.6152C6.9413 12.1266 7.34147 12.5268 7.85283 12.6819C8.07995 12.7508 8.35906 12.7508 8.91728 12.7508H14.123"
+                              stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12.7517 14.4016L14.3974 12.7564L12.7517 11.1016" stroke="currentColor"
+                              stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M14.3999 9.45312C14.3999 8.8949 14.3999 8.61579 14.331 8.38867C14.1759 7.87731 13.7757 7.47714 13.2644 7.32202C13.0372 7.25312 12.7581 7.25312 12.1999 7.25312L6.99419 7.25312"
+                              stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8.36572 5.60234L6.72001 7.24747L8.36572 8.90234" stroke="currentColor"
+                              stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M14.3986 1.60156L4.79863 1.60156C3.29014 1.60156 2.53589 1.60156 2.06726 2.07019C1.59863 2.53882 1.59863 3.29307 1.59863 4.80157L1.59863 14.4016"
+                              stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                          </svg>
+                        </button>
+                        <button @click="rightPanelOpen = !rightPanelOpen"
+                          class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-Forground hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                            fill="none">
+                            <g clip-path="url(#clip0_8946_2072)">
+                              <path d="M5.33301 9.0013H10.6663M5.33301 5.66797H7.99967" stroke="#57534E"
+                                stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path
+                                d="M4.06555 12.668C3.19881 12.5827 2.54951 12.3224 2.11405 11.8869C1.33301 11.1059 1.33301 9.84877 1.33301 7.33464V7.0013C1.33301 4.48714 1.33301 3.23007 2.11405 2.44902C2.89511 1.66797 4.15218 1.66797 6.66634 1.66797H9.33301C11.8471 1.66797 13.1043 1.66797 13.8853 2.44902C14.6663 3.23007 14.6663 4.48714 14.6663 7.0013V7.33464C14.6663 9.84877 14.6663 11.1059 13.8853 11.8869C13.1043 12.668 11.8471 12.668 9.33301 12.668C8.95934 12.6763 8.66174 12.7047 8.36941 12.7713C7.57047 12.9552 6.83067 13.364 6.09959 13.7206C5.05787 14.2285 4.53701 14.4825 4.21013 14.2447C3.5848 13.779 4.19603 12.3359 4.33301 11.668"
+                                stroke="#57534E" stroke-width="1.4" stroke-linecap="round"></path>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_8946_2072">
+                                <rect width="16" height="16" fill="white"></rect>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </button>
+
+                        <button @click="rightPanelOpen = !rightPanelOpen"
+                          class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-Forground hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
+
+
+                          <svg class="text-Theme-dark-gray group-[&amp;.active]:text-Theme-purple"
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_8946_2047)">
+                              <path
+                                d="M10.3327 8.0013C10.3327 9.28997 9.28802 10.3346 7.99935 10.3346C6.71068 10.3346 5.66602 9.28997 5.66602 8.0013C5.66602 6.71264 6.71068 5.66797 7.99935 5.66797C9.28802 5.66797 10.3327 6.71264 10.3327 8.0013Z"
+                                stroke="currentColor" stroke-width="1.4"></path>
+                              <path
+                                d="M14.6673 9.31257V6.6901C12.7629 6.6901 11.5245 4.62158 12.4887 2.97924L10.1793 1.66804C9.20318 3.33067 6.79918 3.3306 5.82307 1.66797L3.51367 2.97918C4.47789 4.62154 3.23847 6.6901 1.33398 6.6901V9.31257C3.23844 9.31257 4.47682 11.3811 3.51262 13.0234L5.82202 14.3346C6.79858 12.6712 9.20372 12.6711 10.1803 14.3346L12.4897 13.0234C11.5256 11.381 12.7629 9.31257 14.6673 9.31257Z"
+                                stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_8946_2047">
+                                <rect width="16" height="16" fill="white"></rect>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-3.5 w-full border-b border-[#EEEEEC] mb-[18px] pb-[18px]">
+                  <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Recipient
+                    Email</label>
+                  <div class="flex md:flex-row flex-col items-center gap-[18px]">
+                    <input type="email" id="email" name="email" placeholder="Email" value="Email"
+                      class="w-full py-[7px] px-3 border border-[#EBEBEB] bg-[#FAFAF9] rounded-md h-[36px] text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+                      required=" ">
+                    <div class="flex md:w-auto w-full items-center gap-2.5">
+                      <button
+                        class="btn-gray bg-[#EEEEEC] border border-[#EBEBEB] py-[7px] px-3 h-[36px] rounded-md transition-all duration-300 text-sm font-inter-display-medium  text-Theme-light-gray md:w-[158px] w-full">
+                        Sample CSV
+                      </button>
+                      <button
+                        class=" flex justify-center btn-purple   py-[7px] px-3 h-[36px]  leading-5 rounded-lg md:w-[158px] w-full" data-modal-target="upload-document">Upload
+                        CSV</button>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="flex flex-col gap-5">
+                  <div class="flex flex-col gap-3.5 w-full ">
+                    <div class="flex items-center justify-between">
+                        <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Recipient
+                        Email</label>
+                        <a href="#" class="text-base font-inter-display-medium leading-[22px] text-Theme-purple">Clear All</a>
+                      </div>
+                    <div class=" rounded-10px  bg-[#EEEEEC] overflow-hidden p-[2px] w-full overflow-x-auto">
+                     <!--table-->
+                      <table class="w-full text-left border-collapse ">
+                        <thead>
+                          <tr class="bg-transparent">
+                            <th class="py-3 px-[18px] text-sm font-medium text-Theme-black"><span
+                                class="font-inter-display-medium">Name</span></th>
+                            <th class="py-3 px-[18px] text-sm font-medium text-Theme-black"><span
+                                class="font-inter-display-medium">Email</span></th>
+                            <th class="py-3 px-[18px] text-sm font-medium text-Theme-black text-center"><span
+                                class="font-inter-display-medium ">Status</span></th>
+                            <th class="py-3 px-[18px] w-[100px]"></th>
+                          </tr>
+                        </thead>
+                        <!--tbody-->
+                        <tbody class="divide-y divide-[#EEEEEC] bg-white rounded-10px">
+                          <!-- Row -->
+                          <tr class=" transition-colors ">
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray rounded-tl-[10px]"><span
+                                class="font-inter-display-medium">Marvin McKinney</span></td>
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                                class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
+                            <td class="py-3 px-4 text-center">
+                              <span
+                                class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#D1FAE5] text-[#1FC16B]">Valid</span>
+                            </td>
+                            <td class="py-3 px-4  rounded-tr-[10px]">
+                              <div class="flex items-center justify-end gap-5">
+                                <button class="group transition-colors" data-modal-target="edit-recipient-email">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-Theme-purple"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_8979_2379)">
+                                      <path
+                                        d="M9.38239 2.589C9.87919 2.05075 10.1276 1.78163 10.3915 1.62465C11.0284 1.24587 11.8127 1.23409 12.4602 1.59358C12.7285 1.74256 12.9845 2.00411 13.4966 2.5272C14.0087 3.0503 14.2647 3.31184 14.4105 3.58598C14.7625 4.24744 14.7509 5.04856 14.3801 5.69916C14.2265 5.9688 13.963 6.22255 13.4361 6.73003L7.16699 12.7682C6.16851 13.73 5.66925 14.2108 5.04529 14.4545C4.42133 14.6982 3.73539 14.6803 2.36349 14.6444L2.17684 14.6396C1.75919 14.6286 1.55037 14.6232 1.42898 14.4854C1.30759 14.3476 1.32416 14.1349 1.35731 13.7095L1.37531 13.4785C1.46859 12.281 1.51523 11.6824 1.74906 11.1442C1.98288 10.606 2.38621 10.169 3.19287 9.29503L9.38239 2.589Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M8.66675 2.66797L13.3334 7.33464" stroke="currentColor"
+                                        stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M9.33325 14.668H14.6666" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_8979_2379">
+                                        <rect width="16" height="16" fill="white" />
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                </button>
+                                <button class="group transition-colors " data-modal-target="delete-recipient-email">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-[#DC2626]"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                      d="M13 3.66797L12.5869 10.3514C12.4813 12.0589 12.4285 12.9127 12.0005 13.5266C11.7889 13.83 11.5165 14.0862 11.2005 14.2786C10.5614 14.668 9.706 14.668 7.99513 14.668C6.28208 14.668 5.42553 14.668 4.78603 14.2779C4.46987 14.0851 4.19733 13.8285 3.98579 13.5245C3.55792 12.9097 3.5063 12.0547 3.40307 10.3448L3 3.66797"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                    <path d="M6 7.82422H10" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path d="M7 10.4375H9" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path
+                                      d="M2 3.66537H14M10.7037 3.66537L10.2486 2.72652C9.94627 2.10287 9.79507 1.79104 9.53433 1.59657C9.47653 1.55343 9.41527 1.51506 9.3512 1.48183C9.06247 1.33203 8.71593 1.33203 8.02287 1.33203C7.3124 1.33203 6.9572 1.33203 6.66366 1.48811C6.59861 1.5227 6.53653 1.56263 6.47807 1.60748C6.2143 1.80983 6.06696 2.13306 5.77228 2.77954L5.36849 3.66537"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <!-- Row-->
+                          <tr class=" transition-colors ">
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray "><span
+                                class="font-inter-display-medium">Marvin McKinney</span></td>
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                                class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
+                            <td class="py-3 px-4 text-center">
+                              <span
+                                class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#D1FAE5] text-[#1FC16B]">Valid</span>
+                            </td>
+                            <td class="py-3 px-4 ">
+                              <div class="flex items-center justify-end gap-5">
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-Theme-purple"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_8979_2379)">
+                                      <path
+                                        d="M9.38239 2.589C9.87919 2.05075 10.1276 1.78163 10.3915 1.62465C11.0284 1.24587 11.8127 1.23409 12.4602 1.59358C12.7285 1.74256 12.9845 2.00411 13.4966 2.5272C14.0087 3.0503 14.2647 3.31184 14.4105 3.58598C14.7625 4.24744 14.7509 5.04856 14.3801 5.69916C14.2265 5.9688 13.963 6.22255 13.4361 6.73003L7.16699 12.7682C6.16851 13.73 5.66925 14.2108 5.04529 14.4545C4.42133 14.6982 3.73539 14.6803 2.36349 14.6444L2.17684 14.6396C1.75919 14.6286 1.55037 14.6232 1.42898 14.4854C1.30759 14.3476 1.32416 14.1349 1.35731 13.7095L1.37531 13.4785C1.46859 12.281 1.51523 11.6824 1.74906 11.1442C1.98288 10.606 2.38621 10.169 3.19287 9.29503L9.38239 2.589Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M8.66675 2.66797L13.3334 7.33464" stroke="currentColor"
+                                        stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M9.33325 14.668H14.6666" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_8979_2379">
+                                        <rect width="16" height="16" fill="white" />
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                </button>
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-[#DC2626]"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                      d="M13 3.66797L12.5869 10.3514C12.4813 12.0589 12.4285 12.9127 12.0005 13.5266C11.7889 13.83 11.5165 14.0862 11.2005 14.2786C10.5614 14.668 9.706 14.668 7.99513 14.668C6.28208 14.668 5.42553 14.668 4.78603 14.2779C4.46987 14.0851 4.19733 13.8285 3.98579 13.5245C3.55792 12.9097 3.5063 12.0547 3.40307 10.3448L3 3.66797"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                    <path d="M6 7.82422H10" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path d="M7 10.4375H9" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path
+                                      d="M2 3.66537H14M10.7037 3.66537L10.2486 2.72652C9.94627 2.10287 9.79507 1.79104 9.53433 1.59657C9.47653 1.55343 9.41527 1.51506 9.3512 1.48183C9.06247 1.33203 8.71593 1.33203 8.02287 1.33203C7.3124 1.33203 6.9572 1.33203 6.66366 1.48811C6.59861 1.5227 6.53653 1.56263 6.47807 1.60748C6.2143 1.80983 6.06696 2.13306 5.77228 2.77954L5.36849 3.66537"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                            <!-- Row-->
+                          <tr class=" transition-colors ">
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray "><span
+                                class="font-inter-display-medium">Marvin McKinney</span></td>
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                                class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
+                            <td class="py-3 px-4 text-center">
+                              <span
+                                class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#FFD5D3] text-[#DC3027]">Fix</span>
+                            </td>
+                            <td class="py-3 px-4  ">
+                              <div class="flex items-center justify-end gap-5">
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-Theme-purple"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_8979_2379)">
+                                      <path
+                                        d="M9.38239 2.589C9.87919 2.05075 10.1276 1.78163 10.3915 1.62465C11.0284 1.24587 11.8127 1.23409 12.4602 1.59358C12.7285 1.74256 12.9845 2.00411 13.4966 2.5272C14.0087 3.0503 14.2647 3.31184 14.4105 3.58598C14.7625 4.24744 14.7509 5.04856 14.3801 5.69916C14.2265 5.9688 13.963 6.22255 13.4361 6.73003L7.16699 12.7682C6.16851 13.73 5.66925 14.2108 5.04529 14.4545C4.42133 14.6982 3.73539 14.6803 2.36349 14.6444L2.17684 14.6396C1.75919 14.6286 1.55037 14.6232 1.42898 14.4854C1.30759 14.3476 1.32416 14.1349 1.35731 13.7095L1.37531 13.4785C1.46859 12.281 1.51523 11.6824 1.74906 11.1442C1.98288 10.606 2.38621 10.169 3.19287 9.29503L9.38239 2.589Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M8.66675 2.66797L13.3334 7.33464" stroke="currentColor"
+                                        stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M9.33325 14.668H14.6666" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_8979_2379">
+                                        <rect width="16" height="16" fill="white" />
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                </button>
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-[#DC2626]"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                      d="M13 3.66797L12.5869 10.3514C12.4813 12.0589 12.4285 12.9127 12.0005 13.5266C11.7889 13.83 11.5165 14.0862 11.2005 14.2786C10.5614 14.668 9.706 14.668 7.99513 14.668C6.28208 14.668 5.42553 14.668 4.78603 14.2779C4.46987 14.0851 4.19733 13.8285 3.98579 13.5245C3.55792 12.9097 3.5063 12.0547 3.40307 10.3448L3 3.66797"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                    <path d="M6 7.82422H10" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path d="M7 10.4375H9" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path
+                                      d="M2 3.66537H14M10.7037 3.66537L10.2486 2.72652C9.94627 2.10287 9.79507 1.79104 9.53433 1.59657C9.47653 1.55343 9.41527 1.51506 9.3512 1.48183C9.06247 1.33203 8.71593 1.33203 8.02287 1.33203C7.3124 1.33203 6.9572 1.33203 6.66366 1.48811C6.59861 1.5227 6.53653 1.56263 6.47807 1.60748C6.2143 1.80983 6.06696 2.13306 5.77228 2.77954L5.36849 3.66537"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                           <!-- Row-->
+                          <tr class=" transition-colors ">
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray "><span
+                                class="font-inter-display-medium">Marvin McKinney</span></td>
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                                class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
+                            <td class="py-3 px-4 text-center">
+                              <span
+                                class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#FFD5D3] text-[#DC3027]">Fix</span>
+                            </td>
+                            <td class="py-3 px-4  ">
+                              <div class="flex items-center justify-end gap-5">
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-Theme-purple"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_8979_2379)">
+                                      <path
+                                        d="M9.38239 2.589C9.87919 2.05075 10.1276 1.78163 10.3915 1.62465C11.0284 1.24587 11.8127 1.23409 12.4602 1.59358C12.7285 1.74256 12.9845 2.00411 13.4966 2.5272C14.0087 3.0503 14.2647 3.31184 14.4105 3.58598C14.7625 4.24744 14.7509 5.04856 14.3801 5.69916C14.2265 5.9688 13.963 6.22255 13.4361 6.73003L7.16699 12.7682C6.16851 13.73 5.66925 14.2108 5.04529 14.4545C4.42133 14.6982 3.73539 14.6803 2.36349 14.6444L2.17684 14.6396C1.75919 14.6286 1.55037 14.6232 1.42898 14.4854C1.30759 14.3476 1.32416 14.1349 1.35731 13.7095L1.37531 13.4785C1.46859 12.281 1.51523 11.6824 1.74906 11.1442C1.98288 10.606 2.38621 10.169 3.19287 9.29503L9.38239 2.589Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M8.66675 2.66797L13.3334 7.33464" stroke="currentColor"
+                                        stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M9.33325 14.668H14.6666" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_8979_2379">
+                                        <rect width="16" height="16" fill="white" />
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                </button>
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-[#DC2626]"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                      d="M13 3.66797L12.5869 10.3514C12.4813 12.0589 12.4285 12.9127 12.0005 13.5266C11.7889 13.83 11.5165 14.0862 11.2005 14.2786C10.5614 14.668 9.706 14.668 7.99513 14.668C6.28208 14.668 5.42553 14.668 4.78603 14.2779C4.46987 14.0851 4.19733 13.8285 3.98579 13.5245C3.55792 12.9097 3.5063 12.0547 3.40307 10.3448L3 3.66797"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                    <path d="M6 7.82422H10" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path d="M7 10.4375H9" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path
+                                      d="M2 3.66537H14M10.7037 3.66537L10.2486 2.72652C9.94627 2.10287 9.79507 1.79104 9.53433 1.59657C9.47653 1.55343 9.41527 1.51506 9.3512 1.48183C9.06247 1.33203 8.71593 1.33203 8.02287 1.33203C7.3124 1.33203 6.9572 1.33203 6.66366 1.48811C6.59861 1.5227 6.53653 1.56263 6.47807 1.60748C6.2143 1.80983 6.06696 2.13306 5.77228 2.77954L5.36849 3.66537"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                           <!-- Row-->
+                          <tr class=" transition-colors ">
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray rounded-bl-[10px]"><span
+                                class="font-inter-display-medium">Marvin McKinney</span></td>
+                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                                class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
+                            <td class="py-3 px-4 text-center">
+                              <span
+                                class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#FFEED3] text-[#DC9727]">Duplicate</span>
+                            </td>
+                            <td class="py-3 px-4  rounded-br-[10px]">
+                              <div class="flex items-center justify-end gap-5">
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-Theme-purple"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_8979_2379)">
+                                      <path
+                                        d="M9.38239 2.589C9.87919 2.05075 10.1276 1.78163 10.3915 1.62465C11.0284 1.24587 11.8127 1.23409 12.4602 1.59358C12.7285 1.74256 12.9845 2.00411 13.4966 2.5272C14.0087 3.0503 14.2647 3.31184 14.4105 3.58598C14.7625 4.24744 14.7509 5.04856 14.3801 5.69916C14.2265 5.9688 13.963 6.22255 13.4361 6.73003L7.16699 12.7682C6.16851 13.73 5.66925 14.2108 5.04529 14.4545C4.42133 14.6982 3.73539 14.6803 2.36349 14.6444L2.17684 14.6396C1.75919 14.6286 1.55037 14.6232 1.42898 14.4854C1.30759 14.3476 1.32416 14.1349 1.35731 13.7095L1.37531 13.4785C1.46859 12.281 1.51523 11.6824 1.74906 11.1442C1.98288 10.606 2.38621 10.169 3.19287 9.29503L9.38239 2.589Z"
+                                        stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M8.66675 2.66797L13.3334 7.33464" stroke="currentColor"
+                                        stroke-width="1.4" stroke-linejoin="round" />
+                                      <path d="M9.33325 14.668H14.6666" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_8979_2379">
+                                        <rect width="16" height="16" fill="white" />
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                </button>
+                                <button class="group transition-colors">
+                                  <svg
+                                    class="text-Theme-light-gray transitiona-all duration-500 group-hover:text-[#DC2626]"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                      d="M13 3.66797L12.5869 10.3514C12.4813 12.0589 12.4285 12.9127 12.0005 13.5266C11.7889 13.83 11.5165 14.0862 11.2005 14.2786C10.5614 14.668 9.706 14.668 7.99513 14.668C6.28208 14.668 5.42553 14.668 4.78603 14.2779C4.46987 14.0851 4.19733 13.8285 3.98579 13.5245C3.55792 12.9097 3.5063 12.0547 3.40307 10.3448L3 3.66797"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                    <path d="M6 7.82422H10" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path d="M7 10.4375H9" stroke="currentColor" stroke-width="1.4"
+                                      stroke-linecap="round" />
+                                    <path
+                                      d="M2 3.66537H14M10.7037 3.66537L10.2486 2.72652C9.94627 2.10287 9.79507 1.79104 9.53433 1.59657C9.47653 1.55343 9.41527 1.51506 9.3512 1.48183C9.06247 1.33203 8.71593 1.33203 8.02287 1.33203C7.3124 1.33203 6.9572 1.33203 6.66366 1.48811C6.59861 1.5227 6.53653 1.56263 6.47807 1.60748C6.2143 1.80983 6.06696 2.13306 5.77228 2.77954L5.36849 3.66537"
+                                      stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-3.5 w-full ">
+                    <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Each document
+                      copy will be named</label>
+                    <div class="flex items-center gap-[18px]">
+                      <input type="email" id="email" name="email" placeholder="Email"
+                        value="Service Agreement - Marketing Project - {{recipient_email}}"
+                        class="w-full py-[7px] px-3 border border-[#EBEBEB] bg-[#FAFAF9] rounded-md h-[36px] text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+                        required=" ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--right side wrapper-->
+          <div
+            class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 flex items-start gap-0 ">
+
+
+            <!--right panel-->
+            <div class="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" :class="rightPanelOpen
+              ? 'w-[350px] min-[1500px]:w-[420px] opacity-100 translate-x-0 max-[767px]:fixed max-[767px]:inset-0 max-[767px]:w-full max-[767px]:z-40'
+              : 'w-[0px] opacity-0 translate-x-10 max-[767px]:hidden'" style="will-change: width, transform;">
+
+              <div class="w-full">
+
+                <div class="bg-[#FAFAF9] p-1 rounded-[12px] h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)] overflow-hidden">
+
+                  <!--panel header-->
+                  <div class="flex items-center justify-between bg-transparent pb-2 pt-1 pl-4 pr-1.5">
+
+                    <h3 class="text-lg font-inter-display-medium leading-[26px] text-Theme-black">
+                      Customize Message
+                    </h3>
+
+                    <button @click="rightPanelOpen = false" class="w-8 h-8 rounded-md hover:bg-[#EEEEEC] transition-all duration-500 flex items-center justify-center">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                  <!--panel body-->
+                  <div class="bg-white rounded-lg w-full pr-[2px] py-[2px] h-[calc(100%-48px)]">
+                    <div class="h-[calc(100vh-190px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col [&amp;::-webkit-scrollbar]:w-[2px] [&amp;::-webkit-scrollbar-track]:bg-transparent [&amp;::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&amp;::-webkit-scrollbar-thumb]:rounded-[3px] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-200 delay-200" :class="rightPanelOpen
+            ? 'opacity-100 transition-opacity duration-200 delay-200'
+            : 'opacity-0 transition-opacity duration-100'">
+                      <!--content-->
+                      <div class="p-3.5 flex flex-col gap-5">
+                        <div class="flex flex-col  gap-2.5  ">
+                            <div class="flex flex-col gap-2 ">
+                              <label for="subject" class="text-sm leading-[22px] font-inter-display-medium text-Theme-light-gray">Subject</label>
+                              <input type="text" id="subject" name="subject" placeholder="Enter your subject" value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                            </div>
+                             <div class="flex flex-col gap-2 ">
+                              <label for="message" class="text-sm leading-[22px] font-inter-display-medium text-Theme-light-gray">Message</label>
+                              <textarea id="message" name="message" placeholder="Write your message here..." value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500 h-[100px] resize-none"></textarea>
+                            </div>
+                        </div>
+                       
+                      </div>
+                      <!--content-->
+                      <div class="p-3.5 pt-0">
+                        <!--checkbox main-->
+                        <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer mb-1.5">
+                          <!-- Checkbox -->
+                          <input type="checkbox" class="peer appearance-none w-[15.83px] h-[15.83px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-[#8E5EFE] checked:border-[#8E5EFE] relative  cursor-pointer">
+                          <!-- SVG Checkmark -->
+                          <div class="absolute w-[10px] h-[12px] left-[3px] z-10 pointer-events-none checkmark flex items-center justify-center">
+                            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </div>
+                          <!-- Label text -->
+                          <span class="peer-checked:text-Theme-black text-sm font-inter-display-medium  leading-[22px] text-Theme-dark-gray transition-all duration-300">
+                            Apply Authentication and settings to all recipients
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <!--buttons-->
+                    <div class="flex items-center gap-2 sticky bottom-3.5 left-0 right-0 mx-auto w-[calc(100%-28px)]">
+                      <button class=" flex justify-center btn-gray   py-2 px-3 leading-5 rounded-lg h-[38px] w-1/2">Cancel</button>
+                      <button class=" flex justify-center btn-purple   py-2 px-3 leading-5 rounded-lg h-[38px] w-1/2">Save</button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------------Modals---------------->
+  <!-- add detail document -->
+  <div class="modalTrigger  modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[580px]"
+    id="add-detail">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Add New Recipient
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col gap-4 py-3.5 px-5">
+      <!-- content  -->
+
+      <div class="flex items-center gap-4 w-full">
+        <div class="flex flex-col gap-[5px] w-full">
+          <label for="first-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">First
+            Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Enter First Name" value="Ajay"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+        <div class="flex flex-col gap-[5px] w-full">
+          <label for="last-name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Last
+            Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name" value="Bhimani"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+      </div>
+      <div class="flex flex-col gap-[5px] w-full">
+        <label for="email" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" value="ajubhimani@gmail.com"
+          class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+          required="">
+      </div>
+      <div class="flex flex-col gap-[5px] w-full">
+        <label for="phone" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Phone
+          Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" value="8645975265"
+          class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+          required="">
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+        Add Recipient
+      </button>
+    </div>
+  </div>
+  <!-- Delete recipient with email-->
+  <div
+    class="modalTrigger flex visible opacity-100 modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[426px]"
+    id="delete-recipient-email">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Delete Marvin McKinney ?
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
+      <div class="flex flex-col gap-3">
+        <p class="text-base font-normal leading-6 text-Theme-black">You’re about to delete <span class="font-inter-display-medium">Marvin McKinney</span></p>
+        <p class="text-base font-normal leading-6 text-Theme-black">This recipient and all associated data will be permanently deleted.</p>
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-red w-full text-center">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
+            stroke="white" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M6.75 8.80078H11.25" stroke="white" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M7.875 11.7422H10.125" stroke="white" stroke-width="1.6" stroke-linecap="round" />
+          <path
+            d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
+            stroke="white" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+        Delete
+      </button>
+    </div>
+  </div>
+  <!-- edit recipient detail with email -->
+  <div class="modalTrigger  modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[416px]"
+    id="edit-recipient-email">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Edit Recipient details
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col gap-4 py-3.5 px-5">
+      <!-- content  -->
+
+      <div class="flex items-center gap-4 w-full">
+        <div class="flex flex-col gap-[5px] w-full">
+          <label for="name" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">
+            Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter Name" value="Ajay"
+            class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+            required="">
+        </div>
+     
+      </div>
+      <div class="flex flex-col gap-[5px] w-full">
+        <label for="email" class="text-xs text-Theme-light-gray font-inter-display-medium leading-[120%]">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" value="ajubhimani@gmail.com"
+          class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+          required="">
+      </div>
+    
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+        Save
+      </button>
+    </div>
+  </div>
+  <!-- date picker model -->
+  <div class="modalTrigger  modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[392px]"
+    id="date-picker">
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-140 text-Theme-light-gray">
+          Set a due date
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L4.00054 11.9995M11.9995 12L4 4.00057" stroke="black" stroke-width="1.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 px-5">
+      <!-- DATE PICKER -->
+      <div x-data="datePicker()" class="w-full ">
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-4 gap-1 mb-3 bg-[#EEEEEC] rounded-lg p-[2px]">
+          <button @click="setQuickDate(0)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500">
+            Today
+          </button>
+
+          <button @click="setQuickDate(1)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500">
+            Tomorrow
+          </button>
+
+          <button @click="setQuickDate(3)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500">
+            In 3 Days
+          </button>
+
+          <button @click="setQuickDate(7)"
+            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500">
+            In 1 Week
+          </button>
+        </div>
+
+        <!-- Calendar Header -->
+        <!-- Calendar Header -->
+        <div class="flex items-center gap-2 mb-2">
+
+          <!-- Month Navigation -->
+          <div class="flex items-center h-[36px] justify-between flex-1 border border-[#EBEBEB]
+  rounded-lg px-2 py-1.5 transition-all duration-300 hover:border-[#D8D8D8]">
+
+            <!-- Prev -->
+            <button @click="prevMonth" class="w-5 h-5 rounded-md hover:bg-[#EEEEEC]
+      flex items-center justify-center transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                <path d="M4.80094 8.79956L0.800781 4.7994L4.8033 0.796875" stroke="#000A06" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <!-- Month Name -->
+            <div class="flex-1 text-center">
+              <span class="text-sm font-inter-display-medium
+        leading-[22px] text-Theme-black" x-text="months[month]"></span>
+            </div>
+
+            <!-- Next -->
+            <button @click="nextMonth" class="w-5 h-5 rounded-md hover:bg-[#EEEEEC]
+      flex items-center justify-center transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                <path d="M0.803141 0.796875L4.8033 4.79704L0.800781 8.79956" stroke="#000A06" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- Year Select -->
+          <div class="relative w-[78px] h-full year-select-wrapper">
+
+            <select x-model="year" @mousedown="yearDropdownOpen = !yearDropdownOpen" @change="
+      generateCalendar();
+      setTimeout(() => yearDropdownOpen = false, 100)
+    " @blur="yearDropdownOpen = false" class="w-full h-full py-1.5 pl-2 pr-7 border border-[#EBEBEB] rounded-lg
+           cursor-pointer text-sm outline-none appearance-none bg-transparent
+           font-inter-display-medium leading-[22px] text-Theme-black
+           transition-all duration-300 hover:border-[#d6d6d6]">
+
+              <template x-for="y in yearRange" :key="y">
+                <option :value="y" x-text="y"></option>
+              </template>
+
+            </select>
+
+            <!-- Custom Arrow -->
+            <div class="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2
+           transition-transform duration-300" :class="yearDropdownOpen ? 'rotate-180' : 'rotate-0'">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M1 1L5 5L9 1" stroke="#000A06" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Days -->
+        <div class="grid grid-cols-7 gap-x-3 mb-2">
+          <template x-for="day in weekDays" :key="day">
+            <div class="h-10 w-10 flex items-center justify-center
+        text-sm font-inter-display-medium leading-[22px] text-Theme-black" x-text="day"></div>
+          </template>
+        </div>
+
+        <!-- Dates -->
+        <div class="grid grid-cols-7 gap-y-3 gap-x-3 mb-3">
+
+          <template x-for="(date,index) in calendarDays" :key="index">
+
+            <button @click="selectDate(date)" :disabled="!date.currentMonth"
+              class="w-10 h-10 mx-auto rounded-lg text-sm font-inter-display-medium leading-[22px] transition-all duration-200"
+              :class="{
+          'text-[#9C9C9C]': !date.currentMonth,
+          'hover:bg-[#EEEEEC] text-Theme-black': date.currentMonth && !date.selected,
+          'bg-[#8B5CF6] text-white': date.selected,
+          'bg-Theme-purple text-white': date.today && !date.selected
+        }">
+              <span x-text="date.day"></span>
+            </button>
+
+          </template>
+
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+
+        Set Due Date
+      </button>
+    </div>
+  </div>
+<!--upload document-->
+  <div class="modalTrigger modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 md:w-auto !w-[calc(100%-10px)] md:h-auto max-h-[calc(100dvh-10px)]  md:!max-w-[546px] !max-w-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-Theme-secondary-gray [&::-webkit-scrollbar-thumb]:rounded-full "
+    id="upload-document">
+
+   
+    <!-- modal header  -->
+    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
+      <div class="flex items-center gap-[15px] ">
+
+        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
+          Upload CSV File
+        </h4>
+      </div>
+
+      <button class="close-btn cursor-pointer">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
+            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+   <div class="w-full bg-white rounded-lg flex flex-col py-5 px-5">
+      <div class="flex flex-col gap-3.5">
+        <div class="block tab-main flex flex-col gap-3.5">
+          <!--tab content-->
+          <div class="flex flex-col gap-3.5">
+            <div class="border border-[#EBEBEB] bg-Theme-Forground rounded-10px p-[5px] md:pr-0 pr-[5px]">
+              <div class="flex items-center md:flex-row flex-col w-full h-full min-h-[380px]">
+                   <label class="cursor-pointer w-full h-full flex justify-center items-center flex-col">
+                    <!-- Hidden Input -->
+                    <input type="file" class="hidden">
+                    <!-- upload area -->
+                    <div class="flex justify-center items-center flex-col gap-2.5">
+                     <svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29.0623 1.5H19.5902C14.9809 1.5 12.6763 1.5 11.2444 2.93191C9.8125 4.36382 9.8125 6.66844 9.8125 11.2777V12.4999V15.2499V16.6249M45.5622 15.2499C45.5622 21.0065 45.5622 29.2833 45.5622 35.7244C45.5622 40.332 45.5622 42.6358 44.1303 44.0677C42.6984 45.4996 40.3937 45.4996 35.7845 45.4996H27.6873H19.4374" stroke="#8E5EFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M29.0625 5.47219V1.5L45.5623 15.2499H38.8402C34.2309 15.2499 31.9263 15.2499 30.4944 13.818C29.0625 12.3861 29.0625 10.0814 29.0625 5.47219Z" stroke="#8E5EFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M34.5625 37.25L38.6875 37.25" stroke="#8E5EFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9.8125 25.3301L10.9164 24.3145C10.3067 23.7536 9.31828 23.7536 8.70862 24.3145L9.8125 25.3301ZM16.9585 33.9359C17.5682 34.4968 18.5566 34.4968 19.1663 33.9359C19.776 33.375 19.776 32.4656 19.1663 31.9047L18.0624 32.9203L16.9585 33.9359ZM0.458696 31.9047C-0.150961 32.4656 -0.150961 33.375 0.458695 33.9359C1.06835 34.4968 2.0568 34.4968 2.66646 33.9359L1.56258 32.9203L0.458696 31.9047ZM9.8125 25.3301L8.70862 26.3457L16.9585 33.9359L18.0624 32.9203L19.1663 31.9047L10.9164 24.3145L9.8125 25.3301ZM1.56258 32.9203L2.66646 33.9359L10.9164 26.3457L9.8125 25.3301L8.70862 24.3145L0.458696 31.9047L1.56258 32.9203Z" fill="#8E5EFE"></path>
+<path d="M9.8125 45.498L9.8125 36.5643L9.8125 25.3316" stroke="#8E5EFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  <div class="flex flex-col gap-[4px] items-center">                      
+                    <h5 class="text-sm font-inter-display-medium leading-[22px] text-Theme-black">Upload a CSV file</h5>
+                      <p class="text-xs text-Theme-light-gray leading-[14px]">or dragging and dropping it here.
+                      </p>
+                      </div>
+                    </div>
+
+
+                  </label>
+               
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal footer  -->
+    <div class="flex items-center justify-end w-full p-2 gap-2">
+      <button class="btn-white w-full text-center">Cancel</button>
+      <button class="btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5">
+        Upload CSV
+      </button>
+    </div>
+  </div>
+  <!-- modal overlay  -->
+  <div
+    class="overlay-modal w-full h-screen z-[500] bg-[rgba(9,5,54,0.20)] backdrop-blur-[7.5px] fixed top-0 left-0 opacity-0 invisible">
+
+  </div>
+</body>
+<!-- MAIN JS-->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="assets/js/main.js"></script>
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('dropdown', {
+      openId: null,
+    });
+  });
+</script>
+<script>
+  function dropdownComponent(id) {
+    return {
+      id,
+      height: 'auto',
+      opacity: 0,
+
+      visible: false,
+      get isOpen() {
+        return Alpine.store('dropdown').openId === this.id;
+      },
+      toggle() {
+        if (this.isOpen) {
+          this.close();
+        } else {
+          Alpine.store('dropdown').openId = this.id;
+          this.$nextTick(() => {
+            this.visible = true;
+            // const scrollHeight = this.$refs.menu.scrollHeight;
+            // this.height = scrollHeight + 'px';
+            this.opacity = 1;
+          });
+        }
+      },
+      close() {
+        if (this.isOpen) {
+          this.opacity = 0;
+          // this.height = '0px';
+
+          setTimeout(() => {
+            this.visible = false;
+            Alpine.store('dropdown').openId = null;
+          }, 100); // match with transition duration
+        }
+      }
+    };
+  }
+
+  function changeReminderValue(delta) {
+    const reminderInput = document.getElementById('reminder');
+    if (!reminderInput) return;
+    const currentValue = parseInt(reminderInput.value, 10);
+    const nextValue = Number.isNaN(currentValue) ? 1 : currentValue + delta;
+    reminderInput.value = Math.max(1, nextValue);
+  }
+
+  function updateRecipientNumbering() {
+    const toggle = document.querySelector('[data-recipient-order-toggle]');
+    const numbers = document.querySelectorAll('.recipient-order-number');
+    if (!toggle || numbers.length === 0) return;
+    numbers.forEach((number) => {
+      const parent = number.closest('.recipient-item');
+      if (toggle.checked) {
+        number.style.width = '32px';
+        number.style.opacity = '1';
+        if (parent) {
+          parent.style.transition = parent.style.transition || 'gap 300ms ease-in-out';
+          parent.style.gap = '';
+        }
+      } else {
+        number.style.width = '0px';
+        number.style.opacity = '0';
+        if (parent) {
+          parent.style.transition = parent.style.transition || 'gap 300ms ease-in-out';
+          parent.style.gap = '0px';
+        }
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('[data-recipient-order-toggle]');
+    if (toggle) {
+      toggle.addEventListener('change', updateRecipientNumbering);
+      updateRecipientNumbering();
+    }
+  });
+</script>
+<script>
+  function slashCommand() {
+    return {
+      show: false,
+      search: '',
+
+      init() {
+        this.updateEmptyState();
+
+        this.$refs.editor.addEventListener('input', () => {
+          this.updateEmptyState();
+
+          const text = this.$refs.editor.innerText;
+          const match = text.match(/(^|[\s\n])\/([^\s]*)$/);
+          const editor = this.$refs.editor;
+
+          if (match) {
+            this.show = true;
+            this.search = match[2] || '';
+            editor.classList.add('slash-active');
+            editor.classList.toggle('has-search', !!this.search);
+            this.updateSecondaryPlaceholder();
+          } else {
+            this.show = false;
+            this.search = '';
+            editor.classList.remove('slash-active', 'has-search');
+            this.$refs.secondaryPlaceholder.classList.remove('visible');
+          }
+        });
+
+        this.$refs.editor.addEventListener('blur', () => {
+          this.updateEmptyState();
+          this.$refs.secondaryPlaceholder.classList.remove('visible');
+        });
+
+        this.$refs.editor.addEventListener('click', () => {
+          if (this.show) this.updateSecondaryPlaceholder();
+        });
+
+        this.$refs.editor.addEventListener('keyup', () => {
+          if (this.show) this.updateSecondaryPlaceholder();
+        });
+
+        this.$refs.editor.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.show = false;
+            this.search = '';
+            this.$refs.editor.classList.remove('slash-active', 'has-search');
+            this.$refs.secondaryPlaceholder.classList.remove('visible');
+          }
+        });
+      },
+
+      updateEmptyState() {
+        const isEmpty = this.$refs.editor.innerText.trim() === '';
+        this.$refs.editor.classList.toggle('empty', isEmpty);
+      },
+
+      updateSecondaryPlaceholder() {
+        const placeholder = this.$refs.secondaryPlaceholder;
+        const editor = this.$refs.editor;
+        if (!this.show || this.search) {
+          placeholder.classList.remove('visible');
+          return;
+        }
+
+        const selection = window.getSelection();
+        if (!selection || !selection.rangeCount) {
+          placeholder.classList.remove('visible');
+          return;
+        }
+
+        const range = selection.getRangeAt(0).cloneRange();
+        range.collapse(true);
+        let rect = range.getClientRects()[0];
+        if (!rect) {
+          rect = range.getBoundingClientRect();
+        }
+        if (!rect || rect.width === 0 && rect.height === 0) {
+          placeholder.classList.remove('visible');
+          return;
+        }
+
+        const editorRect = editor.getBoundingClientRect();
+        const top = rect.top - editorRect.top + editor.scrollTop;
+        const left = rect.left - editorRect.left + editor.scrollLeft;
+
+        placeholder.style.top = `${top}px`;
+        placeholder.style.left = `${left}px`;
+        placeholder.textContent = editor.dataset.secondaryPlaceholder || 'Type to search';
+        placeholder.classList.add('visible');
+      },
+
+      filteredCommands() {
+        return this.commands.map(group => ({
+          ...group,
+          items: group.items.filter(item =>
+            item.label.toLowerCase().includes(this.search.toLowerCase())
+          )
+        })).filter(group => group.items.length > 0);
+      },
+
+      commands: [
+        {
+          group: 'Form Fields',
+          items: [
+            { label: 'Text Field', shortcut: '' },
+            { label: 'Heading 1 (H1)', shortcut: '#' },
+            { label: 'Heading 2 (H2)', shortcut: '##' },
+            { label: 'Heading 3 (H3)', shortcut: '###' },
+            { label: 'Heading 4 (H4)', shortcut: '####' },
+            { label: 'Normal Text', shortcut: '' },
+          ]
+        },
+        {
+          group: 'Signing & Approval',
+          items: [
+            { label: 'Signature', shortcut: '' },
+            { label: 'Initial', shortcut: '' },
+            { label: 'Stamp', shortcut: '' },
+            { label: 'Date', shortcut: '' },
+          ]
+        },
+        {
+          group: 'Content & Layout',
+          items: [
+            { label: 'Quote / Blockquote', shortcut: '>' },
+            { label: 'Bullet List', shortcut: '-' },
+            { label: 'Number List', shortcut: '1.' },
+            { label: 'Table', shortcut: '' },
+            { label: 'Image', shortcut: '' },
+            { label: 'Divider', shortcut: '' },
+            { label: '2 Columns', shortcut: '' },
+            { label: '3 Columns', shortcut: '' },
+            { label: '4 Columns', shortcut: '' },
+          ]
+        },
+      ]
+    }
+  }
+</script>
+<!--datepicekr-->
+<script>
+  function datePicker() {
+    return {
+
+      today: new Date(),
+
+      selectedDate: null,
+
+      month: new Date().getMonth(),
+
+      year: new Date().getFullYear(),
+
+      yearDropdownOpen: false,
+
+      weekDays: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+
+      months: [
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
+      ],
+
+      calendarDays: [],
+
+      get yearRange() {
+        return Array.from(
+          { length: 20 },
+          (_, i) => this.today.getFullYear() - 5 + i
+        )
+      },
+
+      init() {
+
+        this.generateCalendar()
+
+        // close arrow state when clicking outside
+        document.addEventListener('click', (e) => {
+
+          if (!e.target.closest('.year-select-wrapper')) {
+            this.yearDropdownOpen = false
+          }
+
+        })
+      },
+
+      generateCalendar() {
+
+        this.calendarDays = []
+
+        const firstDay = new Date(this.year, this.month, 1)
+        const lastDay = new Date(this.year, this.month + 1, 0)
+
+        let startDay = firstDay.getDay()
+        startDay = startDay === 0 ? 6 : startDay - 1
+
+        const totalDays = lastDay.getDate()
+
+        // Previous month days
+        const prevMonthLastDate = new Date(
+          this.year,
+          this.month,
+          0
+        ).getDate()
+
+        for (let i = startDay; i > 0; i--) {
+
+          this.calendarDays.push({
+            day: prevMonthLastDate - i + 1,
+            currentMonth: false
+          })
+
+        }
+
+        // Current month days
+        for (let day = 1; day <= totalDays; day++) {
+
+          const isToday =
+            day === this.today.getDate() &&
+            this.month === this.today.getMonth() &&
+            this.year === this.today.getFullYear()
+
+          const isSelected =
+            this.selectedDate &&
+            day === this.selectedDate.getDate() &&
+            this.month === this.selectedDate.getMonth() &&
+            this.year === this.selectedDate.getFullYear()
+
+          this.calendarDays.push({
+            day,
+            currentMonth: true,
+            today: isToday,
+            selected: isSelected
+          })
+
+        }
+
+        // Fill remaining cells
+        while (this.calendarDays.length % 7 !== 0) {
+
+          this.calendarDays.push({
+            day: this.calendarDays.length % 7 + 1,
+            currentMonth: false
+          })
+
+        }
+      },
+
+      selectDate(date) {
+
+        if (!date.currentMonth) return
+
+        this.selectedDate = new Date(
+          this.year,
+          this.month,
+          date.day
+        )
+
+        this.generateCalendar()
+      },
+
+      prevMonth() {
+
+        if (this.month === 0) {
+          this.month = 11
+          this.year--
+        } else {
+          this.month--
+        }
+
+        this.generateCalendar()
+      },
+
+      nextMonth() {
+
+        if (this.month === 11) {
+          this.month = 0
+          this.year++
+        } else {
+          this.month++
+        }
+
+        this.generateCalendar()
+      },
+
+      setQuickDate(days) {
+
+        const date = new Date()
+
+        date.setDate(date.getDate() + days)
+
+        this.selectedDate = date
+
+        this.month = date.getMonth()
+        this.year = date.getFullYear()
+
+        this.generateCalendar()
+      }
+    }
+  }
+</script>
+
+</html>

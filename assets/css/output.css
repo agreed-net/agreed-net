@@ -1409,6 +1409,9 @@
   .w-\[130px\] {
     width: 130px;
   }
+  .w-\[136px\] {
+    width: 136px;
+  }
   .w-\[140px\] {
     width: 140px;
   }
@@ -2685,6 +2688,12 @@
   }
   .bg-\[\#fff\] {
     background-color: #fff;
+  }
+  .bg-\[blue\] {
+    background-color: blue;
+  }
+  .bg-\[red\] {
+    background-color: red;
   }
   .bg-\[rgba\(0\,0\,0\,0\.05\)\] {
     background-color: rgba(0,0,0,0.05);

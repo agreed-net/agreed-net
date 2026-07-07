@@ -93,6 +93,19 @@
       width:2px;
       height:7.5px;
     }
+
+    #stackHero .stack-fill-heading {
+      color: rgba(9, 5, 54, 0.22);
+    }
+
+    #stackHero .stack-fill-word {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    #stackHero .stack-fill-char {
+      color: rgba(9, 5, 54, 0.22);
+    }
   </style>
 </head>
 
@@ -499,7 +512,7 @@
   </div>
 
   <!-- how it works section  -->
-  <section id="stepsSection" class="relative bg-white py-[100px]">
+  <section id="stepsSection" class="relative bg-white pt-[100px]">
 
     <div class="max-w-[1149px] mx-auto px-6 ">
       <!--heading wrapper-->
@@ -732,7 +745,7 @@ renewal
       </div>
       <!-- center heading -->
       <div id="stackText" class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6">
-        <h2 class="font-inter-tight text-[37px] font-light tracking-[-1.11px] text-[#090536] max-w-[560px]">
+        <h2 class="stack-fill-heading font-inter-tight text-[37px] font-light tracking-[-1.11px] max-w-[560px]">
           AI-powered Editor for generating Documents in Seconds.
         </h2>
         <p class="text-base font-inter-display leading-[28px] text-Theme-dark-gray max-w-[715px] mt-[22px] mb-[28px]">
@@ -1038,8 +1051,23 @@ renewal
   const stage = document.getElementById("stackStage");
   const cards = gsap.utils.toArray("#stackHero .tool-card");
   const text = document.getElementById("stackText");
+  const heading = document.querySelector("#stackHero .stack-fill-heading");
   const finalLabel = document.getElementById("stackFinalLabel");
   const cardStageHeight = "820px";
+  const headingText = heading.textContent.trim().replace(/\s+/g, " ");
+
+  heading.innerHTML = headingText
+    .split(" ")
+    .map((word) => {
+      const letters = Array.from(word)
+        .map((letter) => `<span class="stack-fill-char">${letter}</span>`)
+        .join("");
+
+      return `<span class="stack-fill-word">${letters}</span>`;
+    })
+    .join(" ");
+
+  const headingChars = gsap.utils.toArray("#stackHero .stack-fill-char");
 
   // ============================================================
   // FIX #1 — normalize every card to plain top/left positioning.
@@ -1078,7 +1106,11 @@ renewal
 
   gsap.set(text, {
     opacity: 1,
-    y: 60
+    y: 100
+  });
+
+  gsap.set(headingChars, {
+    color: "rgba(9, 5, 54, 0.22)"
   });
 
   // Big card starts below the screen — it will rise up to the top
@@ -1106,14 +1138,15 @@ renewal
     scrollTrigger: {
       trigger: "#stackHero",
       start: "top top",
-      end: "+=2800",
+      end: "+=2200",
       scrub: 1,
       pin: true,
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onLeaveBack: () => {
         gsap.set(stage, { minHeight: "" });
-        gsap.set(text, { opacity: 1, y: 60 });
+        gsap.set(text, { opacity: 1, y: 90 });
+        gsap.set(headingChars, { color: "rgba(9, 5, 54, 0.22)" });
       }
     }
   });
@@ -1131,6 +1164,19 @@ renewal
   //    user to keep scrolling for it to fade in.
   // =========================================
 
+  tl.to(text, {
+    y: 0,
+    duration: .65,
+    ease: "power3.out"
+  }, .15);
+
+  tl.to(headingChars, {
+    color: "#090536",
+    duration: .08,
+    stagger: .015,
+    ease: "none"
+  }, 0);
+
   // =========================================
   // 2. Only once you scroll past the heading does the
   //    card grid appear (clear gap from the tween above —
@@ -1146,7 +1192,7 @@ renewal
     y: 0,
     duration: .6,
     ease: "back.out(1.5)"
-  }, .3); // no stagger — all cards appear together
+  }, .6); // no stagger — all cards appear together
 
   // =========================================
   // 3. Cards start gathering to center, and the
@@ -1158,7 +1204,7 @@ renewal
     y: -60,
     duration: .1,
     ease: "power2.in"
-  }, 1.4);
+  }, 1);
 
   tl.to(cards, {
     left: "50%",
@@ -1171,7 +1217,7 @@ renewal
     duration: 0.3,
     stagger: 0,
     ease: "power3.inOut"
-  }, 1.4); // every card starts from clean top/left (see FIX #1 above),
+  }, 1); // every card starts from clean top/left (see FIX #1 above),
   // so they land exactly on top of one another at dead center;
   // nothing is left offset to one side anymore.
 
@@ -1181,11 +1227,11 @@ renewal
   // =========================================
 
   tl.to(finalLabel, {
-    y: -200,
+    y: -100,
     scale: 1,
     duration: 0.5,
     ease: "power4.out"
-  }, 1.4);
+  }, 1.05);
 
   // =========================================
   // 5. Small cards vanish IN PLACE — no `y` shove
@@ -1198,30 +1244,7 @@ renewal
   tl.set(cards, {
     scale: 0,
     opacity: 0
-  }, 2.7);
-
-  // =========================================
-  // 6. Document pop — the last thing in the
-  //    timeline, so the pin releases right as it
-  //    finishes (end: "+=4100" is sized to match
-  //    this timeline's own total length, so there's
-  //    no extra scroll needed after the pop before
-  //    the next section starts).
-  // =========================================
-
-  tl.fromTo(finalLabel,
-    {
-      scale: 0.98
-    },
-    {
-      scale: 1.03,
-      duration: .25,
-      ease: "back.out(2)",
-      repeat: 1,
-      yoyo: true
-    },
-    2.8
-  );
+  }, 1.75);
 
   // Positions/durations above were all measured against final,
   // fully-loaded layout (see bottom of file), so refresh once more
@@ -1408,3 +1431,5 @@ if (document.readyState === "complete") {
 </body>
 
 </html>
+
+

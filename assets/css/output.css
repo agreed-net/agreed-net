@@ -3214,6 +3214,9 @@
   .pt-\[65px\] {
     padding-top: 65px;
   }
+  .pt-\[100px\] {
+    padding-top: 100px;
+  }
   .pr-1 {
     padding-right: calc(var(--spacing) * 1);
   }

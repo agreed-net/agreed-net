@@ -417,7 +417,7 @@
     x-transition:leave="transition-opacity duration-700"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0">
-    <img src="assets/images/hero-screen-img2.png" alt="Edit Content" class="w-full h-full object-cover rounded-xl" />
+    <img src="assets/images/hero-screen-img1.png" alt="Edit Content" class="w-full h-full object-cover rounded-xl" />
   </div>
 
   <div class="absolute inset-0"
@@ -428,7 +428,7 @@
     x-transition:leave="transition-opacity duration-700"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0">
-    <img src="assets/images/hero-screen-img3.png" alt="Send Instantly" class="w-full h-full object-cover rounded-xl" />
+    <img src="assets/images/hero-screen-img1.png" alt="Send Instantly" class="w-full h-full object-cover rounded-xl" />
   </div>
 
   <div class="absolute inset-0"
@@ -439,7 +439,7 @@
     x-transition:leave="transition-opacity duration-700"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0">
-    <img src="assets/images/hero-screen-img4.png" alt="Sign Seamlessly" class="w-full h-full object-cover rounded-xl" />
+    <img src="assets/images/hero-screen-img1.png" alt="Sign Seamlessly" class="w-full h-full object-cover rounded-xl" />
   </div>
 
   <div class="absolute inset-0"
@@ -450,7 +450,7 @@
     x-transition:leave="transition-opacity duration-700"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0">
-    <img src="assets/images/hero-screen-img5.png" alt="Track Progress" class="w-full h-full object-cover rounded-xl" />
+    <img src="assets/images/hero-screen-img1.png" alt="Track Progress" class="w-full h-full object-cover rounded-xl" />
   </div>
 </div>
           </div>
@@ -692,7 +692,7 @@ renewal
   </section>
   <!--animation section-->
   <section id="stackHero" class="relative bg-white ">
-    <div id="stackStage" class="relative w-full max-w-[1300px] mx-auto min-h-[820px]">
+    <div id="stackStage" class="relative w-full max-w-[1300px] mx-auto max-h-[820px] h-[820px]">
       <!-- scattered tool cards -->
       <div class="tool-card absolute " style="top:72px; left:91px;">
         <img src="assets/images/anim-card1.png" alt="Tool 1" class="" />
@@ -1087,13 +1087,51 @@ renewal
         scale: 1
       });
 
+      // =========================================
+      // 0. PRE-ENTRANCE FIX (the only change in this file)
+      //    Problem: the pinned timeline below only starts fading the
+      //    heading/cards in once its OWN pin engages at "top top" — so
+      //    right as section 2 ends, section 3 sits there fully invisible
+      //    and you have to keep scrolling before anything appears.
+      //    Fix: play this exact same fade-in (same durations, same
+      //    easing — nothing about the animation itself changed) as a
+      //    normal one-shot tween the moment section 3 starts entering
+      //    the viewport, instead of scrubbing it to scroll distance.
+      //    That keeps the original snappy "pop in" feel intact and just
+      //    moves WHEN it fires, so nothing sits blank after section 2.
+      // =========================================
+
+      ScrollTrigger.create({
+        trigger: "#stackHero",
+        start: "top bottom",
+        onEnter: () => {
+          gsap.timeline()
+            .to(text, {
+              opacity: 1,
+              y: 60,
+              duration: .4,
+              ease: "power2.out"
+            }, 0)
+            .to(cards, {
+              opacity: 1,
+              y: 0,
+              duration: .6,
+              ease: "back.out(1.5)"
+            }, .5);
+        },
+        onLeaveBack: () => {
+          gsap.set(text, { opacity: 0, y: 40 });
+          gsap.set(cards, { opacity: 0, y: 30 });
+        }
+      });
+
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#stepsSection",
-          start: "bottom bottom",
+          trigger: "#stackHero",
+          start: "top top",
           end: "+=3600",
           scrub: 1,
-          pin: "#stackHero",
+          pin: true,
           anticipatePin: 1,
         }
       });

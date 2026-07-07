@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+ #heroBgWrap{
+    width:100%;
+    height:100%;
+}
+
+#heroBg{
+    will-change:transform;
+    transform:translateZ(0);
+    backface-visibility:hidden;
+}
+
+#heroClip{
+    isolation: isolate;
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+</style>
+
+  </head>
+
+  <body class="font-Inter-disp box-border">
+  
+  <!--hero section-->
+    <div class="pt-[65px] bg-white ">
+      <section class="relative bg-white w-full px-2.5 rounded-[18px] overflow-hidden">
+      <div
+        id="heroClip"
+        class="absolute left-0 right-0 mx-auto h-[852px] w-[calc(100%-182px)] rounded-[18px] overflow-hidden"
+      >
+    <div
+        id="heroBgWrap"
+        class="relative w-full h-full"
+    >
+        <img
+            id="heroBg"
+            src="assets/images/hero-bg-img.png"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,#FFF_0%,rgba(255,255,255,0)_53.18%)]"></div>
+    </div>
+</div>
+        <div class="w-full max-w-[1169px] mx-auto pt-[64px] relative">
+          <!-- badge  -->
+          <div
+            class="py-[7px] pr-4 pl-3.5 rounded-full flex items-center gap-2 w-max mx-auto bg-black/5 mb-[25px]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+            >
+              <circle cx="4" cy="4" r="4" fill="#8E5EFE" />
+            </svg>
+            <span class="text-sm leading-5 font-medium text-[#090536]"
+              >Create and Sign Documents for Free</span
+            >
+          </div>
+          <h1
+            class="text-[54px] leading-[66px] tracking-[-1.08px] text-agreed-dark text-center w-full max-w-[750px] mx-auto mb-4"
+          >
+            Create, Share & Sign Documents. Without the Hassle.
+          </h1>
+          <p
+            class="text-base leading-7 text-[#020012]/60 w-full max-w-[720px] mx-auto text-center mb-7"
+          >
+            Create agreements, contracts, proposals and documents in minutes. Send for eSignature,
+            track approvals, and manage your entire signing workflow in one secure platform.
+          </p>
+          <a
+            href="#"
+            class="py-[9px] px-10 rounded-lg bg-agreed-brand text-sm leading-[22px] font-medium text-white w-max mx-auto flex"
+          >
+            Get Started
+          </a>
+        </div>
+        <div
+          class="pt-10 pb-14 bg-cover bg-center"
+          style="background-image: url(assets/images/hero-tab-bg.png)"
+        >
+          <!-- tab-slider base  -->
+          <div
+            class="w-full max-w-[1056px] mx-auto border border-white/30 rounded-[14px] bg-white/25 backdrop-blur-[3.11px] p-2"
+            x-data="{
+      activeTab: 0,
+      timer: null,
+
+      tabs: [
+          'Create Documents',
+          'Edit Content',
+          'Send Instantly',
+          'Sign Seamlessly',
+          'Track Progress'
+      ],
+
+      init() {
+          this.startSlider()
+      },
+
+      startSlider() {
+          this.timer = setInterval(() => {
+              this.next()
+          }, 3000)
+      },
+
+      restartSlider() {
+          clearInterval(this.timer)
+          this.startSlider()
+      },
+
+      next() {
+          this.activeTab =
+              this.activeTab === this.tabs.length - 1
+                  ? 0
+                  : this.activeTab + 1
+      },
+
+      prev() {
+          this.activeTab =
+              this.activeTab === 0
+                  ? this.tabs.length - 1
+                  : this.activeTab - 1
+
+          this.restartSlider()
+      },
+
+      selectTab(index) {
+          this.activeTab = index
+          this.restartSlider()
+      }
+  }"
+          >
+            <div class="overflow-visible rounded-[10px] flex flex-col gap-2 w-full">
+              <!-- Navigation -->
+              <div
+                class="relative flex items-center gap-2 overflow-hidden px-3 text-white sm:px-4 overflow-visible"
+              >
+                <!-- Prev -->
+                <button
+                  type="button"
+                  @click="prev()"
+                  class="z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full hover:bg-white/10"
+                >
+                  ←
+                </button>
+
+                <!-- Tabs -->
+                <div class="relative grid flex-1 grid-cols-5 gap-1 p-1 overflow-visible">
+                  <!-- Active Background -->
+                  <div
+                    class="absolute inset-y-0 rounded-[8px] flex items-center justify-center overflow-visible transition-all duration-300 ease-out"
+                    :style="`width:${100 / tabs.length}%; transform:translateX(${activeTab * 100}%);`"
+                  >
+                    <div
+                      class="w-7 h-0.5 rounded-full bg-white -translate-y-[28px] relative z-40"
+                    ></div>
+                  </div>
+
+                  <button
+                    @click="selectTab(0)"
+                    class="relative z-10 py-2 px-3 text-center text-[13px] leading-[17px] font-semibold transition"
+                    :class="activeTab === 0 ? 'text-white' : 'text-white/70 hover:text-white'"
+                  >
+                    Create Documents
+                  </button>
+
+                  <button
+                    @click="selectTab(1)"
+                    class="relative z-10 py-2 px-3 text-center text-[13px] leading-[17px] font-semibold transition"
+                    :class="activeTab === 1 ? 'text-white' : 'text-white/70 hover:text-white'"
+                  >
+                    Edit Content
+                  </button>
+
+                  <button
+                    @click="selectTab(2)"
+                    class="relative z-10 py-2 px-3 text-center text-[13px] leading-[17px] font-semibold transition"
+                    :class="activeTab === 2 ? 'text-white' : 'text-white/70 hover:text-white'"
+                  >
+                    Send Instantly
+                  </button>
+
+                  <button
+                    @click="selectTab(3)"
+                    class="relative z-10 py-2 px-3 text-center text-[13px] leading-[17px] font-semibold transition"
+                    :class="activeTab === 3 ? 'text-white' : 'text-white/70 hover:text-white'"
+                  >
+                    Sign Seamlessly
+                  </button>
+
+                  <button
+                    @click="selectTab(4)"
+                    class="relative z-10 py-2 px-3 text-center text-[13px] leading-[17px] font-semibold transition"
+                    :class="activeTab === 4 ? 'text-white' : 'text-white/70 hover:text-white'"
+                  >
+                    Track Progress
+                  </button>
+                </div>
+
+                <!-- Next -->
+                <button
+                  type="button"
+                  @click="next(); restartSlider()"
+                  class="z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full hover:bg-white/10"
+                >
+                  →
+                </button>
+              </div>
+
+              <!-- Images -->
+              <div class="relative overflow-hidden rounded-xl">
+                <div
+                  x-show="activeTab === 0"
+                  x-transition:enter="transition-opacity duration-300"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                >
+                  <img src="assets/images/hero-screen-img1.png" alt="Create Documents" class="w-full" />
+                </div>
+
+                <div
+                  x-show="activeTab === 1"
+                  x-transition:enter="transition-opacity duration-300"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                >
+                  <img src="assets/images/hero-screen-img1.png" alt="Edit Content" class="w-full" />
+                </div>
+
+                <div
+                  x-show="activeTab === 2"
+                  x-transition:enter="transition-opacity duration-300"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                >
+                  <img src="assets/images/hero-screen-img1.png" alt="Send Instantly" class="w-full" />
+                </div>
+
+                <div
+                  x-show="activeTab === 3"
+                  x-transition:enter="transition-opacity duration-300"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                >
+                  <img src="assets/images/hero-screen-img1.png" alt="Sign Seamlessly" class="w-full" />
+                </div>
+
+                <div
+                  x-show="activeTab === 4"
+                  x-transition:enter="transition-opacity duration-300"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                >
+                  <img src="assets/images/hero-screen-img1.png" alt="Track Progress" class="w-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+      <!-- feature section  -->
+     <section
+  x-data="stepsScroller()"
+  x-init="init()"
+  @scroll.window="onScroll()"
+  @resize.window="onScroll()"
+  class="relative bg-white"
+  :style="`height: ${steps.length * 70}vh`"
+>
+  <div class="sticky top-0 h-screen w-full flex items-center overflow-hidden">
+    <div class="w-full max-w-[1169px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: steps list + progress line -->
+      <div class="relative pl-8">
+        <!-- track -->
+        <div class="absolute left-0 top-1 bottom-1 w-[2px] bg-gray-200 rounded-full"></div>
+        <!-- fill (purple, grows on top of the track) -->
+<div
+  class="absolute left-0 top-1 w-[2px] bg-Theme-purple rounded-full"
+  :style="`height: ${progress * 100}%`"
+></div>
+
+        <template x-for="(step, index) in steps" :key="index">
+          <button type="button" @click="goToStep(index)" class="block text-left w-full mb-7 last:mb-0">
+            <h3
+              class="text-[15px] leading-6 transition-colors duration-200"
+              :class="activeIndex === index ? 'font-semibold text-agreed-dark' : 'font-normal text-gray-400'"
+              x-text="`${index + 1}. ${step.title}`"
+            ></h3>
+            <p
+              x-show="activeIndex === index"
+              x-transition:enter="transition-opacity duration-300 delay-100"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              class="text-sm leading-6 text-gray-500 mt-1 max-w-[280px]"
+              x-text="step.description"
+            ></p>
+          </button>
+        </template>
+      </div>
+
+      <!-- Right: image panel -->
+      <div class="relative rounded-2xl bg-[#F7F7F8] p-6 aspect-[4/3]">
+        <template x-for="(step, index) in steps" :key="'img-' + index">
+          <div
+            x-show="activeIndex === index"
+            x-transition:enter="transition-opacity duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity duration-150"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-6"
+          >
+            <img :src="step.image" :alt="step.title" class="w-full h-full object-contain" />
+          </div>
+        </template>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.querySelector("section");
+  const clip = document.querySelector("#heroClip");
+  const wrap = document.querySelector("#heroBgWrap");
+  const img = document.querySelector("#heroBg");
+
+  if (!section || !clip || !wrap || !img) return;
+
+  // Force the clipping container onto its own compositing layer so
+  // border-radius keeps clipping the animated child at every frame,
+  // including once the scrub settles at the end.
+  gsap.set(clip, {
+    force3D: false,
+    willChange: "transform"
+  });
+
+  gsap.set(wrap, {
+    y: 0,
+    scale: 1,
+    transformPerspective: 1000,
+    transformOrigin: "center center",
+    force3D: false,
+    willChange: "transform"
+  });
+
+  // Travel distance (y) must stay within the overscan the scale provides,
+  // or the image runs out of coverage before the scroll finishes.
+  // Box height: 852px. A static scale of 2.2 gives ~511px slack top+bottom,
+  // enough for a 450px vertical drift. Scale stays FIXED (no zoom effect) —
+  // only position (y) animates, for a pure parallax float.
+  const TRAVEL_Y = -750;
+  const STATIC_SCALE = 2.2;
+
+  gsap.set(img, {
+    y: 0,
+    scale: STATIC_SCALE,
+    opacity: 1,
+    transformOrigin: "center center",
+    force3D: false,
+    willChange: "transform"
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+      invalidateOnRefresh: false,
+      // markers: true
+    }
+  });
+
+  // Background image — moves fastest (deepest layer). Only y animates —
+  // scale is fixed above so the image never visibly zooms.
+  tl.to(img, {
+    y: TRAVEL_Y,
+    ease: "none"
+  }, 0);
+
+  // Foreground content (badge/heading/CTA) — moves slower than the
+  // background so it appears to float above it, reinforcing the depth.
+  const content = section.querySelector(".max-w-\\[1169px\\]");
+  // if (content) {
+  //   tl.to(content, {
+  //     y: TRAVEL_Y * 0.25,
+  //     ease: "none"
+  //   }, 0);
+  // }
+
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
+});
+</script>
+  </body>
+</html>

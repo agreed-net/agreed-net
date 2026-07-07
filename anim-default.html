@@ -1,0 +1,123 @@
+<!--animation section-->
+<section id="stackHero" class="relative bg-white overflow-hidden h-screen">
+  <div class="relative w-full h-full max-w-[1300px] mx-auto min-h-[750px]">
+
+    <!-- scattered tool cards -->
+    <div class="tool-card absolute " style="top:12%; left:7%;">
+      <img src="assets/images/anim-card1.png" alt="Tool 1" class="" />
+    </div>
+    <div class="tool-card absolute " style="top:23%; left:16%; z-index:-1;">
+    <img src="assets/images/anim-card2.png" alt="Tool 2" class="" />
+    </div>
+    <div class="tool-card absolute " style=" bottom:50%; left:-7%; ">
+     <img src="assets/images/anim-card3.png" alt="Tool 2" class="" />
+    </div>
+    <div class="tool-card absolute " style="bottom:30%; left:20%; ">
+      <img src="assets/images/anim-card4.png" alt="Tool 2" class="" />
+    </div>
+     <div class="tool-card absolute " style="bottom:25%; left:25%; z-index:-1;">
+      <img src="assets/images/anim-card5.png" alt="Tool 2" class="" />
+    </div>
+    <div class="tool-card absolute " style="bottom:30%; left:55%; z-index:-1;">
+      <img src="assets/images/anim-card6.png" alt="Tool 2" class="" />
+    </div>
+     <div class="tool-card absolute " style="bottom:25%; left:63%; ">
+      <img src="assets/images/anim-card7.png" alt="Tool 2" class="" />
+    </div>
+     <div class="tool-card absolute " style="bottom:40%; left:80%; transform: translateX(90px); ">
+      <img src="assets/images/anim-card8.png" alt="Tool 2" class="" />
+    </div>
+     <div class="tool-card absolute " style="bottom:65%; right:0%; left:80%; transform: translateX(160px)">
+      <img src="assets/images/anim-card9.png" alt="Tool 2" class="" />
+    </div>
+     <div class="tool-card absolute " style="top:12%; left:60%; ">
+      <img src="assets/images/anim-card10.png" alt="Tool 2" class="" />
+    </div>
+    <div class="tool-card absolute " style="top:22%; left:70%; z-index:-1;">
+      <img src="assets/images/anim-card11.png" alt="Tool 2" class="" />
+    </div>
+    <div class="tool-card absolute " style="top:12%; left:80%; ">
+      <img src="assets/images/anim-card12.png" alt="Tool 2" class="" />
+    </div>
+    <!-- center heading -->
+    <div id="stackText" class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6">
+      <h2 class="font-inter-tight text-[37px] font-light tracking-[-1.11px] text-[#090536] max-w-[560px]">
+        AI-powered Editor for generating Documents in Seconds.
+      </h2>
+      <p class="text-base font-inter-display leading-[28px] text-Theme-dark-gray max-w-[715px] mt-[22px] mb-[28px]">
+        Agreed's AI drafts NDAs, proposals, offer letters, and service agreements from a single prompt formatted, field-ready, and sent before your coffee cools.
+      </p>
+      <button class="btn-purple max-w-[150px] mx-auto py-[9px] px-5 rounded-lg text-sm leading-[22px] text-white">Create Document</button>
+    </div>
+
+    <!-- final label, revealed once the deck settles -->
+    <div id="stackFinalLabel" class="absolute inset-x-0 top-[68%] z-30 text-center px-6 opacity-0 flex justify-center">
+      <img src="assets/images/anim-big-image.png"/>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const cards = gsap.utils.toArray('#stackHero .tool-card');
+  const text = document.getElementById('stackText');
+  const finalLabel = document.getElementById('stackFinalLabel');
+  const n = cards.length;
+  const mid = (n - 1) / 2;
+
+  // initial state: hidden, sitting slightly below their scattered resting spot
+  gsap.set(cards, {
+    opacity: 0,
+    scale: 1,
+    y: 20,
+    rotate: (i, el) => getComputedStyle(el).getPropertyValue('--rot'),
+  });
+  gsap.set(text, { opacity: 0, y: 40 });
+  gsap.set(finalLabel, { y: 16 });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#stackHero',
+      start: 'top top',
+      end: '+=3400',   // total scroll distance for the whole sequence
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+    },
+  });
+
+  // Phase 1 — heading + scattered cards fade/settle into view
+  tl.to(text, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 0)
+    .to(cards, {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      stagger: 0.04,
+      duration: 0.8,
+      ease: 'back.out(1.4)',
+    }, 0.15);
+
+  // Phase 2 — cards converge to center into a fanned deck, heading fades/lifts out
+  tl.to(cards, {
+    left: '50%',
+    top: '50%',
+    xPercent: -50,
+    yPercent: -50,
+    x: (i) => (i - mid) * 100,     // horizontal fan spread
+    y: (i) => Math.abs(i - mid) * 6, // slight arc downward at the edges
+    rotate: (i) => (i - mid) * 6,    // fan rotation
+    scale: 1,
+    stagger: 0.025,
+    duration: 1.2,
+    ease: 'power2.inOut',
+  }, 1.3)
+  .to(text, { opacity: 0, y: -20, duration: 0.6, ease: 'power1.in' }, 1.3);
+
+  // Phase 3 — deck settles, final supporting label fades in
+  tl.to(cards, { scale: 1, duration: 0.4, ease: 'power1.out' }, 2.4)
+    .to(finalLabel, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 2.5);
+});
+</script>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- REQUIRED META TAGS -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Agreed</title>
+    <!--Main CSS-->
+    <link href="assets/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="md:overflow-hidden bg-Theme-Forground font-inter-display">
+    <div
+      class="min-h-screen w-full flex items-center justify-center px-5 min-[700px]:py-3 py-5"
+    >
+      <div class="flex flex-col gap-[30px] w-full">
+        <!--Header--->
+        <header class="flex flex-col items-center gap-[15px]">
+          <a href="#" class="outline-none">
+           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <path d="M24.9844 16.6641V24.9974" stroke="#DC3027" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25.2461 32.8099H24.9857M25.5065 32.8099C25.5065 33.0976 25.2734 33.3307 24.9857 33.3307C24.698 33.3307 24.4648 33.0976 24.4648 32.8099C24.4648 32.5222 24.698 32.2891 24.9857 32.2891C25.2734 32.2891 25.5065 32.5222 25.5065 32.8099Z" stroke="#DC3027" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28.1409 4.16406C30.6957 4.16406 31.973 4.16406 33.1215 4.63981C34.2701 5.11556 35.1734 6.01879 36.9799 7.82523L42.1574 13.0029C43.9638 14.8093 44.8672 15.7126 45.3428 16.8611C45.8186 18.0097 45.8186 19.287 45.8186 21.8418V28.153C45.8186 30.7078 45.8186 31.9851 45.3428 33.1336C44.8672 34.2822 43.9638 35.1855 42.1574 36.992L36.9799 42.1695C35.1734 43.9759 34.2701 44.8793 33.1215 45.3549C31.973 45.8307 30.6957 45.8307 28.1409 45.8307H21.8297C19.275 45.8307 17.9976 45.8307 16.849 45.3549C15.7004 44.8793 14.7972 43.9759 12.9907 42.1695L7.81336 36.9918C6.00699 35.1855 5.1038 34.2822 4.62807 33.1336C4.15234 31.9851 4.15234 30.7078 4.15234 28.1532V21.8416C4.15234 19.287 4.15234 18.0097 4.62807 16.8611C5.1038 15.7126 6.00699 14.8094 7.81336 13.0029L12.9908 7.82538C14.7972 6.01885 15.7004 5.1156 16.849 4.63983C17.9976 4.16406 19.275 4.16406 21.8297 4.16406H28.1409Z" stroke="#DC3027" stroke-width="3"/>
+</svg>
+          </a>
+          <div class="flex flex-col gap-2">
+             <h1
+            class="text-2xl text-Theme-black font-normal leading-[140%] text-center"
+          >
+           You Declined to sign
+          </h1>
+           <p class="text-sm font-inter-display leading-5 text-Theme-dark-gray max-w-[400px] text-center">You have declined the Non-Disclosure Agreement from John Doe.
+Your access to this document has been removed.</p>
+          </div>
+         
+        </header>
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center">
+          <a href="#" class="w-[150px] py-2 px-3 bg-[rgba(142,94,254,0.14)] rounded-lg text-sm font-inter-display-medium leading-5 text-Theme-purple text-center transition-all duration-500 hover:bg-[rgba(142,94,254,0.1)]">Open Agreed</a>
+        </div>
+        <button class="close-btn cursor-pointer absolute right-5 top-3.5 bg-[#EEEEEC] rounded-md">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+
+      </button>
+      </div>
+    </div>
+
+    <!-- MAIN JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      document.querySelectorAll(".password-wrapper").forEach((wrapper) => {
+        const passwordInput = wrapper.querySelector(".password-input");
+        const toggleBtn = wrapper.querySelector(".togglePassword");
+        const eyeOpen = wrapper.querySelector(".eyeOpen");
+        const eyeClosed = wrapper.querySelector(".eyeClosed");
+
+        toggleBtn.addEventListener("click", () => {
+          const isPassword = passwordInput.type === "password";
+          passwordInput.type = isPassword ? "text" : "password";
+
+          if (isPassword) {
+            eyeOpen.classList.replace("opacity-100", "opacity-0");
+            eyeOpen.classList.replace("scale-100", "scale-0");
+
+            eyeClosed.classList.replace("opacity-0", "opacity-100");
+            eyeClosed.classList.replace("scale-0", "scale-100");
+          } else {
+            eyeOpen.classList.replace("opacity-0", "opacity-100");
+            eyeOpen.classList.replace("scale-0", "scale-100");
+
+            eyeClosed.classList.replace("opacity-100", "opacity-0");
+            eyeClosed.classList.replace("scale-100", "scale-0");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

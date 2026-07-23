@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- REQUIRED META TAGS -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Agreed</title>
+    <!--Main CSS-->
+    <link href="assets/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="md:overflow-hidden bg-Theme-Forground font-inter-display">
+    <div
+      class="min-h-screen w-full flex items-center justify-center px-5 min-[700px]:py-3 py-5"
+    >
+      <div class="flex flex-col gap-[30px] w-full">
+        <!--Header--->
+        <header class="flex flex-col items-center gap-[15px]">
+          <a href="#" class="outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="90" height="50" viewBox="0 0 90 50" fill="none">
+  <path d="M71.5779 19.8789C71.5779 14.4382 69.7622 11.9866 68.1713 10.798C66.3697 9.45193 63.9797 9.07555 62.0985 9.29922C59.2841 9.63386 53.3773 14.3086 55.5986 22.5735C56.9661 27.6616 60.2672 31.4465 64.4742 33.8282C69.0568 29.7672 71.5779 24.5367 71.5779 19.8789ZM18.4221 19.8789C18.4221 24.5366 20.943 29.7672 25.5255 33.8282C29.7326 31.4465 33.0339 27.6617 34.4014 22.5735C36.6227 14.3086 30.7159 9.63386 27.9015 9.29922C26.0203 9.07555 23.6303 9.45193 21.8287 10.798C20.2378 11.9866 18.4221 14.4382 18.4221 19.8789ZM80.8073 19.8789C80.8073 25.8828 78.4994 31.7639 74.4828 36.7133C78.4621 36.9158 82.2289 36.0404 85.0343 34.2474L90 42.0363C83.038 46.4858 73.7249 47.0279 65.634 44.3814C59.9032 47.8715 52.8674 50 45.0918 50H44.9082C37.1325 50 30.0966 47.8716 24.3657 44.3814C16.2749 47.0278 6.96193 46.4858 0 42.0363L4.96572 34.2474C7.77106 36.0403 11.5377 36.9158 15.5169 36.7133C11.5004 31.7639 9.19275 25.8828 9.19275 19.8789C9.19276 12.1057 11.9526 6.64711 16.3088 3.39226C20.4545 0.294803 25.3836 -0.305796 28.9899 0.123C37.1506 1.09338 47.0594 11.0373 43.3137 24.9746C41.7214 30.8991 38.4258 35.5623 34.2877 38.9709C37.4313 40.1001 40.9878 40.7592 44.9082 40.7593H45.0918C49.0121 40.7592 52.5685 40.1 55.7121 38.9709C51.5741 35.5624 48.2785 30.899 46.6863 24.9746C42.9406 11.0373 52.8494 1.09338 61.0101 0.123C64.6164 -0.305796 69.5455 0.294803 73.6912 3.39226C78.0474 6.64711 80.8072 12.1057 80.8073 19.8789Z" fill="#8E5EFE"/>
+</svg>
+          </a>
+          <div class="flex flex-col gap-2">
+             <h1
+            class="text-2xl text-Theme-black font-normal leading-[140%] text-center"
+          >
+          Document signed!
+          </h1>
+           <p class="text-sm font-inter-display leading-5 text-Theme-dark-gray max-w-[400px] text-center">You've successfully signed the Non-Disclosure Agreement.
+A copy will be emailed to you once all parties have signed.</p>
+          </div>
+         
+        </header>
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center">
+          <a href="#" class="w-[150px] py-2 px-3 bg-[rgba(142,94,254,0.14)] rounded-lg text-sm font-inter-display-medium leading-5 text-Theme-purple text-center transition-all duration-500 hover:bg-[rgba(142,94,254,0.1)]">Open Agreed</a>
+        </div>
+        <button class="close-btn cursor-pointer absolute right-5 top-3.5 bg-[#EEEEEC] rounded-md">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+
+      </button>
+      </div>
+    </div>
+
+    <!-- MAIN JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      document.querySelectorAll(".password-wrapper").forEach((wrapper) => {
+        const passwordInput = wrapper.querySelector(".password-input");
+        const toggleBtn = wrapper.querySelector(".togglePassword");
+        const eyeOpen = wrapper.querySelector(".eyeOpen");
+        const eyeClosed = wrapper.querySelector(".eyeClosed");
+
+        toggleBtn.addEventListener("click", () => {
+          const isPassword = passwordInput.type === "password";
+          passwordInput.type = isPassword ? "text" : "password";
+
+          if (isPassword) {
+            eyeOpen.classList.replace("opacity-100", "opacity-0");
+            eyeOpen.classList.replace("scale-100", "scale-0");
+
+            eyeClosed.classList.replace("opacity-0", "opacity-100");
+            eyeClosed.classList.replace("scale-0", "scale-100");
+          } else {
+            eyeOpen.classList.replace("opacity-0", "opacity-100");
+            eyeOpen.classList.replace("scale-0", "scale-100");
+
+            eyeClosed.classList.replace("opacity-100", "opacity-0");
+            eyeClosed.classList.replace("scale-100", "scale-0");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

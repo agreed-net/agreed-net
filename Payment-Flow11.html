@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- REQUIRED META TAGS -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Agreed</title>
+    <!--Main CSS-->
+    <link href="assets/css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="md:overflow-hidden bg-Theme-Forground font-inter-display">
+    <div
+      class="min-h-screen w-full flex items-center justify-center px-5 min-[700px]:py-3 py-5"
+    >
+      <div class="flex flex-col gap-[30px] w-full">
+        <!--Header--->
+        <header class="flex flex-col items-center gap-[15px]">
+          <div class="w-[68px] h-[68px] flex justify-center items-center bg-Theme-purple rounded-[14px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+  <path d="M26.9033 26.9193H26.9167M26.9033 26.9193C26.0211 27.7941 24.4224 27.5762 23.3012 27.5762C21.9251 27.5762 21.2624 27.8454 20.2802 28.8275C19.4439 29.6639 18.3228 31.1693 17 31.1693C15.6773 31.1693 14.5562 29.6639 13.7199 28.8275C12.7377 27.8454 12.075 27.5762 10.6988 27.5762C9.57767 27.5762 7.97896 27.7941 7.09682 26.9193C6.20761 26.0375 6.42644 24.4322 6.42644 23.3038C6.42644 21.8779 6.1146 21.2223 5.09916 20.2068C3.58866 18.6964 2.8334 17.941 2.83337 17.0026C2.83339 16.0641 3.58863 15.3088 5.09912 13.7983C6.00557 12.8919 6.42644 11.9937 6.42644 10.7014C6.42644 9.58019 6.20857 7.98147 7.08337 7.09931C7.96515 6.21013 9.57048 6.42897 10.6988 6.42897C11.9911 6.42897 12.8893 6.00814 13.7958 5.10171C15.3063 3.59119 16.0615 2.83594 17 2.83594C17.9386 2.83594 18.6938 3.59119 20.2043 5.10171C21.1105 6.00795 22.0087 6.42897 23.3012 6.42897C24.4224 6.42897 26.0212 6.2111 26.9034 7.08594C27.7925 7.96771 27.5736 9.57303 27.5736 10.7014C27.5736 12.1273 27.8856 12.7829 28.9009 13.7983C30.4115 15.3088 31.1667 16.0641 31.1667 17.0026C31.1667 17.941 30.4115 18.6964 28.9009 20.2068C27.8854 21.2223 27.5736 21.8779 27.5736 23.3038C27.5736 24.4322 27.7925 26.0375 26.9033 26.9193Z" stroke="white" stroke-width="3"/>
+  <path d="M12.75 18.2675L15.3 20.5443L21.25 13.4609" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div class="flex flex-col gap-2">
+              <h1
+                class="text-2xl text-Theme-black font-inter-display-medium leading-[140%] text-center">
+               Payment successful!
+              </h1>
+              <p class="text-sm leading-[18px] text-Theme-black text-center font-inter-display max-w-[280px]">Your payment has been received successfully.
+Your document is now complete.</p>
+          </div>
+          
+        </header>
+        <!--content-->
+        <div class="md:w-[384px] w-full mx-auto flex justify-center">
+         
+           <a href="#" class="w-full btn-purple py-2.5 rounded-10px font-inter-display-medium h-[40px] mt-0 text-center">
+                Go to Dashboard
+              </a>   
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      document.querySelectorAll(".password-wrapper").forEach((wrapper) => {
+        const passwordInput = wrapper.querySelector(".password-input");
+        const toggleBtn = wrapper.querySelector(".togglePassword");
+        const eyeOpen = wrapper.querySelector(".eyeOpen");
+        const eyeClosed = wrapper.querySelector(".eyeClosed");
+
+        toggleBtn.addEventListener("click", () => {
+          const isPassword = passwordInput.type === "password";
+          passwordInput.type = isPassword ? "text" : "password";
+
+          if (isPassword) {
+            eyeOpen.classList.replace("opacity-100", "opacity-0");
+            eyeOpen.classList.replace("scale-100", "scale-0");
+
+            eyeClosed.classList.replace("opacity-0", "opacity-100");
+            eyeClosed.classList.replace("scale-0", "scale-100");
+          } else {
+            eyeOpen.classList.replace("opacity-0", "opacity-100");
+            eyeOpen.classList.replace("scale-0", "scale-100");
+
+            eyeClosed.classList.replace("opacity-100", "opacity-0");
+            eyeClosed.classList.replace("scale-100", "scale-0");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -216,7 +216,7 @@
                           </button>
                         </div>
                         <!--accordion content-->
-                        <div x-ref="panel" :style="open ? 'max-height: calc(100vh - 150px); height: calc(100vh - 150px);' : 'max-height: 0px; height: 0px;'" class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ">
+                        <div x-ref="panel" :style="open ? 'max-height: calc(100vh - 150px); height: calc(100vh - 150px);' : 'max-height: 0px; height: 0px;'" :class="open ? 'mt-1.5' : 'mt-0'" class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ">
                          
                           <div class="bg-white rounded-lg h-full min-h-full ">
                             <div class=" h-full min-h-full custom-scroll-gap overflow-y-auto mr-[2px] pr-[2px]">

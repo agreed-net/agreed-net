@@ -340,6 +340,7 @@
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script>
+/*---Hero section parallax scroll --*/
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -350,67 +351,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!section || !clip || !wrap || !img) return;
 
-  // Force the clipping container onto its own compositing layer so
-  // border-radius keeps clipping the animated child at every frame,
-  // including once the scrub settles at the end.
-  gsap.set(clip, {
-    force3D: false,
-    willChange: "transform"
-  });
+  const TRAVEL_Y = -120;
+  const LERP_FACTOR = 0.04;
 
-  gsap.set(wrap, {
-    y: 0,
-    scale: 1,
-    transformPerspective: 1000,
-    transformOrigin: "center center",
-    force3D: false,
-    willChange: "transform"
-  });
+  gsap.set(wrap, { y: 0, force3D: true });
+  gsap.set(img, { y: 0, opacity: 1, force3D: true });
 
-  // Travel distance (y) must stay within the overscan the scale provides,
-  // or the image runs out of coverage before the scroll finishes.
-  // Box height: 852px. A static scale of 2.2 gives ~511px slack top+bottom,
-  // enough for a 450px vertical drift. Scale stays FIXED (no zoom effect) —
-  // only position (y) animates, for a pure parallax float.
-  const TRAVEL_Y = -750;
-  const STATIC_SCALE = 2.2;
+  let currentY = 0;
+  let targetY = 0;
 
-  gsap.set(img, {
-    y: 0,
-    scale: STATIC_SCALE,
-    opacity: 1,
-    transformOrigin: "center center",
-    force3D: false,
-    willChange: "transform"
-  });
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "bottom top",
-      scrub: 1,
-      invalidateOnRefresh: false,
-      // markers: true
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom top",
+    scrub: 0,
+    invalidateOnRefresh: true,
+    onUpdate: (self) => {
+      targetY = self.progress * TRAVEL_Y;
     }
   });
 
-  // Background image — moves fastest (deepest layer). Only y animates —
-  // scale is fixed above so the image never visibly zooms.
-  tl.to(img, {
-    y: TRAVEL_Y,
-    ease: "none"
-  }, 0);
+  function lerp(start, end, factor) {
+    return start + (end - start) * factor;
+  }
 
-  // Foreground content (badge/heading/CTA) — moves slower than the
-  // background so it appears to float above it, reinforcing the depth.
-  const content = section.querySelector(".max-w-\\[1169px\\]");
-  // if (content) {
-  //   tl.to(content, {
-  //     y: TRAVEL_Y * 0.25,
-  //     ease: "none"
-  //   }, 0);
-  // }
+  function tick() {
+    currentY = lerp(currentY, targetY, LERP_FACTOR);
+    gsap.set(img, { y: currentY }); // ✅ img moves, wrap stays static
+    requestAnimationFrame(tick);
+  }
+
+  tick();
 
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();

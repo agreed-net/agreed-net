@@ -1,0 +1,1987 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/output.css" />
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <style>
+    .step {
+      cursor: pointer;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step h3 {
+
+      font-size: 18px;
+      font-family: 'inter tight';
+      font-weight: 400;
+      text-transform: capitalize;
+      color: #A5A5A5;
+      transition: .35s;
+    }
+
+    .step.active h3 {
+
+      color: #020012;
+      font-weight: 500;
+
+    }
+
+    .step p {
+
+      margin-top: 14px;
+      max-width: 384px;
+      line-height: 26px;
+
+      display: none;
+
+      color: rgba(2, 0, 18, 0.60);
+
+    }
+
+    .step.active p {
+
+      display: block;
+
+    }
+
+    .step-image {
+
+      position: absolute;
+      bottom: 0;
+      height: 570px;
+      width: 100%;
+      object-fit: contain;
+      display: flex;
+      align-items: flex-end;
+      opacity: 0;
+
+      pointer-events: none;
+
+    }
+
+    .step-image.active {
+
+      opacity: 1;
+
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      text-align: left;
+      left: 30px !important;
+      bottom: 35px !important;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+
+    }
+
+    .swiper-pagination-bullet {
+      width: 2px;
+      height: 9px;
+      border-radius: 8px;
+      margin: 0px 4px;
+      background: #BCB8B4;
+      opacity: 1;
+      transition: all 0.6s ease-in-out;
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #8E5EFE;
+      height: 18px;
+    }
+
+    #stackHero .stack-fill-heading {
+      color: rgba(9, 5, 54, 0.22);
+    }
+
+    #stackHero .stack-fill-word {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    #stackHero .stack-fill-char {
+      color: rgba(9, 5, 54, 0.22);
+    }
+
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+      padding-top: 15px;
+    }
+
+    .accordion-content.open {
+      grid-template-rows: 1fr;
+      padding-top: 11px;
+    }
+
+    .accordion-content>div {
+      overflow: hidden;
+    }
+
+    /* ==== Tool card positions (stack-hero section) ====
+       Base rules reproduce the original inline top/left/right/z-index
+       values exactly, so large screens are unaffected. */
+    #stackStage .card-1 {
+      top: 72px;
+      left: 91px;
+    }
+
+    #stackStage .card-2 {
+      top: 180px;
+      left: 208px;
+      z-index: -1;
+    }
+
+    #stackStage .card-3 {
+      top: 495px;
+      left: -91px;
+    }
+
+    #stackStage .card-4 {
+      top: 612px;
+      left: 260px;
+    }
+
+    #stackStage .card-5 {
+      top: 720px;
+      left: 325px;
+      z-index: -1;
+    }
+
+    #stackStage .card-6 {
+      top: 612px;
+      left: 715px;
+      z-index: -1;
+    }
+
+    #stackStage .card-7 {
+      top: 720px;
+      left: 819px;
+    }
+
+    #stackStage .card-8 {
+      top: 558px;
+      left: 1130px;
+    }
+
+    #stackStage .card-9 {
+      top: 300px;
+      right: 0px;
+    }
+
+    #stackStage .card-10 {
+      top: 72px;
+      left: 780px;
+    }
+
+    #stackStage .card-11 {
+      top: 162px;
+      left: 910px;
+      z-index: -1;
+    }
+
+    #stackStage .card-12 {
+      top: 72px;
+      left: 1040px;
+    }
+
+    /* Small laptop screens (~1024px–1366px): the scattered layout above
+       was tuned for 1100px+ stages and starts overflowing/colliding at
+       laptop widths, so pull the cards in tighter and closer to center. */
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      #stackStage {
+        max-width: 900px;
+        min-height: 680px;
+      }
+
+      .tool-card img {
+        max-width: 70%;
+      }
+
+      #stackStage .card-1 {
+        top: 80px;
+        left: -20px;
+      }
+
+      #stackStage .card-2 {
+        top: 160px;
+        left: 60px;
+      }
+
+      #stackStage .card-3 {
+        top: 420px;
+        left: -80px;
+      }
+
+      #stackStage .card-4 {
+        top: 500px;
+        left: 170px;
+      }
+
+      #stackStage .card-5 {
+        top: 540px;
+        left: 230px;
+      }
+
+      #stackStage .card-6 {
+        top: 500px;
+        left: 575px;
+      }
+
+      #stackStage .card-7 {
+        top: 540px;
+        left: 650px;
+      }
+
+      #stackStage .card-8 {
+        top: 430px;
+        left: 800px;
+        display: none;
+      }
+
+      #stackStage .card-9 {
+        top: 290px;
+        right: 0px;
+      }
+
+      #stackStage .card-10 {
+        top: 80px;
+        left: 550px;
+      }
+
+      #stackStage .card-11 {
+        top: 160px;
+        left: 630px;
+      }
+
+      #stackStage .card-12 {
+        top: 80px;
+        left: 730px;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter-display-medium box-border">
+  <!-- navigation  -->
+  <header class="fixed left-0 top-0 z-[1000] w-full bg-white px-2.5  " x-data="{ mobileMenu: false, openMenu: null }">
+    <div id="headerBar"
+      class="w-full max-w-[1170px] mx-auto bg-white py-3.5 border-b border-transparent transition-colors duration-300">
+      <div class="mx-auto flex items-center justify-between">
+        <!--logo-->
+        <a href="#" class="flex items-center" aria-label="Agreed home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="89" height="26" viewBox="0 0 89 26" fill="none">
+            <path
+              d="M12.1813 7.78858V6.01468H16.0517V21.0478H12.1813V19.2739C11.0212 20.7371 9.39101 21.4687 7.29078 21.4687C5.29057 21.4687 3.57038 20.707 2.13023 19.1837C0.710076 17.6403 0 15.7561 0 13.5312C0 11.3264 0.710076 9.45224 2.13023 7.90885C3.57038 6.36545 5.29057 5.59375 7.29078 5.59375C9.39101 5.59375 11.0212 6.32536 12.1813 7.78858ZM5.04054 16.598C5.82062 17.3797 6.81073 17.7706 8.01086 17.7706C9.21099 17.7706 10.2011 17.3797 10.9812 16.598C11.7813 15.7962 12.1813 14.774 12.1813 13.5312C12.1813 12.2885 11.7813 11.2763 10.9812 10.4945C10.2011 9.69277 9.21099 9.29189 8.01086 9.29189C6.81073 9.29189 5.82062 9.69277 5.04054 10.4945C4.26046 11.2763 3.87042 12.2885 3.87042 13.5312C3.87042 14.774 4.26046 15.7962 5.04054 16.598Z"
+              fill="#090536" />
+            <path
+              d="M38.1334 6.01468V8.60037C38.4734 7.65829 39.0535 6.94673 39.8736 6.46567C40.6937 5.96457 41.6338 5.71401 42.6939 5.71401V10.0435C41.5137 9.88319 40.4536 10.1237 39.5135 10.7651C38.5934 11.3865 38.1334 12.4188 38.1334 13.862V21.0478H34.263V6.01468H38.1334Z"
+              fill="#090536" />
+            <path
+              d="M85.0563 7.78714V0H88.9267V21.0463H85.0563V19.2724C83.9162 20.7357 82.296 21.4673 80.1958 21.4673C78.1756 21.4673 76.4454 20.7056 75.0052 19.1822C73.5851 17.6388 72.875 15.7547 72.875 13.5298C72.875 11.3249 73.5851 9.45081 75.0052 7.90741C76.4454 6.36401 78.1756 5.59231 80.1958 5.59231C82.296 5.59231 83.9162 6.32392 85.0563 7.78714ZM77.9155 16.5965C78.7356 17.3783 79.7357 17.7691 80.9159 17.7691C82.116 17.7691 83.1061 17.3783 83.8862 16.5965C84.6663 15.7948 85.0563 14.7725 85.0563 13.5298C85.0563 12.2871 84.6663 11.2748 83.8862 10.4931C83.1061 9.69134 82.116 9.29045 80.9159 9.29045C79.7157 9.29045 78.7156 9.69134 77.9155 10.4931C77.1355 11.2748 76.7454 12.2871 76.7454 13.5298C76.7454 14.7725 77.1355 15.7948 77.9155 16.5965Z"
+              fill="#090536" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M31.7678 9.51556H30.1762C30.5787 10.3496 30.8043 11.2854 30.8043 12.2739C30.8043 15.7777 27.9699 18.6182 24.4734 18.6182C20.9769 18.6181 18.1425 15.7777 18.1424 12.2739C18.1424 8.7701 20.9769 5.9297 24.4734 5.92969H31.7678V9.51556ZM24.4734 9.51556C22.9532 9.51558 21.7208 10.7505 21.7208 12.2739C21.7208 13.7973 22.9532 15.0323 24.4734 15.0323C25.9936 15.0323 27.226 13.7973 27.226 12.2739C27.226 10.7505 25.9936 9.51556 24.4734 9.51556Z"
+              fill="#090536" />
+            <path
+              d="M21.9272 15.7219C23.5546 15.7219 24.9583 16.6813 25.6058 18.0665H22.4089C21.8008 18.0665 21.3079 18.5605 21.3079 19.1698C21.3079 19.7792 21.8008 20.2732 22.4089 20.2732H28.4509C28.4565 20.2732 28.4621 20.2734 28.4677 20.2737C28.8746 20.2671 29.2828 20.3218 29.6783 20.4383C30.5198 20.6861 31.2585 21.2004 31.784 21.904C32.3094 22.6077 32.5934 23.4629 32.5934 24.3418L29.1899 25.4052C28.9244 24.556 28.1606 23.9278 27.2417 23.8644L27.2351 23.8591H22.2851C22.2593 23.8591 22.2342 23.8556 22.2104 23.8492C22.1168 23.8557 22.0224 23.8591 21.9272 23.8591C19.6849 23.8591 17.8672 22.0375 17.8672 19.7905C17.8672 17.5434 19.6849 15.7219 21.9272 15.7219Z"
+              fill="#090536" />
+            <path
+              d="M66.9706 11.8691C66.9706 9.8993 66.3139 9.01171 65.7384 8.58134C65.0867 8.094 64.2221 7.95773 63.5416 8.03871C62.5235 8.15986 60.3868 9.85234 61.1903 12.8447C61.6859 14.6901 62.8796 16.0573 64.4016 16.9193C66.0904 15.4339 66.9706 13.5497 66.9706 11.8691ZM47.7421 11.8691C47.7421 13.5497 48.6223 15.434 50.3111 16.9193C51.8331 16.0573 53.0269 14.6902 53.5224 12.8447C54.3259 9.85234 52.1892 8.15986 51.1711 8.03871C50.4907 7.95773 49.6261 8.094 48.9744 8.58134C48.3989 9.01171 47.7421 9.8993 47.7421 11.8691ZM70.3092 11.8691C70.3092 14.0441 69.4578 16.1773 68.0141 17.9637C69.4518 18.0378 70.819 17.7232 71.8383 17.0712L73.6346 19.8912C71.1254 21.4963 67.7669 21.7016 64.8268 20.742C62.7683 22.0019 60.2321 22.7744 57.3895 22.7744H57.3232C54.4807 22.7744 51.9443 22.0019 49.8859 20.742C46.9457 21.7015 43.5874 21.4963 41.0781 19.8912L42.8744 17.0712C43.8937 17.7232 45.2609 18.0378 46.6986 17.9637C45.2549 16.1773 44.4035 14.0441 44.4035 11.8691C44.4035 9.05483 45.4018 7.07848 46.9776 5.90005C48.4773 4.77861 50.2603 4.56116 51.5649 4.71641C54.5169 5.06771 58.1013 8.66797 56.7463 13.714C56.1716 15.8542 54.9815 17.5427 53.4868 18.7772C54.6308 19.1892 55.9183 19.4288 57.3232 19.4288H57.3895C58.7944 19.4288 60.0819 19.1892 61.2258 18.7772C59.7312 17.5427 58.5411 15.8542 57.9664 13.714C56.6114 8.66797 60.1958 5.06771 63.1479 4.71641C64.4524 4.56116 66.2355 4.77861 67.7351 5.90005C69.3109 7.07848 70.3092 9.05483 70.3092 11.8691Z"
+              fill="#8E5EFE" />
+          </svg>
+        </a>
+
+        <nav class="hidden items-center gap-[34px] pl-[50px] lg:flex w-full">
+          <div class="relative">
+            <button @click="openMenu = openMenu === 'platform' ? null : 'platform'"
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              Product
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="relative">
+            <button @click="openMenu = openMenu === 'solutions' ? null : 'solutions'"
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              Solutions
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="relative">
+            <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              Templates
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="relative">
+            <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              Integrations
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="relative">
+            <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              Resources
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M8.75 0.75L4.75 4.75L0.75 0.75" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <a href="#"
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">Pricing</a>
+        </nav>
+
+        <a href="#"
+          class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+          Get Started
+        </a>
+        <!--mobile toggle button-->
+        <button class="inline-flex h-7 w-7 items-center justify-center text-[#110a3f] lg:hidden"
+          aria-label="Toggle navigation">
+          <svg x-show="!mobileMenu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <svg x-show="mobileMenu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+            style="display: none">
+            <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- mobile menu  -->
+      <nav x-show="mobileMenu" x-transition class="bg-white px-4 py-3 pt-8 flex flex-col gap-4 lg:hidden"
+        style="display: none">
+        <div class="relative">
+          <button @click="openMenu = openMenu === 'platform' ? null : 'platform'"
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+            Platform
+
+            <svg class="transition-transform" :class="openMenu === 'platform' ? 'rotate-180' : ''"
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M14 8L10 12L6 8" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="relative">
+          <button @click="openMenu = openMenu === 'solutions' ? null : 'solutions'"
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+            Solutions
+
+            <svg class="transition-transform" :class="openMenu === 'solutions' ? 'rotate-180' : ''"
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M14 8L10 12L6 8" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="relative">
+          <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+            Resources
+
+            <svg class="transition-transform" :class="openMenu === 'resources' ? 'rotate-180' : ''"
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M14 8L10 12L6 8" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <a href="#"
+          class="block text-sm leading-5 font-medium text-black/60 transition-all duration-500 hover:text-black">Enterprise</a>
+        <a href="#"
+          class="block text-sm leading-5 font-medium text-black/60 transition-all duration-500 hover:text-black">Template</a>
+        <a href="#"
+          class="block text-sm leading-5 font-medium text-black/60 transition-all duration-500 hover:text-black">Pricing</a>
+        <a href="#"
+          class="rounded-lg bg-[#8E5EFE] px-4 py-2 text-sm font-medium leading-5 text-white lg:inline-flex whitespace-nowrap w-max">Get
+          Started</a>
+      </nav>
+    </div>
+  </header>
+  <!--content section-->
+  <div class="md:pt-[130px] pt-[100px] md:pb-[100px] pb-[50px]">
+    <div class="max-w-[974px] mx-auto px-[15px]">
+      <!--content header-->
+      <div class="border-b border-[#EEEEEC] md:pb-10 pb-5 md:mb-[50px] mb-[25px]">
+        <div class="flex flex-col gap-[15px]">
+          <span
+            class="w-fit bg-[rgba(142,94,254,0.10)] rounded-lg py-[7px] px-[15px] text-sm text-Theme-purple font-inter-display-medium">
+            Legal
+          </span>
+          <h1 class="text-[47px] text-[#090536] leading-[66px] tracking-[-1.41px] font-inter-tight font-light">Privacy
+            Policy</h1>
+        </div>
+      </div>
+      <!--content main-->
+      <div class="block">
+        <span class="text-base font-inter-display-medium leading-[28px] text-Theme-black/60 mb-[50px] block">Effective
+          Date: July 14, 2026</span>
+        <!--main-->
+        <div class="flex flex-col gap-10">
+          <!--sub-->
+          <div class="flex flex-col gap-3">
+            <h2 class="text-2xl text-[#090536] font-inter-display-medium ">1. Introduction</h2>
+            <div class="flex flex-col gap-3.5">
+              <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Welcome to Agreed ("we", "our",
+                or "us"). Agreed is a global platform for contract and legal agreement management, e-signature, document
+                signing, and marketplace deal facilitation, accessible at <a href="#">https://agreed.net/</a>.</p>
+              <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We are committed to protecting
+                the privacy of all users — individuals, businesses, and visitors — who access or use our platform. This
+                Privacy Policy explains what information we collect, how we use it, how we protect it, and your rights
+                regarding your personal data.</p>
+              <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">By using Agreed, you agree to
+                the terms described in this Privacy Policy. If you do not agree, please discontinue use of the platform.
+              </p>
+            </div>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">2. Information We Collect</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We collect various types of
+                  information to provide, improve, and secure our services.</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col gap-3 pl-5">
+                <h3 class="text-xl font-inter-display-medium">A. Personal Information</h3>
+                <ul class="list-disc pl-5">
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Full name</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Email address</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Phone number</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Date of birth (where
+                    required for identity verification)</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Government-issued
+                    identification (where legally required for e-signature compliance)</li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-3 pl-5">
+                <h3 class="text-xl font-inter-display-medium">B. Payment & Financial Information</h3>
+                <ul class="list-disc pl-5">
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50"> Billing address</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Credit/debit card details
+                    (processed securely via PCI-DSS compliant payment processors)
+                  </li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Transaction history and
+                    invoice records</li>
+
+                </ul>
+
+              </div>
+              <div class="flex flex-col gap-3 pl-5">
+                <h3 class="text-xl font-inter-display-medium">C. Location Data</h3>
+                <ul class="list-disc pl-5">
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50"> IP address and
+                    approximate geographic location</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Country and region (for
+                    compliance with local laws and tax purposes)
+
+                  </li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Precise location data only
+                    when explicitly permitted by the user</li>
+
+
+                </ul>
+
+              </div>
+              <div class="flex flex-col gap-3 pl-5">
+                <h3 class="text-xl font-inter-display-medium">D. Device & Technical Data </h3>
+                <ul class="list-disc pl-5">
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Browser type and version
+                  </li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Operating system and
+                    device type
+                  </li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Cookies, session tokens,
+                    and usage logs
+                  </li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Referring URLs and pages
+                    visited on our platform
+
+                  </li>
+                </ul>
+
+              </div>
+              <div class="flex flex-col gap-3 pl-5">
+                <h3 class="text-xl font-inter-display-medium">E. Document & Agreement Data </h3>
+                <ul class="list-disc pl-5">
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Uploaded contracts,
+                    agreements, and legal documents</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">E-signature data including
+                    signature images, timestamps, and IP addresses
+                  </li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Metadata associated with
+                    documents (creation date, signatories, version history)
+
+                  </li>
+
+                </ul>
+              </div>
+              <div class="flex flex-col gap-3 pl-5">
+                <h3 class="text-xl font-inter-display-medium">F. User-Generated Content</h3>
+                <ul class="list-disc pl-5">
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Messages, comments, or
+                    notes added within the platform</li>
+                  <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Deal or marketplace
+                    listings created by users
+
+                  </li>
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">3. How We Use Your Information</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We use the information we
+                  collect for the following purposes: </p>
+
+              </div>
+            </div>
+            <ul class="list-disc pl-5">
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To create and manage your
+                account
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To provide contract,
+                e-signature, and document management services
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To facilitate marketplace
+                transactions and deals
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To process payments and send
+                invoices or receipts
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To verify user identity and
+                ensure legal compliance of signatures
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To communicate with you about
+                your account, updates, or support requests
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To improve our platform, fix
+                bugs, and develop new features
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To detect, prevent, and
+                investigate fraud, abuse, or security incidents
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To comply with applicable
+                laws, regulations, and legal processes
+
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To send service-related
+                notifications (account alerts, policy updates)
+
+
+              </li>
+            </ul>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We do not use your data for
+              automated decision-making or profiling that produces legal or significant effects without your explicit
+              consent. </p>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">4. Legal Basis for Processing (GDPR &
+                Global Compliance)</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">For users in the European
+                  Economic Area (EEA), United Kingdom, and other jurisdictions with applicable data protection laws, we
+                  process your personal data on the following legal bases: </p>
+
+              </div>
+            </div>
+            <ul class="list-disc pl-5">
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Contract performance — to
+                deliver the services you have signed up for
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Legal obligation — to comply
+                with laws such as e-signature regulations (eIDAS, ESIGN Act, IT Act 2000)
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Legitimate interests — to
+                improve our platform, prevent fraud, and ensure security
+
+
+              </li>
+              <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Consent — for optional data
+                uses such as marketing communications (you may withdraw consent at any time)
+
+              </li>
+
+
+            </ul>
+
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3">
+            <h2 class="text-2xl text-[#090536] font-inter-display-medium ">5. Children's Privacy</h2>
+            <div class="flex flex-col gap-3.5">
+              <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Agreed is accessible to users
+                of all ages; however, users under the age of 13 (or the applicable minimum age in their jurisdiction)
+                are not permitted to create accounts or submit legally binding agreements without verifiable parental or
+                guardian consent.</p>
+              <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">If we become aware that we have
+                inadvertently collected personal data from a child under the applicable minimum age without proper
+                consent, we will take prompt steps to delete that information. If you believe we have collected such
+                data, please contact us at <a href="#">support@agreed.net</a>.</p>
+
+            </div>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">6. Data Sharing & Disclosure</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Agreed does not sell, rent,
+                  or trade your personal data to third parties for their own marketing purposes.</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <p class="text-base font-inter-display leading-[26px] text-Theme-black">We may disclose your information
+                only in the following limited circumstances: </p>
+              <ul class="list-disc pl-5">
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">With your explicit consent
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To comply with a legal
+                  obligation, court order, or government request
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">To enforce our Terms of
+                  Service or protect the rights, property, or safety of Agreed, our users, or the public
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">In connection with a merger,
+                  acquisition, or sale of business assets — you will be notified of any such change
+
+                </li>
+
+              </ul>
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We use internal infrastructure
+              and carefully vetted service providers (such as cloud hosting and payment processors) who process data
+              solely on our behalf under strict data processing agreements. These providers are contractually bound to
+              protect your data and may not use it for any other purpose. </p>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">7. Cookies & Tracking Technologies</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We use cookies and similar
+                  tracking technologies to operate and improve our platform. These include:</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+
+              <ul class="list-disc pl-5">
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50"> Essential cookies —
+                  required for the platform to function (login sessions, security tokens)
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Analytics cookies — help us
+                  understand how users interact with the platform (e.g., page visits, features used)
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Preference cookies —
+                  remember your settings and language preferences
+
+
+
+                </li>
+
+
+              </ul>
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">You can control cookie settings
+              through your browser preferences. Disabling certain cookies may affect the functionality of the platform.
+              We honor "Do Not Track" browser signals where feasible.</p>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">8. Data Retention</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We retain your personal data
+                  for as long as your account is active or as needed to provide our services. After account closure:</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <ul class="list-disc pl-5">
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Account data is retained for
+                  90 days to allow for reactivation, then deleted
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Contract and document data
+                  is retained for 7 years in accordance with standard legal and regulatory requirements
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Payment records are retained
+                  for the period required by applicable tax and financial regulations
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Anonymised or aggregated
+                  data may be retained indefinitely for analytical purposes
+
+                </li>
+
+
+              </ul>
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">You may request deletion of your
+              data at any time (see Section 10 — Your Rights).</p>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">9. Data Security</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We implement
+                  industry-standard security measures to protect your personal information, including:</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <ul class="list-disc pl-5">
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">
+                  TLS/SSL encryption for all data transmitted to and from our platform
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">AES-256 encryption for
+                  stored documents and sensitive data
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Multi-factor authentication
+                  (MFA) for user accounts
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Regular security audits,
+                  vulnerability assessments, and penetration testing
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Access controls limiting
+                  employee access to personal data on a need-to-know basis
+
+                </li>
+
+
+              </ul>
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">While we take all reasonable
+              precautions, no method of data transmission over the internet is 100% secure. In the event of a data
+              breach that affects your rights, we will notify you in accordance with applicable law.</p>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">10. Your Rights</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Depending on your location,
+                  you may have the following rights regarding your personal data:</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <ul class="list-disc pl-5">
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">
+                  Access — request a copy of the personal data we hold about you
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Correction — request
+                  correction of inaccurate or incomplete data
+
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Deletion — request deletion
+                  of your personal data ("right to be forgotten")
+
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Portability — receive your
+                  data in a structured, machine-readable format
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Restriction — request that
+                  we limit how we process your data
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Objection — object to
+                  processing based on legitimate interests
+
+
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Withdraw consent — where
+                  processing is based on consent, withdraw it at any time
+
+                </li>
+
+              </ul>
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">While we take all reasonable
+              precautions, no method of data transmission over the internet is 100% secure. In the event of a data
+              breach that affects your rights, we will notify you in accordance with applicable law.</p>
+          </div>
+           <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">11. International Data Transfers</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Agreed operates globally. Your data may be processed and stored in countries other than your own. Where we transfer personal data outside of the EEA or other regulated regions, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission, or equivalent mechanisms under applicable law.</p>
+
+              </div>
+            </div>
+          </div>
+            <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">12. Third-Party Links & Integrations</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Our platform may contain links to third-party websites or integrate with external services. This Privacy Policy does not apply to those third-party services. We encourage you to review the privacy policies of any third-party services you choose to use.</p>
+
+              </div>
+            </div>
+          </div>
+           <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">13. Changes to This Privacy Policy</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we make material changes, we will:</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <ul class="list-disc pl-5">
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">
+                  Update the "Effective Date" at the top of this policy
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Notify registered users via email or an in-platform notification
+                </li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Post a prominent notice on agreed.net</li>
+              
+              </ul>
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Your continued use of Agreed after changes take effect constitutes your acceptance of the updated policy.</p>
+          </div>
+            <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">14. Contact Us</h2>
+              <div class="flex flex-col gap-3.5">
+                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+
+              </div>
+            </div>
+            <div class="flex flex-col gap-3.5">
+                <h4 class="text-lg font-inter-display-semibold leading-[26px] text-Theme-black">Agreed</h4>
+                <div class="flex flex-col">
+                  <span class="text-base font-inter-display leading-[30px] text-Theme-black">Website: <a href="#" class="text-[#007DFF]">https://agreed.net/</a></span>
+                   <span class="text-base font-inter-display leading-[30px] text-Theme-black">Email: <a href="#" class="text-[#007DFF]">mail@agreed.net</a></span>
+                </div>
+ 
+            </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We are committed to working with you to resolve any concerns about your privacy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--CTA section-->
+  <section class="relative ">
+    <div class="max-w-[1149px] mx-auto px-6">
+      <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-[#EEEEEC]">
+        <div class="flex flex-col gap-[40px]">
+          <div class="max-w-[536px] mx-auto text-center pt-[60px]">
+            <h2 class="text-[37px] text-[#090536] font-inter-tight font-light tracking-[-1.11px] mb-2.5 text-center">
+              Everything You Need to
+              Create, Send and Sign Documents</h2>
+            <p
+              class="text-base font-inter-display font-normal text-Theme-dark-gray w-full  leading-[26px] mx-auto  mb-[25px]">
+              Agreed helps teams reduce delays, improve signing completion</p>
+            <a href="#"
+              class="py-2 px-5 flex justify-center items-center w-[160px] mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+              Start Creating Now
+            </a>
+          </div>
+          <div class="xl:hidden flex justify-center">
+            <img src="assets/images/cta-img-mobile.png" alt="image" class="md:max-w-[500px] max-w-full w-full" />
+          </div>
+          <div id="ctaCardsWrap" class="xl:flex hidden justify-center relative min-h-[170px] overflow-hidden">
+            <div class="cta-card absolute left-0 right-0 flex justify-center z-30">
+              <img src="assets/images/cta-card1.png" alt="image" />
+            </div>
+            <div class="cta-card absolute xl:left-[325px] xl:top-[25px]  z-20">
+              <img src="assets/images/cta-card2.png" alt="image" />
+            </div>
+            <div class="cta-card absolute right-[350px] top-[25px] z-20 ">
+              <img src="assets/images/cta-card3.png" alt="image" />
+            </div>
+            <div class="cta-card absolute left-[240px] top-[70px]  z-10">
+              <img src="assets/images/cta-card4.png" alt="image" />
+            </div>
+            <div class="cta-card absolute right-[250px] top-[50px]  z-10">
+              <img src="assets/images/cta-card5.png" alt="image" />
+            </div>
+            <div class="cta-card absolute left-[140px] top-[95px]  ">
+              <img src="assets/images/cta-card6.png" alt="image" />
+            </div>
+            <div class="cta-card absolute right-[150px] top-[106px]  ">
+              <img src="assets/images/cta-card7.png" alt="image" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!--footer section-->
+  <footer class="relative w-full">
+    <div class="max-w-[1149px] mx-auto px-6 ">
+      <!--footer top-->
+      <div class="flex flex-col  lg:grid grid-flow-dense lg:grid-flow-col lg:gap-[80px] gap-10 pt-[60px]">
+        <!--left-->
+        <div
+          class="ft-logo w-full lg:w-[295px] md:text-left text-center flex flex-col md:items-start items-center gap-[25px]">
+          <div class="flex flex-col md:text-left text-center md:items-start items-center gap-5">
+            <a href="https://agreed.net">
+              <svg xmlns="http://www.w3.org/2000/svg" width="105" height="30" viewBox="0 0 105 30" fill="none">
+                <path
+                  d="M14.3845 9.20119V7.10643H18.955V24.8586H14.3845V22.7638C13.0146 24.4917 11.0896 25.3556 8.60946 25.3556C6.24747 25.3556 4.21616 24.4562 2.51552 22.6573C0.838507 20.8348 0 18.6098 0 15.9825C0 13.3789 0.838507 11.1658 2.51552 9.3432C4.21616 7.52065 6.24747 6.60938 8.60946 6.60938C11.0896 6.60938 13.0146 7.47331 14.3845 9.20119ZM5.95222 19.6039C6.8734 20.5271 8.04258 20.9886 9.45978 20.9886C10.877 20.9886 12.0462 20.5271 12.9673 19.6039C13.9121 18.6572 14.3845 17.45 14.3845 15.9825C14.3845 14.515 13.9121 13.3197 12.9673 12.3966C12.0462 11.4498 10.877 10.9764 9.45978 10.9764C8.04258 10.9764 6.8734 11.4498 5.95222 12.3966C5.03104 13.3197 4.57045 14.515 4.57045 15.9825C4.57045 17.45 5.03104 18.6572 5.95222 19.6039Z"
+                  fill="#020012" />
+                <path
+                  d="M45.0305 7.10643V10.1598C45.4321 9.04733 46.1171 8.20707 47.0855 7.639C48.0539 7.04726 49.164 6.75139 50.4159 6.75139V11.864C49.0223 11.6747 47.7704 11.9587 46.6603 12.7161C45.5738 13.4499 45.0305 14.6688 45.0305 16.3731V24.8586H40.4601V7.10643H45.0305Z"
+                  fill="#020012" />
+                <path
+                  d="M100.435 9.19561V0H105.006V24.853H100.435V22.7582C99.089 24.4861 97.1758 25.3501 94.6957 25.3501C92.3101 25.3501 90.2669 24.4506 88.5663 22.6517C86.8893 20.8292 86.0508 18.6042 86.0508 15.9769C86.0508 13.3733 86.8893 11.1602 88.5663 9.33763C90.2669 7.51507 92.3101 6.6038 94.6957 6.6038C97.1758 6.6038 99.089 7.46773 100.435 9.19561ZM92.003 19.5984C92.9714 20.5215 94.1524 20.983 95.546 20.983C96.9632 20.983 98.1324 20.5215 99.0535 19.5984C99.9747 18.6516 100.435 17.4444 100.435 15.9769C100.435 14.5094 99.9747 13.3141 99.0535 12.391C98.1324 11.4442 96.9632 10.9708 95.546 10.9708C94.1288 10.9708 92.9478 11.4442 92.003 12.391C91.0818 13.3141 90.6212 14.5094 90.6212 15.9769C90.6212 17.4444 91.0818 18.6516 92.003 19.5984Z"
+                  fill="#020012" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M37.5105 11.2345H35.6311C36.1063 12.2194 36.3728 13.3244 36.3728 14.4917C36.3727 18.6293 33.0256 21.9834 28.8968 21.9834C24.7679 21.9834 21.4208 18.6292 21.4207 14.4917C21.4207 10.3542 24.7679 7.00002 28.8968 7H37.5105V11.2345ZM28.8968 11.2345C27.1016 11.2345 25.6463 12.6928 25.6463 14.4917C25.6463 16.2906 27.1016 17.749 28.8968 17.749C30.6919 17.749 32.1473 16.2907 32.1473 14.4917C32.1473 12.6928 30.6919 11.2345 28.8968 11.2345Z"
+                  fill="#020012" />
+                <path
+                  d="M25.8901 18.5633C27.8118 18.5633 29.4693 19.6963 30.234 21.332H26.4589C25.7408 21.332 25.1588 21.9153 25.1587 22.6349C25.1587 23.3545 25.7408 23.9378 26.4589 23.9379H33.5937C33.6003 23.9379 33.607 23.9381 33.6135 23.9384C34.094 23.9306 34.5761 23.9952 35.0431 24.1328C36.0367 24.4254 36.9091 25.0327 37.5296 25.8636C38.1501 26.6946 38.4855 27.7045 38.4855 28.7423L34.4664 29.998C34.1528 28.9953 33.2509 28.2534 32.1657 28.1786L32.1579 28.1723H26.3127C26.2822 28.1723 26.2526 28.1682 26.2245 28.1606C26.114 28.1683 26.0025 28.1723 25.8901 28.1723C23.2422 28.1723 21.0957 26.0212 21.0957 23.3678C21.0957 20.7143 23.2422 18.5633 25.8901 18.5633Z"
+                  fill="#020012" />
+                <path
+                  d="M79.0874 14.0225C79.0874 11.6964 78.3118 10.6482 77.6322 10.14C76.8626 9.56452 75.8417 9.40361 75.0381 9.49923C73.8359 9.6423 71.3127 11.6409 72.2616 15.1744C72.8468 17.3537 74.2564 18.9681 76.0537 19.9861C78.0479 18.2321 79.0874 16.007 79.0874 14.0225ZM56.381 14.0225C56.381 16.007 57.4204 18.2321 59.4146 19.9861C61.2119 18.9681 62.6216 17.3537 63.2068 15.1744C64.1557 11.6409 61.6325 9.6423 60.4303 9.49923C59.6267 9.40361 58.6057 9.56452 57.8362 10.14C57.1566 10.6482 56.381 11.6964 56.381 14.0225ZM83.0298 14.0225C83.0298 16.5909 82.0244 19.1098 80.3195 21.2194C82.0173 21.3069 83.6318 20.9354 84.8355 20.1654L86.9567 23.4955C83.9936 25.3909 80.0277 25.6333 76.5558 24.5002C74.125 25.988 71.13 26.9002 67.7734 26.9002H67.695C64.3384 26.9002 61.3433 25.988 58.9125 24.5002C55.4406 25.6333 51.4748 25.3909 48.5117 23.4955L50.6329 20.1654C51.8366 20.9354 53.4511 21.3069 55.1488 21.2194C53.444 19.1098 52.4386 16.5909 52.4386 14.0225C52.4386 10.6991 53.6174 8.36532 55.4783 6.97375C57.2491 5.64948 59.3547 5.3927 60.8952 5.57602C64.3812 5.99086 68.6139 10.2423 67.0138 16.201C66.3352 18.7283 64.9298 20.7222 63.1648 22.18C64.5156 22.6666 66.036 22.9495 67.695 22.9495H67.7734C69.4324 22.9495 70.9527 22.6665 72.3035 22.18C70.5385 20.7222 69.1332 18.7283 68.4546 16.201C66.8545 10.2423 71.0872 5.99086 74.5732 5.57602C76.1137 5.3927 78.2192 5.64948 79.9901 6.97375C81.851 8.36532 83.0298 10.6991 83.0298 14.0225Z"
+                  fill="#8E5EFE" />
+              </svg>
+            </a>
+            <p class="text-base font-inter-display leading-[23px] text-Theme-black/50">Create agreements, contracts,
+              proposals and documents in minutes. Send for </p>
+          </div>
+          <ul class="flex items-center gap-3">
+            <li>
+              <a href="#"
+                class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M7.14163 5.08118L11.6089 0H10.5503L6.67137 4.41192L3.57328 0H0L4.68492 6.6716L0 12H1.05866L5.15491 7.34086L8.42672 12H12L7.14137 5.08118H7.14163ZM5.69165 6.73038L5.21697 6.06604L1.44011 0.779808H3.06615L6.11412 5.04596L6.5888 5.71031L10.5508 11.2557H8.92476L5.69165 6.73063V6.73038Z"
+                    fill="#020012" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M19.1195 6.16547C19.88 6.37087 20.4778 6.97018 20.6799 7.72987C21.0475 9.10858 21.0475 11.987 21.0475 11.987C21.0475 11.987 21.0475 14.8654 20.6799 16.2441C20.475 17.0066 19.8772 17.6059 19.1195 17.8085C17.7443 18.1771 12.2266 18.1771 12.2266 18.1771C12.2266 18.1771 6.71184 18.1771 5.33384 17.8085C4.57327 17.6031 3.97548 17.0038 3.77342 16.2441C3.40576 14.8654 3.40576 11.987 3.40576 11.987C3.40576 11.987 3.40576 9.10858 3.77342 7.72987C3.97829 6.96737 4.57608 6.36805 5.33384 6.16547C6.71184 5.79688 12.2266 5.79688 12.2266 5.79688C12.2266 5.79688 17.7443 5.79688 19.1195 6.16547ZM15.0471 11.987L10.4641 14.6403V9.33367L15.0471 11.987Z"
+                    fill="#020012" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M17.5007 7.03108C19.2991 9.69158 20.1872 12.6925 19.8552 16.1473C19.8538 16.162 19.8463 16.1754 19.8343 16.1842C18.4725 17.1904 17.153 17.8011 15.852 18.206C15.8419 18.2091 15.831 18.2089 15.821 18.2055C15.811 18.2021 15.8023 18.1956 15.7961 18.187C15.4955 17.7662 15.2224 17.3226 14.9832 16.8567C14.9694 16.8293 14.982 16.7963 15.0102 16.7854C15.444 16.621 15.8564 16.4239 16.2531 16.1906C16.2843 16.1722 16.2863 16.1271 16.2575 16.1055C16.1733 16.0426 16.0899 15.9765 16.01 15.9104C15.9951 15.8982 15.975 15.8958 15.9581 15.904C13.3826 17.1007 10.5613 17.1007 7.9554 15.904C7.93849 15.8964 7.91838 15.899 7.90385 15.911C7.82423 15.9771 7.74063 16.0426 7.65723 16.1055C7.62837 16.1271 7.63076 16.1722 7.66221 16.1906C8.05891 16.4195 8.47133 16.621 8.90446 16.7862C8.93253 16.7971 8.94586 16.8293 8.93193 16.8567C8.69785 17.3232 8.42476 17.7668 8.11862 18.1876C8.10529 18.2046 8.08339 18.2124 8.06269 18.206C6.76789 17.8011 5.44841 17.1904 4.08653 16.1842C4.07518 16.1754 4.06702 16.1614 4.06583 16.1467C3.78835 13.1584 4.35385 10.1326 6.41816 7.03048C6.42314 7.02226 6.4307 7.01586 6.43946 7.01205C7.4552 6.543 8.54339 6.19792 9.68074 6.00084C9.70145 5.99764 9.72215 6.00725 9.73289 6.02568C9.87342 6.27603 10.0341 6.59707 10.1427 6.85944C11.3416 6.67518 12.5592 6.67518 13.7831 6.85944C13.8918 6.60268 14.0468 6.27603 14.1868 6.02568C14.1918 6.01654 14.1995 6.00921 14.2088 6.00476C14.2182 6.0003 14.2287 5.99893 14.2389 6.00084C15.3769 6.19852 16.4651 6.5436 17.48 7.01205C17.489 7.01586 17.4963 7.02226 17.5007 7.03108ZM10.7522 12.713C10.7648 11.8295 10.1246 11.0985 9.32107 11.0985C8.52408 11.0985 7.89012 11.8231 7.89012 12.713C7.89012 13.6026 8.53662 14.3272 9.32107 14.3272C10.1182 14.3272 10.7522 13.6026 10.7522 12.713ZM16.0433 12.713C16.0558 11.8295 15.4157 11.0985 14.6123 11.0985C13.8152 11.0985 13.1812 11.8231 13.1812 12.713C13.1812 13.6026 13.8277 14.3272 14.6123 14.3272C15.4157 14.3272 16.0433 13.6026 16.0433 12.713Z"
+                    fill="#020012" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!--right-->
+        <div class="block col-span-6">
+          <!--top-->
+          <div
+            class="grid md:grid-cols-3 grid-cols-1 flex-wrap md:gap-x-[100px]  md:gap-y-[70px] gap-8 md:mb-[50px] mb-5">
+            <!--col-->
+            <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
+              <h5 class="text-base font-inter-display-semibold text-[#090536]">Product</h5>
+              <ul class="flex flex-col gap-[15px] md:text-left text-center">
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Drag & Drop Editor
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Document Repository
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Workspaces
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Custom Branding & Themes
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Signature Request
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Signing Order
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Bulk Send
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Collect Payment
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    ID Verification
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Signature Verification
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    AI Document Assistant
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    AI Data Extraction
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--col-->
+            <div class="flex flex-col  md:items-start items-center md:gap-[28px] gap-4 ">
+              <h5 class="text-base font-inter-display-semibold text-[#090536]">Solutions</h5>
+              <ul class="flex flex-col gap-[15px] md:text-left text-center">
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Sales
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Human Resources
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Legal
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Healthcare
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Real Estate
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Financial Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Insurance
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Construction
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Small Business
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Teams
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Enterprise
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Government
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--col-->
+            <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
+              <h5 class="text-base font-inter-display-semibold text-[#090536]">Resources</h5>
+              <ul class="flex flex-col gap-[15px] md:text-left text-center">
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Templates
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Affiliate
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Help Center
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+            <!--col-->
+            <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
+              <h5 class="text-base font-inter-display-semibold text-[#090536]">Legal</h5>
+              <ul class="flex flex-col gap-[15px] md:text-left text-center">
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Cookie Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Fair Use
+
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    GDPR
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Security
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--col-->
+            <div class="flex flex-col  md:items-start items-center md:gap-[28px] gap-4 ">
+              <h5 class="text-base font-inter-display-semibold text-[#090536]">Alternatives</h5>
+              <ul class="flex flex-col gap-[15px] md:text-left text-center">
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Pandadoc Alternative
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Pandadoc Alternative
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Pandadoc Alternative
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Pandadoc Alternative
+                  </a>
+                </li>
+
+
+              </ul>
+            </div>
+            <!--col-->
+            <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
+              <h5 class="text-base font-inter-display-semibold text-[#090536]">Free Tools</h5>
+              <ul class="flex flex-col gap-[15px] md:text-left text-center">
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Templates
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Affiliate
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    Help Center
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--footer text-->
+      <div class="relative w-full flex justify-center">
+        <svg class="md:w-[1128px] md:h-[200px] w-full h-[100px]" width="1128" height="201" viewBox="0 0 1128 201"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M154.394 98.7173V76.2336H203.45V266.774H154.394V244.29C139.69 262.836 119.028 272.109 92.4082 272.109C67.0562 272.109 45.2534 262.455 26.9999 243.147C8.99998 223.585 0 199.704 0 171.504C0 143.558 8.99998 119.804 26.9999 100.242C45.2534 80.6795 67.0562 70.8984 92.4082 70.8984C119.028 70.8984 139.69 80.1714 154.394 98.7173ZM63.8872 210.374C73.7745 220.282 86.3237 225.236 101.535 225.236C116.746 225.236 129.295 220.282 139.183 210.374C149.324 200.212 154.394 187.255 154.394 171.504C154.394 155.752 149.324 142.923 139.183 133.015C129.295 122.852 116.746 117.771 101.535 117.771C86.3237 117.771 73.7745 122.852 63.8872 133.015C53.9999 142.923 49.0562 155.752 49.0562 171.504C49.0562 187.255 53.9999 200.212 63.8872 210.374Z"
+            fill="#F2F3F3" />
+          <path
+            d="M483.328 76.2336V109.006C487.638 97.066 494.99 88.0471 505.384 81.9498C515.779 75.5984 527.694 72.4227 541.131 72.4227V127.298C526.173 125.266 512.736 128.315 500.821 136.444C489.159 144.32 483.328 157.404 483.328 175.696V266.774H434.272V76.2336H483.328Z"
+            fill="#F2F3F3" />
+          <path
+            d="M1078.01 98.6998V0H1127.06V266.756H1078.01V244.273C1063.55 262.818 1043.02 272.091 1016.4 272.091C990.794 272.091 968.865 262.437 950.611 243.129C932.611 223.567 923.611 199.686 923.611 171.486C923.611 143.54 932.611 119.786 950.611 100.224C968.865 80.662 990.794 70.881 1016.4 70.881C1043.02 70.881 1063.55 80.1539 1078.01 98.6998ZM987.499 210.356C997.893 220.264 1010.57 225.219 1025.53 225.219C1040.74 225.219 1053.29 220.264 1063.17 210.356C1073.06 200.194 1078.01 187.238 1078.01 171.486C1078.01 155.735 1073.06 142.905 1063.17 132.997C1053.29 122.835 1040.74 117.754 1025.53 117.754C1010.32 117.754 997.639 122.835 987.499 132.997C977.611 142.905 972.668 155.735 972.668 171.486C972.668 187.238 977.611 200.194 987.499 210.356Z"
+            fill="#F2F3F3" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M402.613 120.606H382.441C387.542 131.177 390.402 143.038 390.402 155.568C390.401 199.977 354.476 235.979 310.159 235.979C265.843 235.979 229.917 199.977 229.917 155.568C229.917 111.158 265.842 75.1564 310.159 75.1562H402.613V120.606ZM310.159 120.606C290.891 120.606 275.271 136.259 275.271 155.568C275.271 174.876 290.891 190.529 310.159 190.529C329.427 190.529 345.048 174.876 345.048 155.568C345.048 136.259 329.427 120.606 310.159 120.606Z"
+            fill="#F2F3F3" />
+          <path
+            d="M277.887 199.27C298.513 199.27 316.305 211.43 324.512 228.987H283.993C276.285 228.987 270.038 235.248 270.038 242.971C270.038 250.695 276.285 256.956 283.993 256.956H360.573C360.644 256.956 360.715 256.959 360.786 256.963C365.943 256.879 371.117 257.572 376.13 259.049C386.795 262.19 396.158 268.708 402.818 277.627C409.478 286.545 413.078 297.385 413.078 308.524L369.94 322.003C366.574 311.239 356.893 303.277 345.246 302.474L345.162 302.406H282.423C282.096 302.406 281.778 302.362 281.476 302.281C280.291 302.363 279.094 302.406 277.887 302.406C249.467 302.406 226.428 279.318 226.428 250.838C226.428 222.357 249.467 199.27 277.887 199.27Z"
+            fill="#F2F3F3" />
+          <path
+            d="M848.872 150.489C848.872 125.522 840.548 114.272 833.253 108.817C824.993 102.64 814.035 100.913 805.41 101.939C792.506 103.475 765.424 124.927 775.609 162.853C781.89 186.244 797.02 203.572 816.311 214.499C837.716 195.672 848.872 171.79 848.872 150.489ZM605.157 150.489C605.157 171.79 616.313 195.672 637.718 214.499C657.009 203.572 672.14 186.244 678.421 162.853C688.605 124.927 661.523 103.475 648.619 101.939C639.994 100.913 629.036 102.64 620.776 108.817C613.482 114.272 605.157 125.522 605.157 150.489ZM891.188 150.489C891.187 178.057 880.396 205.093 862.097 227.736C880.32 228.675 897.649 224.688 910.568 216.423L933.336 252.166C901.532 272.51 858.965 275.112 821.7 262.95C795.61 278.919 763.463 288.71 727.435 288.71H726.594C690.566 288.71 658.419 278.919 632.329 262.95C595.063 275.112 552.497 272.51 520.693 252.166L543.461 216.423C556.38 224.688 573.709 228.675 591.931 227.736C573.633 205.094 562.842 178.056 562.842 150.489C562.842 114.818 575.495 89.7686 595.468 74.8324C614.475 60.6185 637.075 57.8624 653.609 59.83C691.025 64.2827 736.457 109.915 719.283 173.872C711.999 200.998 696.914 222.399 677.97 238.047C692.469 243.269 708.787 246.306 726.594 246.306H727.435C745.242 246.306 761.56 243.269 776.059 238.047C757.114 222.399 742.031 200.998 734.747 173.872C717.573 109.915 763.004 64.2827 800.42 59.83C816.955 57.8624 839.554 60.6185 858.562 74.8324C878.535 89.7686 891.188 114.818 891.188 150.489Z"
+            fill="#F2F3F3" />
+        </svg>
+
+      </div>
+      <!--footer bottom-->
+      <div class="bg-white flex md:flex-row flex-col gap-3 items-center justify-between py-2.5">
+        <p class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray ">© 2026 agreed.net. All rights
+          reserved.</p>
+        <ul class="flex items-center">
+          <li>
+            <a href="#"
+              class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray transition-all duration-500 hover:text-Theme-purple border-r border-[#CCCCD0] pr-3 mr-3">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray transition-all duration-500 hover:text-Theme-purple">
+              Legal
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // prep every signature path up front: hide it (full dash-offset) until its slide is active
+    document.querySelectorAll('.sig-path').forEach((path) => {
+      const length = path.getTotalLength();
+      path.dataset.length = length;
+      gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
+    });
+
+    function animateSignature(slideEl) {
+      if (!slideEl) return;
+      const path = slideEl.querySelector('.sig-path');
+      if (!path) return;
+      const length = parseFloat(path.dataset.length);
+
+      gsap.fromTo(
+        path,
+        { strokeDashoffset: length },
+        { strokeDashoffset: 0, duration: 1, ease: 'power2.inOut' }
+      );
+    }
+
+    function resetSignature(slideEl) {
+      if (!slideEl) return;
+      const path = slideEl.querySelector('.sig-path');
+      if (!path) return;
+      const length = parseFloat(path.dataset.length);
+      gsap.set(path, { strokeDashoffset: length }); // ready to redraw if swiped back to
+    }
+
+    const swiper = new Swiper('.testimonialSwiper', {
+      loop: true,
+      speed: 800,
+      effect: 'fade',           // fade effect
+      fadeEffect: {
+        crossFade: true         // old slide fades out while new fades in
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      on: {
+        init(swiper) {
+          animateSignature(swiper.slides[swiper.activeIndex]);
+        },
+        slideChangeTransitionStart(swiper) {
+          resetSignature(swiper.slides[swiper.previousIndex]);
+        },
+        slideChangeTransitionEnd(swiper) {
+          animateSignature(swiper.slides[swiper.activeIndex]);
+        },
+      },
+    });
+  </script>
+
+  <script>
+    function initStackHeroAnimation() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const stage = document.getElementById("stackStage");
+      const cards = gsap.utils.toArray("#stackHero .tool-card");
+      const text = document.getElementById("stackText");
+      const heading = document.querySelector("#stackHero .stack-fill-heading");
+      const finalLabel = document.getElementById("stackFinalLabel");
+      const cardStageHeight = "820px";
+      const headingText = heading.textContent.trim().replace(/\s+/g, " ");
+
+      heading.innerHTML = headingText
+        .split(" ")
+        .map((word) => {
+          const letters = Array.from(word)
+            .map((letter) => `<span class="stack-fill-char">${letter}</span>`)
+            .join("");
+
+          return `<span class="stack-fill-word">${letters}</span>`;
+        })
+        .join(" ");
+
+      const headingChars = gsap.utils.toArray("#stackHero .stack-fill-char");
+
+      // ============================================================
+      // FIX #1 — normalize every card to plain top/left positioning.
+      // Several cards were placed with `bottom` (no `top`), and a couple
+      // also had an inline `transform: translateX(...)`. Later, the
+      // "gather to center" tween sets `top` on every card. For any card
+      // that still had `bottom` set too, having BOTH top and bottom
+      // defined with an auto height makes the browser stretch/resize the
+      // box to fill the gap between them — which is what caused cards to
+      // visibly jump or drift instead of holding position. Converting
+      // everything to top+left up front (using the actual rendered
+      // position, transform included) removes that conflict for good.
+      // ============================================================
+      cards.forEach((card) => {
+        const stageRect = stage.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+
+        const top = cardRect.top - stageRect.top;
+        const left = cardRect.left - stageRect.left;
+
+        card.style.top = top + "px";
+        card.style.left = left + "px";
+        card.style.bottom = "";
+        card.style.right = "";
+        card.style.transform = "";
+      });
+
+      // Initial State
+      gsap.set(cards, {
+        opacity: 0,
+        y: 40,
+        scale: 1,
+        rotate: 0,
+        transformOrigin: "center center"
+      });
+
+      gsap.set(text, {
+        opacity: 1,
+        y: 100
+      });
+
+      gsap.set(headingChars, {
+        color: "rgba(9, 5, 54, 0.22)"
+      });
+
+      // Big card starts below the screen — it will rise up to the top
+      gsap.set(finalLabel, {
+        opacity: 1,
+        y: window.innerHeight,
+        scale: 1
+      });
+
+      // FIX — trigger/pin the section itself, not #stepsSection's
+      // "bottom bottom". "bottom bottom" fires the instant #stackHero's
+      // top edge first touches the very bottom of the viewport (i.e.
+      // section 3 is barely peeking in, section 2 still fills the
+      // screen) — so the whole timeline below was starting and playing
+      // while section 3 was mostly out of view, which is why it looked
+      // broken/confusing. "top top" on #stackHero itself fires exactly
+      // once section 2 has fully finished scrolling by, with section 3
+      // filling the full screen — that's the moment you want "only the
+      // heading" to show.
+      // Heading entrance — deliberately NOT scrubbed, and hooked onto this
+      // SAME ScrollTrigger that does the pinning (not a separate one), so
+      // it fires in the exact same frame the screen locks rather than a
+      // moment after.
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#stackHero",
+          start: "top top",
+          end: "+=2200",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onLeaveBack: () => {
+            gsap.set(stage, { minHeight: "" });
+            gsap.set(text, { opacity: 1, y: 90 });
+            gsap.set(headingChars, { color: "rgba(9, 5, 54, 0.22)" });
+          }
+        }
+      });
+
+      // =========================================
+      // 1. Heading only. Cards stay hidden (opacity 0
+      //    from the initial state above) until you keep
+      //    scrolling further — see step 2.
+      //
+      //    The heading's fade-in itself is NOT part of this
+      //    scrubbed timeline anymore — see the separate
+      //    ScrollTrigger below (right after this timeline is
+      //    built) that plays it instantly the moment the
+      //    section locks into place, instead of requiring the
+      //    user to keep scrolling for it to fade in.
+      // =========================================
+
+      tl.to(text, {
+        y: 0,
+        duration: .65,
+        ease: "power3.out"
+      }, .15);
+
+      tl.to(headingChars, {
+        color: "#090536",
+        duration: .08,
+        stagger: .015,
+        ease: "none"
+      }, 0);
+
+      // =========================================
+      // 2. Only once you scroll past the heading does the
+      //    card grid appear (clear gap from the tween above —
+      //    heading finishes at .4, cards don't start until .8).
+      // =========================================
+
+      tl.set(stage, {
+        minHeight: cardStageHeight
+      }, .75);
+
+      tl.to(cards, {
+        opacity: 1,
+        y: 0,
+        duration: .6,
+        ease: "back.out(1.5)"
+      }, .6); // no stagger — all cards appear together
+
+      // =========================================
+      // 3. Cards start gathering to center, and the
+      //    heading hides at the SAME moment
+      // =========================================
+
+      tl.to(text, {
+        opacity: 0,
+        y: -60,
+        duration: .1,
+        ease: "power2.in"
+      }, 1);
+
+      tl.to(cards, {
+        left: "50%",
+        top: "50%",
+        xPercent: -50,
+        yPercent: -50,
+        x: 0,
+        y: 0,
+        rotate: 0,
+        duration: 0.3,
+        stagger: 0,
+        ease: "power3.inOut"
+      }, 1); // every card starts from clean top/left (see FIX #1 above),
+      // so they land exactly on top of one another at dead center;
+      // nothing is left offset to one side anymore.
+
+      // =========================================
+      // 4. Big card rises only once the heading
+      //    has fully finished hiding (no overlap)
+      // =========================================
+
+      tl.to(finalLabel, {
+        y: -120,
+        scale: 1,
+        duration: 0.5,
+        ease: "power4.out"
+      }, 1.05);
+
+      // =========================================
+      // 5. Small cards vanish IN PLACE — no `y` shove
+      //    downward, so it doesn't look like they're
+      //    falling/feeding into the bottom of the big
+      //    card. Still an instant `.set()`, timed to
+      //    when the big card finishes arriving.
+      // =========================================
+
+      tl.set(cards, {
+        scale: 0,
+        opacity: 0
+      }, 1.75);
+
+      // Positions/durations above were all measured against final,
+      // fully-loaded layout (see bottom of file), so refresh once more
+      // here just in case fonts/images shifted anything after this ran.
+      ScrollTrigger.refresh();
+    }
+
+    // Cards contain images (anim-card1.png ... anim-card12.png). Measuring
+    // their getBoundingClientRect() on DOMContentLoaded — before those
+    // images finish loading — reads stale/collapsed box sizes, which bakes
+    // wrong top/left values and a wrong pin start/end into the timeline.
+    // That's what produced the "blank space" when scrolling past the steps
+    // section: the pin was engaging/releasing at the wrong scroll offset
+    // because it was calculated from a layout that hadn't settled yet.
+    // Waiting for window "load" guarantees every image has its real size
+    // before we measure anything or build the ScrollTrigger.
+    if (document.readyState === "complete") {
+      initStackHeroAnimation();
+    } else {
+      window.addEventListener("load", initStackHeroAnimation);
+    }
+  </script>
+  <script>
+    /*--- "Simplify signing and workflows" stat numbers count-up ---*/
+    // Waits for window "load" (same reasoning as the CTA cards animation
+    // above) so ScrollTrigger measures final, settled positions.
+    function initStatsCountUp() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const statRow = document.getElementById("statsRow");
+      const statEls = gsap.utils.toArray(".stat-number");
+      if (!statRow || !statEls.length) return;
+
+      if (statRow.dataset.statAnimInit) return;
+      statRow.dataset.statAnimInit = "true";
+
+      // Parse each number's target value, decimal precision, and suffix
+      // straight from its original markup (e.g. "8.5x" -> 8.5 / 1 decimal
+      // / "x", "42%" -> 42 / 0 decimals / "%") so the HTML stays the
+      // single source of truth for the displayed values.
+      const stats = statEls.map((el) => {
+        const raw = el.textContent.trim();
+        const match = raw.match(/^([\d.]+)(.*)$/);
+        const numberPart = match ? match[1] : "0";
+        const suffix = match ? match[2] : "";
+        const decimals = numberPart.includes(".") ? numberPart.split(".")[1].length : 0;
+        const target = parseFloat(numberPart);
+
+        el.textContent = (0).toFixed(decimals) + suffix;
+
+        return { el, target, decimals, suffix };
+      });
+
+      // Individual tweens (rather than one shared tween) so each stat's
+      // own decimal precision/suffix formatting applies during onUpdate,
+      // staggered via each tween's own `delay`.
+      stats.forEach((stat, i) => {
+        const proxy = { val: 0 };
+        gsap.to(proxy, {
+          val: stat.target,
+          duration: 2,
+          ease: "power1.out",
+          delay: i * 0.15,
+          onUpdate: () => {
+            stat.el.textContent = proxy.val.toFixed(stat.decimals) + stat.suffix;
+          },
+          scrollTrigger: {
+            trigger: statRow,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            invalidateOnRefresh: true,
+            once: true
+          }
+        });
+      });
+
+      ScrollTrigger.refresh();
+    }
+
+    if (document.readyState === "complete") {
+      initStatsCountUp();
+    } else {
+      window.addEventListener("load", initStatsCountUp);
+    }
+  </script>
+  <script>
+    /*--- CTA "Everything You Need to Create, Send and Sign Documents" cards animation ---*/
+    // Built on window "load" (not DOMContentLoaded) because the cards are
+    // images (cta-card1.png ... cta-card7.png). Measuring/creating the
+    // ScrollTrigger before those images finish loading bakes in the wrong
+    // start offset (the section's height/position shifts once images size
+    // in), which is exactly what caused the animation to fire at the wrong
+    // moment. Same fix pattern used for the stack-hero section above.
+    function initCtaCardsAnimation() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const ctaCards = gsap.utils.toArray(".cta-card");
+      const ctaWrap = document.getElementById("ctaCardsWrap");
+      if (!ctaCards.length || !ctaWrap) return;
+
+      // Avoid re-initializing if this ever runs twice
+      if (ctaWrap.dataset.ctaAnimInit) return;
+      ctaWrap.dataset.ctaAnimInit = "true";
+
+      // Keep overflow-hidden active at all times so the container acts as
+      // a mask — cards are clipped while still below it and are gradually
+      // revealed as they rise into place, instead of spilling outside the
+      // section's bounds during the entrance.
+      gsap.set(ctaCards, { opacity: 0, y: 90, scale: 0.92 });
+
+      gsap.to(ctaCards, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.9,
+        ease: "power3.out",
+        stagger: 0.12,
+        scrollTrigger: {
+          // Trigger off the card row itself, not the section (which
+          // starts higher up at the heading), so the entrance fires
+          // exactly when the cards are about to be seen.
+          trigger: ctaWrap,
+          start: "top 90%",
+          toggleActions: "play none none none",
+          invalidateOnRefresh: true,
+          once: true
+        }
+      });
+
+      ScrollTrigger.refresh();
+    }
+
+    if (document.readyState === "complete") {
+      initCtaCardsAnimation();
+    } else {
+      window.addEventListener("load", initCtaCardsAnimation);
+    }
+  </script>
+  <script>
+    /*---Hero section parallax scroll --*/
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const section = document.querySelector("section");
+      const clip = document.querySelector("#heroClip");
+      const wrap = document.querySelector("#heroBgWrap");
+      const img = document.querySelector("#heroBg");
+
+      if (!section || !clip || !wrap || !img) return;
+
+      const TRAVEL_Y = -600;
+      const STATIC_SCALE = 2.2;
+      const LERP_FACTOR = 0.08; // smoothness: lower = smoother, higher = snappier
+
+      gsap.set(clip, { force3D: false });
+      gsap.set(wrap, { y: 0, scale: 1, transformOrigin: "center center", force3D: false });
+      gsap.set(img, { y: 0, scale: STATIC_SCALE, opacity: 1, transformOrigin: "center center", force3D: false });
+
+      let currentY = 0;
+      let targetY = 0;
+      let rafId = null;
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          // immediately update target — no scrub lag
+          targetY = self.progress * TRAVEL_Y;
+        }
+      });
+
+      function lerp(start, end, factor) {
+        return start + (end - start) * factor;
+      }
+
+      function tick() {
+        // smoothly interpolate toward target
+        currentY = lerp(currentY, targetY, LERP_FACTOR);
+
+        gsap.set(img, { y: currentY });
+
+        rafId = requestAnimationFrame(tick);
+      }
+
+      tick();
+
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+    });
+  </script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const steps = gsap.utils.toArray(".step");
+    const images = gsap.utils.toArray(".step-image");
+    const progress = document.getElementById("progressLine");
+
+    let active = 0;
+    let autoTween;
+    let isPlaying = false;
+    let resumeCall; // pending "restart autoplay after click" timer
+
+    function showStep(index, animate = true) {
+      if (index === active && animate) return;
+
+      steps.forEach((step, i) => {
+        step.classList.toggle("active", i === index);
+      });
+
+      images.forEach((img, i) => {
+        if (i === index) {
+          gsap.to(img, { autoAlpha: 1, duration: .45, ease: "power2.out" });
+          img.classList.add("active");
+        } else {
+          gsap.to(img, { autoAlpha: 0, duration: .3 });
+          img.classList.remove("active");
+        }
+      });
+
+      active = index;
+
+      // measure AFTER the class toggle above, so the active step's paragraph
+      // is already visible and offsetHeight reflects its real expanded size —
+      // this makes the fill land exactly on the step's bottom edge instead of
+      // a generic (index+1)/total percentage
+      const currentStep = steps[index];
+      const fillHeight = currentStep.offsetTop + currentStep.offsetHeight;
+
+      gsap.to(progress, {
+        height: fillHeight + "px",
+        duration: .45,
+        ease: "power2.out"
+      });
+    }
+
+    function nextStep() {
+      // compute the target BEFORE touching `active` — mutating `active` first
+      // would make showStep's "index === active" guard always trip and
+      // silently no-op, which is what broke autoplay before
+      const next = (active + 1) % steps.length;
+      showStep(next);
+    }
+
+    function startAutoplay() {
+      if (isPlaying) return;
+      isPlaying = true;
+
+      // holds the current step 2s, advances, holds 2s, advances... on a loop
+      autoTween = gsap.timeline({ repeat: -1 })
+        .to({}, { duration: 3 })
+        .call(nextStep)
+        .to({}, { duration: 3 })
+        .call(nextStep);
+    }
+
+    function stopAutoplay() {
+      isPlaying = false;
+      if (autoTween) {
+        autoTween.kill();
+        autoTween = null;
+      }
+    }
+
+    steps.forEach((step, index) => {
+      step.addEventListener("click", () => {
+        showStep(index);
+        stopAutoplay();
+
+        // cancel any previously pending "resume" so rapid clicks don't
+        // stack multiple autoplay restarts on top of each other
+        if (resumeCall) resumeCall.kill();
+        resumeCall = gsap.delayedCall(2, () => {
+          startAutoplay();
+        });
+      });
+    });
+
+    ScrollTrigger.create({
+      trigger: "#stepsSection",
+      start: "top 60%",
+      end: "bottom 40%",
+      onEnter() { startAutoplay(); },
+      onEnterBack() { startAutoplay(); },
+      onLeave() { stopAutoplay(); },
+      onLeaveBack() { stopAutoplay(); }
+    });
+
+    showStep(0, false);
+  </script>
+
+
+
+
+</body>
+
+</html>

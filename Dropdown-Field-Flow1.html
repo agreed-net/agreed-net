@@ -1342,30 +1342,42 @@ Assign Field
                                 </ul>
                       </div>
                   </div>
-              <div class="w-[98px] rounded-md border border-[#D2D2D2] p-1.5 space-y-2.5">
-              <label class="group flex items-center gap-1.5 cursor-pointer has-[:checked]:text-Theme-black">
-                <input type="radio" name="option" class="sr-only">
-
-                <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
-                    <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
-                </div>
-
-                <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 1</span>
-            </label>
-            <label class="group flex items-center gap-1.5 cursor-pointer has-[:checked]:text-Theme-black">
-                <input type="radio" name="option" class="sr-only">
-
-                <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
-                    <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
-                </div>
-
-                <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 2</span>
-            </label>
-            <button class="flex items-center justify-center gap-1 bg-[#EEEEEC] rounded-md text-xs font-inter-display-medium leading-[16px] text-Theme-dark-gray py-1.5 w-full transition-all duration-500 hover:bg-[#eaeae7]"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.11133 6.99826H7.00022M7.00022 6.99826H10.8891M7.00022 6.99826V3.10938M7.00022 6.99826V10.8872" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-Add</button>
-
+                  <!--dropdown-->
+              <div class="block">
+                
+<div x-data="dropdownComponent('drop-field')" class="relative  w-[200px]">
+            <button @click="toggle"  class="w-full border rounded-md py-[8px] pl-3.5 pr-3 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[24px] text-Theme-black focus:outline-none transition-all duration-500 bg-[rgba(129,167,224,0.16)] border border-[#81A7E0] ">
+            Please select...
+            <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out"  xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M8.70312 0.705484L4.70296 4.70565L0.700441 0.703125" stroke="#000A06" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <div x-ref="drop-field" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10 p-2 mt-2 w-full bg-gradient-gray rounded-xl p-[2px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+              
+              <div class="bg-white rounded-lg p-2 ">
+                <!--list-->
+                <ul class="flex flex-col gap-0.5">
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm font-inter-display-medium leading-5 text-Theme-dark-gray  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                    Rename
+                    </button>
+                  </li>
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm font-inter-display-medium leading-5 text-Theme-dark-gray  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                    Settings
+                    </button>
+                  </li>
+                  <li>
+                    <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm font-inter-display-medium leading-5 text-Theme-dark-gray  transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                     Delete
+                    </button>
+                  </li>
+                 
+                
+                </ul>
+              </div>
+            </div>
+              </div>
               </div>
             </div>
           </div>
@@ -1390,7 +1402,7 @@ Add</button>
                   <div class="flex items-center justify-between bg-transparent pb-2 pt-1 pl-4 pr-1.5">
 
                     <h3 class="text-lg font-inter-display-medium leading-[26px] text-Theme-black">
-                      Radio Settings
+                     Dropdown Settings
                     </h3>
 
                     <button @click="rightPanelOpen = false"
@@ -1425,15 +1437,76 @@ Add</button>
 
                       </div>
                       <!--content-->
-                      <div class="p-3.5 flex flex-col gap-3.5 border-b border-[#EEEEEC]">
-                        <!--tooltip wrap-->
-                        <div class="relative  flex flex-col gap-3.5 ">
+                      <div class="p-3.5 flex flex-col gap-2 border-b border-[#EEEEEC]">
+                       <label for="" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px] ">Dropdown Items</label>
+                       <div class="flex flex-col gap-3.5">
+                       <!--value input-->
+                       <div class="flex items-center justify-between gap-2">
+                       <button class="recipient-order-number w-[22px] h-[38px] bg-[#EEEEEC] rounded-md flex items-center justify-center text-sm font-inter-display-medium leading-5 shrink-0 cursor-grabbing transition-all duration-300 ease-in-out overflow-hidden" >
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M9.66667 5.4974C10.311 5.4974 10.8333 4.97506 10.8333 4.33073C10.8333 3.6864 10.311 3.16406 9.66667 3.16406C9.02233 3.16406 8.5 3.6864 8.5 4.33073C8.5 4.97506 9.02233 5.4974 9.66667 5.4974Z" fill="#57534E"/>
+  <path d="M5.66667 5.4974C6.311 5.4974 6.83333 4.97506 6.83333 4.33073C6.83333 3.6864 6.311 3.16406 5.66667 3.16406C5.02233 3.16406 4.5 3.6864 4.5 4.33073C4.5 4.97506 5.02233 5.4974 5.66667 5.4974Z" fill="#57534E"/>
+  <path d="M9.66667 13.4974C10.311 13.4974 10.8333 12.9751 10.8333 12.3307C10.8333 11.6864 10.311 11.1641 9.66667 11.1641C9.02233 11.1641 8.5 11.6864 8.5 12.3307C8.5 12.9751 9.02233 13.4974 9.66667 13.4974Z" fill="#57534E"/>
+  <path d="M9.66667 9.4974C10.311 9.4974 10.8333 8.97506 10.8333 8.33073C10.8333 7.6864 10.311 7.16406 9.66667 7.16406C9.02233 7.16406 8.5 7.6864 8.5 8.33073C8.5 8.97506 9.02233 9.4974 9.66667 9.4974Z" fill="#57534E"/>
+  <path d="M5.66667 13.4974C6.311 13.4974 6.83333 12.9751 6.83333 12.3307C6.83333 11.6864 6.311 11.1641 5.66667 11.1641C5.02233 11.1641 4.5 11.6864 4.5 12.3307C4.5 12.9751 5.02233 13.4974 5.66667 13.4974Z" fill="#57534E"/>
+  <path d="M5.66667 9.4974C6.311 9.4974 6.83333 8.97506 6.83333 8.33073C6.83333 7.6864 6.311 7.16406 5.66667 7.16406C5.02233 7.16406 4.5 7.6864 4.5 8.33073C4.5 8.97506 5.02233 9.4974 5.66667 9.4974Z" fill="#57534E"/>
+</svg>
+                      </button>
+                        <input type="text" id="dropdown" name="dropdown" placeholder="Dropdown 01" value="" class="w-full py-[11px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[44px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                         <button class="p-[11px] flex justify-center items-center transition-all duration-500  rounded-10px bg-transparent hover:bg-[#dc30271a]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M4 11H11H18" stroke="#DC3027" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                         </button>
+                        
+                        </div>
+                        <!--value input-->
+                        <input type="text" id="dropdown" name="dropdown" placeholder="Dropdown 02" value="" class="w-full py-[11px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[44px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        <!--value input-->
+                        <div class="flex items-center justify-between gap-2">
+                         <input type="text" id="dropdown" name="dropdown" placeholder="Dropdown 03" value="" class="w-full py-[11px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[44px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                         <button class="p-[11px] flex justify-center items-center transition-all duration-500  rounded-10px bg-transparent hover:bg-[#dc30271a]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M4 11H11H18" stroke="#DC3027" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                         </button>
+                        
+                        </div>
+                      <!--add option-->
+                         <button class="flex items-center justify-center gap-1.5 bg-[#EEEEEC] rounded-10px text-sm font-inter-display-medium leading-[19px] text-Theme-dark-gray py-[8px] px-[8px] h-[38px] w-full transition-all duration-500 hover:bg-[#eaeae7]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M4 9H9M9 9H14M9 9V4M9 9V14" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+Add option</button>
+</div>
+                      </div>
+                       <!--content-->
+                      <div class="p-3.5 flex flex-col gap-3.5 ">
+                        <div class="flex flex-col gap-2">
+                          <label for="" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px]">Conditional Logic</label>
+ <!--add option-->
+                         <button class="flex items-center justify-center gap-1.5 bg-[#EEEEEC] rounded-10px text-sm font-inter-display-medium leading-[19px] text-Theme-dark-gray py-[8px] px-[8px] h-[38px] w-full transition-all duration-500 hover:bg-[#eaeae7]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M4 9H9M9 9H14M9 9V4M9 9V14" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+Add a rule</button>
+                        </div>
+                       <!--input-->
+                       <div class="flex flex-col gap-[5px] ">
+                          <label for="drop-select" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[120%]">Placeholder</label>
+                          <input type="text" id="drop-select" name="drop-select" placeholder="Please select..." value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[48px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                      <!--input Field id-->
+                       <div class="flex flex-col gap-[5px] ">
+                          <label for="drop-select2" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[120%]">Field ID</label>
+                          <input type="text" id="drop-select2" name="drop-select2" placeholder="Dropdown" value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[48px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                        </div>
+                        <div class="relative py-3.5 flex flex-col gap-3.5 border-y border-Theme-secondary-gray">
                           <!--toggle-->
-                          <label for="show-value"
-                            class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                            <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Show Values</span>
+                          <label for="required-field" class="w-full flex items-center justify-between gap-2 cursor-pointer">
+                            <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Required
+                              Field</span>
+
                             <div class="flex items-center">
-                              <input type="checkbox" id="show-value" class="sr-only peer">
+                              <input type="checkbox" id="required-field" class="sr-only peer">
                               <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
                       peer-checked:bg-[#8E5EFE]
                       peer-checked:hover:bg-[#8E5EFE]
@@ -1455,54 +1528,13 @@ Add</button>
                           </label>
 
                         </div>
-                        <!--value input-->
-                        <input type="text" id="Radio Field" name="Radio Field" placeholder="Option 1" value="" class="w-full py-[11px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[44px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
-                        <!--value input-->
-                        <input type="text" id="Radio Field" name="Radio Field" placeholder="Option 2" value="" class="w-full py-[11px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[44px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
-                        <!--value input-->
-                        <div class="flex items-center justify-between gap-2">
-                         <input type="text" id="Radio Field" name="Radio Field" placeholder="Option 3" value="" class="w-full py-[11px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[44px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
-                         <button class="p-[11px] flex justify-center items-center transition-all duration-500  rounded-10px bg-transparent hover:bg-[#dc30271a]">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-  <path d="M4 11H11H18" stroke="#DC3027" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                         </button>
-                        
-                        </div>
-                      <!--add option-->
-                         <button class="flex items-center justify-center gap-1.5 bg-[#EEEEEC] rounded-10px text-sm font-inter-display-medium leading-[19px] text-Theme-dark-gray py-[8px] px-[8px] h-[38px] w-full transition-all duration-500 hover:bg-[#eaeae7]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-  <path d="M4 9H9M9 9H14M9 9V4M9 9V14" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-Add option</button>
-                      </div>
-                       <!--content-->
-                      <div class="p-3.5 flex flex-col gap-3.5 ">
-                        <div class="flex flex-col gap-2">
-                          <label for="" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px]">Conditional Logic</label>
- <!--add option-->
-                         <button class="flex items-center justify-center gap-1.5 bg-[#EEEEEC] rounded-10px text-sm font-inter-display-medium leading-[19px] text-Theme-dark-gray py-[8px] px-[8px] h-[38px] w-full transition-all duration-500 hover:bg-[#eaeae7]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-  <path d="M4 9H9M9 9H14M9 9V4M9 9V14" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-Add a rule</button>
-                        </div>
-                       <!--input-->
-                       <div class="flex flex-col gap-[5px] ">
-                          <label for="Radio Field" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[120%]">Placeholder</label>
-                          <input type="text" id="Radio Field" name="Radio Field" placeholder="Radio Field" value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[48px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
-                        </div>
-                      <!--input Field id-->
-                       <div class="flex flex-col gap-[5px] ">
-                          <label for="field-id" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[120%]">Field ID</label>
-                          <input type="text" id="field-id" name="field-id" placeholder="Radio_buttone1" value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] h-[48px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
-                        </div>
-                        <div class="relative py-3.5 flex flex-col gap-3.5 border-y border-Theme-secondary-gray">
+                        <div class="relative pb-3.5 flex flex-col gap-3.5 border-b border-Theme-secondary-gray">
                           <!--toggle-->
-                          <label for="required-field" class="w-full flex items-center justify-between gap-2 cursor-pointer">
-                            <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Required
-                              Field</span>
+                          <label for="mask-required-field" class="w-full flex items-center justify-between gap-2 cursor-pointer">
+                            <span class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Mask Field Value</span>
 
                             <div class="flex items-center">
-                              <input type="checkbox" id="required-field" class="sr-only peer">
+                              <input type="checkbox" id="mask-required-field" class="sr-only peer">
                               <div class="relative w-[40px] h-[20px] bg-[#EEEEEC] hover:bg-[#dcdcdc] rounded-[24px] transition-all duration-500 ease-in-out
                       peer-checked:bg-[#8E5EFE]
                       peer-checked:hover:bg-[#8E5EFE]

@@ -425,6 +425,9 @@
   .top-full {
     top: 100%;
   }
+  .-right-1 {
+    right: calc(var(--spacing) * -1);
+  }
   .-right-2 {
     right: calc(var(--spacing) * -2);
   }
@@ -490,6 +493,9 @@
   }
   .right-full {
     right: 100%;
+  }
+  .-bottom-1 {
+    bottom: calc(var(--spacing) * -1);
   }
   .-bottom-2 {
     bottom: calc(var(--spacing) * -2);
@@ -1437,6 +1443,9 @@
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
+  .w-2\.5 {
+    width: calc(var(--spacing) * 2.5);
+  }
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
@@ -1616,6 +1625,9 @@
   }
   .w-\[100px\] {
     width: 100px;
+  }
+  .w-\[110px\] {
+    width: 110px;
   }
   .w-\[115px\] {
     width: 115px;

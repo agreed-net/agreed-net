@@ -1342,25 +1342,54 @@ Assign Field
                                 </ul>
                       </div>
                   </div>
-              <div class="w-[98px] rounded-md border border-[#D2D2D2] p-1.5 space-y-2.5">
+              <div class="w-[120px] rounded-md border border-[#D2D2D2] p-1.5 space-y-2.5">
               <label class="group flex items-center gap-1.5 cursor-pointer has-[:checked]:text-Theme-black">
-                <input type="radio" name="option" class="sr-only">
+    <div class="relative w-[34px] h-[34px] rounded-md border border-[#D2D2D2] bg-transparent flex items-center justify-center">
+        <input type="radio" name="option" class="sr-only">
 
-                <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
-                    <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
-                </div>
+        <!-- circle radio indicator, now centered inside the square box -->
+        <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
+            <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
+        </div>
 
-                <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 1</span>
-            </label>
-            <label class="group flex items-center gap-1.5 cursor-pointer has-[:checked]:text-Theme-black">
-                <input type="radio" name="option" class="sr-only">
+        <!-- small corner box -->
+        <div class="absolute -bottom-1 -right-1 w-2.5 h-2.5 rounded-[3px] border border-[#D2D2D2] bg-white"></div>
+    </div>
 
-                <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
-                    <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
-                </div>
+    <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 1</span>
+</label>
+            
+<label class="group flex items-center gap-1.5 cursor-pointer has-[:checked]:text-Theme-black">
+    <div class="relative w-[34px] h-[34px] rounded-md border border-[#D2D2D2] bg-transparent flex items-center justify-center">
+        <input type="radio" name="option" class="sr-only">
 
-                <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 2</span>
-            </label>
+        <!-- circle radio indicator, now centered inside the square box -->
+        <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
+            <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
+        </div>
+
+        <!-- small corner box -->
+        <div class="absolute -bottom-1 -right-1 w-2.5 h-2.5 rounded-[3px] border border-[#D2D2D2] bg-white"></div>
+    </div>
+
+    <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 2</span>
+</label>
+
+           <label class="group flex items-center gap-1.5 cursor-pointer has-[:checked]:text-Theme-black">
+    <div class="relative w-[34px] h-[34px] rounded-md border border-[#D2D2D2] bg-transparent flex items-center justify-center">
+        <input type="radio" name="option" class="sr-only">
+
+        <!-- circle radio indicator, now centered inside the square box -->
+        <div class="relative w-[22px] h-[22px] rounded-full border-2 border-Theme-dark-gray group-has-[:checked]:border-Theme-black">
+            <div class="absolute inset-[4px] rounded-full bg-Theme-black opacity-0 group-has-[:checked]:opacity-100 transition"></div>
+        </div>
+
+        <!-- small corner box -->
+        <div class="absolute -bottom-1 -right-1 w-2.5 h-2.5 rounded-[3px] border border-[#D2D2D2] bg-white"></div>
+    </div>
+
+    <span class="text-sm font-inter-display-medium text-Theme-dark-gray leading-[22px] group-has-[:checked]:text-Theme-black">Option 3</span>
+</label>
             <button class="flex items-center justify-center gap-1 bg-[#EEEEEC] rounded-md text-xs font-inter-display-medium leading-[16px] text-Theme-dark-gray py-1.5 w-full transition-all duration-500 hover:bg-[#eaeae7]"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.11133 6.99826H7.00022M7.00022 6.99826H10.8891M7.00022 6.99826V3.10938M7.00022 6.99826V10.8872" stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

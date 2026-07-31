@@ -204,9 +204,9 @@
           <!--left accordion panel-->
           <div class="lg:sticky relative lg:top-[70px] top-0 flex flex-col shrink-0 min-[1500px]:w-[420px] min-[1200px]:w-[350px] min-[990px]:w-[320px] w-full  pt-3.5">
             <!--accordion-->
-            <div x-data="{ open: (window.innerWidth >= 776), panelHeight: '0px', init() { this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); window.addEventListener('resize', () => { this.open = (window.innerWidth >= 776); this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); }); }, toggle() { this.open = !this.open; this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); } }" :class="open ? 'accordion-open h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)]' : 'h-auto'" class="bg-[#FAFAF9] p-1 rounded-[12px] transition-all duration-300 overflow-hidden">
+            <div x-data="{ open: (window.innerWidth >= 776), panelHeight: '0px', init() { this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); window.addEventListener('resize', () => { this.open = (window.innerWidth >= 776); this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); }); }, toggle() { this.open = !this.open; this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); } }" :class="open ? 'accordion-open h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)]' : 'h-auto'" class="bg-[#FAFAF9] p-1 pt-0 pb-0 rounded-[12px] transition-all duration-300 overflow-hidden">
                         <!--accordion header-->
-                        <div class="flex items-center justify-between p-1.5 pl-[18px]">
+                        <div class="flex items-center justify-between p-2 pr-1 pl-[15px]">
                           <h5 class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Document Preview</h5>
                           <button @click="toggle()" :class="{ 'bg-transparent': open, 'bg-transparent': !open }" class="w-[30px] h-[30px] p-1.5 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray">
                           
@@ -218,18 +218,18 @@
                         <!--accordion content-->
                         <div x-ref="panel" :style="open ? 'max-height: calc(100vh - 150px);' : 'max-height: 0px;'" class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ">
                          
-                          <div class="bg-white rounded-lg h-[calc(100vh-150px)] ">
-                            <div class=" h-full min-h-full custom-scroll-gap overflow-y-auto mr-[4px] pr-[2px]">
+                          <div class="bg-white rounded-lg h-[calc(100vh-150px)] py-[2px]">
+                            <div class=" h-full min-h-full [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&::-webkit-scrollbar-thumb]:rounded-[3px] overflow-y-auto mr-[4px] pr-[2px]">
                             <div class="flex flex-col gap-3.5 p-3.5">
                                 <!--doc-->  
                                 <div class="flex flex-col gap-2">
                                       <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
-                                      <img src="assets/images/document-img3.png" class="" alt="image"/>
+                                      <img src="assets/images/document-img3.png" class="h-[450px] rounded-md" alt="image" />
                                   </div>
                                   <!--doc-->  
                                 <div class="flex flex-col gap-2">
                                       <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
-                                      <img src="assets/images/document-img3.png" class="" alt="image"/>
+                                      <img src="assets/images/document-img3.png" class="h-[450px] rounded-md" alt="image"/>
                                   </div>  
                               </div>
                               </div>  

@@ -531,4 +531,414 @@ input[type="number"] {
     isolation: isolate;
     transform: translateZ(0);
     -webkit-mask-image: -webkit-radial-gradient(white, black);
-}       
+} 
+      
+.step {
+      cursor: pointer;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+   .step h3 {
+
+      font-size: 18px;
+      font-family: 'inter tight';
+      font-weight: 400;
+      text-transform: capitalize;
+      color: #A5A5A5;
+      transition: .35s;
+    }
+
+    .step.active h3 {
+
+      color: #020012;
+      font-weight: 500;
+
+    }
+
+    .step p {
+
+      margin-top: 14px;
+      max-width: 290px;
+      line-height: 26px;
+      height: 52px;
+      display: none;
+
+      color: rgba(2, 0, 18, 0.60);
+
+    }
+
+    @media(max-width:990px) {
+      .step p {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+   .step.active p {
+
+      display: block;
+
+    }
+
+    .step-image-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 546px;
+      overflow: hidden;
+    }
+
+    @media(max-width:767px) {
+      .step-image-wrap {
+        height: 265px;
+      }
+
+     .step h3 {
+        font-size: 16px;
+      }
+
+     .step p {
+        font-size: 12px;
+        margin-top: 10px;
+        line-height: 16px;
+      }
+    }
+
+     .step-image {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      opacity: 0;
+      pointer-events: none;
+
+    }
+
+     .step-image.active {
+
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .testimonialSwiper .swiper-pagination {
+      position: absolute;
+      text-align: left;
+      left: 30px !important;
+      bottom: 35px !important;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+
+    }
+
+    @media(max-width:767px) {
+      .testimonialSwiper .swiper-pagination {
+        left: 0px !important;
+        right: 0 !important;
+        display: flex;
+        justify-content: center;
+        bottom: 25px !important;
+      }
+    }
+
+    .testimonialSwiper .swiper-pagination-bullet {
+      width: 2px;
+      height: 9px;
+      border-radius: 8px;
+      margin: 0px 4px;
+      background: #BCB8B4;
+      opacity: 1;
+      transition: all 0.6s ease-in-out;
+    }
+
+    .testimonialSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #8E5EFE;
+      height: 18px;
+    }
+
+    #stackHero .stack-fill-heading {
+      color: rgba(9, 5, 54, 0.22);
+    }
+
+    #stackHero .stack-fill-word {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    #stackHero .stack-fill-char {
+      color: rgba(9, 5, 54, 0.22);
+    }
+
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+      padding-top: 15px;
+    }
+
+    .accordion-content.open {
+      grid-template-rows: 1fr;
+      padding-top: 6px;
+    }
+
+    .accordion-content>div {
+      overflow: hidden;
+    }
+
+    /* ==== Tool card positions (stack-hero section) ====
+       Base rules reproduce the original inline top/left/right/z-index
+       values exactly, so large screens are unaffected. */
+    #stackStage .card-1 {
+      top: 72px;
+      left: 91px;
+    }
+
+    #stackStage .card-2 {
+      top: 180px;
+      left: 208px;
+      z-index: -1;
+    }
+
+    #stackStage .card-3 {
+      top: 495px;
+      left: -91px;
+    }
+
+    #stackStage .card-4 {
+      top: 612px;
+      left: 260px;
+    }
+
+    #stackStage .card-5 {
+      top: 720px;
+      left: 325px;
+      z-index: -1;
+    }
+
+    #stackStage .card-6 {
+      top: 612px;
+      left: 715px;
+      z-index: -1;
+    }
+
+    #stackStage .card-7 {
+      top: 720px;
+      left: 819px;
+    }
+
+    #stackStage .card-8 {
+      top: 558px;
+      left: 1130px;
+    }
+
+    #stackStage .card-9 {
+      top: 300px;
+      right: 0px;
+    }
+
+    #stackStage .card-10 {
+      top: 72px;
+      left: 780px;
+    }
+
+    #stackStage .card-11 {
+      top: 162px;
+      left: 910px;
+      z-index: -1;
+    }
+
+    #stackStage .card-12 {
+      top: 72px;
+      left: 1040px;
+    }
+
+    /* Small laptop screens (~1024px–1366px): the scattered layout above
+       was tuned for 1100px+ stages and starts overflowing/colliding at
+       laptop widths, so pull the cards in tighter and closer to center. */
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      #stackStage {
+        max-width: 900px;
+        min-height: 680px;
+      }
+
+      .tool-card img {
+        max-width: 70%;
+      }
+
+      #stackStage .card-1 {
+        top: 80px;
+        left: -20px;
+      }
+
+      #stackStage .card-2 {
+        top: 160px;
+        left: 60px;
+      }
+
+      #stackStage .card-3 {
+        top: 420px;
+        left: -80px;
+      }
+
+      #stackStage .card-4 {
+        top: 500px;
+        left: 170px;
+      }
+
+      #stackStage .card-5 {
+        top: 540px;
+        left: 230px;
+      }
+
+      #stackStage .card-6 {
+        top: 500px;
+        left: 575px;
+      }
+
+      #stackStage .card-7 {
+        top: 540px;
+        left: 650px;
+      }
+
+      #stackStage .card-8 {
+        top: 430px;
+        left: 800px;
+        display: none;
+      }
+
+      #stackStage .card-9 {
+        top: 290px;
+        right: 0px;
+      }
+
+      #stackStage .card-10 {
+        top: 80px;
+        left: 550px;
+      }
+
+      #stackStage .card-11 {
+        top: 160px;
+        left: 630px;
+      }
+
+      #stackStage .card-12 {
+        top: 80px;
+        left: 730px;
+      }
+    }
+
+    .mega-wrapper {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100vw;
+      height: 0;
+      overflow: hidden;
+      background: #fff;
+
+      box-shadow: 0 14px 22px 0 rgba(0, 0, 0, 0.04);
+      transition: height .32s cubic-bezier(.4, 0, .2, 1);
+      pointer-events: none;
+    }
+
+    .mega-wrapper.open {
+      pointer-events: auto;
+      border-top: 1px solid #EEEEEC;
+    }
+
+    .mega-panel {
+      position: absolute;
+      inset: 0 0 auto 0;
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(0);
+      transition: opacity .32s cubic-bezier(.4, 0, .2, 1), transform .32s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .mega-panel.active {
+      pointer-events: auto;
+    }
+
+    .chev {
+      transition: transform .18s ease;
+    }
+
+    .group-open .chev {
+      transform: rotate(180deg);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link[aria-expanded="true"]::after,
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-link[aria-expanded="true"] {
+      background-color: rgba(217, 217, 217, 0.20);
+    }
+
+    .feature-row {
+      transition: background-color .15s ease;
+    }
+
+    .feature-row:hover {
+      background-color: var(--accent-soft);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #D8DBDF;
+      border-radius: 8px;
+    }
+
+    .mobile-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 64px;
+      z-index: 10;
+    }
+
+    .mobile-panel.open {
+      max-height: 1200px;
+    }
+
+    .mobile-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .mobile-submenu.open {
+      max-height: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .mega-wrapper,
+      .mega-panel,
+      .chev,
+      .nav-link::after,
+      .mobile-panel,
+      .mobile-submenu {
+        transition: none !important;
+      }
+    }

@@ -21,13 +21,16 @@
 
   /* Colors */
   --color-Theme-Forground: #FAFAF9;
-  --color-Theme-black: #020012;
-  --color-Theme-dark-gray: #57534E;
+  --color-Theme-background: #F5F4F2;
+  --color-Theme-black: #131211;
+  --color-Theme-dark-gray: #454340;
   --color-Theme-light-gray: #A6A6A6;
-  --color-Theme-blue: #090536;
-  --color-Theme-purple:#8E5EFE;
-  --color-Theme-primary-gray: #EBEBEB;
-  --color-Theme-secondary-gray:#EEEEEC;
+  --color-Theme-blue: #131211;
+  --color-Theme-purple:#7D4BF2;
+  --color-Theme-primary-gray: #DEDCD8;
+  --color-Theme-secondary-gray:#DEDCD8;
+  --color-Theme-tertiary-gray:#DEDCD8;
+  --color-Theme-panel-bg:#EAE8E5;
 
   /* border radius  */
   --radius-10px: 10px;
@@ -44,6 +47,8 @@
   --shadow-primary:  0 0 6px 0 rgba(0, 0, 0, 0.06);
   --shadow-secondary: 0 0 0 0 rgba(255,255,255,0.10) inset, 0 2px 4px 0 rgba(0,0,0,0.04), 0 1px 2px 0 rgba(0,0,0,0.06), 0 0 1px 0 rgba(0,0,0,0.06);
   --shadow-xl: 0 4px 12px 0 rgba(0, 0, 0, 0.10);
+
+  
   
 }
 /* utility classes */
@@ -77,10 +82,10 @@
 /*component classes*/
 @layer components {
   .close-btn {
-    @apply w-8 h-8 p-2 aspect-square flex items-center justify-center bg-transparent  rounded-md transition-all duration-500 hover:bg-[#EEEEEC];
+    @apply w-8 h-8 p-2 aspect-square flex items-center justify-center bg-transparent  rounded-md transition-all duration-500 hover:bg-Theme-tertiary-gray;
   }
   .btn-white-icon-square{
-    @apply border border-[#EBEBEB] cursor-pointer p-[3px] rounded-5px bg-white w-6 h-6 aspect-square flex items-center justify-center transition-all duration-500 hover:bg-[#EEEEEC];
+    @apply border border-[#DEDCD8] cursor-pointer p-[3px] rounded-5px bg-[#F5F4F2] w-6 h-6 aspect-square flex items-center justify-center transition-all duration-500 hover:bg-Theme-tertiary-gray;
   }
   .btn-gray-icon-text{
     @apply relative  w-full rounded-10px cursor-pointer flex items-center  justify-center gap-1.5 py-2 px-3 border border-[rgba(142,94,254,0.06)]  text-sm font-inter-display-medium leading-[140%] text-Theme-blue transition-all duration-500 hover:bg-transparent;
@@ -108,7 +113,7 @@
       @apply relative z-10;
   }
   .btn-blue-icon-text{
-    @apply font-inter-display-medium  rounded-lg cursor-pointer flex items-center  justify-center gap-1.5 md:py-[7px] md:pl-3 md:pr-3.5 bg-Theme-blue text-sm leading-[20px] text-white transition-all duration-500 hover:bg-[#252250] md:h-auto md:w-auto w-[34px] h-[34px] ;
+    @apply font-inter-display-medium  rounded-md cursor-pointer flex items-center  justify-center gap-1.5 md:py-2 md:px-4 bg-Theme-blue text-xs leading-[14px] text-white transition-all duration-500 hover:bg-[#2B2A28] md:h-auto md:w-auto w-[34px] h-[34px] ;
   }
   
   .btn-purple{
@@ -116,7 +121,7 @@
   }
    
   .btn-purple-icon-text{
-    @apply font-inter-display-medium  rounded-10px cursor-pointer  md:py-2.5 md:px-[25px]  bg-Theme-purple text-sm leading-[140%] text-white flex items-center justify-center gap-2.5 transition-all duration-500 hover:bg-[#7b53d7] md:h-auto md:w-auto w-[34px] h-[34px];
+    @apply font-inter-display-medium  rounded-lg cursor-pointer  md:py-[7px] md:px-2.5  bg-Theme-purple text-sm leading-[140%] text-white flex items-center justify-between gap-2.5 transition-all duration-500 hover:bg-[#7b53d7] md:h-auto md:w-auto w-[34px] h-[34px];
   }
   .btn-red {
     @apply py-2 px-3 bg-[#DC3027] flex items-center justify-center gap-2 rounded-lg transition-all duration-500 hover:bg-[#cc261d] text-sm font-inter-display-medium leading-[20px] text-white;
@@ -133,7 +138,7 @@
       @apply py-2 px-3 bg-Theme-black rounded-lg transition-all duration-500 hover:bg-black/90 text-sm font-inter-display-medium leading-[20px] text-white;
   }
   .doc-list-item{
-    @apply font-inter-display-medium h-[38px] py-2 px-3 rounded-lg bg-transparent border border-transparent transition-all duration-500 flex items-center gap-2 text-sm leading-[20px] text-Theme-dark-gray hover:bg-[#EEEEEC] hover:text-Theme-black lg:[&.active]:bg-white [&.active]:bg-Theme-Forground [&.active]:border-[#EBEBEB] [&.active]:text-Theme-black;
+    @apply font-inter-display-medium h-[38px] py-2 px-3 rounded-lg bg-transparent border border-transparent transition-all duration-500 flex items-center gap-2 text-sm leading-[20px] text-Theme-dark-gray hover:bg-Theme-tertiary-gray hover:text-Theme-black lg:[&.active]:bg-white [&.active]:bg-Theme-Forground [&.active]:border-[#EBEBEB] [&.active]:text-Theme-black;
   }
   .dropdown-item.active {
       @apply bg-Theme-Forground text-Theme-blue;
@@ -224,14 +229,14 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #EEEEEC;
+    background-color: #DEDCD8;
     border-radius: 3px;
 }
 /* Firefox Scrollbar only */
 @-moz-document url-prefix() {
     .custom-scrollbar {
         scrollbar-width: thin;
-        scrollbar-color: #EEEEEC transparent;
+        scrollbar-color: #DEDCD8 transparent;
         
     }
 }
@@ -478,7 +483,7 @@ input[type="number"] {
         .range-wrap {
         width: 100%;
         height: 8px;
-        background: #EEEEEC;
+        background: #DEDCD8;
         border-radius: 10px;
         padding: 2px;        
         position: relative;
@@ -851,7 +856,7 @@ input[type="number"] {
 
     .mega-wrapper.open {
       pointer-events: auto;
-      border-top: 1px solid #EEEEEC;
+      border-top: 1px solid #DEDCD8;
     }
 
     .mega-panel {

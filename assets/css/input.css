@@ -23,7 +23,7 @@
   --color-Theme-Forground: #FAFAF9;
   --color-Theme-background: #F5F4F2;
   --color-Theme-black: #131211;
-  --color-Theme-dark-gray: #454340;
+  --color-Theme-dark-gray: #7D7972;
   --color-Theme-light-gray: #A6A6A6;
   --color-Theme-blue: #131211;
   --color-Theme-purple:#7D4BF2;
@@ -31,6 +31,8 @@
   --color-Theme-secondary-gray:#DEDCD8;
   --color-Theme-tertiary-gray:#DEDCD8;
   --color-Theme-panel-bg:#EAE8E5;
+  --color-Theme-medium-gray:#7D7972;
+  --color-Theme-input-text:#EDECE9;
 
   /* border radius  */
   --radius-10px: 10px;
@@ -90,6 +92,7 @@
   .btn-gray-icon-text{
     @apply relative  w-full rounded-10px cursor-pointer flex items-center  justify-center gap-1.5 py-2 px-3 border border-[rgba(142,94,254,0.06)]  text-sm font-inter-display-medium leading-[140%] text-Theme-blue transition-all duration-500 hover:bg-transparent;
   }
+  
   .btn-gray-icon-text::before {
       content: '';
       @apply absolute inset-0 transition-opacity duration-500 rounded-10px opacity-100;
@@ -112,16 +115,19 @@
   .btn-gray-icon-text > * {
       @apply relative z-10;
   }
+    .btn-gray-border{
+    @apply relative  w-full rounded-lg cursor-pointer flex items-center  justify-center gap-1.5 py-2 px-3 border border-Theme-tertiary-gray  text-sm font-inter-display-medium leading-5 text-[#454340] hover:bg-[#F0EFED] transition-all duration-500 ;
+  }
   .btn-blue-icon-text{
     @apply font-inter-display-medium  rounded-md cursor-pointer flex items-center  justify-center gap-1.5 md:py-2 md:px-4 bg-Theme-blue text-xs leading-[14px] text-white transition-all duration-500 hover:bg-[#2B2A28] md:h-auto md:w-auto w-[34px] h-[34px] ;
   }
   
   .btn-purple{
-    @apply font-inter-display w-full rounded-md cursor-pointer  py-[7px] px-3 bg-Theme-purple text-sm leading-[140%] text-white transition-all duration-500 hover:bg-[#7b53d7];
+    @apply font-inter-display w-full rounded-md cursor-pointer  py-[7px] px-3 bg-Theme-purple text-sm leading-[140%] text-white transition-all duration-500 hover:bg-[#5527B0];
   }
    
   .btn-purple-icon-text{
-    @apply font-inter-display-medium  rounded-lg cursor-pointer  md:py-[7px] md:px-2.5  bg-Theme-purple text-sm leading-[140%] text-white flex items-center justify-between gap-2.5 transition-all duration-500 hover:bg-[#7b53d7] md:h-auto md:w-auto w-[34px] h-[34px];
+    @apply font-inter-display-medium  rounded-lg cursor-pointer  md:py-[7px] md:px-2.5  bg-Theme-purple text-sm leading-[140%] text-white flex items-center justify-between gap-2.5 transition-all duration-500 hover:bg-[#5527B0] md:h-auto md:w-auto w-[34px] h-[34px];
   }
   .btn-red {
     @apply py-2 px-3 bg-[#DC3027] flex items-center justify-center gap-2 rounded-lg transition-all duration-500 hover:bg-[#cc261d] text-sm font-inter-display-medium leading-[20px] text-white;
@@ -137,6 +143,14 @@
   .btn-black {
       @apply py-2 px-3 bg-Theme-black rounded-lg transition-all duration-500 hover:bg-black/90 text-sm font-inter-display-medium leading-[20px] text-white;
   }
+  /*=====dropdown style===========*/
+.dropdown-style1{
+  @apply w-full border border-Theme-tertiary-gray rounded-lg py-[9px] px-3 flex items-center justify-between gap-2.5 text-sm font-inter-display-medium leading-[20px] text-Theme-black outline-none focus:outline-none transition-all duration-500  hover:border-[#999894] h-[38px];
+}
+.dropdown-style1-menu{
+  @apply bg-white rounded-10px p-[4px] border-[0.5px] border-Theme-tertiary-gray shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] transition-all duration-500;
+}
+
   .doc-list-item{
     @apply font-inter-display-medium h-[38px] py-2 px-3 rounded-lg bg-transparent border border-transparent transition-all duration-500 flex items-center gap-2 text-sm leading-[20px] text-Theme-dark-gray hover:bg-Theme-tertiary-gray hover:text-Theme-black lg:[&.active]:bg-white [&.active]:bg-Theme-Forground [&.active]:border-[#EBEBEB] [&.active]:text-Theme-black;
   }
@@ -229,22 +243,22 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #DEDCD8;
+    background-color: #EAE8E5;
     border-radius: 3px;
 }
 /* Firefox Scrollbar only */
 @-moz-document url-prefix() {
     .custom-scrollbar {
         scrollbar-width: thin;
-        scrollbar-color: #DEDCD8 transparent;
+        scrollbar-color: #EAE8E5 transparent;
         
     }
 }
 
 /*=========custom scroll gap===========*/
- .custom-scroll-gap::-webkit-scrollbar { width: 2px; margin-top: 10px; }
-  .custom-scroll-gap::-webkit-scrollbar-track { background: transparent; margin-top: 10px; margin-bottom:5px; }
-  .custom-scroll-gap::-webkit-scrollbar-thumb { background: #BCB8B4; border-radius: 3px; }
+ .custom-scroll-gap::-webkit-scrollbar { width: 2px; margin-top: 5px; }
+  .custom-scroll-gap::-webkit-scrollbar-track { background: transparent; margin-top: 5px; margin-bottom:10px; }
+  .custom-scroll-gap::-webkit-scrollbar-thumb { background: #EAE8E5; border-radius: 3px; }
 /*=======modal============*/
 .overlay-modal {
     position: fixed;

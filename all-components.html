@@ -1386,7 +1386,72 @@
   </div>
   <br>
   <!--date pciker-->
+<div class="flex flex-col gap-2 max-w-[200px]">
+                          <label class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">background color</label>
+                         <div class="flex items-center gap-2.5 ">
+                              <!--color picker-->
+                              <div x-data="{ opacity: 100, hex: '8E5EFE', dragging: false, startX: 0, startVal: 0 }" @mousemove.window="dragging &amp;&amp; (opacity = Math.max(0, Math.min(100, startVal + Math.round((($event.clientX - startX) / 2)))))" @mouseup.window="dragging = false; document.body.style.cursor = ''" class="h-[38px] border border-Theme-tertiary-gray bg-white rounded-lg w-full">
+                                <div class="flex items-center h-full">
+                                  <!-- colorpicker box-->
+                                  <div class="flex items-center gap-1.5 p-[4px] w-full">
+                                    <button class="w-[30px] h-[30px] rounded-md shrink-0 bg-[#80C32E] transition-all duration-300">
+                                    </button>
+                                    <input type="text" class="sr-only">
+                                    <input type="text" :value="'#'+hex" @input="hex = $event.target.value.replace('#','').toUpperCase()" class="w-full bg-transparent outline-none text-sm text-Theme-black font-inter-display-medium leading-5">
+                                  </div>
 
+                                  <!-- Opacity -->
+                                  <div class="flex items-center border-l border-[#D0D0CD] h-[37px] flex-1  pl-2.5 pr-3.5">
+                                    <input type="number" :value="opacity" @input="opacity = Math.max(0, Math.min(100, parseInt($event.target.value) || 0))" class="bg-transparent outline-none text-sm text-Theme-black font-inter-display-semibold leading-5 w-[24px]">
+                                    <span @mousedown.prevent="if(document.activeElement !== $el) { dragging = true; startX = $event.clientX; startVal = opacity; document.body.style.cursor = 'ew-resize'; }" class="text-sm text-Theme-black   font-inter-display-medium cursor-ew-resize select-none">%</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            
+                         
+                            </div>
+                          </div>
+
+                       <!--font family-->   
+                       <div x-data="dropdownComponent('choose-font')" class="relative w-full max-w-[200px] my-4">
+                                <button @click="toggle" :class="isOpen ? 'bg-white !border-Theme-purple' : 'border-Theme-tertiary-gray hover:border-[#999894]'" class="dropdown-style1 border-Theme-tertiary-gray hover:border-[#999894]">
+                                  Inter - Display
+                                  <svg class="transition-all duration-500" :class="{'rotate-180': isOpen}" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                    <path d="M8.80273 0.799234L4.80257 4.7994L0.80005 0.796875" stroke="#000A06" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+
+                                </button>
+                                <div x-ref="choose-font" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10 mt-2 w-full dropdown-style1-menu border-[1px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+
+                                  <div class="block">
+                                    <!--list-->
+                                    <ul class="flex flex-col gap-0.5">
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-stylescript transition-all duration-300 ease-in-out hover:bg-Theme-background hover:text-Theme-black">
+                                          Style Script
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md  text-sm leading-5 text-Theme-dark-gray font-birthstone transition-all duration-300 ease-in-out hover:bg-Theme-background hover:text-Theme-black">
+                                          Birthstone
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md  text-sm leading-5 text-Theme-dark-gray font-grandhotel transition-all duration-300 ease-in-out hover:bg-Theme-background hover:text-Theme-black">
+                                          Grand Hotel
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-petitformal transition-all duration-300 ease-in-out hover:bg-Theme-background hover:text-Theme-black">
+                                          Petit Formal Script
+                                        </button>
+                                      </li>
+
+                                    </ul>
+                                  </div>
+                                </div>
+                                </div>
 
   <!-- MAIN JS-->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>

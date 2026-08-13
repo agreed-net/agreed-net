@@ -1112,11 +1112,11 @@
                 ? 'transform: translateX(-4px); opacity: 0; pointer-events: none; transition: transform 300ms cubic-bezier(0.22,1,0.36,1), opacity 200ms ease;' 
                 : 'transform: translateX(0px); opacity: 1; transition: transform 350ms cubic-bezier(0.22,1,0.36,1), opacity 250ms ease 100ms;'">
                 <template x-for="item in items" :key="item.id">
-                  <button @click="scrollTo(item.id)" class="group flex h-[1.4px] items-center">
+                  <button @click="scrollTo(item.id)" class="group flex h-[2px] items-center">
                     <span
                       :style="active === item.key 
-                            ? 'width:24px; height:1.4px; background:#8E5EFE; border-radius:9999px; transition: all 200ms ease;' 
-                            : 'width:18px; height:1.4px; background:#BCB8B4; border-radius:9999px; transition: all 200ms ease;'">
+                            ? 'width:24px; height:2px; background:#8E5EFE; border-radius:9999px; transition: all 200ms ease;' 
+                            : 'width:18px; height:2px; background:#BCB8B4; border-radius:9999px; transition: all 200ms ease;'">
                     </span>
                   </button>
                 </template>
@@ -1129,21 +1129,23 @@
 
               <!-- FLOATING MENU -->
               <div @mouseenter="show()" @mouseleave="hide()"
-                class="absolute left-0 top-1/2 w-[280px] -translate-y-1/2 overflow-hidden rounded-10px border border-white/60 bg-[rgba(2,0,18,0.80)] bg-[linear-gradient(270deg,rgba(2,0,18,0)_54.5%,rgba(142,94,254,0.14)_100%)] py-3.5 px-4 shadow-[0_18px_45px_rgba(2,0,18,0.16)] backdrop-blur-[3.5px]"
+                class="absolute left-0 top-1/2 w-[250px] -translate-y-1/2 overflow-hidden bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px]"
                 style="transform: translateY(0%);" :class="open ? 'pointer-events-auto' : 'pointer-events-none'"
                 :style="open 
         ? 'transform: translateY(0%) translateX(0px) scale(1); visiblity:visible; opacity:1; transition: opacity 150ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1);' 
         : 'transform: translateY(0%) translateX(-10px) scale(0.97); visiblity:hidden;  opacity:0; transition: opacity 180ms ease, transform 220ms ease;'">
 
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col ">
                   <template x-for="item in items" :key="item.id">
-                    <button @click="scrollTo(item.id)" class="group flex items-center gap-2.5 rounded-lg text-left"
-                      style="transition: background 200ms ease;">
+                    <button @click="scrollTo(item.id)" class="group flex items-center py-2 px-3 rounded-md text-left hover:bg-[#F5F4F2]"
+                      style="transition: background 200ms ease;" :style="active === item.key 
+                                ? 'background:#F5F4F2 ' 
+                                : 'background:transparent'">
 
                       <!-- label -->
                       <span class="capitalize text-sm leading-5 font-inter-display-medium" :style="active === item.key 
-                                ? 'color: white; transition: color 250ms ease;' 
-                                : 'color: rgba(255,255,255,0.4); transition: color 250ms ease;'" x-text="item.label">
+                                ? 'color: #131211; transition: color 250ms ease; ' 
+                                : 'color: #7D7972; transition: color 250ms ease;'" x-text="item.label">
                       </span>
                     </button>
                   </template>
@@ -3580,11 +3582,11 @@
             : 'opacity-100 transition-opacity duration-100'" id="resize-container-y"
                     class="relative flex h-[calc(100%-44px)] min-h-0 w-full flex-col">
                     <!--panel top-->
-                    <div class="p-[2px] rounded-[12px] bg-[conic-gradient(from_145deg,#8E5EFE4A_0%,#FE8FFC4A_25%,#4BFFB14A_50%,#75C0FE4A_75%,#8E5EFE4A_100%)] w-full flex-1 min-h-[130px] relative overflow-auto" id="panel-top">
+                    <div class="gradient-border p-[2px] rounded-[12px] w-full flex-1 min-h-[130px] relative overflow-auto" id="panel-top" style="background: conic-gradient(from var(--ga), #8E5EFE4A 0%, #FE8FFC4A 25%, #4BFFB14A 50%, #75C0FE4A 75%, #8E5EFE4A 100%);">
                     <div 
-                      class=" rounded-[12px] h-full bg-white py-[26px] px-4 ">
+                      class=" rounded-[11px] h-full bg-white  px-4 ">
                       <div
-                        class="h-full overflow-y-auto custom-scroll-gap pr-[8px] mr-[-10px]">
+                        class="h-full overflow-y-auto custom-scroll-gap pr-[8px] mr-[-10px] py-[26px] pb-2">
                         <!--conversation start-->
                         <div class="flex flex-col gap-[26px]">
                           <!--sender-->

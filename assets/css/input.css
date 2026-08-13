@@ -953,3 +953,32 @@ input[type="number"] {
         transition: none !important;
       }
     }
+
+      @property --ga {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 145deg;
+  }
+
+  @keyframes spin-gradient {
+    to { --ga: 505deg; }
+  }
+
+  .gradient-border {
+    animation: spin-gradient 4s linear infinite;
+  }
+ 
+  .gradient-border-doc {
+  position: relative;
+  border-radius: 12px;
+}
+
+.gradient-border-doc::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: conic-gradient(from var(--ga), #8E5EFE4A, #FE8FFC4A, #4BFFB14A, #75C0FE4A, #8E5EFE4A);
+  animation: spin-gradient 4s linear infinite;
+
+}

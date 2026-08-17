@@ -16,7 +16,7 @@
     <div class="relative flex h-full">
       <aside :class="$store.sidebar.open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
         class="fixed lg:bg-[#FAFAF9] bg-white top-0 left-0 xl:w-[270px] lg:w-[250px] w-[240px]  px-2.5 lg:z-0 z-[100]   py-[2px] transition-transform duration-500 ease-in-out">
-        <div class="h-[100vh] transition-transform duration-500 ease-in-out overflow-y-auto overscroll-contain flex flex-col custom-scroll-gap pr-[5px] mr-[-5px]">
+        <div class="h-[100vh] transition-transform duration-500 ease-in-out overflow-y-auto overscroll-contain flex flex-col custom-scroll-gap pr-[5px] mr-[-5px] [&::-webkit-scrollbar]:hidden">
           <!--logo wrapper-->
           <div class="py-2.5 flex items-center gap-1.5 border-b border-Theme-secondary-gray mb-3">
             <!--logo-->
@@ -53,7 +53,7 @@
 
               <div x-ref="user-menu" x-show="isOpen" x-transition=""
                 x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
-                class="absolute left-[-47px] lg:left-[-45px] xl:left-[-47px] z-10 p-2 mt-[10px] w-[220px] lg:w-[230px] xl:w-[250px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px]"
+                class="absolute left-[-47px] lg:left-[-45px] xl:left-[-46px] z-10 p-2 mt-[10px] w-[220px] lg:w-[230px] xl:w-[250px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px]"
                 style="
                   overflow: hidden;
                   transition: height 300ms;
@@ -732,7 +732,7 @@
               </button>
               <div x-ref="invite-menu" x-show="isOpen" x-transition=""
                 x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
-                class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-Theme-background shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] rounded-10px p-[2px] z-30 hover:bg-[#2b2a28]"
+                class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-Theme-background shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] rounded-10px p-[2px] z-30 "
                 style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                 <div class="flex flex-col gap-0.5 p-[14px]">
                   <h4 class="text-lg block text-Theme-black ">Invite Members</h4>
@@ -1085,7 +1085,7 @@
             <!--sort Dropdown-->
             <div x-data="dropdownComponent('sort-menu')" class="relative md:w-max relative md:w-max w-full min-w-0">
               <button @click="toggle" :class="{'bg-[#eeeeee]': isOpen}"
-                class="bg-Theme-background hover:bg-[#eeeeee] transition-all duration-300 rounded-10px p-2.5 pr-[6px] flex items-center gap-2.5  text-sm font-inter-display-medium leading-[140%] text-Theme-black w-full">
+                class="bg-Theme-background hover:bg-[#eeeeee] transition-all duration-300 rounded-10px p-2.5 pr-2 flex items-center gap-2.5  text-sm font-inter-display-medium leading-[140%] text-Theme-black w-full">
                 <div class="flex items-center gap-1.5 w-full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                     <path
@@ -1409,7 +1409,7 @@ z-40
         <div class="w-full h-full py-3.5 max-[1080px]:hidden">
           <!--list header-->
           <div
-            class="bg-Theme-Forground w-full rounded-t-lg list-card-title grid grid-cols-[minmax(0,1fr)_150px_130px_120px_60px] min-[1400px]:grid-cols-[minmax(0,1fr)_206px_112px_313px_45px] py-3 pl-4 pr-6"> 
+            class="bg-Theme-background w-full rounded-t-lg list-card-title grid grid-cols-[minmax(0,1fr)_150px_130px_120px_60px] min-[1400px]:grid-cols-[minmax(0,1fr)_206px_112px_313px_45px] py-3 pl-4 pr-6"> 
             <span class="text-sm text-Theme-dark-gray font-inter-display-medium leading-[18px]">Document Name</span>
             <span class="text-sm text-Theme-dark-gray font-inter-display-medium leading-[18px]">Signers</span>
             <span class="text-sm text-Theme-dark-gray font-inter-display-medium leading-[18px]">Status</span>

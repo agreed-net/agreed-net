@@ -618,6 +618,9 @@
   .left-\[3px\] {
     left: 3px;
   }
+  .left-\[4px\] {
+    left: 4px;
+  }
   .left-\[6px\] {
     left: 6px;
   }
@@ -950,6 +953,9 @@
   }
   .ml-\[-10px\] {
     margin-left: -10px;
+  }
+  .ml-\[4px\] {
+    margin-left: 4px;
   }
   .ml-\[5px\] {
     margin-left: 5px;
@@ -5440,6 +5446,13 @@
       }
     }
   }
+  .hover\:bg-\[\#DEDCD8\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #DEDCD8;
+      }
+    }
+  }
   .hover\:bg-\[\#EDECE9\] {
     &:hover {
       @media (hover: hover) {
@@ -5711,6 +5724,16 @@
         background-color: color-mix(in srgb, #fff 70%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-white\/80 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #fff 80%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
         }
       }
     }

@@ -65,7 +65,7 @@
 }
 
 @utility btn-invited-inner {
-    @apply block px-1.5 py-1 rounded-md bg-[rgba(9,5,54,0.80)] text-white text-xs font-normal leading-[16px];
+    @apply block px-1.5 py-1 rounded-[4px] bg-[#DEDCD8] text-xs text-Theme-black font-normal leading-[16px] ;
 }
 @utility list-grid-list {
   @apply

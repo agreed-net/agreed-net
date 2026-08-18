@@ -734,14 +734,19 @@
                 x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close"
                 class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-Theme-background shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] rounded-10px p-[2px] z-30 "
                 style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
-                <div class="flex flex-col gap-0.5 p-[14px]">
-                  <h4 class="text-lg block text-Theme-black ">Invite Members</h4>
-                  <p class="text-xs text-Theme-light-gray leading-[130%]">Manage who has access to this workspace</p>
+                <div class="flex justify-between items-center gap-0.5 pt-1 pb-1.5 pl-5 pr-2">
+                  <h4 class="text-sm font-inter-display-medium leading-4 capitalize block text-Theme-black ">Invite Members</h4>
+                  <button class="close-btn cursor-pointer" @click="close">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+
+      </button>
                 </div>
-                <div class="bg-white rounded-lg p-2 flex flex-col gap-2">
-                  <div class="flex flex-col gap-2">
+                <div class="bg-white rounded-lg p-[18px] flex flex-col gap-2">
+                  <div class="flex flex-col gap-[18px]">
                     <!--email box-->
-                    <div class="p-2 flex flex-row gap-2.5 w-full">
+                    <div class="flex flex-row gap-2.5 w-full">
                       <div
                         class="md:w-[336px] w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-background hover:bg-[#eeeeee] transition-all duration-300 rounded-md">
                         <input type="text" id="email-address"
@@ -789,14 +794,13 @@
                       <!--invite button-->
                       <button class="btn-purple w-fit">Invite</button>
                     </div>
-                    <div class="flex flex-col gap-2 custom-scrollbar md:max-h-[428px] max-h-[328px] mr-[5px] pr-[5px]">
+                    <div class="flex flex-col gap-[18px] custom-scroll-gap overflow-y-auto md:max-h-[428px] max-h-[328px] mr-[-10px] pr-2.5">
                       <!--members list-->
-                      <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Members with
-                          access</h5>
-                        <ul class="flex flex-col  divide-y divide-[#DEDCD8] px-2">
+                      <div class="flex flex-col border-b border-Theme-tertiary-gray pb-2.5">
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] ">Who has access</h5>
+                        <ul class="flex flex-col   ">
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
@@ -813,9 +817,9 @@
                               class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
-                            <div class="flex items-center gap-2.5">
+                            <div class="flex items-center gap-2">
                               <div
                                 class="w-[34px] h-[34px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
                                 AF
@@ -873,7 +877,7 @@
                             </div>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
@@ -931,7 +935,7 @@
                             </div>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg"
@@ -992,11 +996,11 @@
                       </div>
                       <!--invited member list-->
                       <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Invited
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Invited
                           People</h5>
-                        <ul class="flex flex-col  divide-y divide-[#DEDCD8] px-2">
+                        <ul class="flex flex-col ">
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <div
@@ -1015,7 +1019,7 @@
                             </div>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between pt-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <div
@@ -1033,25 +1037,7 @@
                               Invited
                             </div>
                           </li>
-                          <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
-                            <!--member details-->
-                            <div class="flex items-center gap-2.5">
-                              <div
-                                class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
-                                DR</div>
-                              <div class="flex flex-col">
-                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
-                                  Russell</span>
-                                <span
-                                  class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
-                              </div>
-                            </div>
-                            <!--access level-->
-                            <div class="btn-invited-inner">
-                              Invited
-                            </div>
-                          </li>
+                         
                         </ul>
                       </div>
                     </div>
@@ -6617,13 +6603,13 @@ z-40
   </div>
   <!-- Datepicker model -->
   <div
-    class="modalTrigger  flex modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto md:!max-w-[392px] !max-w-[350px]"
+    class="modalTrigger flex modal bg-Theme-background rounded-10px p-[2px] flex-col gap-0 w-full h-auto md:!max-w-[392px] !max-w-[350px]"
     id="date-picker">
     <!-- modal header  -->
     <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
       <div class="flex items-center gap-[15px] ">
 
-        <h4 class="text-sm font-inter-display-medium capitalize leading-140 text-Theme-light-gray">
+        <h4 class="text-sm font-inter-display-medium capitalize leading-140 text-Theme-black">
           Set a due date
         </h4>
       </div>
@@ -6636,38 +6622,17 @@ z-40
 
       </button>
     </div>
-    <div class="w-full bg-white rounded-lg flex flex-col py-3.5 md:px-5 px-3">
+    <div class="w-full bg-white rounded-lg flex flex-col py-4 md:px-4 px-3">
       <!-- DATE PICKER -->
       <div x-data="datePicker()" class="w-full ">
-        <!-- Quick Actions -->
-        <div class="grid grid-cols-4 gap-1 mb-3 bg-Theme-secondary-gray rounded-lg p-[2px]">
-          <button @click="setQuickDate(0)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white active">
-            Today
-          </button>
-
-          <button @click="setQuickDate(1)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
-            Tomorrow
-          </button>
-
-          <button @click="setQuickDate(3)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
-            In 3 Days
-          </button>
-
-          <button @click="setQuickDate(7)"
-            class="h-full rounded-md bg-transparent text-sm font-inter-display-medium leading-[22px] text-Theme-black py-[7px] hover:bg-white transition-all duration-500 [&.active]:bg-white ">
-            In 1 Week
-          </button>
-        </div>
+     
 
         <!-- Calendar Header -->
         <!-- Calendar Header -->
         <div class="flex items-center gap-2 mb-2">
 
           <!-- Month Navigation -->
-          <div class="flex items-center h-[36px] justify-between flex-1 border border-[#EBEBEB]
+          <div class="flex items-center h-[36px] justify-between flex-1 border border-Theme-tertiary-gray
   rounded-lg px-1 py-1.5 transition-all duration-300 hover:border-[#D8D8D8]">
 
             <!-- Prev -->
@@ -6697,10 +6662,10 @@ z-40
           </div>
 
           <!-- Year Select -->
-          <div x-data="dropdownComponent('year-menu')" class="relative w-[78px] shrink-0">
+          <div x-data="dropdownComponent('year-menu')" class="relative shrink-0">
             <button @click="toggle" :class="{'border-[#D8D8D8]': isOpen}"
               class="border border-[#EBEBEB]
-  rounded-lg  transition-all duration-300  p-[6px] flex items-center gap-1 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:border-[#D8D8D8]">
+  rounded-lg  transition-all duration-300  py-[6px] pl-3 pr-1.5 flex items-center gap-1 text-sm font-inter-display-medium leading-[22px] text-Theme-black hover:border-[#D8D8D8]">
               <div class="flex items-center gap-1.5 hover">
 
                 2023
@@ -6724,7 +6689,7 @@ z-40
                 class="py-1.5 px-3.5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Year</span>
               <div class="bg-white rounded-lg p-1">
                 <!--list-->
-                <ul class="flex flex-col gap-0.5 max-h-[150px] overflow-y-auto custom-scrollbar pr-1">
+                <ul class="flex flex-col gap-0.5 max-h-[150px] overflow-y-auto custom-scroll-gap pr-1">
                   <li>
                     <a href="#"
                       class="block group w-full py-[5px] px-2.5 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">

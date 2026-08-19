@@ -16,41 +16,34 @@
 
     <!--Main Content-->
     <div class=" w-full  relative md:h-screen h-auto p-1 h-full min-h-screen">
-      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full md:px-5 px-3 overflow-hidden">
-        <div class="py-3.5   border-b border-[#EEEEEC] flex justify-between items-center relative z-10 bg-white">
+      <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-xl h-full md:px-3.5 px-3  overflow-hidden">
+        <div class="py-3.5  border-b border-Theme-tertiary-gray  flex justify-between items-center relative z-10 bg-Theme-backgrounde">
           <!--top bar-->
-          <div class="flex items-center gap-3">
+         <div class="flex items-center gap-3">
             <!-- Toggle button — put this in your header -->
-            <button
-              class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
+            <button class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-Theme-tertiary-gray p-[7px] transition-all duration-500 hover:bg-[#EDECE9]">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M9.16732 15L4.16732 10L9.16732 5M4.58398 10L15.834 10" stroke="#57534E" stroke-width="1.4"
-                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9.16732 15L4.16732 10L9.16732 5M4.58398 10L15.834 10" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </button>
             <!--breadcrumbs-->
-            <ul class="flex items-center gap-3.5 bg-[#F6F6F6] rounded-lg py-[2px] px-3.5 h-[34px]">
-
-              <a href="#"
-                class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Document</a>
-
+            <ul class="flex items-center gap-3.5 bg-Theme-tertiary-gray rounded-lg py-[2px] px-3.5 h-[34px]">
+              
+                <a href="#" class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Document</a>
+              
               <span class="py-[5px] block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
-                  <path d="M0.700195 0.699219L4.7002 4.69922L0.700195 8.69922" stroke="#57534E" stroke-width="1.4"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+  <path d="M0.700195 0.699219L4.7002 4.69922L0.700195 8.69922" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </span>
-
-              <a href="#"
-                class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Recipients</a>
-              <span class="py-[5px] block">
+              
+                <a href="#" class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Recipients</a>
+                <span class="py-[5px] block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
-                  <path d="M0.700195 0.699219L4.7002 4.69922L0.700195 8.69922" stroke="#57534E" stroke-width="1.4"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+  <path d="M0.700195 0.699219L4.7002 4.69922L0.700195 8.69922" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </span>
-              <a href="#"
-                class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Send</a>
+               <a href="#" class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Send</a>
             </ul>
           </div>
 
@@ -60,52 +53,43 @@
           class="relative max-[1370px]:gap-2 flex lg:flex-row flex-col md:h-auto h-[calc(100vh-74px)] overflow-y lg:overflow-hidden">
 
           <!--left accordion panel-->
-          <div
-            class="lg:sticky relative lg:top-[70px] top-0 flex flex-col shrink-0 min-[1500px]:w-[420px] min-[1200px]:w-[350px] min-[990px]:w-[320px] w-full  pt-3.5">
+            <div class="lg:sticky relative lg:top-[70px] top-0 flex flex-col shrink-0 min-[1500px]:w-[380px] min-[1200px]:w-[350px] min-[990px]:w-[320px] w-full  pt-3.5">
             <!--accordion-->
-            <div
-              x-data="{ open: (window.innerWidth >= 776), panelHeight: '0px', init() { this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); window.addEventListener('resize', () => { this.open = (window.innerWidth >= 776); this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); }); }, toggle() { this.open = !this.open; this.$nextTick(() => { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); } }"
-              :class="open ? 'accordion-open h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)]' : 'h-auto'"
-              class="bg-[#FAFAF9] p-1 rounded-[12px] transition-all duration-300 overflow-hidden">
-              <!--accordion header-->
-              <div class="flex items-center justify-between p-1.5 pl-[18px]">
-                <h5 class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Document Preview</h5>
-                <button @click="toggle()" :class="{ 'bg-transparent': open, 'bg-transparent': !open }"
-                  class="w-[30px] h-[30px] p-1.5 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray">
-
-                  <svg :class="open ? 'rotate-180' : ''" class="transition-transform duration-300"
-                    xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="black" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <!--accordion content-->
-              <div x-ref="panel" :style="open ? 'max-height: calc(100vh - 150px);' : 'max-height: 0px;'"
-                class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ">
-
-                <div class="bg-white rounded-lg h-[calc(100vh-150px)] ">
-                  <div class=" h-full min-h-full custom-scroll-gap overflow-y-auto mr-[4px] pr-[2px]">
-                    <div class="flex flex-col gap-3.5 p-3.5">
-                      <!--doc-->
-                      <div class="flex flex-col gap-2">
-                        <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
-                        <img src="assets/images/document-img3.png" class="" alt="image" />
-                      </div>
-                      <!--doc-->
-                      <div class="flex flex-col gap-2">
-                        <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
-                        <img src="assets/images/document-img3.png" class="" alt="image" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div x-data="{ open: (window.innerWidth &gt;= 776), panelHeight: '0px', init() { this.$nextTick(() =&gt; { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); window.addEventListener('resize', () =&gt; { this.open = (window.innerWidth &gt;= 776); this.$nextTick(() =&gt; { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); }); }, toggle() { this.open = !this.open; this.$nextTick(() =&gt; { this.panelHeight = this.$refs.panel.scrollHeight + 'px'; }); } }" :class="open ? 'accordion-open h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)]' : 'h-auto'" class="bg-Theme-panel-bg border border-Theme-tertiary-gray shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] pt-0 pb-0 rounded-[12px] transition-all duration-300 overflow-hidden accordion-open h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)]">
+                        <!--accordion header-->
+                        <div class="flex items-center justify-between p-2 pr-1 pl-[15px]">
+                          <h5 class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Document Preview</h5>
+                          <button @click="toggle()" :class="{ 'bg-transparent': open, 'bg-transparent': !open }" class="w-[30px] h-[30px] p-1.5 flex justify-center items-center rounded-md transition-all duration-500 hover:bg-Theme-secondary-gray">
+                          
+<svg :class="open ? 'rotate-180' : ''" class="transition-transform duration-300 rotate-180" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                          </button>
+                        </div>
+                        <!--accordion content-->
+                        <div x-ref="panel" :style="open ? 'max-height: calc(100vh - 148px);' : 'max-height: 0px;'" class="relative overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] " style="max-height: calc(100vh - 148px);">
+                         
+                          <div class="bg-white rounded-lg h-[calc(100vh-148px)] py-[2px]">
+                            <div class=" h-full min-h-full custom-scroll-gap overflow-y-auto mr-[4px] pr-[2px]">
+                            <div class="flex flex-col gap-3.5 p-4">
+                                <!--doc-->  
+                                <div class="flex flex-col gap-2">
+                                      <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
+                                      <img src="assets/images/document-img3.png" class="h-[450px] object-contain rounded-md border border-Theme-tertiary-gray" alt="image">
+                                  </div>
+                                  <!--doc-->  
+                                <div class="flex flex-col gap-2">
+                                      <h6 class="text-sm font-inter-display-medium text-Theme-black leading-5">Page 01</h6>
+                                      <img src="assets/images/document-img3.png" class="h-[450px] object-contain rounded-md border border-Theme-tertiary-gray" alt="image">
+                                  </div>  
+                              </div>
+                              </div>  
+                          </div>
+                        </div>
+                        </div>
           </div>
-
           <!--middle area-->
-          <div class="flex-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[calc(100vh-75px)] overflow-auto md:pb-0 pb-10 [&::-webkit-scrollbar]:w-[4px]
+           <div class="flex-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[calc(100vh-75px)] overflow-auto md:pb-0 pb-10 [&::-webkit-scrollbar]:w-[4px]
 [&::-webkit-scrollbar-track]:bg-transparent
 [&::-webkit-scrollbar-thumb]:bg-transparent
 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar]:hidden" :class="rightPanelOpen ? 'pr-[0px]' : 'pr-[0px]'"
@@ -114,121 +98,92 @@
             <!--middle start-->
             <div class="xl:pt-[56px] lg:pt-10 pt-2 relative min-h-full w-full">
               <div class="min-[1500px]:max-w-[670px] min-[990px]:max-w-[580px] max-w-full mx-auto">
-                <div class="flex flex-col gap-3 border-b border-[#EEEEEC] mb-[18px] pb-[18px]">
+                <div class="flex flex-col gap-3 border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
                   <h3 class="text-[26px] font-inter-display-medium leading-8 text-Theme-black">Invite Bulk</h3>
                   <span class="text-base font-inter-display-medium leading-[22px] text-Theme-dark-gray">Send invitations
                     to many recipients in one step.</span>
                 </div>
-                <div class="flex flex-col gap-3.5 border-b border-[#EEEEEC] mb-[18px] pb-[18px]">
+                <div class="flex flex-col gap-3.5 border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
 
                   <!--recipient list-->
                   <div class="flex flex-col gap-3.5">
                     <!--card-->
-                    <div class="flex justify-between items-center">
-                      <!--name-->
-                      <div class="flex items-center gap-3 transition-all duration-300 ">
-                        <div class="w-[54px] h-[54px] rounded-xl bg-Theme-Forground flex justify-center items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
-                            fill="none">
-                            <path d="M8.66602 18.418H17.3327" stroke="#57534E" stroke-width="1.6" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M8.66602 14.082H12.9993" stroke="#57534E" stroke-width="1.6" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path
-                              d="M14.084 2.70964V3.2513C14.084 6.31543 14.084 7.8475 15.0359 8.7994C15.9878 9.7513 17.5199 9.7513 20.584 9.7513H21.1257M21.6673 11.5463V15.168C21.6673 19.2534 21.6673 21.2963 20.3981 22.5654C19.129 23.8346 17.0861 23.8346 13.0007 23.8346C8.91514 23.8346 6.8724 23.8346 5.60319 22.5654C4.33398 21.2963 4.33398 19.2534 4.33398 15.168V10.2451C4.33398 6.72969 4.33398 4.97197 5.29389 3.78141C5.48782 3.54089 5.7069 3.32181 5.94743 3.12788C7.13799 2.16797 8.89571 2.16797 12.4111 2.16797C13.1755 2.16797 13.5576 2.16797 13.9076 2.29148C13.9804 2.31717 14.0517 2.34672 14.1214 2.38003C14.4562 2.54015 14.7264 2.81039 15.2669 3.35084L20.3981 8.4821C21.0244 9.10833 21.3374 9.42145 21.5024 9.81962C21.6673 10.2178 21.6673 10.6606 21.6673 11.5463Z"
-                              stroke="#57534E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
+                   <div class="flex justify-between items-center">
+                            <!--name-->
+                            <div class="flex items-center gap-3 transition-all duration-300 ">
+                              <div class="w-[54px] h-[54px] rounded-xl bg-Theme-Forground flex justify-center items-center">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="54" viewBox="0 0 50 54" fill="none">
+  <path d="M0 8C0 3.58172 3.58172 0 8 0H42C46.4183 0 50 3.58172 50 8V46C50 50.4183 46.4183 54 42 54H8C3.58172 54 0 50.4183 0 46V8Z" fill="#EEEEEC"></path>
+  <path d="M3 9C3 5.68629 5.68629 3 9 3H31.2222C32.7548 3 34.2293 3.58648 35.3432 4.63913L40.2119 9.24L45.0606 13.6972C46.2966 14.8334 47 16.4355 47 18.1144V45C47 48.3137 44.3137 51 41 51H9C5.68629 51 3 48.3137 3 45V9Z" fill="white"></path>
+  <circle cx="44" cy="6" r="2" fill="#2563EB"></circle>
+  <rect x="11" y="21" width="28" height="3" rx="1.5" fill="#EEEEEC"></rect>
+  <rect x="11" y="27" width="28" height="3" rx="1.5" fill="#EEEEEC"></rect>
+  <rect x="11" y="32" width="28" height="3" rx="1.5" fill="#EEEEEC"></rect>
+  <rect x="11" y="38" width="18" height="3" rx="1.5" fill="#EEEEEC"></rect>
+  <rect x="11" y="13" width="8" height="3" rx="1.5" fill="#EEEEEC"></rect>
+</svg>
+                              </div>
+                              <h6 class="text-base font-inter-display-medium leading-[22px] text-Theme-black">Service Agreement – Marketing Project</h6>
+                            </div>
+                            <!--buttons-->
+                            <div class="flex items-center gap-1.5">
+                              <button class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-secondary-gray hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
+                               
+                                <svg class="text-Theme-dark-gray group-[&amp;.active]:text-Theme-purple" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M6.71729 10.5508C6.71729 11.109 6.71729 11.3881 6.78618 11.6152C6.9413 12.1266 7.34147 12.5268 7.85283 12.6819C8.07995 12.7508 8.35906 12.7508 8.91728 12.7508H14.123" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M12.7517 14.4016L14.3974 12.7564L12.7517 11.1016" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M14.3999 9.45312C14.3999 8.8949 14.3999 8.61579 14.331 8.38867C14.1759 7.87731 13.7757 7.47714 13.2644 7.32202C13.0372 7.25312 12.7581 7.25312 12.1999 7.25312L6.99419 7.25312" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M8.36572 5.60234L6.72001 7.24747L8.36572 8.90234" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M14.3986 1.60156L4.79863 1.60156C3.29014 1.60156 2.53589 1.60156 2.06726 2.07019C1.59863 2.53882 1.59863 3.29307 1.59863 4.80157L1.59863 14.4016" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+</svg>
+                              </button>
+                              <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-secondary-gray hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                  <g clip-path="url(#clip0_8946_2072)">
+                                    <path d="M5.33301 9.0013H10.6663M5.33301 5.66797H7.99967" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M4.06555 12.668C3.19881 12.5827 2.54951 12.3224 2.11405 11.8869C1.33301 11.1059 1.33301 9.84877 1.33301 7.33464V7.0013C1.33301 4.48714 1.33301 3.23007 2.11405 2.44902C2.89511 1.66797 4.15218 1.66797 6.66634 1.66797H9.33301C11.8471 1.66797 13.1043 1.66797 13.8853 2.44902C14.6663 3.23007 14.6663 4.48714 14.6663 7.0013V7.33464C14.6663 9.84877 14.6663 11.1059 13.8853 11.8869C13.1043 12.668 11.8471 12.668 9.33301 12.668C8.95934 12.6763 8.66174 12.7047 8.36941 12.7713C7.57047 12.9552 6.83067 13.364 6.09959 13.7206C5.05787 14.2285 4.53701 14.4825 4.21013 14.2447C3.5848 13.779 4.19603 12.3359 4.33301 11.668" stroke="#57534E" stroke-width="1.4" stroke-linecap="round"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_8946_2072">
+                                      <rect width="16" height="16" fill="white"></rect>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </button>
+
+                              <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-secondary-gray hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
+
+
+                                <svg class="text-Theme-dark-gray group-[&amp;.active]:text-Theme-purple" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                  <g clip-path="url(#clip0_8946_2047)">
+                                    <path d="M10.3327 8.0013C10.3327 9.28997 9.28802 10.3346 7.99935 10.3346C6.71068 10.3346 5.66602 9.28997 5.66602 8.0013C5.66602 6.71264 6.71068 5.66797 7.99935 5.66797C9.28802 5.66797 10.3327 6.71264 10.3327 8.0013Z" stroke="currentColor" stroke-width="1.4"></path>
+                                    <path d="M14.6673 9.31257V6.6901C12.7629 6.6901 11.5245 4.62158 12.4887 2.97924L10.1793 1.66804C9.20318 3.33067 6.79918 3.3306 5.82307 1.66797L3.51367 2.97918C4.47789 4.62154 3.23847 6.6901 1.33398 6.6901V9.31257C3.23844 9.31257 4.47682 11.3811 3.51262 13.0234L5.82202 14.3346C6.79858 12.6712 9.20372 12.6711 10.1803 14.3346L12.4897 13.0234C11.5256 11.381 12.7629 9.31257 14.6673 9.31257Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_8946_2047">
+                                      <rect width="16" height="16" fill="white"></rect>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                  </div>
+                </div>
+               <div class="flex flex-col gap-3.5 w-full border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
+                    <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Recipient Email</label>
+                      <div class="flex items-center gap-[18px]">
+                          <input type="email" id="email" name="email" placeholder="Email" value="Email" class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required=" ">
+                          <div class="flex items-center gap-2.5">
+                            <button class="bg-Theme-tertiary-gray  border border-Theme-tertiary-gray py-[7px] px-3 h-[36px] rounded-md transition-all duration-300 text-sm font-inter-display-medium  text-Theme-light-gray w-[158px]">
+                              Sample CSV
+                            </button>
+                            <button class=" flex justify-center btn-purple   py-[7px] px-3 h-[36px]  leading-5 rounded-lg w-[158px]">Upload CSV</button>
+                          </div>
                         </div>
-                        <h6 class="text-base font-inter-display-medium leading-[22px] text-Theme-black md:max-w-full max-w-[150px] truncate">Service
-                          Agreement – Marketing Project</h6>
-                      </div>
-                      <!--buttons-->
-                      <div class="flex items-center gap-1.5">
-                        <button
-                          class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-Forground hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
 
-                          <svg class="text-Theme-dark-gray group-[&amp;.active]:text-Theme-purple"
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path
-                              d="M6.71729 10.5508C6.71729 11.109 6.71729 11.3881 6.78618 11.6152C6.9413 12.1266 7.34147 12.5268 7.85283 12.6819C8.07995 12.7508 8.35906 12.7508 8.91728 12.7508H14.123"
-                              stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12.7517 14.4016L14.3974 12.7564L12.7517 11.1016" stroke="currentColor"
-                              stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M14.3999 9.45312C14.3999 8.8949 14.3999 8.61579 14.331 8.38867C14.1759 7.87731 13.7757 7.47714 13.2644 7.32202C13.0372 7.25312 12.7581 7.25312 12.1999 7.25312L6.99419 7.25312"
-                              stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M8.36572 5.60234L6.72001 7.24747L8.36572 8.90234" stroke="currentColor"
-                              stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M14.3986 1.60156L4.79863 1.60156C3.29014 1.60156 2.53589 1.60156 2.06726 2.07019C1.59863 2.53882 1.59863 3.29307 1.59863 4.80157L1.59863 14.4016"
-                              stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-                          </svg>
-                        </button>
-                        <button @click="rightPanelOpen = !rightPanelOpen"
-                          class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-Forground hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <g clip-path="url(#clip0_8946_2072)">
-                              <path d="M5.33301 9.0013H10.6663M5.33301 5.66797H7.99967" stroke="#57534E"
-                                stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
-                              <path
-                                d="M4.06555 12.668C3.19881 12.5827 2.54951 12.3224 2.11405 11.8869C1.33301 11.1059 1.33301 9.84877 1.33301 7.33464V7.0013C1.33301 4.48714 1.33301 3.23007 2.11405 2.44902C2.89511 1.66797 4.15218 1.66797 6.66634 1.66797H9.33301C11.8471 1.66797 13.1043 1.66797 13.8853 2.44902C14.6663 3.23007 14.6663 4.48714 14.6663 7.0013V7.33464C14.6663 9.84877 14.6663 11.1059 13.8853 11.8869C13.1043 12.668 11.8471 12.668 9.33301 12.668C8.95934 12.6763 8.66174 12.7047 8.36941 12.7713C7.57047 12.9552 6.83067 13.364 6.09959 13.7206C5.05787 14.2285 4.53701 14.4825 4.21013 14.2447C3.5848 13.779 4.19603 12.3359 4.33301 11.668"
-                                stroke="#57534E" stroke-width="1.4" stroke-linecap="round"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_8946_2072">
-                                <rect width="16" height="16" fill="white"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                        </button>
-
-                        <button @click="rightPanelOpen = !rightPanelOpen"
-                          class="group w-[36px] h-[36px] flex items-center justify-center rounded-lg border border-[#EBEBEB] bg-white transition-all duration-500 hover:bg-Theme-Forground hover:border-transparent [&amp;.active]:bg-[#EFE8FF] ">
-
-
-                          <svg class="text-Theme-dark-gray group-[&amp;.active]:text-Theme-purple"
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <g clip-path="url(#clip0_8946_2047)">
-                              <path
-                                d="M10.3327 8.0013C10.3327 9.28997 9.28802 10.3346 7.99935 10.3346C6.71068 10.3346 5.66602 9.28997 5.66602 8.0013C5.66602 6.71264 6.71068 5.66797 7.99935 5.66797C9.28802 5.66797 10.3327 6.71264 10.3327 8.0013Z"
-                                stroke="currentColor" stroke-width="1.4"></path>
-                              <path
-                                d="M14.6673 9.31257V6.6901C12.7629 6.6901 11.5245 4.62158 12.4887 2.97924L10.1793 1.66804C9.20318 3.33067 6.79918 3.3306 5.82307 1.66797L3.51367 2.97918C4.47789 4.62154 3.23847 6.6901 1.33398 6.6901V9.31257C3.23844 9.31257 4.47682 11.3811 3.51262 13.0234L5.82202 14.3346C6.79858 12.6712 9.20372 12.6711 10.1803 14.3346L12.4897 13.0234C11.5256 11.381 12.7629 9.31257 14.6673 9.31257Z"
-                                stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                              </path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_8946_2047">
-                                <rect width="16" height="16" fill="white"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
+                    
                   </div>
-                </div>
-                <div class="flex flex-col gap-3.5 w-full border-b border-[#EEEEEC] mb-[18px] pb-[18px]">
-                  <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Recipient
-                    Email</label>
-                  <div class="flex md:flex-row flex-col items-center gap-[18px]">
-                    <input type="email" id="email" name="email" placeholder="Email" value="Email"
-                      class="w-full py-[7px] px-3 border border-[#EBEBEB] bg-[#FAFAF9] rounded-md h-[36px] text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
-                      required=" ">
-                    <div class="flex md:w-auto w-full items-center gap-2.5">
-                      <button
-                        class="btn-gray bg-[#EEEEEC] border border-[#EBEBEB] py-[7px] px-3 h-[36px] rounded-md transition-all duration-300 text-sm font-inter-display-medium  text-Theme-light-gray md:w-[158px] w-full">
-                        Sample CSV
-                      </button>
-                      <button
-                        class=" flex justify-center btn-purple   py-[7px] px-3 h-[36px]  leading-5 rounded-lg md:w-[158px] w-full" data-modal-target="upload-document">Upload
-                        CSV</button>
-                    </div>
-                  </div>
-
-
-                </div>
                 <div class="flex flex-col gap-5">
                   <div class="flex flex-col gap-3.5 w-full ">
                     <div class="flex items-center justify-between">
@@ -236,7 +191,7 @@
                         Email</label>
                         <a href="#" class="text-base font-inter-display-medium leading-[22px] text-Theme-purple">Clear All</a>
                       </div>
-                    <div class=" rounded-10px  bg-[#EEEEEC] overflow-hidden p-[2px] w-full overflow-x-auto">
+                    <div class=" rounded-10px  bg-[#EAE8E5] overflow-hidden p-[2px] w-full overflow-x-auto">
                      <!--table-->
                       <table class="w-full text-left border-collapse ">
                         <thead>
@@ -251,18 +206,18 @@
                           </tr>
                         </thead>
                         <!--tbody-->
-                        <tbody class="divide-y divide-[#EEEEEC] bg-white rounded-10px">
+                        <tbody class="divide-y divide-Theme-tertiary-gray bg-white rounded-10px">
                           <!-- Row -->
                           <tr class=" transition-colors ">
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray rounded-tl-[10px]"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray rounded-tl-[10px]"><span
                                 class="font-inter-display-medium">Marvin McKinney</span></td>
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray"><span
                                 class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
-                            <td class="py-3 px-4 text-center">
+                            <td class="py-2.5 px-4 text-center">
                               <span
                                 class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#D1FAE5] text-[#1FC16B]">Valid</span>
                             </td>
-                            <td class="py-3 px-4  rounded-tr-[10px]">
+                            <td class="py-2.5 px-4  rounded-tr-[10px]">
                               <div class="flex items-center justify-end gap-5">
                                 <button class="group transition-colors" data-modal-target="edit-recipient-email">
                                   <svg
@@ -307,15 +262,15 @@
                           </tr>
                           <!-- Row-->
                           <tr class=" transition-colors ">
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray "><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray "><span
                                 class="font-inter-display-medium">Marvin McKinney</span></td>
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray"><span
                                 class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
-                            <td class="py-3 px-4 text-center">
+                            <td class="py-2.5 px-4 text-center">
                               <span
                                 class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#D1FAE5] text-[#1FC16B]">Valid</span>
                             </td>
-                            <td class="py-3 px-4 ">
+                            <td class="py-2.5 px-4 ">
                               <div class="flex items-center justify-end gap-5">
                                 <button class="group transition-colors">
                                   <svg
@@ -360,15 +315,15 @@
                           </tr>
                             <!-- Row-->
                           <tr class=" transition-colors ">
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray "><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray "><span
                                 class="font-inter-display-medium">Marvin McKinney</span></td>
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray"><span
                                 class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
-                            <td class="py-3 px-4 text-center">
+                            <td class="py-2.5 px-4 text-center">
                               <span
                                 class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#FFD5D3] text-[#DC3027]">Fix</span>
                             </td>
-                            <td class="py-3 px-4  ">
+                            <td class="py-2.5 px-4  ">
                               <div class="flex items-center justify-end gap-5">
                                 <button class="group transition-colors">
                                   <svg
@@ -413,15 +368,15 @@
                           </tr>
                            <!-- Row-->
                           <tr class=" transition-colors ">
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray "><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray "><span
                                 class="font-inter-display-medium">Marvin McKinney</span></td>
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray"><span
                                 class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
-                            <td class="py-3 px-4 text-center">
+                            <td class="py-2.5 px-4 text-center">
                               <span
                                 class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#FFD5D3] text-[#DC3027]">Fix</span>
                             </td>
-                            <td class="py-3 px-4  ">
+                            <td class="py-2.5 px-4  ">
                               <div class="flex items-center justify-end gap-5">
                                 <button class="group transition-colors">
                                   <svg
@@ -466,15 +421,15 @@
                           </tr>
                            <!-- Row-->
                           <tr class=" transition-colors ">
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray rounded-bl-[10px]"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray rounded-bl-[10px]"><span
                                 class="font-inter-display-medium">Marvin McKinney</span></td>
-                            <td class="py-3 px-4 text-sm text-Theme-dark-gray"><span
+                            <td class="py-2.5 px-4 text-sm text-Theme-dark-gray"><span
                                 class="font-inter-display-medium">marvinmcKinney@gmail.com</span></td>
-                            <td class="py-3 px-4 text-center">
+                            <td class="py-2.5 px-4 text-center">
                               <span
                                 class="inline-flex items-center px-[7px] py-[4px] rounded-md text-xs font-normal bg-[#FFEED3] text-[#DC9727]">Duplicate</span>
                             </td>
-                            <td class="py-3 px-4  rounded-br-[10px]">
+                            <td class="py-2.5 px-4  rounded-br-[10px]">
                               <div class="flex items-center justify-end gap-5">
                                 <button class="group transition-colors">
                                   <svg
@@ -527,7 +482,7 @@
                     <div class="flex items-center gap-[18px]">
                       <input type="email" id="email" name="email" placeholder="Email"
                         value="Service Agreement - Marketing Project - {{recipient_email}}"
-                        class="w-full py-[7px] px-3 border border-[#EBEBEB] bg-[#FAFAF9] rounded-md h-[36px] text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
+                        class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
                         required=" ">
                     </div>
                   </div>
@@ -539,56 +494,56 @@
           </div>
 
           <!--right side wrapper-->
-          <div
-            class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 flex items-start gap-0 ">
+         <div class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 hidden  md:flex items-start gap-0 ">
 
 
             <!--right panel-->
-            <div class="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" :class="rightPanelOpen
-              ? 'w-[350px] min-[1500px]:w-[420px] opacity-100 translate-x-0 max-[767px]:fixed max-[767px]:inset-0 max-[767px]:w-full max-[767px]:z-40'
-              : 'w-[0px] opacity-0 translate-x-10 max-[767px]:hidden'" style="will-change: width, transform;">
+            <div class="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] w-[350px] min-[1440px]:w-[380px] opacity-100 translate-x-0" :class="rightPanelOpen
+                ? 'w-[350px] min-[1440px]:w-[380px] opacity-100 translate-x-0'
+                : 'w-[0px] opacity-0 translate-x-10'" style="will-change: width, transform;">
 
               <div class="w-full">
 
-                <div class="bg-[#FAFAF9] p-1 rounded-[12px] h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)] overflow-hidden">
+                <div class="bg-Theme-panel-bg border border-Theme-tertiary-gray shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] rounded-[12px] h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)] overflow-hidden">
 
                   <!--panel header-->
-                  <div class="flex items-center justify-between bg-transparent pb-2 pt-1 pl-4 pr-1.5">
+                 
 
-                    <h3 class="text-lg font-inter-display-medium leading-[26px] text-Theme-black">
+                  <div class="flex items-center justify-between bg-transparent pb-2 pt-2 px-2 pl-4">
+
+                    <h3 class="text-base font-inter-display-medium leading-[26px] text-Theme-black">
                       Customize Message
                     </h3>
 
-                    <button @click="rightPanelOpen = false" class="w-8 h-8 rounded-md hover:bg-[#EEEEEC] transition-all duration-500 flex items-center justify-center">
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
+                   <button @click="rightPanelOpen = false" class="w-[28px] h-[28px] rounded-lg hover:bg-Theme-tertiary-gray transition-all duration-500 flex items-center justify-center">
+                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.60156 0.599976L0.602103 8.59944M8.60103 8.59998L0.601562 0.600542" stroke="#131211" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
 
                     </button>
 
                   </div>
-
                   <!--panel body-->
-                  <div class="bg-white rounded-lg w-full pr-[2px] py-[2px] h-[calc(100%-48px)]">
-                    <div class="h-[calc(100vh-190px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col [&amp;::-webkit-scrollbar]:w-[2px] [&amp;::-webkit-scrollbar-track]:bg-transparent [&amp;::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&amp;::-webkit-scrollbar-thumb]:rounded-[3px] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-200 delay-200" :class="rightPanelOpen
+                  <div class="bg-white rounded-[12px] w-full pr-[2px] py-[2px] h-[calc(100%-44px)]">
+                    <div class="h-[calc(100vh-190px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col custom-scroll-gap w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-200 delay-200" :class="rightPanelOpen
             ? 'opacity-100 transition-opacity duration-200 delay-200'
             : 'opacity-0 transition-opacity duration-100'">
                       <!--content-->
-                      <div class="p-3.5 flex flex-col gap-5">
-                        <div class="flex flex-col  gap-2.5  ">
+                      <div class="p-4 flex flex-col gap-5">
+                        <div class="flex flex-col  gap-4  ">
                             <div class="flex flex-col gap-2 ">
-                              <label for="subject" class="text-sm leading-[22px] font-inter-display-medium text-Theme-light-gray">Subject</label>
-                              <input type="text" id="subject" name="subject" placeholder="Enter your subject" value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
+                              <label for="subject" class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">Subject</label>
+                              <input type="text" id="subject" name="subject" placeholder="Enter your subject" value="" class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
                             </div>
                              <div class="flex flex-col gap-2 ">
-                              <label for="message" class="text-sm leading-[22px] font-inter-display-medium text-Theme-light-gray">Message</label>
-                              <textarea id="message" name="message" placeholder="Write your message here..." value="" class="w-full py-[13px] px-4 border border-[#EBEBEB] bg-[#FAFAF9] rounded-10px text-sm font-inter-display-medium leading-[22px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#dcdcdc] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500 h-[100px] resize-none"></textarea>
+                              <label for="message" class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">Message</label>
+                              <textarea id="message" name="message" placeholder="Write your message here..." value="" class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500 h-[100px] resize-none"></textarea>
                             </div>
                         </div>
                        
                       </div>
                       <!--content-->
-                      <div class="p-3.5 pt-0">
+                      <div class="p-4 pt-0">
                         <!--checkbox main-->
                         <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer mb-1.5">
                           <!-- Checkbox -->
@@ -608,10 +563,9 @@
                     </div>
                     <!--buttons-->
                     <div class="flex items-center gap-2 sticky bottom-3.5 left-0 right-0 mx-auto w-[calc(100%-28px)]">
-                      <button class=" flex justify-center btn-gray   py-2 px-3 leading-5 rounded-lg h-[38px] w-1/2">Cancel</button>
-                      <button class=" flex justify-center btn-purple   py-2 px-3 leading-5 rounded-lg h-[38px] w-1/2">Save</button>
+                      <button class=" btn-gray-border w-full text-center  h-[38px] w-1/2">Cancel</button>
+                      <button class=" btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5 h-[38px] w-1/2">Save</button>
                     </div>
-
                   </div>
 
                 </div>

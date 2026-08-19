@@ -6312,28 +6312,21 @@ z-40
     class="modalTrigger  modal bg-gradient-gray rounded-10px p-[2px] flex-col gap-0 w-full h-auto !max-w-[320px] md:!max-w-[420px] !overflow-visible"
     id="share-document">
     <!-- modal header  -->
-    <div class="flex items-center justify-between pt-1 pb-1.5 pr-1 pl-5 w-full">
-      <div class="flex items-center gap-[15px] ">
-
-        <h4 class="text-sm font-inter-display-medium capitalize leading-[16px] text-Theme-light-gray">
-         Share this document
-        </h4>
-      </div>
-
-      <button class="close-btn cursor-pointer">
+    <div class="flex justify-between items-center gap-0.5 pt-1 pb-1.5 pl-5 pr-2">
+                  <h4 class="text-sm font-inter-display-medium leading-4 capitalize block text-Theme-black ">Share Document</h4>
+                  <button class="close-btn cursor-pointer" @click="close">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
-            stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
 
       </button>
-    </div>
-    <div class="w-full bg-white rounded-lg flex flex-col p-2">
-      <div class="flex flex-col gap-2">
+                </div>
+   <div class="bg-white rounded-lg p-[18px] flex flex-col gap-2">
+                  <div class="flex flex-col gap-[18px]">
                     <!--email box-->
-                    <div class="p-2 flex flex-row gap-2.5 w-full">
-                      <div class="md:w-[336px] w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-secondary-gray hover:bg-[#f2f2f2] transition-all duration-300 rounded-md">
-                        <input type="text" id="email-address" class=" w-full bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  " placeholder="Enter Email Address">
+                    <div class="flex flex-row gap-2.5 w-full">
+                      <div class=" w-full flex flex-row justify-between gap-2.5 p-[3px] pl-3 bg-Theme-background hover:bg-[#eeeeee] transition-all duration-300 rounded-md">
+                        <input type="text" id="email-address" class="w-full bg-transparent text-sm leading-5 text-Theme-black placeholder:text-Theme-light-gray outline-0 transition-all duration-300  " placeholder="Enter Email Address">
                         <div class="custom-dropdown relative w-max" data-style="design1">
                           <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-transparent transition-all duration-300 hover:bg-white/70">
                             <span class="selected-option">Editor</span>
@@ -6344,18 +6337,17 @@ z-40
 
                           </button>
 
-                          <div class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5">
-                            <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
-
-                            <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+                          <div class="dropdown-menu hidden absolute right-0 z-10 mt-[6px] w-[100px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px] flex flex-col gap-0.5">
+                           
+                            <ul class=" flex flex-col gap-0.5">
 
                               <li>
-                                <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                   Editor
                                 </button>
                               </li>
                               <li>
-                                <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                   Viewer
                                 </button>
                               </li>
@@ -6371,14 +6363,13 @@ z-40
                       <!--invite button-->
                       <button class="btn-purple w-fit">Invite</button>
                     </div>
-                    <div class="flex flex-col gap-2 custom-scrollbar md:max-h-[428px] max-h-[328px] mr-[5px] pr-[5px]">
+                    <div class="flex flex-col gap-[18px] custom-scroll-gap overflow-y-auto md:max-h-[428px] max-h-[328px] mr-[-10px] pr-2.5">
                       <!--members list-->
-                      <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Members with
-                          access</h5>
-                        <ul class="flex flex-col  divide-y divide-[#DEDCD8] px-2">
+                      <div class="flex flex-col border-b border-Theme-tertiary-gray pb-2.5">
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] ">Who has access</h5>
+                        <ul class="flex flex-col   ">
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-1.png" alt="Avatar">
@@ -6392,9 +6383,9 @@ z-40
                             <span class="text-sm text-Theme-purple font-inter-display-medium leading-[140%]">Owner</span>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
-                            <div class="flex items-center gap-2.5">
+                            <div class="flex items-center gap-2">
                               <div class="w-[34px] h-[34px] aspect-square object-cover rounded-lg bg-[#ECE7F6] flex items-center justify-center text-sm text-Theme-purple font-inter-display-medium leading-[140%]">
                                 AF
                               </div>
@@ -6406,8 +6397,8 @@ z-40
                             </div>
                             <!--access level dropdown-->
                             <div class="custom-dropdown relative w-max" data-style="design1">
-                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-primary-gray  transition-all duration-300 hover:bg-[#eeeeee]">
-                                <span class="selected-option">Remove</span>
+                              <button class="dropdown-button p-[7px] pl-2 cursor-pointer rounded-md flex items-center gap-1.5 text-xs font-inter-display-medium leading-[116%] text-Theme-black bg-white border border-Theme-tertiary-gray  transition-all duration-300 hover:border-[#999894] ">
+                                <span class="selected-option">Editor</span>
 
                                 <svg class="dropdown-arrow transition-all duration-300 ease-in-out" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.85547 3.57031L4.99833 6.42746L2.14118 3.57031" stroke="#000A06" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -6415,23 +6406,22 @@ z-40
 
                               </button>
 
-                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
-
-                                <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[100px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px] flex flex-col gap-0.5 hidden">
+                               
+                                <ul class="block flex flex-col gap-0.5">
 
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
@@ -6444,7 +6434,7 @@ z-40
                             </div>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-2.png" alt="Avatar">
@@ -6465,33 +6455,35 @@ z-40
 
                               </button>
 
-                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
-
-                                <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[100px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px] flex flex-col gap-0.5 hidden">
+                               
+                                <ul class="block flex flex-col gap-0.5">
 
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
 
                                 </ul>
+
+
+
                               </div>
                             </div>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <img class="w-[34px] h-[34px] aspect-square object-cover rounded-lg" src="assets/images/avatar-3.png" alt="Avatar">
@@ -6512,27 +6504,30 @@ z-40
 
                               </button>
 
-                              <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[140px] bg-gradient-gray p-[2px] rounded-10px shadow-soft flex flex-col gap-0.5 hidden">
-                                <span class="py-1.5 px-[14px] text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px]">Access</span>
-
-                                <ul class="bg-white rounded-lg p-1 flex flex-col gap-0.5">
+                               <div class="dropdown-menu absolute right-0 z-10 mt-[6px] w-[100px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px] flex flex-col gap-0.5 hidden">
+                               
+                                <ul class="block flex flex-col gap-0.5">
 
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black active">
+                                    <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black active">
                                       Editor
                                     </button>
                                   </li>
                                   <li>
-                                    <button class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                       Viewer
                                     </button>
                                   </li>
                                   <li>
-                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full rounded-[4px] py-[5px] px-2 rounded text-left text-sm leading-[140%] text-Theme-dark-gray font-inter-display-medium transition-all duration-300 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                                    <button data-modal-target="remove-member" @click="close()" class="dropdown-item group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
                                       Remove
                                     </button>
                                   </li>
+
                                 </ul>
+
+
+
                               </div>
                             </div>
                           </li>
@@ -6540,11 +6535,11 @@ z-40
                       </div>
                       <!--invited member list-->
                       <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Invited
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Invited
                           People</h5>
-                        <ul class="flex flex-col  divide-y divide-[#DEDCD8] px-2">
+                        <ul class="flex flex-col ">
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between py-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
@@ -6561,7 +6556,7 @@ z-40
                             </div>
                           </li>
                           <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
+                          <li class=" flex items-center gap-2 w-full justify-between pt-3 ">
                             <!--member details-->
                             <div class="flex items-center gap-2.5">
                               <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
@@ -6577,28 +6572,12 @@ z-40
                               Invited
                             </div>
                           </li>
-                          <!--list-->
-                          <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
-                            <!--member details-->
-                            <div class="flex items-center gap-2.5">
-                              <div class="w-[34px] h-[34px] aspect-square object-cover rounded-md bg-white border border-Theme-primary-gray flex items-center justify-center text-sm text-Theme-black font-inter-display-medium leading-[140%]">
-                                DR</div>
-                              <div class="flex flex-col">
-                                <span class="text-sm text-Theme-black font-inter-display-medium leading-[140%]">Dianne
-                                  Russell</span>
-                                <span class="text-xs text-Theme-light-gray leading-[116%]">diannerussell@gmail.com</span>
-                              </div>
-                            </div>
-                            <!--access level-->
-                            <div class="btn-invited-inner">
-                              Invited
-                            </div>
-                          </li>
+                         
                         </ul>
                       </div>
                     </div>
                   </div>
-    </div>
+                </div>
    
   </div>
   <!-- Datepicker model -->

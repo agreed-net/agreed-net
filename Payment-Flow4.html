@@ -534,68 +534,47 @@
     ? 'w-full min-[1441px]:w-[calc(100%-270px)] min-[1441px]:ml-auto pl-0' 
     : 'w-full ml-auto pl-1'" 
     class="relative md:h-screen h-auto p-1 pl-0 h-full min-h-screen transition-all duration-300 ease-in-out">
-      <div class="bg-white border border-[#E9EDF2] rounded-xl h-full  overflow-hidden">
-        <div class="lg:px-5 px-1.5  md:py-3.5 py-2  pb-3.5 border-b border-Theme-secondary-gray flex justify-between items-center relative z-10 bg-white">
+      <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-xl h-full  overflow-hidden">
+       <div class="lg:px-5 px-1.5  md:py-3.5 py-2  pb-3.5 border-b border-Theme-tertiary-gray flex justify-between items-center relative z-10 bg-Theme-background">
           <!--top bar-->
           <div class="flex items-center gap-3">
             <!-- Toggle button — put this in your header -->
-            <button @click="$store.sidebar.toggle(); console.log($store.sidebar.open)"
-              class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
-              <svg :class="$store.sidebar.open ? 'rotate-180' : ''" class="transition-all duration-500" width="20"
-                height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.5 5H5.83334" stroke="#57534E" stroke-width="1.4" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M17.5 10H9.16667" stroke="#57534E" stroke-width="1.4" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M17.5 15H5.83334" stroke="#57534E" stroke-width="1.4" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M2.4987 6.66406L5.83203 9.9974L2.4987 13.3307" stroke="#57534E" stroke-width="1.4"
-                  stroke-linecap="round" stroke-linejoin="round" />
+            <button @click="$store.sidebar.toggle(); console.log($store.sidebar.open)" class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-Theme-tertiary-gray p-[7px] transition-all duration-500 hover:bg-[#EDECE9]">
+              <svg :class="$store.sidebar.open ? 'rotate-180' : ''" class="transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.5 5H5.83334" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 10H9.16667" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 15H5.83334" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.4987 6.66406L5.83203 9.9974L2.4987 13.3307" stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </button>
             <div class="flex items-center gap-2.5">
-              <h1 class="text-2xl font-inter-display-medium leading-[34px] text-Theme-black overflow-hidden text-ellipsis whitespace-nowrap min-w-0 md:max-w-[236px] max-w-[120px]">Untitled</h1>
+              <h1 class="text-2xl font-inter-display-medium leading-[34px] text-Theme-black overflow-hidden whitespace-nowrap text-ellipsis lg:max-w-max md:max-w-[236px] max-w-[120px]">
+                Untitled</h1>
               <!--settings dropdown -->
               <div x-data="dropdownComponent('settings-menu')" class="relative w-max">
-                <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}"
-                  class="btn-white-icon-square">
+                <button @click="toggle" :class="{'bg-[#f7f7f7]': isOpen}" class="btn-white-icon-square">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
-                    <path d="M8.99841 13.4853L8.99841 13.4979" stroke="#000A06" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M8.99841 9.09075L8.99841 9.10333" stroke="#000A06" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M8.99841 4.69231L8.99841 4.70489" stroke="#000A06" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
+                    <path d="M8.99841 13.4853L8.99841 13.4979" stroke="#000A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8.99841 9.09075L8.99841 9.10333" stroke="#000A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8.99841 4.69231L8.99841 4.70489" stroke="#000A06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
                 </button>
-                <div x-ref="settings-menu" x-show="isOpen" x-transition=""
-                  x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height"
-                  @click.outside="close" @keydown.escape.window="close()"
-                  class="absolute left-0 z-10  mt-[5px] w-[252px] bg-gradient-gray rounded-10px p-[2px]"
-                  style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
-                  <span
-                    class="py-2.5 px-5 text-xs block font-inter-display-medium uppercase text-Theme-light-gray leading-[130%] tracking-[0.96px] ">Settings</span>
-                  <div class="bg-white rounded-lg p-2 ">
+                <div x-ref="settings-menu" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10  mt-[5px] w-[200px] bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px]" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
+                 
+                  <div class="block">
                     <!--list-->
                     <ul class="flex flex-col gap-0.5">
                       <li>
-                        <button
-                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                          <svg
-                            class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out"
-                            width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
+                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_7888_846)">
-                              <path
-                                d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z"
-                                stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
-                              <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6"
-                                stroke-linejoin="round" />
-                              <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                              <path d="M10.5553 2.91409C11.1142 2.30856 11.3936 2.0058 11.6906 1.8292C12.407 1.40307 13.2893 1.38982 14.0178 1.79424C14.3197 1.96185 14.6077 2.25609 15.1838 2.84457C15.7598 3.43305 16.0479 3.72729 16.2119 4.0357C16.6079 4.77984 16.5949 5.68109 16.1777 6.41303C16.0049 6.71637 15.7085 7.00184 15.1157 7.57275L8.06295 14.3657C6.93966 15.4477 6.378 15.9887 5.67605 16.2628C4.97409 16.537 4.2024 16.5168 2.65902 16.4764L2.44904 16.471C1.97918 16.4587 1.74425 16.4525 1.60769 16.2975C1.47113 16.1425 1.48977 15.9032 1.52706 15.4247L1.54731 15.1648C1.65226 13.8176 1.70473 13.1441 1.96778 12.5387C2.23083 11.9332 2.68458 11.4416 3.59207 10.4584L10.5553 2.91409Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                              <path d="M9.75 3L15 8.25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                              <path d="M10.5 16.5H16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_7888_846">
-                                <rect width="18" height="18" fill="white" />
+                                <rect width="18" height="18" fill="white"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -603,70 +582,40 @@
                         </button>
                       </li>
                       <li>
-                        <button data-modal-target="convert-to-template" @click="close()"
-                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                          <svg
-                            class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out"
-                            xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path
-                              d="M1.5 13.5V4.5C1.5 3.25736 2.50736 2.25 3.75 2.25H5.25C6.49264 2.25 7.5 3.25736 7.5 4.5V13.5C7.5 14.7427 6.49264 15.75 5.25 15.75H3.75C2.50736 15.75 1.5 14.7427 1.5 13.5Z"
-                              stroke="currentColor" stroke-width="1.6"></path>
-                            <path
-                              d="M12 2.25H13.5C15.1568 2.25 16.5 3.59314 16.5 5.25V12.75C16.5 14.4068 15.1568 15.75 13.5 15.75H12"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
+                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" fill="none">
+                            <path d="M1.5 13.5V4.5C1.5 3.25736 2.50736 2.25 3.75 2.25H5.25C6.49264 2.25 7.5 3.25736 7.5 4.5V13.5C7.5 14.7427 6.49264 15.75 5.25 15.75H3.75C2.50736 15.75 1.5 14.7427 1.5 13.5Z" stroke="currentColor" stroke-width="1.6"></path>
+                            <path d="M12 2.25H13.5C15.1568 2.25 16.5 3.59314 16.5 5.25V12.75C16.5 14.4068 15.1568 15.75 13.5 15.75H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             </path>
-                            <path d="M7.5 9H13.5M11.25 11.25L13.5 9L11.25 6.75" stroke="currentColor" stroke-width="1.6"
-                              stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M7.5 9H13.5M11.25 11.25L13.5 9L11.25 6.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                           </svg>
                           Convert to Template
                         </button>
                       </li>
                       <li>
-                        <button
-                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
+                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
 
-                          <svg
-                            class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out"
-                            xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path
-                              d="M2.25 12.75C2.25 13.4475 2.25 13.7962 2.32667 14.0824C2.53472 14.8588 3.1412 15.4653 3.91766 15.6734C4.20379 15.75 4.55252 15.75 5.25 15.75H12.75C13.4475 15.75 13.7963 15.75 14.0824 15.6734C14.8588 15.4653 15.4653 14.8588 15.6734 14.0824C15.75 13.7962 15.75 13.4475 15.75 12.75"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" fill="none">
+                            <path d="M2.25 12.75C2.25 13.4475 2.25 13.7962 2.32667 14.0824C2.53472 14.8588 3.1412 15.4653 3.91766 15.6734C4.20379 15.75 4.55252 15.75 5.25 15.75H12.75C13.4475 15.75 13.7963 15.75 14.0824 15.6734C14.8588 15.4653 15.4653 14.8588 15.6734 14.0824C15.75 13.7962 15.75 13.4475 15.75 12.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             </path>
-                            <path
-                              d="M12.375 8.62503C12.375 8.62503 9.88938 12 8.99995 12C8.1106 12 5.625 8.62503 5.625 8.62503M8.99995 11.25V2.25"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12.375 8.62503C12.375 8.62503 9.88938 12 8.99995 12C8.1106 12 5.625 8.62503 5.625 8.62503M8.99995 11.25V2.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             </path>
                           </svg>
                           Download
                         </button>
                       </li>
                       <li>
-                        <button
-                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                          <svg
-                            class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out"
-                            xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
+                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" fill="none">
                             <g clip-path="url(#clip0_8174_5322)">
-                              <path
-                                d="M12.75 12.75H14C14.9346 12.75 15.4019 12.75 15.75 12.5491C15.978 12.4174 16.1674 12.228 16.299 12C16.5 11.6519 16.5 11.1846 16.5 10.25C16.5 8.3808 16.5 7.44615 16.0981 6.75C15.8348 6.29394 15.4561 5.91523 15 5.65193C14.3039 5.25 13.3692 5.25 11.5 5.25H6.5C4.63077 5.25 3.69615 5.25 3 5.65193C2.54394 5.91523 2.16523 6.29394 1.90193 6.75C1.5 7.44615 1.5 8.3808 1.5 10.25C1.5 11.1846 1.5 11.6519 1.70096 12C1.83262 12.228 2.02197 12.4174 2.25 12.5491C2.59808 12.75 3.06539 12.75 4 12.75H5.25"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                              <path
-                                d="M12.75 5.25V3.75C12.75 2.68934 12.75 2.15901 12.4205 1.82951C12.091 1.5 11.5607 1.5 10.5 1.5H7.5C6.43934 1.5 5.90901 1.5 5.57951 1.82951C5.25 2.15901 5.25 2.68934 5.25 3.75V5.25"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                              <path
-                                d="M12.75 10.5V14.25C12.75 15.3106 12.75 15.841 12.4205 16.1705C12.091 16.5 11.5607 16.5 10.5 16.5H7.5C6.43934 16.5 5.90901 16.5 5.57951 16.1705C5.25 15.841 5.25 15.3106 5.25 14.25V10.5H12.75Z"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                              <path
-                                d="M14.1562 7.6875H14.0625M14.25 7.6875C14.25 7.79107 14.1661 7.875 14.0625 7.875C13.9589 7.875 13.875 7.79107 13.875 7.6875C13.875 7.58393 13.9589 7.5 14.0625 7.5C14.1661 7.5 14.25 7.58393 14.25 7.6875Z"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                              <path d="M12.75 12.75H14C14.9346 12.75 15.4019 12.75 15.75 12.5491C15.978 12.4174 16.1674 12.228 16.299 12C16.5 11.6519 16.5 11.1846 16.5 10.25C16.5 8.3808 16.5 7.44615 16.0981 6.75C15.8348 6.29394 15.4561 5.91523 15 5.65193C14.3039 5.25 13.3692 5.25 11.5 5.25H6.5C4.63077 5.25 3.69615 5.25 3 5.65193C2.54394 5.91523 2.16523 6.29394 1.90193 6.75C1.5 7.44615 1.5 8.3808 1.5 10.25C1.5 11.1846 1.5 11.6519 1.70096 12C1.83262 12.228 2.02197 12.4174 2.25 12.5491C2.59808 12.75 3.06539 12.75 4 12.75H5.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.75 5.25V3.75C12.75 2.68934 12.75 2.15901 12.4205 1.82951C12.091 1.5 11.5607 1.5 10.5 1.5H7.5C6.43934 1.5 5.90901 1.5 5.57951 1.82951C5.25 2.15901 5.25 2.68934 5.25 3.75V5.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M12.75 10.5V14.25C12.75 15.3106 12.75 15.841 12.4205 16.1705C12.091 16.5 11.5607 16.5 10.5 16.5H7.5C6.43934 16.5 5.90901 16.5 5.57951 16.1705C5.25 15.841 5.25 15.3106 5.25 14.25V10.5H12.75Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M14.1562 7.6875H14.0625M14.25 7.6875C14.25 7.79107 14.1661 7.875 14.0625 7.875C13.9589 7.875 13.875 7.79107 13.875 7.6875C13.875 7.58393 13.9589 7.5 14.0625 7.5C14.1661 7.5 14.25 7.58393 14.25 7.6875Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_8174_5322">
-                                <rect width="18" height="18" fill="white" />
+                                <rect width="18" height="18" fill="white"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -674,21 +623,12 @@
                         </button>
                       </li>
                       <li>
-                        <button data-modal-target="Delete-workspace" @click="close()"
-                          class="group w-full  py-2 px-3 flex items-center gap-2 rounded-[2px] text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-Theme-Forground hover:text-Theme-black">
-                          <svg
-                            class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out"
-                            xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path
-                              d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                            <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6"
-                              stroke-linecap="round" />
-                            <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6"
-                              stroke-linecap="round" />
-                            <path
-                              d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                        <button data-modal-target="Delete-workspace" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
+                          <svg class="text-Theme-dark-gray group-hover:text-[#DC2626] transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" fill="none">
+                            <path d="M14.625 4.125L14.1602 11.6438C14.0414 13.5648 13.9821 14.5253 13.5006 15.2159C13.2625 15.5573 12.956 15.8455 12.6005 16.062C11.8816 16.5 10.9192 16.5 8.99452 16.5C7.06734 16.5 6.10372 16.5 5.38429 16.0612C5.0286 15.8443 4.722 15.5556 4.48401 15.2136C4.00266 14.5219 3.94459 13.5601 3.82846 11.6364L3.375 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                            <path d="M6.75 8.80078H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                            <path d="M7.875 11.7422H10.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                            <path d="M2.25 4.125H15.75M12.0416 4.125L11.5297 3.0688C11.1896 2.3672 11.0195 2.01639 10.7261 1.79761C10.6611 1.74908 10.5922 1.7059 10.5201 1.66852C10.1953 1.5 9.80542 1.5 9.02572 1.5C8.22645 1.5 7.82685 1.5 7.49662 1.67559C7.42343 1.71451 7.35359 1.75943 7.28783 1.80988C6.99109 2.03753 6.82533 2.40116 6.49381 3.12845L6.03955 4.125" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
                           </svg>
 
 
@@ -723,8 +663,11 @@
                   <img src="assets/images/avatar-5.png" alt="User" class="w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-white object-cover">
                 </div>
 
-                <div class="relative z-20 flex items-center justify-center w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-Theme-secondary-gray text-sm text-Theme-dark-gray">
-                  +8
+                <div class="relative z-20 flex items-center justify-center w-[34px] h-[34px] rounded-lg border-[1.5px] border-white bg-Theme-tertiary-gray text-sm text-Theme-dark-gray">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M8 3.33594V12.6706" stroke="#131211" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M12.6706 8H3.33594" stroke="#131211" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
                 </div>
               </button>
 
@@ -781,35 +724,43 @@
 
             </div>
 
-            <!--play button-->
-            <button
-              class="w-[34px] h-[34px] flex items-center justify-center rounded-lg bg-[#F6F6F6] p-[7px] transition-all duration-500 hover:bg-[#e4e4e4]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-                <path
-                  d="M11.1172 6.96262C10.852 7.96987 9.59924 8.68163 7.09349 10.1052C4.67122 11.4813 3.46012 12.1694 2.48409 11.8928C2.08057 11.7784 1.71291 11.5613 1.4164 11.2621C0.699219 10.5385 0.699219 9.13508 0.699219 6.32813C0.699219 3.52118 0.699219 2.1177 1.4164 1.39412C1.71291 1.09496 2.08057 0.877785 2.48409 0.76344C3.46012 0.486863 4.67122 1.17493 7.09349 2.55107C9.59924 3.9746 10.852 4.68638 11.1172 5.69363C11.2266 6.10943 11.2266 6.54682 11.1172 6.96262Z"
-                  stroke="#020012" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-             <!--share document dropdown -->
+            <!--share document dropdown -->
             <div x-data="dropdownComponent('invite-menu')" class="relative w-max z-30">
               <div x-show="isOpen" x-transition.opacity="" @click="close" class="fixed inset-0 bg-[rgba(0,0,0,0.14)] z-20 xl:hidden" style="display: none;"></div>
-              <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}" class="md:py-[7px] md:pl-3 md:pr-3.5 md:w-fit w-[34px] rounded-lg gap-1.5">
-                <span class="md:block hidden">Share</span>
-                <svg class="md:hidden block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_2873_328)">
-                <path d="M6.75 3.375C4.12832 4.27578 2.25 6.70631 2.25 9.56332C2.25 10.4684 2.4385 11.3307 2.77943 12.1151M11.25 3.375C13.8717 4.27578 15.75 6.70631 15.75 9.56332C15.75 10.3302 15.6146 11.0664 15.3659 11.7506M12.375 15.2472C11.3822 15.8055 10.2295 16.125 9 16.125C7.77053 16.125 6.61783 15.8055 5.625 15.2472" stroke="white" stroke-width="1.4"/>
-                <path d="M11.25 3.75C11.25 4.99264 10.2427 6 9 6C7.75732 6 6.75 4.99264 6.75 3.75C6.75 2.50736 7.75732 1.5 9 1.5C10.2427 1.5 11.25 2.50736 11.25 3.75Z" stroke="white" stroke-width="1.4"/>
-                <path d="M3.75 16.5C4.99264 16.5 6 15.4926 6 14.25C6 13.0074 4.99264 12 3.75 12C2.50736 12 1.5 13.0074 1.5 14.25C1.5 15.4926 2.50736 16.5 3.75 16.5Z" stroke="white" stroke-width="1.4"/>
-                <path d="M14.25 16.5C15.4926 16.5 16.5 15.4926 16.5 14.25C16.5 13.0074 15.4926 12 14.25 12C13.0074 12 12 13.0074 12 14.25C12 15.4926 13.0074 16.5 14.25 16.5Z" stroke="white" stroke-width="1.4"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_2873_328">
-                <rect width="18" height="18" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
+              <div class="flex items-center gap-[28px] bg-[#EDECE9] border border-Theme-tertiary-gray rounded-lg md:p-[2px] md:pl-2.5 shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)]">
+                <div class="flex items-center gap-1.5">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_9901_5161)">
+<path d="M8 1.41605C7.38755 1.14845 6.7111 1 6 1C3.23858 1 1 3.23858 1 6C1 8.7614 3.23858 11 6 11C8.7614 11 11 8.7614 11 6C11 5.83125 10.9917 5.66445 10.9753 5.5" stroke="#7D4BF2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 5.25L5.75 7L11 2" stroke="#7D4BF2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+<defs>
+<clipPath id="clip0_9901_5161">
+<rect width="12" height="12" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
 
-              </button>
+<span class="text-xs text-Theme-black leading-[14px] font-inter-display-medium">Saved Just Now</span>
+                </div>   
+                <button class="btn-blue-icon-text" @click="toggle" :class="{'bg-[#252250]': isOpen}">
+                    <span class="md:block hidden">Publish</span>
+                    <svg class="md:hidden block" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_2873_328)">
+                        <path d="M6.75 3.375C4.12832 4.27578 2.25 6.70631 2.25 9.56332C2.25 10.4684 2.4385 11.3307 2.77943 12.1151M11.25 3.375C13.8717 4.27578 15.75 6.70631 15.75 9.56332C15.75 10.3302 15.6146 11.0664 15.3659 11.7506M12.375 15.2472C11.3822 15.8055 10.2295 16.125 9 16.125C7.77053 16.125 6.61783 15.8055 5.625 15.2472" stroke="white" stroke-width="1.4"></path>
+                        <path d="M11.25 3.75C11.25 4.99264 10.2427 6 9 6C7.75732 6 6.75 4.99264 6.75 3.75C6.75 2.50736 7.75732 1.5 9 1.5C10.2427 1.5 11.25 2.50736 11.25 3.75Z" stroke="white" stroke-width="1.4"></path>
+                        <path d="M3.75 16.5C4.99264 16.5 6 15.4926 6 14.25C6 13.0074 4.99264 12 3.75 12C2.50736 12 1.5 13.0074 1.5 14.25C1.5 15.4926 2.50736 16.5 3.75 16.5Z" stroke="white" stroke-width="1.4"></path>
+                        <path d="M14.25 16.5C15.4926 16.5 16.5 15.4926 16.5 14.25C16.5 13.0074 15.4926 12 14.25 12C13.0074 12 12 13.0074 12 14.25C12 15.4926 13.0074 16.5 14.25 16.5Z" stroke="white" stroke-width="1.4"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_2873_328">
+                          <rect width="18" height="18" fill="white"></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+              </div>
+               
               <div x-ref="invite-menu" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" class="absolute right-0 p-2 mt-[15px] md:w-[440px] w-[350px] bg-gradient-gray rounded-10px p-[2px] z-30" style="overflow: hidden; transition: height 300ms; height: auto; display: none;">
                 <div class="flex flex-col gap-0.5 p-[14px]">
                   <h4 class="text-lg block text-Theme-black ">Share this document</h4>
@@ -861,7 +812,8 @@
                     <div class="flex flex-col gap-2 custom-scrollbar md:max-h-[390px] max-h-[328px] mr-[5px] pr-[5px]">
                       <!--members list-->
                       <div class="flex flex-col ">
-                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Who has access</h5>
+                        <h5 class="text-sm text-Theme-black font-inter-display-medium leading-[140%] px-2">Who has
+                          access</h5>
                         <ul class="flex flex-col  divide-y divide-[#EEEEEC] px-2">
                           <!--list-->
                           <li class=" flex items-center gap-2.5 w-full justify-between py-3 ">
@@ -1088,35 +1040,35 @@
               </div>
             </div>
             <!--send button-->
-            <button class="btn-purple-icon-text md:py-[7px] md:pl-3 md:pr-3.5 md:w-fit w-[34px] rounded-lg gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="btn-purple-icon-text gap-0">
+              <svg class="md:hidden block" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_8174_5284)">
-                  <path d="M5.53906 8.75L9.91406 4.375" stroke="white" stroke-width="1.4" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M4.67016 4.48195L8.94055 2.46358C10.7149 1.62492 11.6021 1.20559 12.168 1.62626C12.7339 2.04692 12.5722 3.0056 12.2489 4.92294L11.6918 8.22574C11.4804 9.47944 11.3747 10.1062 10.9075 10.3796C10.4402 10.6529 9.83328 10.443 8.61943 10.0231L4.90608 8.73872C2.63598 7.9535 1.50093 7.56091 1.45824 6.79056C1.41555 6.02021 2.50042 5.50747 4.67016 4.48195Z"
-                    stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M5.53906 9.03906V10.3384C5.53906 11.723 5.53906 12.4153 5.95334 12.5257C6.36762 12.6361 6.8039 12.0601 7.67645 10.908L8.16406 10.2057"
-                    stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M5.53906 8.75L9.91406 4.375" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M4.67016 4.48195L8.94055 2.46358C10.7149 1.62492 11.6021 1.20559 12.168 1.62626C12.7339 2.04692 12.5722 3.0056 12.2489 4.92294L11.6918 8.22574C11.4804 9.47944 11.3747 10.1062 10.9075 10.3796C10.4402 10.6529 9.83328 10.443 8.61943 10.0231L4.90608 8.73872C2.63598 7.9535 1.50093 7.56091 1.45824 6.79056C1.41555 6.02021 2.50042 5.50747 4.67016 4.48195Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M5.53906 9.03906V10.3384C5.53906 11.723 5.53906 12.4153 5.95334 12.5257C6.36762 12.6361 6.8039 12.0601 7.67645 10.908L8.16406 10.2057" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
                 </g>
                 <defs>
                   <clipPath id="clip0_8174_5284">
-                    <rect width="14" height="14" fill="white" />
+                    <rect width="14" height="14" fill="white"></rect>
                   </clipPath>
                 </defs>
               </svg>
 
               <span class="md:block hidden"> Send</span>
-
-              </button>
+              <span class="w-[1px] h-[18px] bg-[#B193F7] ml-5 mr-2"></span>
+              <span class="w-3.5 h-3.5 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9" fill="none">
+  <path d="M0.700195 0.703125L4.2002 4.20312L0.700195 7.70312" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              </span>
+            </button>
           </div>
         </div>
         <!--content-->
         <div x-data="{ rightPanelOpen: false }" class="relative max-[1370px]:gap-2 flex  h-[calc(100vh-75px)] overflow-auto [&::-webkit-scrollbar]:w-[4px]
 [&::-webkit-scrollbar-track]:bg-transparent
 [&::-webkit-scrollbar-thumb]:bg-transparent
-[&::-webkit-scrollbar-thumb]:rounded-full  lg:pl-5 lg:pr-4 px-1.5 pb-10" style="scrollbar-gutter: stable;">
+[&::-webkit-scrollbar-thumb]:rounded-full  lg:pl-3.5 lg:pr-3.5 px-1.5 pb-10" style="scrollbar-gutter: stable;">
 
           <!--document area-->
           <div class="flex-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -4399,51 +4351,34 @@
           </div>
 
           <!--right side wrapper-->
-          <div class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 hidden  md:flex items-start gap-0  ">
+          <div class="sticky max-[1300px]:fixed max-[1300px]:right-3.5 max-[1300px]:top-[70px] top-0 pt-3.5 hidden  md:flex items-start gap-0    ">
 
             <!--toolbar-->
-            <div class="bg-[#FAFAF9] min-w-[50px] border border-[#EEEEEC] rounded-10px p-1 ">
+           <div class="bg-white min-w-[50px] border border-Theme-tertiary-gray rounded-10px p-1 ">
               <ul class="flex flex-col gap-[2px] ">
                 <li class="relative">
 
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M2.08203 10.0026C2.08203 6.27065 2.08203 4.40468 3.2414 3.24531C4.40077 2.08594 6.26675 2.08594 9.9987 2.08594C13.7306 2.08594 15.5966 2.08594 16.756 3.24531C17.9154 4.40468 17.9154 6.27065 17.9154 10.0026C17.9154 13.7346 17.9154 15.6006 16.756 16.7599C15.5966 17.9193 13.7306 17.9193 9.9987 17.9193C6.26675 17.9193 4.40077 17.9193 3.2414 16.7599C2.08203 15.6006 2.08203 13.7346 2.08203 10.0026Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M10.0013 6.66406V13.3308M13.3346 9.99744H6.66797" stroke="currentColor"
-                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.08203 10.0026C2.08203 6.27065 2.08203 4.40468 3.2414 3.24531C4.40077 2.08594 6.26675 2.08594 9.9987 2.08594C13.7306 2.08594 15.5966 2.08594 16.756 3.24531C17.9154 4.40468 17.9154 6.27065 17.9154 10.0026C17.9154 13.7346 17.9154 15.6006 16.756 16.7599C15.5966 17.9193 13.7306 17.9193 9.9987 17.9193C6.26675 17.9193 4.40077 17.9193 3.2414 16.7599C2.08203 15.6006 2.08203 13.7346 2.08203 10.0026Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M10.0013 6.66406V13.3308M13.3346 9.99744H6.66797" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                   </button>
-                 
+
                 </li>
                 <li>
 
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M17.872 9.16927C17.9007 9.4431 17.9154 9.72119 17.9154 10.0026C17.9154 14.3749 14.3709 17.9193 9.9987 17.9193C8.64195 17.9193 7.36486 17.5779 6.2487 16.9765C4.69184 16.1376 3.64421 16.9175 2.7203 17.0574C2.58015 17.0787 2.44056 17.0278 2.34034 16.9276C2.18821 16.7754 2.15925 16.5402 2.24328 16.3421C2.60591 15.4874 2.93886 13.8678 2.48487 12.5026C2.22353 11.7168 2.08203 10.8762 2.08203 10.0026C2.08203 5.63035 5.62644 2.08594 9.9987 2.08594C10.2801 2.08594 10.5582 2.10062 10.832 2.12927"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M14.9731 2.10682C14.9788 2.07898 15.0186 2.07898 15.0243 2.10682C15.3197 3.55212 16.4492 4.68161 17.8945 4.97702C17.9224 4.98271 17.9224 5.02249 17.8945 5.02819C16.4492 5.32359 15.3197 6.45309 15.0243 7.89839C15.0186 7.92623 14.9788 7.92623 14.9731 7.89839C14.6777 6.45309 13.5482 5.32359 12.103 5.02819C12.0751 5.02249 12.0751 4.98271 12.103 4.97702C13.5482 4.68161 14.6777 3.55212 14.9731 2.10682Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M10.1034 9.9974H9.99928M6.76953 9.9974H6.66536M10.2076 9.9974C10.2076 10.1125 10.1144 10.2057 9.99928 10.2057C9.88428 10.2057 9.79095 10.1125 9.79095 9.9974C9.79095 9.88231 9.88428 9.78906 9.99928 9.78906C10.1144 9.78906 10.2076 9.88231 10.2076 9.9974ZM6.8737 9.9974C6.8737 10.1125 6.78042 10.2057 6.66536 10.2057C6.55031 10.2057 6.45703 10.1125 6.45703 9.9974C6.45703 9.88231 6.55031 9.78906 6.66536 9.78906C6.78042 9.78906 6.8737 9.88231 6.8737 9.9974Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.872 9.16927C17.9007 9.4431 17.9154 9.72119 17.9154 10.0026C17.9154 14.3749 14.3709 17.9193 9.9987 17.9193C8.64195 17.9193 7.36486 17.5779 6.2487 16.9765C4.69184 16.1376 3.64421 16.9175 2.7203 17.0574C2.58015 17.0787 2.44056 17.0278 2.34034 16.9276C2.18821 16.7754 2.15925 16.5402 2.24328 16.3421C2.60591 15.4874 2.93886 13.8678 2.48487 12.5026C2.22353 11.7168 2.08203 10.8762 2.08203 10.0026C2.08203 5.63035 5.62644 2.08594 9.9987 2.08594C10.2801 2.08594 10.5582 2.10062 10.832 2.12927" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M14.9731 2.10682C14.9788 2.07898 15.0186 2.07898 15.0243 2.10682C15.3197 3.55212 16.4492 4.68161 17.8945 4.97702C17.9224 4.98271 17.9224 5.02249 17.8945 5.02819C16.4492 5.32359 15.3197 6.45309 15.0243 7.89839C15.0186 7.92623 14.9788 7.92623 14.9731 7.89839C14.6777 6.45309 13.5482 5.32359 12.103 5.02819C12.0751 5.02249 12.0751 4.98271 12.103 4.97702C13.5482 4.68161 14.6777 3.55212 14.9731 2.10682Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M10.1034 9.9974H9.99928M6.76953 9.9974H6.66536M10.2076 9.9974C10.2076 10.1125 10.1144 10.2057 9.99928 10.2057C9.88428 10.2057 9.79095 10.1125 9.79095 9.9974C9.79095 9.88231 9.88428 9.78906 9.99928 9.78906C10.1144 9.78906 10.2076 9.88231 10.2076 9.9974ZM6.8737 9.9974C6.8737 10.1125 6.78042 10.2057 6.66536 10.2057C6.55031 10.2057 6.45703 10.1125 6.45703 9.9974C6.45703 9.88231 6.55031 9.78906 6.66536 9.78906C6.78042 9.78906 6.8737 9.88231 6.8737 9.9974Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
 
                   </button>
@@ -4451,99 +4386,59 @@
                 </li>
                 <li>
 
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)] "
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE] "
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M13.7513 16.6641V14.9727C13.7513 13.9375 13.2852 12.9223 12.3432 12.4929C11.1942 11.9691 9.81622 11.6641 8.33464 11.6641C6.85307 11.6641 5.47505 11.9691 4.32604 12.4929C3.38403 12.9223 2.91797 13.9375 2.91797 14.9727V16.6641"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M17.0833 16.6707V14.9793C17.0833 13.9441 16.6173 12.929 15.6753 12.4996C15.4581 12.4006 15.2327 12.3093 15 12.2266"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M8.33464 9.16927C9.94547 9.16927 11.2513 7.86344 11.2513 6.2526C11.2513 4.64177 9.94547 3.33594 8.33464 3.33594C6.72381 3.33594 5.41797 4.64177 5.41797 6.2526C5.41797 7.86344 6.72381 9.16927 8.33464 9.16927Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M12.5 3.45312C13.7048 3.81169 14.5833 4.92775 14.5833 6.24901C14.5833 7.57027 13.7048 8.68635 12.5 9.04493"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE] " xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M13.7513 16.6641V14.9727C13.7513 13.9375 13.2852 12.9223 12.3432 12.4929C11.1942 11.9691 9.81622 11.6641 8.33464 11.6641C6.85307 11.6641 5.47505 11.9691 4.32604 12.4929C3.38403 12.9223 2.91797 13.9375 2.91797 14.9727V16.6641" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M17.0833 16.6707V14.9793C17.0833 13.9441 16.6173 12.929 15.6753 12.4996C15.4581 12.4006 15.2327 12.3093 15 12.2266" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M8.33464 9.16927C9.94547 9.16927 11.2513 7.86344 11.2513 6.2526C11.2513 4.64177 9.94547 3.33594 8.33464 3.33594C6.72381 3.33594 5.41797 4.64177 5.41797 6.2526C5.41797 7.86344 6.72381 9.16927 8.33464 9.16927Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 3.45312C13.7048 3.81169 14.5833 4.92775 14.5833 6.24901C14.5833 7.57027 13.7048 8.68635 12.5 9.04493" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                   </button>
 
                 </li>
                 <li>
 
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE] active"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M2.08203 10.0026C2.08203 6.27065 2.08203 4.40468 3.2414 3.2453C4.40077 2.08594 6.26675 2.08594 9.9987 2.08594C13.7306 2.08594 15.5966 2.08594 16.756 3.2453C17.9154 4.40468 17.9154 6.27065 17.9154 10.0026C17.9154 13.7345 17.9154 15.6005 16.756 16.7599C15.5966 17.9193 13.7306 17.9193 9.9987 17.9193C6.26675 17.9193 4.40077 17.9193 3.2414 16.7599C2.08203 15.6005 2.08203 13.7345 2.08203 10.0026Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
-                      <path d="M13.3346 7.5C10.6816 7.5 9.32105 12.5173 6.66797 12.5173" stroke="currentColor"
-                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M12.9507 12.5173C12.2767 12.5173 11.9064 12.5173 11.6223 12.4165C11.461 12.3592 11.3141 12.2791 11.1887 12.1801C10.9682 12.0058 10.8472 11.756 10.6052 11.2566L9.39625 8.76075C9.15433 8.26133 9.03333 8.01159 8.81275 7.83727C8.6875 7.73826 8.54058 7.65815 8.37925 7.60086C8.09512 7.5 7.72479 7.5 7.05078 7.5"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE] active" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M2.08203 10.0026C2.08203 6.27065 2.08203 4.40468 3.2414 3.2453C4.40077 2.08594 6.26675 2.08594 9.9987 2.08594C13.7306 2.08594 15.5966 2.08594 16.756 3.2453C17.9154 4.40468 17.9154 6.27065 17.9154 10.0026C17.9154 13.7345 17.9154 15.6005 16.756 16.7599C15.5966 17.9193 13.7306 17.9193 9.9987 17.9193C6.26675 17.9193 4.40077 17.9193 3.2414 16.7599C2.08203 15.6005 2.08203 13.7345 2.08203 10.0026Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+                      <path d="M13.3346 7.5C10.6816 7.5 9.32105 12.5173 6.66797 12.5173" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.9507 12.5173C12.2767 12.5173 11.9064 12.5173 11.6223 12.4165C11.461 12.3592 11.3141 12.2791 11.1887 12.1801C10.9682 12.0058 10.8472 11.756 10.6052 11.2566L9.39625 8.76075C9.15433 8.26133 9.03333 8.01159 8.81275 7.83727C8.6875 7.73826 8.54058 7.65815 8.37925 7.60086C8.09512 7.5 7.72479 7.5 7.05078 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                   </button>
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M17.9154 10.0026H2.08203M9.9987 2.08594V17.9193" stroke="currentColor" stroke-width="1.6"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M4.58203 17.9193H15.4154C16.7961 17.9193 17.9154 16.8 17.9154 15.4193V4.58594C17.9154 3.20523 16.7961 2.08594 15.4154 2.08594H4.58203C3.20132 2.08594 2.08203 3.20523 2.08203 4.58594V15.4193C2.08203 16.8 3.20132 17.9193 4.58203 17.9193Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            : 'hover:bg-Theme-tertiary-gray'">
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M17.9154 10.0026H2.08203M9.9987 2.08594V17.9193" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M4.58203 17.9193H15.4154C16.7961 17.9193 17.9154 16.8 17.9154 15.4193V4.58594C17.9154 3.20523 16.7961 2.08594 15.4154 2.08594H4.58203C3.20132 2.08594 2.08203 3.20523 2.08203 4.58594V15.4193C2.08203 16.8 3.20132 17.9193 4.58203 17.9193Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                   </button>
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
-                            ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[#E9DFFD] active" :class="rightPanelOpen 
+                            ? 'bg-[#E9DFFD]' 
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <g clip-path="url(#clip0_8188_1215)">
-                        <path
-                          d="M18.3346 9.9974C18.3346 5.39502 14.6036 1.66406 10.0013 1.66406C5.39893 1.66406 1.66797 5.39502 1.66797 9.9974C1.66797 14.5997 5.39893 18.3307 10.0013 18.3307C10.7027 18.3307 11.668 18.4276 11.668 17.4974C11.668 16.9899 11.404 16.5984 11.1418 16.2094C10.7581 15.6403 10.3782 15.0768 10.8346 14.1641C11.3902 13.053 12.3161 13.053 13.7359 13.053C14.4458 13.053 15.2791 13.053 16.2513 12.9141C18.0021 12.664 18.3346 11.5877 18.3346 9.9974Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M7.91797 8.33594C8.60832 8.33594 9.16797 7.77629 9.16797 7.08594C9.16797 6.39558 8.60832 5.83594 7.91797 5.83594C7.22761 5.83594 6.66797 6.39558 6.66797 7.08594C6.66797 7.77629 7.22761 8.33594 7.91797 8.33594Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M13.75 9.16406C14.4404 9.16406 15 8.60442 15 7.91406C15 7.22371 14.4404 6.66406 13.75 6.66406C13.0596 6.66406 12.5 7.22371 12.5 7.91406C12.5 8.60442 13.0596 9.16406 13.75 9.16406Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M5.9375 12.4974H5.83333M6.04167 12.4974C6.04167 12.6125 5.94839 12.7057 5.83333 12.7057C5.71828 12.7057 5.625 12.6125 5.625 12.4974C5.625 12.3823 5.71828 12.2891 5.83333 12.2891C5.94839 12.2891 6.04167 12.3823 6.04167 12.4974Z"
-                          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M18.3346 9.9974C18.3346 5.39502 14.6036 1.66406 10.0013 1.66406C5.39893 1.66406 1.66797 5.39502 1.66797 9.9974C1.66797 14.5997 5.39893 18.3307 10.0013 18.3307C10.7027 18.3307 11.668 18.4276 11.668 17.4974C11.668 16.9899 11.404 16.5984 11.1418 16.2094C10.7581 15.6403 10.3782 15.0768 10.8346 14.1641C11.3902 13.053 12.3161 13.053 13.7359 13.053C14.4458 13.053 15.2791 13.053 16.2513 12.9141C18.0021 12.664 18.3346 11.5877 18.3346 9.9974Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M7.91797 8.33594C8.60832 8.33594 9.16797 7.77629 9.16797 7.08594C9.16797 6.39558 8.60832 5.83594 7.91797 5.83594C7.22761 5.83594 6.66797 6.39558 6.66797 7.08594C6.66797 7.77629 7.22761 8.33594 7.91797 8.33594Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M13.75 9.16406C14.4404 9.16406 15 8.60442 15 7.91406C15 7.22371 14.4404 6.66406 13.75 6.66406C13.0596 6.66406 12.5 7.22371 12.5 7.91406C12.5 8.60442 13.0596 9.16406 13.75 9.16406Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M5.9375 12.4974H5.83333M6.04167 12.4974C6.04167 12.6125 5.94839 12.7057 5.83333 12.7057C5.71828 12.7057 5.625 12.6125 5.625 12.4974C5.625 12.3823 5.71828 12.2891 5.83333 12.2891C5.94839 12.2891 6.04167 12.3823 6.04167 12.4974Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                       </g>
                       <defs>
                         <clipPath id="clip0_8188_1215">
-                          <rect width="20" height="20" fill="white" />
+                          <rect width="20" height="20" fill="white"></rect>
                         </clipPath>
                       </defs>
                     </svg>
@@ -4551,63 +4446,42 @@
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M10 6.66406V9.9974L12.3364 11.2474" stroke="currentColor" stroke-width="1.6"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M18.3346 11.6417V8.3636C15.9541 8.3636 14.4061 5.77795 15.6113 3.72503L12.7246 2.08602C11.5045 4.16431 8.49947 4.16423 7.27933 2.08594L4.39258 3.72495C5.59785 5.7779 4.04858 8.3636 1.66797 8.3636V11.6417C4.04854 11.6417 5.59651 14.2274 4.39126 16.2803L7.27801 17.9193C8.49872 15.8399 11.5051 15.8399 12.7259 17.9192L15.6126 16.2802C14.4075 14.2273 15.9541 11.6417 18.3346 11.6417Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M10 6.66406V9.9974L12.3364 11.2474" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M18.3346 11.6417V8.3636C15.9541 8.3636 14.4061 5.77795 15.6113 3.72503L12.7246 2.08602C11.5045 4.16431 8.49947 4.16423 7.27933 2.08594L4.39258 3.72495C5.59785 5.7779 4.04858 8.3636 1.66797 8.3636V11.6417C4.04854 11.6417 5.59651 14.2274 4.39126 16.2803L7.27801 17.9193C8.49872 15.8399 11.5051 15.8399 12.7259 17.9192L15.6126 16.2802C14.4075 14.2273 15.9541 11.6417 18.3346 11.6417Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                   </button>
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M6.66797 11.2526H13.3346M6.66797 7.08594H10.0013" stroke="currentColor"
-                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M5.08364 15.8359C4.00022 15.7294 3.18859 15.4039 2.64428 14.8596C1.66797 13.8834 1.66797 12.3119 1.66797 9.16927V8.7526C1.66797 5.6099 1.66797 4.03856 2.64428 3.06225C3.62059 2.08594 5.19194 2.08594 8.33464 2.08594H11.668C14.8106 2.08594 16.3821 2.08594 17.3583 3.06225C18.3346 4.03856 18.3346 5.6099 18.3346 8.7526V9.16927C18.3346 12.3119 18.3346 13.8834 17.3583 14.8596C16.3821 15.8359 14.8106 15.8359 11.668 15.8359C11.2009 15.8464 10.8289 15.8819 10.4635 15.9651C9.4648 16.195 8.54005 16.706 7.62619 17.1517C6.32404 17.7866 5.67297 18.1041 5.26438 17.8069C4.48271 17.2247 5.24675 15.4209 5.41797 14.5859"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M6.66797 11.2526H13.3346M6.66797 7.08594H10.0013" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M5.08364 15.8359C4.00022 15.7294 3.18859 15.4039 2.64428 14.8596C1.66797 13.8834 1.66797 12.3119 1.66797 9.16927V8.7526C1.66797 5.6099 1.66797 4.03856 2.64428 3.06225C3.62059 2.08594 5.19194 2.08594 8.33464 2.08594H11.668C14.8106 2.08594 16.3821 2.08594 17.3583 3.06225C18.3346 4.03856 18.3346 5.6099 18.3346 8.7526V9.16927C18.3346 12.3119 18.3346 13.8834 17.3583 14.8596C16.3821 15.8359 14.8106 15.8359 11.668 15.8359C11.2009 15.8464 10.8289 15.8819 10.4635 15.9651C9.4648 16.195 8.54005 16.706 7.62619 17.1517C6.32404 17.7866 5.67297 18.1041 5.26438 17.8069C4.48271 17.2247 5.24675 15.4209 5.41797 14.5859" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
                     </svg>
                   </button>
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <g clip-path="url(#clip0_8188_1229)">
-                        <path
-                          d="M15.7947 7.16954L17.8864 7.0422C16.387 3.08471 12.0822 0.830658 7.88497 1.95135C3.41462 3.14498 0.759326 7.71496 1.9542 12.1586C3.14906 16.6024 7.74162 19.237 12.212 18.0435C15.5312 17.1572 17.8497 14.4096 18.3347 11.2344"
-                          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                        <path d="M10 6.66406V9.99738L11.6667 11.664" stroke="currentColor" stroke-width="1.6"
-                          stroke-linecap="round" />
+                        <path d="M15.7947 7.16954L17.8864 7.0422C16.387 3.08471 12.0822 0.830658 7.88497 1.95135C3.41462 3.14498 0.759326 7.71496 1.9542 12.1586C3.14906 16.6024 7.74162 19.237 12.212 18.0435C15.5312 17.1572 17.8497 14.4096 18.3347 11.2344" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                        <path d="M10 6.66406V9.99738L11.6667 11.664" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
                       </g>
                       <defs>
                         <clipPath id="clip0_8188_1229">
-                          <rect width="20" height="20" fill="white" />
+                          <rect width="20" height="20" fill="white"></rect>
                         </clipPath>
                       </defs>
                     </svg>
@@ -4615,32 +4489,20 @@
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <g clip-path="url(#clip0_8188_1233)">
-                        <path
-                          d="M7.5 4.16406C7.5 2.98555 7.5 2.3963 7.86612 2.03018C8.23223 1.66406 8.8215 1.66406 10 1.66406C11.1785 1.66406 11.7678 1.66406 12.1339 2.03018C12.5 2.3963 12.5 2.98555 12.5 4.16406C12.5 5.34257 12.5 5.93183 12.1339 6.29795C11.7678 6.66406 11.1785 6.66406 10 6.66406C8.8215 6.66406 8.23223 6.66406 7.86612 6.29795C7.5 5.93183 7.5 5.34257 7.5 4.16406Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M1.66797 15.8359C1.66797 14.6574 1.66797 14.0682 2.03409 13.702C2.4002 13.3359 2.98946 13.3359 4.16797 13.3359C5.34648 13.3359 5.93574 13.3359 6.30185 13.702C6.66797 14.0682 6.66797 14.6574 6.66797 15.8359C6.66797 17.0144 6.66797 17.6037 6.30185 17.9699C5.93574 18.3359 5.34648 18.3359 4.16797 18.3359C2.98946 18.3359 2.4002 18.3359 2.03409 17.9699C1.66797 17.6037 1.66797 17.0144 1.66797 15.8359Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M13.332 15.8359C13.332 14.6574 13.332 14.0682 13.6981 13.702C14.0643 13.3359 14.6535 13.3359 15.832 13.3359C17.0105 13.3359 17.5998 13.3359 17.9659 13.702C18.332 14.0682 18.332 14.6574 18.332 15.8359C18.332 17.0144 18.332 17.6037 17.9659 17.9699C17.5998 18.3359 17.0105 18.3359 15.832 18.3359C14.6535 18.3359 14.0643 18.3359 13.6981 17.9699C13.332 17.6037 13.332 17.0144 13.332 15.8359Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M10.0013 6.66406V7.4974M10.0013 7.4974C10.0013 8.27396 10.0013 8.66223 10.1493 8.96856C10.3466 9.3769 10.7252 9.7014 11.2016 9.87056C11.559 9.9974 12.012 9.9974 12.918 9.9974C13.824 9.9974 14.277 9.9974 14.6343 10.1242C15.1107 10.2934 15.4893 10.6179 15.6866 11.0262C15.8346 11.3326 15.8346 11.7208 15.8346 12.4974V13.3307M10.0013 7.4974C10.0013 8.27396 10.0013 8.66223 9.8533 8.96856C9.65597 9.3769 9.27739 9.7014 8.80097 9.87056C8.44364 9.9974 7.99064 9.9974 7.08464 9.9974C6.17864 9.9974 5.72564 9.9974 5.36831 10.1242C4.89186 10.2934 4.51333 10.6179 4.31598 11.0262C4.16797 11.3326 4.16797 11.7208 4.16797 12.4974V13.3307"
-                          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7.5 4.16406C7.5 2.98555 7.5 2.3963 7.86612 2.03018C8.23223 1.66406 8.8215 1.66406 10 1.66406C11.1785 1.66406 11.7678 1.66406 12.1339 2.03018C12.5 2.3963 12.5 2.98555 12.5 4.16406C12.5 5.34257 12.5 5.93183 12.1339 6.29795C11.7678 6.66406 11.1785 6.66406 10 6.66406C8.8215 6.66406 8.23223 6.66406 7.86612 6.29795C7.5 5.93183 7.5 5.34257 7.5 4.16406Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M1.66797 15.8359C1.66797 14.6574 1.66797 14.0682 2.03409 13.702C2.4002 13.3359 2.98946 13.3359 4.16797 13.3359C5.34648 13.3359 5.93574 13.3359 6.30185 13.702C6.66797 14.0682 6.66797 14.6574 6.66797 15.8359C6.66797 17.0144 6.66797 17.6037 6.30185 17.9699C5.93574 18.3359 5.34648 18.3359 4.16797 18.3359C2.98946 18.3359 2.4002 18.3359 2.03409 17.9699C1.66797 17.6037 1.66797 17.0144 1.66797 15.8359Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M13.332 15.8359C13.332 14.6574 13.332 14.0682 13.6981 13.702C14.0643 13.3359 14.6535 13.3359 15.832 13.3359C17.0105 13.3359 17.5998 13.3359 17.9659 13.702C18.332 14.0682 18.332 14.6574 18.332 15.8359C18.332 17.0144 18.332 17.6037 17.9659 17.9699C17.5998 18.3359 17.0105 18.3359 15.832 18.3359C14.6535 18.3359 14.0643 18.3359 13.6981 17.9699C13.332 17.6037 13.332 17.0144 13.332 15.8359Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M10.0013 6.66406V7.4974M10.0013 7.4974C10.0013 8.27396 10.0013 8.66223 10.1493 8.96856C10.3466 9.3769 10.7252 9.7014 11.2016 9.87056C11.559 9.9974 12.012 9.9974 12.918 9.9974C13.824 9.9974 14.277 9.9974 14.6343 10.1242C15.1107 10.2934 15.4893 10.6179 15.6866 11.0262C15.8346 11.3326 15.8346 11.7208 15.8346 12.4974V13.3307M10.0013 7.4974C10.0013 8.27396 10.0013 8.66223 9.8533 8.96856C9.65597 9.3769 9.27739 9.7014 8.80097 9.87056C8.44364 9.9974 7.99064 9.9974 7.08464 9.9974C6.17864 9.9974 5.72564 9.9974 5.36831 10.1242C4.89186 10.2934 4.51333 10.6179 4.31598 11.0262C4.16797 11.3326 4.16797 11.7208 4.16797 12.4974V13.3307" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                       </g>
                       <defs>
                         <clipPath id="clip0_8188_1233">
-                          <rect width="20" height="20" fill="white" />
+                          <rect width="20" height="20" fill="white"></rect>
                         </clipPath>
                       </defs>
                     </svg>
@@ -4648,52 +4510,33 @@
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)]"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M14.375 2.5V8.75M17.5 5.625H11.25" stroke="currentColor" stroke-width="1.6"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M11.4086 16.2139C11.25 15.8311 11.25 15.3457 11.25 14.375C11.25 13.4042 11.25 12.9189 11.4086 12.5361C11.62 12.0256 12.0256 11.62 12.5361 11.4086C12.9189 11.25 13.4042 11.25 14.375 11.25C15.3457 11.25 15.8311 11.25 16.2139 11.4086C16.7244 11.62 17.13 12.0256 17.3414 12.5361C17.5 12.9189 17.5 13.4042 17.5 14.375C17.5 15.3457 17.5 15.8311 17.3414 16.2139C17.13 16.7244 16.7244 17.13 16.2139 17.3414C15.8311 17.5 15.3457 17.5 14.375 17.5C13.4042 17.5 12.9189 17.5 12.5361 17.3414C12.0256 17.13 11.62 16.7244 11.4086 16.2139Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M2.65858 16.2139C2.5 15.8311 2.5 15.3457 2.5 14.375C2.5 13.4042 2.5 12.9189 2.65858 12.5361C2.87003 12.0256 3.2756 11.62 3.78608 11.4086C4.16893 11.25 4.65429 11.25 5.625 11.25C6.59571 11.25 7.08107 11.25 7.46392 11.4086C7.9744 11.62 8.38 12.0256 8.59142 12.5361C8.75 12.9189 8.75 13.4042 8.75 14.375C8.75 15.3457 8.75 15.8311 8.59142 16.2139C8.38 16.7244 7.9744 17.13 7.46392 17.3414C7.08107 17.5 6.59571 17.5 5.625 17.5C4.65429 17.5 4.16893 17.5 3.78608 17.3414C3.2756 17.13 2.87003 16.7244 2.65858 16.2139Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M2.65858 7.46392C2.5 7.08107 2.5 6.59571 2.5 5.625C2.5 4.65429 2.5 4.16893 2.65858 3.78608C2.87003 3.2756 3.2756 2.87003 3.78608 2.65858C4.16893 2.5 4.65429 2.5 5.625 2.5C6.59571 2.5 7.08107 2.5 7.46392 2.65858C7.9744 2.87003 8.38 3.2756 8.59142 3.78608C8.75 4.16893 8.75 4.65429 8.75 5.625C8.75 6.59571 8.75 7.08107 8.59142 7.46392C8.38 7.9744 7.9744 8.38 7.46392 8.59142C7.08107 8.75 6.59571 8.75 5.625 8.75C4.65429 8.75 4.16893 8.75 3.78608 8.59142C3.2756 8.38 2.87003 7.9744 2.65858 7.46392Z"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M14.375 2.5V8.75M17.5 5.625H11.25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M11.4086 16.2139C11.25 15.8311 11.25 15.3457 11.25 14.375C11.25 13.4042 11.25 12.9189 11.4086 12.5361C11.62 12.0256 12.0256 11.62 12.5361 11.4086C12.9189 11.25 13.4042 11.25 14.375 11.25C15.3457 11.25 15.8311 11.25 16.2139 11.4086C16.7244 11.62 17.13 12.0256 17.3414 12.5361C17.5 12.9189 17.5 13.4042 17.5 14.375C17.5 15.3457 17.5 15.8311 17.3414 16.2139C17.13 16.7244 16.7244 17.13 16.2139 17.3414C15.8311 17.5 15.3457 17.5 14.375 17.5C13.4042 17.5 12.9189 17.5 12.5361 17.3414C12.0256 17.13 11.62 16.7244 11.4086 16.2139Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M2.65858 16.2139C2.5 15.8311 2.5 15.3457 2.5 14.375C2.5 13.4042 2.5 12.9189 2.65858 12.5361C2.87003 12.0256 3.2756 11.62 3.78608 11.4086C4.16893 11.25 4.65429 11.25 5.625 11.25C6.59571 11.25 7.08107 11.25 7.46392 11.4086C7.9744 11.62 8.38 12.0256 8.59142 12.5361C8.75 12.9189 8.75 13.4042 8.75 14.375C8.75 15.3457 8.75 15.8311 8.59142 16.2139C8.38 16.7244 7.9744 17.13 7.46392 17.3414C7.08107 17.5 6.59571 17.5 5.625 17.5C4.65429 17.5 4.16893 17.5 3.78608 17.3414C3.2756 17.13 2.87003 16.7244 2.65858 16.2139Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M2.65858 7.46392C2.5 7.08107 2.5 6.59571 2.5 5.625C2.5 4.65429 2.5 4.16893 2.65858 3.78608C2.87003 3.2756 3.2756 2.87003 3.78608 2.65858C4.16893 2.5 4.65429 2.5 5.625 2.5C6.59571 2.5 7.08107 2.5 7.46392 2.65858C7.9744 2.87003 8.38 3.2756 8.59142 3.78608C8.75 4.16893 8.75 4.65429 8.75 5.625C8.75 6.59571 8.75 7.08107 8.59142 7.46392C8.38 7.9744 7.9744 8.38 7.46392 8.59142C7.08107 8.75 6.59571 8.75 5.625 8.75C4.65429 8.75 4.16893 8.75 3.78608 8.59142C3.2756 8.38 2.87003 7.9744 2.65858 7.46392Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
                   </button>
 
                 </li>
                 <li>
-                  <button @click="rightPanelOpen = !rightPanelOpen"
-                    class="group w-[42px] h-[42px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-[#EEEEEC] [&.active]:bg-[rgba(142,94,254,0.14)] active"
-                    :class="rightPanelOpen 
+                  <button @click="rightPanelOpen = !rightPanelOpen" class="group w-[40px] h-[40px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-500 hover:bg-Theme-tertiary-gray [&amp;.active]:bg-[rgba(142,94,254,0.14)]" :class="rightPanelOpen 
                             ? 'bg-[rgba(142,94,254,0.14)]' 
-                            : 'hover:bg-[#EEEEEC]'">
+                            : 'hover:bg-Theme-tertiary-gray'">
 
-                    <svg
-                      class="text-Theme-dark-gray transition-all duration-500 group-hover:text-Theme-black group-[&.active]:text-[#8E5EFE]"
-                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg class="text-Theme-medium-gray transition-all duration-500 group-hover:text-Theme-black group-[&amp;.active]:text-[#8E5EFE]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <g clip-path="url(#clip0_8188_1245)">
-                        <path
-                          d="M18.3346 9.9974C18.3346 14.5997 14.6036 18.3307 10.0013 18.3307C5.39893 18.3307 1.66797 14.5997 1.66797 9.9974C1.66797 5.39502 5.39893 1.66406 10.0013 1.66406C14.6036 1.66406 18.3346 5.39502 18.3346 9.9974Z"
-                          stroke="currentColor" stroke-width="1.6" />
-                        <path
-                          d="M12.2578 8.38067C12.1753 7.74512 11.4455 6.71827 10.1333 6.71824C8.60868 6.71822 7.96715 7.56263 7.83697 7.98484C7.63389 8.54958 7.6745 9.71067 9.4616 9.83725C11.6955 9.99558 12.5904 10.2593 12.4766 11.6264C12.3627 12.9935 11.1174 13.2889 10.1333 13.2572C9.14918 13.2256 7.53905 12.7735 7.47656 11.5575M9.97718 5.82812V6.72127M9.97718 13.249V14.1614"
-                          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                        <path d="M18.3346 9.9974C18.3346 14.5997 14.6036 18.3307 10.0013 18.3307C5.39893 18.3307 1.66797 14.5997 1.66797 9.9974C1.66797 5.39502 5.39893 1.66406 10.0013 1.66406C14.6036 1.66406 18.3346 5.39502 18.3346 9.9974Z" stroke="currentColor" stroke-width="1.6"></path>
+                        <path d="M12.2578 8.38067C12.1753 7.74512 11.4455 6.71827 10.1333 6.71824C8.60868 6.71822 7.96715 7.56263 7.83697 7.98484C7.63389 8.54958 7.6745 9.71067 9.4616 9.83725C11.6955 9.99558 12.5904 10.2593 12.4766 11.6264C12.3627 12.9935 11.1174 13.2889 10.1333 13.2572C9.14918 13.2256 7.53905 12.7735 7.47656 11.5575M9.97718 5.82812V6.72127M9.97718 13.249V14.1614" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
                       </g>
                       <defs>
                         <clipPath id="clip0_8188_1245">
-                          <rect width="20" height="20" fill="white" />
+                          <rect width="20" height="20" fill="white"></rect>
                         </clipPath>
                       </defs>
                     </svg>
@@ -4707,39 +4550,36 @@
             <!--right panel-->
             <div class="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
              :class="rightPanelOpen
-                ? 'w-[350px] min-[1650px]:w-[420px] opacity-100 translate-x-0 ml-1'
-                : 'w-[350px] opacity-100 min-[1650px]:w-[420px] translate-x-0 ml-1'" style="will-change: width, transform;">
+                ? 'w-[350px] min-[1650px]:w-[380px] opacity-100 translate-x-0 ml-[7px]'
+                : 'w-[350px] opacity-100 min-[1650px]:w-[380px] translate-x-0 ml-[7px]'" style="will-change: width, transform;">
             
               <div class="w-full">
 
-                <div class="bg-[#FAFAF9] p-1 rounded-[12px] h-[calc(100vh-95px)] min-[1200px]:h-[calc(100vh-100px)] overflow-hidden">
+                <div class="bg-Theme-panel-bg border border-Theme-tertiary-gray shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] rounded-[12px] h-[calc(100vh-97px)] min-[1200px]:h-[calc(100vh-102px)] ">
 
                   <!--panel header-->
-                  <div class="flex items-center justify-between bg-transparent pb-2 pt-1 pl-4 pr-1.5">
+                  
+<div class="flex items-center justify-between bg-transparent pb-2 pt-2 px-2 pl-4">
 
-                    <h3 class="text-lg font-inter-display-medium leading-[26px] text-Theme-black">
+                    <h3 class="text-base font-inter-display-medium leading-[26px] text-Theme-black">
                       Payment Request
                     </h3>
 
-                    <button @click="rightPanelOpen = false"
-                      class="w-8 h-8 rounded-md hover:bg-[#EEEEEC] transition-all duration-500 flex items-center justify-center">
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.60156 0.601562L0.602103 8.60103M8.60103 8.60156L0.601562 0.602129" stroke="black"
-                          stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
+                   <button @click="rightPanelOpen = false" class="w-[28px] h-[28px] rounded-lg hover:bg-Theme-tertiary-gray transition-all duration-500 flex items-center justify-center">
+                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.60156 0.599976L0.602103 8.59944M8.60103 8.59998L0.601562 0.600542" stroke="#131211" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
 
                     </button>
 
                   </div>
-
                   <!--panel body-->
                  <div class="bg-white rounded-[12px] w-full pr-[2px] py-[2px] h-[calc(100%-44px)]">
                     <div :class="rightPanelOpen
             ? 'opacity-100 transition-opacity duration-200 delay-200'
             : 'opacity-0 transition-opacity duration-100'" 
-                    class=" h-[calc(100vh-190px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&::-webkit-scrollbar-thumb]:rounded-[3px] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-200 delay-200" >
-                     <!--content-->
-                     <div class="p-3.5  flex flex-col gap-3.5">
+                    class=" h-[calc(100vh-180px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&::-webkit-scrollbar-thumb]:rounded-[3px] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-100" >
+                       <div class="p-3.5  flex flex-col gap-3.5">
                         <div class="flex flex-col  gap-2  ">
                           <h5 class="text-sm leading-[22px] font-inter-display-medium text-Theme-light-gray">
                             Payment Type</h5>
@@ -4896,13 +4736,10 @@
                             
                             </div>
                     </div>
-                    
-                  </div>
-<!--button-->
-                    <div class="flex items-center gap-2 sticky bottom-3.5 left-0 right-0 mx-auto w-[calc(100%-28px)]">
-                      <button class=" flex justify-center btn-gray   py-2 px-3 leading-5 rounded-lg h-[38px] w-1/2">Cancel</button>
-                      <button class=" flex justify-center btn-purple   py-2 px-3 leading-5 rounded-lg h-[38px] w-1/2">Add Payment</button>
                     </div>
+                    <button data-modal-target="add-detail" class="sticky bottom-3.5 flex justify-center btn-purple w-[calc(100%-28px)] left-0 right-0 mx-auto py-2 px-3 leading-5 rounded-lg h-[38px]">Add New Recipient</button>
+                  </div>
+
                 </div>
 
               </div>

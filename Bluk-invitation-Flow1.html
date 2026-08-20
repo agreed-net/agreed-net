@@ -27,7 +27,7 @@
               </svg>
             </button>
             <!--breadcrumbs-->
-            <ul class="flex items-center gap-3.5 bg-Theme-tertiary-gray rounded-lg py-[2px] px-3.5 h-[34px]">
+            <ul class="flex items-center gap-3.5 bg-Theme-panel-bg rounded-lg py-[2px] px-3.5 h-[34px]">
               
                 <a href="#" class="text-sm font-inter-display-medium leading-4 text-Theme-dark-gray py-[5px] transition-all duration-500 hover:text-Theme-purple">Document</a>
               
@@ -98,7 +98,7 @@
             <!--middle start-->
             <div class="xl:pt-[56px] lg:pt-10 pt-2 relative min-h-full w-full">
               <div class="min-[1500px]:max-w-[670px] min-[990px]:max-w-[580px] max-w-full mx-auto">
-                <div class="flex flex-col gap-3 border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
+                <div class="flex flex-col gap-2 border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
                   <h3 class="text-[26px] font-inter-display-medium leading-8 text-Theme-black">Invite Bulk</h3>
                   <span class="text-base font-inter-display-medium leading-[22px] text-Theme-dark-gray">Send invitations to many recipients in one step.</span>
                 </div>
@@ -169,8 +169,8 @@
                           </div>
                   </div>
                 </div>
-                 <div class="flex flex-col gap-3.5 w-full border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
-                    <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Recipient Email</label>
+                 <div class="flex flex-col gap-2 w-full border-b border-Theme-tertiary-gray mb-[18px] pb-[18px]">
+                    <label class="text-sm font-inter-display-medium text-Theme-black leading-[16px]">Recipient Email</label>
                       <div class="flex items-center gap-[18px]">
                           <input type="email" id="email" name="email" placeholder="Email" value="Email"
                           class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
@@ -186,8 +186,8 @@
 
                     
                   </div>
-                   <div class="flex flex-col gap-3.5 w-full ">
-                    <label class="text-base font-inter-display-medium text-Theme-black leading-[22px]">Each document copy will be named</label>
+                   <div class="flex flex-col gap-2 w-full ">
+                    <label class="text-sm font-inter-display-medium text-Theme-black leading-[16px]">Each document copy will be named</label>
                       <div class="flex items-center gap-[18px]">
                           <input type="email" id="email" name="email" placeholder="Email" value="Service Agreement - Marketing Project - {{recipient_email}}"
                           class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500"
@@ -234,11 +234,12 @@
 
                   <!--panel body-->
                   <div class="bg-white rounded-[12px] w-full pr-[2px] py-[2px] h-[calc(100%-44px)]">
-                    <div class="h-[calc(100vh-190px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col [&amp;::-webkit-scrollbar]:w-[2px] [&amp;::-webkit-scrollbar-track]:bg-transparent [&amp;::-webkit-scrollbar-thumb]:bg-[#EEEEEC] [&amp;::-webkit-scrollbar-thumb]:rounded-[3px] w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-200 delay-200" :class="rightPanelOpen
+                    <div class="h-[calc(100vh-190px)] pb-14 relative overflow-y-auto overscroll-contain flex flex-col custom-scroll-gap w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] opacity-100 transition-opacity duration-200 delay-200" :class="rightPanelOpen
             ? 'opacity-100 transition-opacity duration-200 delay-200'
             : 'opacity-0 transition-opacity duration-100'">
                       <!--content-->
                       <div class="p-4  border-b border-Theme-tertiary-gray">
+                        <h4 class="text-base font-inter-display-semibold leading-[22px] text-Theme-black mb-4">Security & Reminders</h4>
                         <div class="flex flex-col  gap-2 mb-5 ">
                           <h5 class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">
                             Authentication Type</h5>
@@ -279,21 +280,7 @@
 
                         </div>
                         <div class="flex flex-col gap-3.5">
-                          <!--checkbox main-->
-                          <label class="flex items-center gap-2 cursor-pointer select-none relative cursor-pointer mb-1.5">
-                            <!-- Checkbox -->
-                            <input type="checkbox" class="peer appearance-none w-[15.83px] h-[15.83px] bg-transparent border-[1.2px] border-Theme-dark-gray rounded-[4px] checked:bg-[#7D4BF2] checked:border-[#8E5EFE] relative  cursor-pointer">
-                            <!-- SVG Checkmark -->
-                            <div class="absolute w-[10px] h-[12px] left-[3px] z-10 pointer-events-none checkmark flex items-center justify-center">
-                              <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.599609 3.22461L2.47461 5.09961L6.59961 0.599609" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                            </div>
-                            <!-- Label text -->
-                            <span class="peer-checked:text-Theme-black text-base font-inter-display-medium  leading-5 text-Theme-dark-gray transition-all duration-300">
-                              Set expiration &amp; reminders
-                            </span>
-                          </label>
+                        
                           <!--enabled toggle-->
                           <div class="flex flex-col  border-b border-Theme-tertiary-gray  pb-3.5">
                             <!--toggle wrap-->
@@ -329,7 +316,7 @@
                                 <div class="flex items-center gap-3">
                                   <!--input-->
                                   <div class="flex flex-col gap-2 shrink-0 w-[220px]">
-                                    <label for="expired-on" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px]">Expires on</label>
+                                    <label for="expired-on" class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">Expires on</label>
 
                                     <div class="relative">
                                       <input type="text" id="expired-on" name="expired-on" placeholder="Enter Date" value="30 June, 2026" class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
@@ -346,7 +333,7 @@
                                   </div>
                                   <!--input-->
                                   <div class="flex flex-col gap-2 w-full">
-                                    <label for="reminder" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px]">Reminders
+                                    <label for="reminder" class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">Reminders
                                       </label>
                                       <div class="w-full py-[13px] px-4  border border-Theme-tertiary-gray bg-white rounded-lg hover:border-[#999894] h-[38px] hover:bg-white flex items-center justify-between transition-all duration-500">
                                          <input type="text" id="reminder" name="reminder" value="1" class="w-[38px] text-sm font-inter-display-medium leading-[22px] bg-transparent text-Theme-black   focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
@@ -408,7 +395,7 @@
                                <div class="flex items-center gap-3">
                                   <!--input-->
                                   <div class="flex flex-col gap-2 shrink-0 w-[220px]">
-                                    <label for="expired-on" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px]">Expires on</label>
+                                    <label for="expired-on" class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">Expires on</label>
 
                                     <div class="relative">
                                       <input type="text" id="expired-on" name="expired-on" placeholder="Enter Date" value="30 June, 2026" class="w-full  py-2 px-3 border border-Theme-tertiary-gray bg-white rounded-lg text-sm font-inter-display-medium leading-[20px] text-Theme-black placeholder:text-Theme-dark-gray hover:border-[#999894] hover:bg-white focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
@@ -425,7 +412,7 @@
                                   </div>
                                   <!--input-->
                                   <div class="flex flex-col gap-2 w-full">
-                                    <label for="reminder" class="text-sm text-Theme-light-gray font-inter-display-medium leading-[18px]">Reminders
+                                    <label for="reminder" class="text-sm leading-4 font-inter-display-medium text-Theme-dark-gray capitalize">Reminders
                                       </label>
                                       <div class="w-full py-[13px] px-4  border border-Theme-tertiary-gray bg-white rounded-lg hover:border-[#999894] h-[38px] hover:bg-white flex items-center justify-between transition-all duration-500">
                                          <input type="text" id="reminder" name="reminder" value="1" class="w-[38px] text-sm font-inter-display-medium leading-[22px] bg-transparent text-Theme-black   focus:border-Theme-purple focus:bg-white focus:outline-none transition-all duration-500" required="">
@@ -704,7 +691,7 @@
                       </div>
                     </div>
                     <!--buttons-->
-                    <div class="flex items-center gap-2 sticky bottom-3.5 left-0 right-0 mx-auto w-[calc(100%-28px)]">
+                    <div class="flex items-center gap-2 sticky bottom-0 left-0 right-0 mx-auto py-4 bg-white w-[calc(100%-28px)]">
                       <button class=" btn-gray-border w-full text-center  h-[38px] w-1/2">Cancel</button>
                       <button class=" btn-purple w-full text-center py-2 px-3 font-inter-display-medium leading-5 h-[38px] w-1/2">Save</button>
                     </div>

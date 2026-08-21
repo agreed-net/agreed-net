@@ -420,6 +420,9 @@
   .top-\[135px\] {
     top: 135px;
   }
+  .top-\[140px\] {
+    top: 140px;
+  }
   .top-\[155px\] {
     top: 155px;
   }
@@ -576,14 +579,8 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
-  }
   .left-1\/2 {
     left: calc(1 / 2 * 100%);
-  }
-  .left-2 {
-    left: calc(var(--spacing) * 2);
   }
   .left-2\.5 {
     left: calc(var(--spacing) * 2.5);
@@ -630,6 +627,9 @@
   .left-\[8px\] {
     left: 8px;
   }
+  .left-\[17-px\] {
+    left: 17-px;
+  }
   .left-\[25px\] {
     left: 25px;
   }
@@ -653,6 +653,9 @@
   }
   .left-\[162px\] {
     left: 162px;
+  }
+  .left-\[170px\] {
+    left: 170px;
   }
   .left-\[175px\] {
     left: 175px;
@@ -906,9 +909,6 @@
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
   }
-  .mb-\[2px\] {
-    margin-bottom: 2px;
-  }
   .mb-\[14px\] {
     margin-bottom: 14px;
   }
@@ -1026,9 +1026,6 @@
   }
   .inline-flex {
     display: inline-flex;
-  }
-  .table {
-    display: table;
   }
   .aspect-3\/2 {
     aspect-ratio: 3/2;
@@ -1189,6 +1186,9 @@
   .h-\[55px\] {
     height: 55px;
   }
+  .h-\[56px\] {
+    height: 56px;
+  }
   .h-\[60\%\] {
     height: 60%;
   }
@@ -1345,6 +1345,12 @@
   .h-\[calc\(100vh-140px\)\] {
     height: calc(100vh - 140px);
   }
+  .h-\[calc\(100vh-144px\)\] {
+    height: calc(100vh - 144px);
+  }
+  .h-\[calc\(100vh-145px\)\] {
+    height: calc(100vh - 145px);
+  }
   .h-\[calc\(100vh-148px\)\] {
     height: calc(100vh - 148px);
   }
@@ -1485,9 +1491,6 @@
   }
   .w-0 {
     width: calc(var(--spacing) * 0);
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1 / 2 * 100%);
@@ -1636,6 +1639,9 @@
   .w-\[55px\] {
     width: 55px;
   }
+  .w-\[56px\] {
+    width: 56px;
+  }
   .w-\[60px\] {
     width: 60px;
   }
@@ -1689,9 +1695,6 @@
   }
   .w-\[130px\] {
     width: 130px;
-  }
-  .w-\[136px\] {
-    width: 136px;
   }
   .w-\[140px\] {
     width: 140px;
@@ -2061,10 +2064,6 @@
   }
   .origin-top-right {
     transform-origin: 100% 0;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
@@ -2951,9 +2950,6 @@
   .bg-\[\#3A375E\] {
     background-color: #3A375E;
   }
-  .bg-\[\#5EBEFE\] {
-    background-color: #5EBEFE;
-  }
   .bg-\[\#8B5CF6\] {
     background-color: #8B5CF6;
   }
@@ -3557,6 +3553,9 @@
   .p-\[7px\] {
     padding: 7px;
   }
+  .p-\[8px\] {
+    padding: 8px;
+  }
   .p-\[10px\] {
     padding: 10px;
   }
@@ -3679,6 +3678,9 @@
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
@@ -4762,10 +4764,6 @@
   }
   .backdrop-blur-xl {
     --tw-backdrop-blur: blur(var(--blur-xl));
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .backdrop-filter {
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }

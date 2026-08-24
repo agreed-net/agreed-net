@@ -18,7 +18,7 @@
   <!-- NAVBAR -->
   <header class="sticky border-b  top-0 z-50 bg-white   xl:px-2.5 px-[20px]"   x-data="{ mobileMenu: false, openMenu: null, scrolled: false }"
   x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
-  :class="scrolled || openMenu !== null ? 'border-[#EEEEEC]' : 'border-transparent'">
+  :class="scrolled || openMenu !== null ? 'border-Theme-tertiary-gray' : 'border-transparent'">
     <nav class="max-w-[1170px] mx-auto px-0 relative">
       <div class="md:h-[64px] h-auto md:p-0  py-3 flex items-center justify-between">
         <!--logo-->
@@ -49,7 +49,7 @@
 
           <div class="relative" data-menu="products">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)] "
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)] "
               aria-expanded="false" data-trigger="products">
               Products
               <span class="w-5 h-5 flex justify-center items-center">
@@ -64,7 +64,7 @@
 
           <div class="relative" data-menu="solutions">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
               aria-expanded="false" data-trigger="solutions">
               Solutions
               <span class="w-5 h-5 flex justify-center items-center">
@@ -79,7 +79,7 @@
           </div>
           <div class="relative" data-menu="integrations">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
               aria-expanded="false" data-trigger="integrations">
               Integrations
               <span class="w-5 h-5 flex justify-center items-center">
@@ -94,7 +94,7 @@
           </div>
           <div class="relative" data-menu="resources">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
               aria-expanded="false" data-trigger="resources">
               Resources
               <span class="w-5 h-5 flex justify-center items-center">
@@ -108,17 +108,17 @@
           </div>
 
           <a href="#"
-            class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]">Pricing</a>
+            class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]">Pricing</a>
         </div>
 
         <!-- CTA -->
         <div class="flex items-center gap-2.5">
           <a href="#"
-            class="py-2 px-5 bg-[#090536] rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#252250] xl:block hidden">
+            class="py-2 px-5 bg-Theme-blue rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#2B2A28] xl:block hidden">
             Book a Demo
           </a>
           <a href="#"
-            class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7] xl:block hidden">
+            class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0] xl:block hidden">
             Get Started
           </a>
         </div>
@@ -266,7 +266,7 @@
                   </a>
                 </li>
               </ul>
-              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 See All Features<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -623,7 +623,7 @@
                   </a>
                 </li>
               </ul>
-               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Industries<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -753,7 +753,7 @@
                   </a>
                 </li>
               </ul>
-              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Business<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -899,7 +899,7 @@
                   </a>
                 </li>
               </ul>
-               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Organization<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -972,7 +972,7 @@
                   </a>
                 </li>
               </ul>
-              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                All Integrations<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -1245,7 +1245,7 @@
     <div class="h-[calc(100vh-134px)] custom-scrollbar mr-[-11px]  pr-3">
      <!--product-->
      <div class="relative"> 
-     <button class="mobile-trigger w-full flex items-center justify-between py-3 tbaset-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] pt-[7px] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+     <button class="mobile-trigger w-full flex items-center justify-between py-3 tbaset-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black pt-[7px] py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
         data-target="m-products">
         Products
        <span class="w-5 h-5 flex justify-center items-center">
@@ -1336,7 +1336,7 @@
                   </a>
                 </li>
               </ul>
-              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 See All Features<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -1509,7 +1509,7 @@
       </div>
        <!--solution-->
         <div class="relative"> 
-        <button class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+        <button class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
           data-target="m-solutions">
           Solutions
         <span class="w-5 h-5 flex justify-center items-center">
@@ -1600,7 +1600,7 @@
                   </a>
                 </li>
               </ul>
-               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 All Industries<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -1688,7 +1688,7 @@
                   </a>
                 </li>
               </ul>
-              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+              <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 All Business<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -1787,7 +1787,7 @@
                   </a>
                 </li>
               </ul>
-               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+               <a href="#" class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 All Organization<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -1798,7 +1798,7 @@
       </div>
       <!--integration-->
       <div class="relative"> 
-        <button class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+        <button class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
           data-target="m-integration">
           Integrations
         <span class="w-5 h-5 flex justify-center items-center">
@@ -2002,7 +2002,7 @@
       <!--resources-->
       <!--integration-->
       <div class="relative"> 
-        <button class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+        <button class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
           data-target="m-resources">
           Resources
         <span class="w-5 h-5 flex justify-center items-center">
@@ -2111,7 +2111,7 @@
               </ul>
         </div>
       </div>
-      <a href="#" class="block py-[15px]  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536]  bg-transparent rounded-md transition-all duration-500 ">Pricing</a>
+      <a href="#" class="block py-[15px]  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black  bg-transparent rounded-md transition-all duration-500 ">Pricing</a>
 
     </div>
 
@@ -2145,20 +2145,20 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
             <circle cx="4" cy="4" r="4" fill="#8E5EFE" />
           </svg>
-          <span class="text-xs md:text-sm leading-5 font-inter-display-medium text-[#090536]">Create and Sign Documents for
+          <span class="text-xs md:text-sm leading-5 font-inter-display-medium text-Theme-black">Create and Sign Documents for
             Free</span>
         </div>
         <h1
-          class="text-[22px] md:text-[47px] font-inter-tight font-light leading-[30px] md:leading-[66px] tracking-[-1.41px] text-[#090536] text-center w-full md:max-w-[688px] max-w-[268px] mx-auto md:mb-3 mb-2.5">
+          class="text-[22px] md:text-[47px] font-inter-tight font-light leading-[30px] md:leading-[66px] tracking-[-1.41px] text-Theme-black text-center w-full md:max-w-[688px] max-w-[268px] mx-auto md:mb-3 mb-2.5">
           Create, Share & Sign Documents. Without the Hassle.
         </h1>
         <p
-          class="text-xs md:text-base font-inter-display font-normal text-[#020012]/60 w-full max-w-full md:max-w-[674px] leading-[19px] md:leading-[26px] mx-auto text-center md:mb-[30px] mb-[15px]">
+          class="text-xs md:text-base font-inter-display font-normal text-Theme-dark-gray w-full max-w-full md:max-w-[674px] leading-[19px] md:leading-[26px] mx-auto text-center md:mb-[30px] mb-[15px]">
           Create agreements, contracts, proposals and documents in minutes. Send for eSignature, track approvals, and
           manage your entire signing workflow in one secure platform.
         </p>
         <a href="#"
-          class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[153px] w-fit mx-auto bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+          class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[153px] w-fit mx-auto bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
           Get Started
         </a>
       </div>
@@ -2258,31 +2258,31 @@ scrollActiveTab() {
 
                 <button @click="selectTab(0)"
                   class="relative z-10 md:py-[7px] py-[4px] lg:px-[21px] md:px-[15px] px-0 text-center text-[12.465px] leading-[18px] font-inter-display-medium transition-all duration-500 whitespace-nowrap w-auto"
-                  :class="activeTab === 0 ? 'text-[#090536]' : 'text-[rgba(9,5,54,0.27)] hover:text-[#090536] '">
+                  :class="activeTab === 0 ? 'text-Theme-black' : 'text-[rgba(9,5,54,0.27)] hover:text-Theme-black '">
                   Create Documents
                 </button>
 
                 <button @click="selectTab(1)"
                   class="relative z-10 md:py-[7px] py-[4px] lg:px-[21px] md:px-[15px] px-0 text-center text-[12.465px] leading-[18px] font-inter-display-medium transition-all duration-500 whitespace-nowrap w-auto"
-                  :class="activeTab === 1 ? 'text-[#090536]' : 'text-[rgba(9,5,54,0.27)] hover:text-[#090536] '">
+                  :class="activeTab === 1 ? 'text-Theme-black' : 'text-[rgba(9,5,54,0.27)] hover:text-Theme-black '">
                   Edit Content
                 </button>
 
                 <button @click="selectTab(2)"
                   class="relative z-10 md:py-[7px] py-[4px] lg:px-[21px] md:px-[15px] px-0 text-center text-[12.465px] leading-[18px] font-inter-display-medium transition-all duration-500 whitespace-nowrap w-auto"
-                  :class="activeTab === 2 ? 'text-[#090536]' : 'text-[rgba(9,5,54,0.27)] hover:text-[#090536] '">
+                  :class="activeTab === 2 ? 'text-Theme-black' : 'text-[rgba(9,5,54,0.27)] hover:text-Theme-black '">
                   Send Instantly
                 </button>
 
                 <button @click="selectTab(3)"
                   class="relative z-10 md:py-[7px] py-[4px] lg:px-[21px] md:px-[15px] px-0 text-center text-[12.465px] leading-[18px] font-inter-display-medium transition-all duration-500 whitespace-nowrap w-auto"
-                  :class="activeTab === 3 ? 'text-[#090536]' : 'text-[rgba(9,5,54,0.27)] hover:text-[#090536] '">
+                  :class="activeTab === 3 ? 'text-Theme-black' : 'text-[rgba(9,5,54,0.27)] hover:text-Theme-black '">
                   Sign Seamlessly
                 </button>
 
                 <button @click="selectTab(4)"
                   class="relative z-10 md:py-[7px] py-[4px] lg:px-[21px] md:px-[15px] px-0 text-center text-[12.465px] leading-[18px] font-inter-display-medium transition-all duration-500 whitespace-nowrap w-auto"
-                  :class="activeTab === 4 ? 'text-[#090536]' : 'text-[rgba(9,5,54,0.27)] hover:text-[#090536] '">
+                  :class="activeTab === 4 ? 'text-Theme-black' : 'text-[rgba(9,5,54,0.27)] hover:text-Theme-black '">
                   Track Progress
                 </button>
               </div>
@@ -2336,7 +2336,7 @@ scrollActiveTab() {
           </div>
           <!--watch video button-->
           <button
-            class="group relative overflow-hidden rounded-full bg-white border border-[#F4EFFF] shadow-[0_19px_22px_0_rgba(0,0,0,0.06)] font-inter-tight md:p-[7px] md:pr-[22px] p-[5px] pr-3 flex items-center gap-2.5 transition-all duration-500 mx-auto absolute left-0 md:bottom-28 bottom-14  right-0">
+            class="group relative overflow-hidden rounded-full bg-white border border-Theme-tertiary-gray shadow-[0_19px_22px_0_rgba(0,0,0,0.06)] font-inter-tight md:p-[7px] md:pr-[22px] p-[5px] pr-3 flex items-center gap-2.5 transition-all duration-500 mx-auto absolute left-0 md:bottom-28 bottom-14  right-0">
 
             <!-- Hover Gradient -->
             <span class="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
@@ -2385,11 +2385,11 @@ scrollActiveTab() {
       <div class="flex lg:flex-row flex-col lg:items-center gap-[20px] justify-between md:mb-[50px] mb-[15px]">
         <div class="flex flex-col md:gap-4 gap-2.5 md:max-w-[580px] max-w-[335px]">
           <span class="text-base font-inter-display leading-[28px] text-Theme-purple">Process</span>
-          <h2 class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px]">One Platform for
+          <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px]">One Platform for
             Document Creation, eSignatures and Collaboration.</h2>
         </div>
         <a href="#"
-          class="py-2 px-5 hidden md:flex justify-center items-center w-[160px]  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+          class="py-2 px-5 hidden md:flex justify-center items-center w-[160px]  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
           Start Creating Now
         </a>
       </div>
@@ -2398,7 +2398,7 @@ scrollActiveTab() {
         <div class="relative pl-[22px] w-full lg:w-[408px] shrink-0">
 
           <!-- Gray Track -->
-          <div class="absolute left-0 top-0 bottom-0 w-[1px] bg-[#EEEEEC]"></div>
+          <div class="absolute left-0 top-0 bottom-0 w-[1px] bg-Theme-tertiary-gray"></div>
 
           <!-- Purple Progress -->
           <div id="progressLine" class="absolute left-[-0.5px] top-0 w-[2px] bg-Theme-purple rounded-full"
@@ -2538,7 +2538,7 @@ scrollActiveTab() {
         </div>
 
         <!-- RIGHT -->
-        <div class="w-full relative rounded-[18px] bg-[#F9F9F9] overflow-hidden md:h-[616px] h-[298px]">
+        <div class="w-full relative rounded-[18px] bg-Theme-background overflow-hidden md:h-[616px] h-[298px]">
           <!--bottom layer-->
           <div
             class="absolute bg-[linear-gradient(180deg,rgba(249,249,249,0.00)_0%,#F9F9F9_82.27%)] md:h-[127px] h-[60px] w-full bottom-0 left-0 z-[10]">
@@ -2629,7 +2629,8 @@ scrollActiveTab() {
       <!-- final label, revealed once the deck settles -->
       <div id="stackFinalLabel"
         class="absolute inset-x-0 top-[40%] z-30 text-center px-6 opacity-0 flex justify-center">
-        <img src="assets/images/anim-big-image.png" class="max-[1366px]:max-w-[500px]"/>
+        <!-- <img src="assets/images/anim-big-video.mp4" class="max-[1366px]:max-w-[500px]"/> -->
+        <video src="assets/images/anim-big-video.mp4" autoplay muted></video>
       </div>
 
     </div>
@@ -2665,11 +2666,11 @@ scrollActiveTab() {
       <div class="flex lg:flex-row flex-col md:items-center justify-between md:mb-[50px] mb-[15px] gap-5">
         <div class="flex flex-col md:gap-4 gap-2.5 md:max-w-[570px] max-w-[335px]">
           <span class="md:text-base text-sm font-inter-display leading-[28px] text-Theme-purple ">Features</span>
-          <h2 class="md:text-[37px] text-[20px] md:leading-[normal] leading-[28px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] ">Build, customize, and
+          <h2 class="md:text-[37px] text-[20px] md:leading-[normal] leading-[28px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] ">Build, customize, and
             finalize <br>agreements with complete control.</h2>
         </div>
         <a href="#"
-          class="py-2 px-5 hidden md:flex justify-center items-center w-[160px]  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+          class="py-2 px-5 hidden md:flex justify-center items-center w-[160px]  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
           Start Creating Now
         </a>
       </div>
@@ -2679,11 +2680,11 @@ scrollActiveTab() {
         <div class="flex flex-col gap-2.5">
           <!--card-->
           <div
-            class="relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex flex-col md:gap-[48px] gap-[32px] overflow-hidden">
+            class="relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex flex-col md:gap-[48px] gap-[32px] overflow-hidden">
             <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-2">
               <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">Smart Workflow
                 Automation</h4>
-              <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Due dates, reminders,
+              <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Due dates, reminders,
                 approvals, expiration and automated actions.</p>
             </div>
             <div class="block">
@@ -2796,11 +2797,11 @@ scrollActiveTab() {
           </div>
           <!--card-->
           <div
-            class="relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex flex-col md:gap-[20px] gap-[40px] overflow-hidden">
+            class="relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex flex-col md:gap-[20px] gap-[40px] overflow-hidden">
             <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-[5px]">
               <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">Team Collaboration
               </h4>
-              <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Workspaces, comments,
+              <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Workspaces, comments,
                 mentions, shared templates and role-based permissions.</p>
             </div>
             <div class="flex justify-center">
@@ -2877,11 +2878,11 @@ scrollActiveTab() {
         <div class="flex flex-col gap-2.5">
           <!--card-->
           <div
-            class="relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex flex-col md:gap-[35px] gap-[23px] overflow-hidden">
+            class="relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex flex-col md:gap-[35px] gap-[23px] overflow-hidden">
             <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-[5px]">
               <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">Recipient
                 Management</h4>
-              <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Assign roles, signing
+              <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Assign roles, signing
                 order, CC recipients, and permissions.</p>
             </div>
             <div class="flex justify-center">
@@ -2933,10 +2934,10 @@ scrollActiveTab() {
           </div>
           <!--card-->
           <div
-            class="relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex flex-col gap-[30px] overflow-hidden">
+            class="relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex flex-col gap-[30px] overflow-hidden">
             <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-[5px]">
               <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">Bulk invite</h4>
-              <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Send documents to multiple
+              <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Send documents to multiple
                 recipients with one streamlined invitation.</p>
             </div>
             <div class="flex justify-center px-[15px] pb-[8px]">
@@ -2995,11 +2996,11 @@ scrollActiveTab() {
         <div class="flex xl:flex-col md:flex-row flex-col gap-2.5 xl:col-start-auto col-span-full">
           <!--card-->
           <div
-            class="relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex flex-col md:gap-[45px] gap-[18px] overflow-hidden">
+            class="relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex flex-col md:gap-[45px] gap-[18px] overflow-hidden">
             <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-[5px]">
               <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">Payment Collection
               </h4>
-              <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Accept one time, deposit,
+              <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Accept one time, deposit,
                 and recurring payments during signing.</p>
             </div>
             <div class="md:block flex justify-center">
@@ -3077,10 +3078,10 @@ scrollActiveTab() {
           </div>
           <!--card-->
           <div
-            class="relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex flex-col justify-between md:gap-[5px] gap-[37px] overflow-hidden">
+            class="relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex flex-col justify-between md:gap-[5px] gap-[37px] overflow-hidden">
             <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-[5px]">
               <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">Identity Verification 1234</h4>
-              <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Verify signer identities
+              <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Verify signer identities
                 securely before documents are viewed or signed.</p>
             </div>
             <div class="flex justify-center pb-4">
@@ -3131,11 +3132,11 @@ scrollActiveTab() {
         </div>
         <!--card-->
         <div
-          class="w-full col-span-full relative bg-[#F9F9F9] border border-[#EEEEEC] rounded-[18px] flex lg:flex-row flex-col overflow-hidden">
+          class="w-full col-span-full relative bg-Theme-background border border-Theme-tertiary-gray rounded-[18px] flex lg:flex-row flex-col overflow-hidden">
           <div class="md:py-[23px] md:px-[25px] px-[15px] pt-[15px] pb-0 flex flex-col md:gap-2.5 gap-[5px] max-w-[358px] shrink-0">
             <h4 class="md:text-xl text-[15px] text-Theme-black font-inter-tight font-normal leading-6 capitalize ">One Platform.
               Endless Integrations.</h4>
-            <p class="md:text-base text-xs font-inter-display text-[rgba(2,0,18,0.60)] md:leading-[26px] md:max-w-fit max-w-[277px]">Keep your documents, data,
+            <p class="md:text-base text-xs font-inter-display text-Theme-dark-gray md:leading-[26px] md:max-w-fit max-w-[277px]">Keep your documents, data,
               and workflows perfectly in sync.</p>
           </div>
           <div class="md:block lg:pt-[57px] pt-[30px] md:pb-0 pb-[15px] flex justify-end">
@@ -3305,18 +3306,18 @@ scrollActiveTab() {
   <!--slider section-->
   <section class="relative xl:pb-[100px] md:pb-[80px] pb-[40px]">
     <div class="max-w-[1170px] mx-auto px-[15px]">
-      <div class="bg-[#F9F9F9] bg-[url('../images/testimonial-bg.png')] bg-cover bg-no-repeat rounded-[18px] md:p-2 p-1">
+      <div class="bg-Theme-background bg-[url('../images/testimonial-bg.png')] bg-cover bg-no-repeat rounded-[18px] md:p-2 p-1">
         <div class="xl:py-[72px] md:py-[60px] py-[30px]  flex flex-col md:gap-[60px] gap-[30px]">
           <div class="block md:max-w-[584px] max-w-[300px] mx-auto text-center md:px-0 px-[14px]">
             <!--badge-->
             <div
-              class="md:py-[7px] md:pr-4 md:pl-3.5 py-[5px] pl-2.5 pr-3 rounded-full flex items-center gap-2 w-max mx-auto bg-white border border-[#EEEEEC] mb-4">
+              class="md:py-[7px] md:pr-4 md:pl-3.5 py-[5px] pl-2.5 pr-3 rounded-full flex items-center gap-2 w-max mx-auto bg-white border border-Theme-tertiary-gray mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
                 <circle cx="4" cy="4" r="4" fill="#8E5EFE"></circle>
               </svg>
               <span class="md:text-sm text-xs leading-5 font-inter-display-medium text-Theme-black">Built for modern teams</span>
             </div>
-            <h2 class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5">Simplify signing
+            <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5">Simplify signing
               and workflows.</h2>
             <p
               class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full leading-[19px]  md:leading-[26px] mx-auto text-center ">
@@ -3328,7 +3329,7 @@ scrollActiveTab() {
             <!--number-->
             <div class="flex flex-col md:gap-2.5 gap-[5px] items-center">
               <div
-                class="stat-number md:text-[64px] text-[26px] text-[#090536] font-inter-tight font-normal md:leading-[78px] tracking-[-1.28px] capitalize">
+                class="stat-number md:text-[64px] text-[26px] text-Theme-black font-inter-tight font-normal md:leading-[78px] tracking-[-1.28px] capitalize">
                 8.5x</div>
               <p class="md:text-base text-xs md:leading-[28px]  text-Theme-black font-inter-tight font-normal text-center">Documents signed faster
               </p>
@@ -3336,7 +3337,7 @@ scrollActiveTab() {
             <!--number-->
             <div class="flex flex-col md:gap-2.5 gap-[5px] items-center">
               <div
-                class="stat-number md:text-[64px] text-[26px] text-[#090536] font-inter-tight font-normal md:leading-[78px] tracking-[-1.28px] capitalize">
+                class="stat-number md:text-[64px] text-[26px] text-Theme-black font-inter-tight font-normal md:leading-[78px] tracking-[-1.28px] capitalize">
                 42%</div>
               <p class="md:text-base text-xs md:leading-[28px]  text-Theme-black font-inter-tight font-normal text-center">Higher signing
                 completion</p>
@@ -3344,7 +3345,7 @@ scrollActiveTab() {
             <!--number-->
             <div class="flex flex-col md:gap-2.5 gap-[5px] items-center">
               <div
-                class=" stat-number md:text-[64px] text-[26px] text-[#090536] font-inter-tight font-normal md:leading-[78px] tracking-[-1.28px] capitalize">
+                class=" stat-number md:text-[64px] text-[26px] text-Theme-black font-inter-tight font-normal md:leading-[78px] tracking-[-1.28px] capitalize">
                 3.2x</div>
               <p class="md:text-base text-xs md:leading-[28px]  text-Theme-black font-inter-tight font-normal text-center">Faster team approvals
               </p>
@@ -3588,7 +3589,7 @@ scrollActiveTab() {
     <div class="max-w-[1170px] mx-auto px-[15px]">
       <div class="flex xl:flex-row flex-col md:gap-[60px] gap-[15px]">
         <div class="xl:max-w-[300px] max-w-[280px] mx-auto">
-          <h2 class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5 xl:text-left text-center md:leading-[normal]">Frequently
+          <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5 xl:text-left text-center md:leading-[normal]">Frequently
             Asked Questions.</h2>
           <p class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full  md:leading-[26px] mx-auto  xl:text-left text-center">
             Everything you need to know about Agreed. Can't find what you're looking for?
@@ -3599,8 +3600,8 @@ scrollActiveTab() {
           <div x-data="{ open: null }" class="w-full max-w-[778px] mx-auto flex flex-col gap-[15px]">
 
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 1 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 1 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 1 ? null : 1"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3608,7 +3609,7 @@ scrollActiveTab() {
                   Do my clients need to create an account to sign?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3633,8 +3634,8 @@ scrollActiveTab() {
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 2 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 2 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 2 ? null : 2"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3642,7 +3643,7 @@ scrollActiveTab() {
                  Are signatures created with Agreed legally binding?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                    <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3667,8 +3668,8 @@ scrollActiveTab() {
               </div>
             </div>
              <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 3 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 3 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 3 ? null : 3"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3676,7 +3677,7 @@ scrollActiveTab() {
                  How does the workflow automation work?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                     <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 3" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3700,8 +3701,8 @@ scrollActiveTab() {
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 4 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 4 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 4 ? null : 4"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3709,7 +3710,7 @@ scrollActiveTab() {
                  Can I use my own branding on documents and emails?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                    <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3733,8 +3734,8 @@ scrollActiveTab() {
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 5 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 5 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 5 ? null : 5"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3742,7 +3743,7 @@ scrollActiveTab() {
                  Can multiple people sign the same document?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                    <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 5" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3767,8 +3768,8 @@ scrollActiveTab() {
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 6 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 6 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 6 ? null : 6"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3776,7 +3777,7 @@ scrollActiveTab() {
                  What happens to my documents after the free trial?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 6" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3801,8 +3802,8 @@ scrollActiveTab() {
               </div>
             </div>
              <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-            :class="open === 7 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+            :class="open === 7 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 7 ? null : 7"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
@@ -3810,7 +3811,7 @@ scrollActiveTab() {
                  Does Agreed integrate with tools my team already uses?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                    <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 7" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"
                     fill="none">
@@ -3842,13 +3843,13 @@ scrollActiveTab() {
 <!--CTA section-->
 <section class="relative ">
   <div class="max-w-[1170px] mx-auto px-[15px]">
-    <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-[#EEEEEC]">
+    <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-Theme-tertiary-gray">
         <div class="flex flex-col gap-[40px]">
           <div class="md:max-w-[536px] max-w-full mx-auto text-center md:pt-[60px] pt-[30px]  md:px-0 px-[15px]">
-           <h2 class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] mb-2.5 text-center md:leading-[normal] leading-[28px]">Everything You Need to <br>
+           <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] mb-2.5 text-center md:leading-[normal] leading-[28px]">Everything You Need to <br>
 Create, Send and Sign Documents</h2>
             <p class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full leading-[19px]  md:leading-[26px] mx-auto  md:mb-[25px] mb-[15px] md:max-w-full max-w-[247px]">Agreed helps teams reduce delays, improve signing completion</p>
-            <a href="#" class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[160px] w-fit mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+            <a href="#" class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[160px] w-fit mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
           Start Creating Now
         </a>
           </div>
@@ -3902,25 +3903,25 @@ Create, Send and Sign Documents</h2>
   <path d="M79.0874 14.0225C79.0874 11.6964 78.3118 10.6482 77.6322 10.14C76.8626 9.56452 75.8417 9.40361 75.0381 9.49923C73.8359 9.6423 71.3127 11.6409 72.2616 15.1744C72.8468 17.3537 74.2564 18.9681 76.0537 19.9861C78.0479 18.2321 79.0874 16.007 79.0874 14.0225ZM56.381 14.0225C56.381 16.007 57.4204 18.2321 59.4146 19.9861C61.2119 18.9681 62.6216 17.3537 63.2068 15.1744C64.1557 11.6409 61.6325 9.6423 60.4303 9.49923C59.6267 9.40361 58.6057 9.56452 57.8362 10.14C57.1566 10.6482 56.381 11.6964 56.381 14.0225ZM83.0298 14.0225C83.0298 16.5909 82.0244 19.1098 80.3195 21.2194C82.0173 21.3069 83.6318 20.9354 84.8355 20.1654L86.9567 23.4955C83.9936 25.3909 80.0277 25.6333 76.5558 24.5002C74.125 25.988 71.13 26.9002 67.7734 26.9002H67.695C64.3384 26.9002 61.3433 25.988 58.9125 24.5002C55.4406 25.6333 51.4748 25.3909 48.5117 23.4955L50.6329 20.1654C51.8366 20.9354 53.4511 21.3069 55.1488 21.2194C53.444 19.1098 52.4386 16.5909 52.4386 14.0225C52.4386 10.6991 53.6174 8.36532 55.4783 6.97375C57.2491 5.64948 59.3547 5.3927 60.8952 5.57602C64.3812 5.99086 68.6139 10.2423 67.0138 16.201C66.3352 18.7283 64.9298 20.7222 63.1648 22.18C64.5156 22.6666 66.036 22.9495 67.695 22.9495H67.7734C69.4324 22.9495 70.9527 22.6665 72.3035 22.18C70.5385 20.7222 69.1332 18.7283 68.4546 16.201C66.8545 10.2423 71.0872 5.99086 74.5732 5.57602C76.1137 5.3927 78.2192 5.64948 79.9901 6.97375C81.851 8.36532 83.0298 10.6991 83.0298 14.0225Z" fill="#8E5EFE"/>
 </svg>
               </a>
-              <p class="md:text-base text-sm font-inter-display leading-[23px] text-Theme-black/50 md:max-w-fit max-w-[265px]">Create agreements, contracts, proposals and documents in minutes. Send for </p>
+              <p class="md:text-base text-sm font-inter-display leading-[23px] text-Theme-dark-gray md:max-w-fit max-w-[265px]">Create agreements, contracts, proposals and documents in minutes. Send for </p>
             </div>
             <ul class="flex items-center gap-3">
               <li>
-                <a href="#" class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                <a href="#" class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
   <path d="M7.14163 5.08118L11.6089 0H10.5503L6.67137 4.41192L3.57328 0H0L4.68492 6.6716L0 12H1.05866L5.15491 7.34086L8.42672 12H12L7.14137 5.08118H7.14163ZM5.69165 6.73038L5.21697 6.06604L1.44011 0.779808H3.06615L6.11412 5.04596L6.5888 5.71031L10.5508 11.2557H8.92476L5.69165 6.73063V6.73038Z" fill="#020012"/>
 </svg>
                 </a>
               </li>
               <li>
-                <a href="#" class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                <a href="#" class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1195 6.16547C19.88 6.37087 20.4778 6.97018 20.6799 7.72987C21.0475 9.10858 21.0475 11.987 21.0475 11.987C21.0475 11.987 21.0475 14.8654 20.6799 16.2441C20.475 17.0066 19.8772 17.6059 19.1195 17.8085C17.7443 18.1771 12.2266 18.1771 12.2266 18.1771C12.2266 18.1771 6.71184 18.1771 5.33384 17.8085C4.57327 17.6031 3.97548 17.0038 3.77342 16.2441C3.40576 14.8654 3.40576 11.987 3.40576 11.987C3.40576 11.987 3.40576 9.10858 3.77342 7.72987C3.97829 6.96737 4.57608 6.36805 5.33384 6.16547C6.71184 5.79688 12.2266 5.79688 12.2266 5.79688C12.2266 5.79688 17.7443 5.79688 19.1195 6.16547ZM15.0471 11.987L10.4641 14.6403V9.33367L15.0471 11.987Z" fill="#020012"/>
 </svg>
                 </a>
               </li>
                <li>
-                <a href="#" class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                <a href="#" class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M17.5007 7.03108C19.2991 9.69158 20.1872 12.6925 19.8552 16.1473C19.8538 16.162 19.8463 16.1754 19.8343 16.1842C18.4725 17.1904 17.153 17.8011 15.852 18.206C15.8419 18.2091 15.831 18.2089 15.821 18.2055C15.811 18.2021 15.8023 18.1956 15.7961 18.187C15.4955 17.7662 15.2224 17.3226 14.9832 16.8567C14.9694 16.8293 14.982 16.7963 15.0102 16.7854C15.444 16.621 15.8564 16.4239 16.2531 16.1906C16.2843 16.1722 16.2863 16.1271 16.2575 16.1055C16.1733 16.0426 16.0899 15.9765 16.01 15.9104C15.9951 15.8982 15.975 15.8958 15.9581 15.904C13.3826 17.1007 10.5613 17.1007 7.9554 15.904C7.93849 15.8964 7.91838 15.899 7.90385 15.911C7.82423 15.9771 7.74063 16.0426 7.65723 16.1055C7.62837 16.1271 7.63076 16.1722 7.66221 16.1906C8.05891 16.4195 8.47133 16.621 8.90446 16.7862C8.93253 16.7971 8.94586 16.8293 8.93193 16.8567C8.69785 17.3232 8.42476 17.7668 8.11862 18.1876C8.10529 18.2046 8.08339 18.2124 8.06269 18.206C6.76789 17.8011 5.44841 17.1904 4.08653 16.1842C4.07518 16.1754 4.06702 16.1614 4.06583 16.1467C3.78835 13.1584 4.35385 10.1326 6.41816 7.03048C6.42314 7.02226 6.4307 7.01586 6.43946 7.01205C7.4552 6.543 8.54339 6.19792 9.68074 6.00084C9.70145 5.99764 9.72215 6.00725 9.73289 6.02568C9.87342 6.27603 10.0341 6.59707 10.1427 6.85944C11.3416 6.67518 12.5592 6.67518 13.7831 6.85944C13.8918 6.60268 14.0468 6.27603 14.1868 6.02568C14.1918 6.01654 14.1995 6.00921 14.2088 6.00476C14.2182 6.0003 14.2287 5.99893 14.2389 6.00084C15.3769 6.19852 16.4651 6.5436 17.48 7.01205C17.489 7.01586 17.4963 7.02226 17.5007 7.03108ZM10.7522 12.713C10.7648 11.8295 10.1246 11.0985 9.32107 11.0985C8.52408 11.0985 7.89012 11.8231 7.89012 12.713C7.89012 13.6026 8.53662 14.3272 9.32107 14.3272C10.1182 14.3272 10.7522 13.6026 10.7522 12.713ZM16.0433 12.713C16.0558 11.8295 15.4157 11.0985 14.6123 11.0985C13.8152 11.0985 13.1812 11.8231 13.1812 12.713C13.1812 13.6026 13.8277 14.3272 14.6123 14.3272C15.4157 14.3272 16.0433 13.6026 16.0433 12.713Z" fill="#020012"/>
 </svg>
@@ -3934,65 +3935,65 @@ Create, Send and Sign Documents</h2>
           <div class="grid md:grid-cols-3 grid-cols-2 flex-wrap md:gap-x-[100px] gap-x-20  md:gap-y-[70px] gap-y-6 md:mb-[50px] mb-5">
             <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-                <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Product</h5>  
+                <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Product</h5>  
                 <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Drag & Drop Editor
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Document Repository
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Workspaces
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Custom Branding & Themes
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Signature Request
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Signing Order
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Bulk Send
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Collect Payment
                     </a>
                   </li>
                     <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       ID Verification
                     </a>
                   </li>
                     <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Signature Verification
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       AI Document Assistant
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       AI Data Extraction
                     </a>
                   </li>
@@ -4000,65 +4001,65 @@ Create, Send and Sign Documents</h2>
             </div>
              <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5 ">
-                <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Solutions</h5>  
+                <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Solutions</h5>  
                 <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Sales
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Human Resources
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Legal
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Healthcare
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Real Estate
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Financial Services
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Insurance
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Construction
                     </a>
                   </li>
                     <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Small Business
                     </a>
                   </li>
                     <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                      Teams
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Enterprise
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Government
                     </a>
                   </li>
@@ -4066,25 +4067,25 @@ Create, Send and Sign Documents</h2>
             </div>
              <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-                <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Resources</h5>  
+                <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Resources</h5>  
                 <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Blog
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Templates
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Affiliate
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Help Center
                     </a>
                   </li>
@@ -4093,36 +4094,36 @@ Create, Send and Sign Documents</h2>
             </div>
               <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-                <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Legal</h5>  
+                <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Legal</h5>  
                 <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Privacy Policy
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Terms of Service
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Cookie Policy
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Fair Use
 
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       GDPR
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Security
                     </a>
                   </li>
@@ -4130,25 +4131,25 @@ Create, Send and Sign Documents</h2>
             </div>
              <!--col-->
             <div class="flex flex-col  md:gap-[28px] gap-5 ">
-                <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Alternatives</h5>  
+                <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Alternatives</h5>  
                 <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Pandadoc Alternative
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Pandadoc Alternative
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Pandadoc Alternative
                     </a>
                   </li>
                    <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Pandadoc Alternative
                     </a>
                   </li>
@@ -4158,25 +4159,25 @@ Create, Send and Sign Documents</h2>
             </div>
              <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-                <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Free Tools</h5>  
+                <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Free Tools</h5>  
                 <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Blog
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Templates
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Affiliate
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    <a href="#" class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                       Help Center
                     </a>
                   </li>
@@ -4922,9 +4923,9 @@ const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 10) {
     header.classList.remove('border-transparent');
-    header.classList.add('border-[#EEEEEC]');
+    header.classList.add('border-Theme-tertiary-gray');
   } else {
-    header.classList.remove('border-[#EEEEEC]');
+    header.classList.remove('border-Theme-tertiary-gray');
     header.classList.add('border-transparent');
   }
 });

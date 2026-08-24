@@ -19,7 +19,7 @@
   <header class="sticky border-b  top-0 z-50 bg-white   xl:px-2.5 px-[20px]"
     x-data="{ mobileMenu: false, openMenu: null, scrolled: false }"
     x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
-    :class="scrolled || openMenu !== null ? 'border-[#EEEEEC]' : 'border-transparent'">
+    :class="scrolled || openMenu !== null ? 'border-Theme-tertiary-gray' : 'border-transparent'">
     <nav class="max-w-[1170px] mx-auto px-0 relative">
       <div class="md:h-[64px] h-auto md:p-0  pt-5 flex items-center justify-between">
         <!--logo-->
@@ -50,7 +50,7 @@
 
           <div class="relative" data-menu="products">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)] "
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)] "
               aria-expanded="false" data-trigger="products">
               Products
               <span class="w-5 h-5 flex justify-center items-center">
@@ -65,7 +65,7 @@
 
           <div class="relative" data-menu="solutions">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
               aria-expanded="false" data-trigger="solutions">
               Solutions
               <span class="w-5 h-5 flex justify-center items-center">
@@ -80,7 +80,7 @@
           </div>
           <div class="relative" data-menu="integrations">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
               aria-expanded="false" data-trigger="integrations">
               Integrations
               <span class="w-5 h-5 flex justify-center items-center">
@@ -95,7 +95,7 @@
           </div>
           <div class="relative" data-menu="resources">
             <button
-              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
+              class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]"
               aria-expanded="false" data-trigger="resources">
               Resources
               <span class="w-5 h-5 flex justify-center items-center">
@@ -109,17 +109,17 @@
           </div>
 
           <a href="#"
-            class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]">Pricing</a>
+            class="nav-link text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[7px] px-2.5 bg-transparent rounded-md transition-all duration-500 hover:bg-[rgba(217,217,217,0.20)]">Pricing</a>
         </div>
 
         <!-- CTA -->
         <div class="flex items-center gap-2.5">
           <a href="#"
-            class="py-2 px-5 bg-[#090536] rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#252250] xl:block hidden">
+            class="py-2 px-5 bg-Theme-black rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#2B2A28] xl:block hidden">
             Book a Demo
           </a>
           <a href="#"
-            class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7] xl:block hidden">
+            class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0] xl:block hidden">
             Get Started
           </a>
         </div>
@@ -269,7 +269,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 See All Features<svg class="group-hover:translate-x-1 transition-all duration-500" width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -629,7 +629,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Industries<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20"
                   viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -762,7 +762,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Business<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20"
                   viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -911,7 +911,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Organization<svg class="group-hover:translate-x-1 transition-all duration-500" width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -987,7 +987,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit mt-2.5">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit mt-2.5">
                 All Integrations<svg class="group-hover:translate-x-1 transition-all duration-500" width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -1303,7 +1303,7 @@
         <!--product-->
         <div class="relative">
           <button
-            class="mobile-trigger w-full flex items-center justify-between py-3 tbaset-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] pt-[7px] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+            class="mobile-trigger w-full flex items-center justify-between py-3 tbaset-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black pt-[7px] py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
             data-target="m-products">
             Products
             <span class="w-5 h-5 flex justify-center items-center">
@@ -1443,7 +1443,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 See All Features<svg class="group-hover:translate-x-1 transition-all duration-500" width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -1685,7 +1685,7 @@
         <!--solution-->
         <div class="relative">
           <button
-            class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+            class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
             data-target="m-solutions">
             Solutions
             <span class="w-5 h-5 flex justify-center items-center">
@@ -1816,7 +1816,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 All Industries<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20"
                   viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -1949,7 +1949,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 All Business<svg class="group-hover:translate-x-1 transition-all duration-500" width="20" height="20"
                   viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -2101,7 +2101,7 @@
                 </li>
               </ul>
               <a href="#"
-                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-[#090536] transition-all duration-500 w-fit ">
+                class="group py-[7px] px-2.5 flex items-center gap-1 bg-transparent hover:bg-[rgba(217,217,217,0.20)] rounded-md text-sm font-inter-display-medium leading-[20px] text-Theme-black transition-all duration-500 w-fit ">
                 All Organization<svg class="group-hover:translate-x-1 transition-all duration-500" width="20"
                   height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 6L12 10L8 14" stroke="#090536" stroke-width="1.5" stroke-linecap="round"
@@ -2115,7 +2115,7 @@
         <!--integration-->
         <div class="relative">
           <button
-            class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+            class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
             data-target="m-integration">
             Integrations
             <span class="w-5 h-5 flex justify-center items-center">
@@ -2333,7 +2333,7 @@
         <!--integration-->
         <div class="relative">
           <button
-            class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] py-[15px]  bg-transparent  transition-all duration-500 border-b border-[#EEEEEC]"
+            class="mobile-trigger w-full flex items-center justify-between  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black py-[15px]  bg-transparent  transition-all duration-500 border-b border-Theme-tertiary-gray"
             data-target="m-resources">
             Resources
             <span class="w-5 h-5 flex justify-center items-center">
@@ -2487,17 +2487,17 @@
           </div>
         </div>
         <a href="#"
-          class="block py-[15px]  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536]  bg-transparent rounded-md transition-all duration-500 ">Pricing</a>
+          class="block py-[15px]  text-base leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black  bg-transparent rounded-md transition-all duration-500 ">Pricing</a>
 
       </div>
 
       <div class="flex items-center gap-2.5 pr-3">
         <a href="#"
-          class="py-2 px-5 bg-[#090536] rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#252250] mt-2 w-1/2 flex justify-center">
+          class="py-2 px-5 bg-Theme-black rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#2B2A28] mt-2 w-1/2 flex justify-center">
           Book a Demo
         </a>
         <a href="#"
-          class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7] w-1/2 flex justify-center mt-2">
+          class="py-2 px-5 bg-Theme-purple rounded-lg text-sm leading-5 font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0] w-1/2 flex justify-center mt-2">
           Get Started
         </a>
       </div>
@@ -2512,7 +2512,7 @@
           <!--dropdown-->
           <div x-data="dropdownComponent('doc-dropdown')" class="relative md:w-max relative md:w-max w-max min-w-0">
             <button @click="toggle"
-              class="bg-[linear-gradient(92deg,rgba(142,94,254,0.10)_0%,rgba(142,94,254,0.02)_40.38%,rgba(142,94,254,0.05)_100%)]  transition-all duration-300 rounded-[99px] p-[5px] pr-[8px] flex items-center gap-2 text-sm font-inter-display-medium  text-[#090536] w-full">
+              class="bg-[linear-gradient(92deg,rgba(142,94,254,0.10)_0%,rgba(142,94,254,0.02)_40.38%,rgba(142,94,254,0.05)_100%)]  transition-all duration-300 rounded-[99px] p-[5px] pr-[8px] flex items-center gap-2 text-sm font-inter-display-medium  text-Theme-black w-full">
               <div class="flex items-center gap-[5px] w-full">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="24" height="24" rx="12" fill="#8E5EFE" />
@@ -2581,11 +2581,11 @@
           </div>
           <div class="flex flex-col md:gap-[15px] gap-2.5">
             <h1
-              class="text-[22px] md:text-[47px] font-inter-tight font-light tracking-[-1.41px] text-[#090536] md:leading-[57px] leading-[30px] w-full  ">
+              class="text-[22px] md:text-[47px] font-inter-tight font-light tracking-[-1.41px] text-Theme-black md:leading-[57px] leading-[30px] w-full  ">
               Create Documents in Seconds with AI
             </h1>
             <p
-              class="text-xs md:text-base font-inter-display font-normal text-[#020012]/60 w-full  leading-[19px] md:leading-[26px] mx-auto ">
+              class="text-xs md:text-base font-inter-display font-normal text-Theme-dark-gray w-full  leading-[19px] md:leading-[26px] mx-auto ">
               Create, edit, and improve documents with AI Creation and Editing using simple instructions. Generate
               professional documents in seconds.
             </p>
@@ -2593,11 +2593,11 @@
           <!--buttons-->
           <div class="flex md:flex-row flex-col items-center gap-2.5">
             <a href="#"
-              class="md:w-[164px] w-full py-[9px] px-5 bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 flex items-center justify-center hover:bg-[#7b53d7] ">
+              class="md:w-[164px] w-full py-[9px] px-5 bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 flex items-center justify-center hover:bg-[#5527B0] ">
               Try AI Creation Free
             </a>
             <a href="#"
-              class="md:w-[164px] w-full py-[9px] px-5 bg-[#090536] rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 flex items-center justify-center hover:bg-[#252250]">
+              class="md:w-[164px] w-full py-[9px] px-5 bg-Theme-black rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 flex items-center justify-center hover:bg-[#2B2A28]">
               Book a Demo
             </a>
 
@@ -2614,7 +2614,7 @@
   <!--detail section-->
   <div class="block xl:pb-[100px] md:pb-[80px] pb-[40px]">
     <div class="max-w-[1170px] mx-auto px-[15px]">
-      <div class="bg-[#F9F9F9] rounded-[18px] lg:pt-[50px] pt-[30px] lg:px-[98px] md:px-[45px] px-[30px]">
+      <div class="bg-Theme-background rounded-[18px] lg:pt-[50px] pt-[30px] lg:px-[98px] md:px-[45px] px-[30px]">
         <div class="flex flex-col gap-[30px]">
           <h3
             class="md:text-[28px] text-[20px] font-inter-tight font-light tracking-[-0.56px] text-Theme-black md:leading-[36px] leading-[26px] text-center max-w-[746px] mx-auto">
@@ -2633,16 +2633,16 @@
       <div class="flex flex-col md:gap-4 gap-2.5 md:max-w-[580px] max-w-[335px] mx-auto text-center md:mb-[50px] mb-[25px]">
         <span class="text-base font-inter-display leading-[28px] text-Theme-purple">Features</span>
         <h2
-          class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px]">
+          class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px]">
          Powerful AI Features for Every Document Workflow</h2>
       </div>
       <!--grid wrapper-->
       <div class="grid md:grid-cols-3 grid-cols-1 gap-[15px]">
         <!--card-->  
-        <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] p-5 flex flex-col gap-5">
+        <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] p-5 flex flex-col gap-5">
             <!--icon--> 
             <div class="relative">
-                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-[#EEEEEC] rounded-lg">
+                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-Theme-tertiary-gray rounded-lg">
                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M15 2L15.5387 4.39157C15.9957 6.42015 17.5798 8.00431 19.6084 8.46127L22 9L19.6084 9.53873C17.5798 9.99569 15.9957 11.5798 15.5387 13.6084L15 16L14.4613 13.6084C14.0043 11.5798 12.4202 9.99569 10.3916 9.53873L8 9L10.3916 8.46127C12.4201 8.00431 14.0043 6.42015 14.4613 4.39158L15 2Z" stroke="#020012" stroke-width="1.5" stroke-linejoin="round"/>
                         <path d="M7 12L7.38481 13.7083C7.71121 15.1572 8.84275 16.2888 10.2917 16.6152L12 17L10.2917 17.3848C8.84275 17.7112 7.71121 18.8427 7.38481 20.2917L7 22L6.61519 20.2917C6.28879 18.8427 5.15725 17.7112 3.70827 17.3848L2 17L3.70827 16.6152C5.15725 16.2888 6.28879 15.1573 6.61519 13.7083L7 12Z" stroke="#020012" stroke-width="1.5" stroke-linejoin="round"/>
@@ -2652,14 +2652,14 @@
               <!--detail--> 
               <div class="flex flex-col gap-2">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">AI Document Creation</h4>
-                <p class="text-base text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Generate complete, professional documents from simple prompts in seconds.</p>
+                <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Generate complete, professional documents from simple prompts in seconds.</p>
               </div>
           </div>
            <!--card-->  
-        <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] p-5 flex flex-col gap-5">
+        <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] p-5 flex flex-col gap-5">
             <!--icon--> 
             <div class="relative">
-                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-[#EEEEEC] rounded-lg">
+                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-Theme-tertiary-gray rounded-lg">
                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M14.0737 3.88545C14.8189 3.07808 15.1915 2.6744 15.5874 2.43893C16.5427 1.87076 17.7191 1.85309 18.6904 2.39232C19.0929 2.6158 19.4769 3.00812 20.245 3.79276C21.0131 4.5774 21.3972 4.96972 21.6159 5.38093C22.1438 6.37312 22.1265 7.57479 21.5703 8.5507C21.3398 8.95516 20.9446 9.33578 20.1543 10.097L10.7506 19.1543C9.25288 20.5969 8.504 21.3182 7.56806 21.6837C6.63212 22.0493 5.6032 22.0224 3.54536 21.9686L3.26538 21.9613C2.63891 21.9449 2.32567 21.9367 2.14359 21.73C1.9615 21.5234 1.98636 21.2043 2.03608 20.5662L2.06308 20.2197C2.20301 18.4235 2.27297 17.5255 2.62371 16.7182C2.97444 15.9109 3.57944 15.2555 4.78943 13.9445L14.0737 3.88545Z" stroke="#020012" stroke-width="1.5" stroke-linejoin="round"/>
   <path d="M13 4L20 11" stroke="#020012" stroke-width="1.5" stroke-linejoin="round"/>
@@ -2670,14 +2670,14 @@
               <!--detail--> 
               <div class="flex flex-col gap-2">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Smart Content Editing</h4>
-                <p class="text-base text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Rewrite, refine, or improve existing document content effortlessly.</p>
+                <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Rewrite, refine, or improve existing document content effortlessly.</p>
               </div>
           </div>
            <!--card-->  
-        <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] p-5 flex flex-col gap-5">
+        <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] p-5 flex flex-col gap-5">
             <!--icon--> 
             <div class="relative">
-                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-[#EEEEEC] rounded-lg">
+                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-Theme-tertiary-gray rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M11 21H10C6.22876 21 4.34315 21 3.17157 19.8284C2 18.6569 2 16.7712 2 13V10C2 6.22876 2 4.34315 3.17157 3.17157C4.34315 2 6.22876 2 10 2H12C15.7712 2 17.6569 2 18.8284 3.17157C20 4.34315 20 6.22876 20 10V10.5" stroke="#020012" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M17.4069 14.4036C17.6192 13.8655 18.3808 13.8655 18.5931 14.4036L18.6298 14.4969C19.1482 15.8113 20.1887 16.8518 21.5031 17.3702L21.5964 17.4069C22.1345 17.6192 22.1345 18.3808 21.5964 18.5931L21.5031 18.6298C20.1887 19.1482 19.1482 20.1887 18.6298 21.5031L18.5931 21.5964C18.3808 22.1345 17.6192 22.1345 17.4069 21.5964L17.3702 21.5031C16.8518 20.1887 15.8113 19.1482 14.4969 18.6298L14.4036 18.5931C13.8655 18.3808 13.8655 17.6192 14.4036 17.4069L14.4969 17.3702C15.8113 16.8518 16.8518 15.8113 17.3702 14.4969L17.4069 14.4036Z" stroke="#020012" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2688,14 +2688,14 @@
               <!--detail--> 
               <div class="flex flex-col gap-2">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Content Enhancement</h4>
-                <p class="text-base text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Improve clarity, tone, and structure with intelligent AI suggestions.</p>
+                <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Improve clarity, tone, and structure with intelligent AI suggestions.</p>
               </div>
           </div>
              <!--card-->  
-        <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] p-5 flex flex-col gap-5">
+        <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] p-5 flex flex-col gap-5">
             <!--icon--> 
             <div class="relative">
-                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-[#EEEEEC] rounded-lg">
+                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-Theme-tertiary-gray rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M21 10V13C21 16.7712 21 18.6569 19.8284 19.8284C18.6569 21 16.7712 21 13 21H11C7.22876 21 5.34315 21 4.17157 19.8284C3 18.6569 3 16.7712 3 13V11C3 7.22876 3 5.34315 4.17157 4.17157C5.34315 3 7.22876 3 11 3H14" stroke="#020012" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M10 3L15 20.5" stroke="#020012" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2707,14 +2707,14 @@
               <!--detail--> 
               <div class="flex flex-col gap-2">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Template Free Creation</h4>
-                <p class="text-base text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Create custom documents without relying on predefined templates.</p>
+                <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Create custom documents without relying on predefined templates.</p>
               </div>
           </div>
             <!--card-->  
-        <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] p-5 flex flex-col gap-5">
+        <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] p-5 flex flex-col gap-5">
             <!--icon--> 
             <div class="relative">
-                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-[#EEEEEC] rounded-lg">
+                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-Theme-tertiary-gray rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M12.8809 7.01656L17.6538 8.28825M11.8578 10.8134L14.2442 11.4492M11.9765 17.9664L12.9311 18.2208C15.631 18.9401 16.981 19.2998 18.0445 18.6893C19.108 18.0787 19.4698 16.7363 20.1932 14.0516L21.2163 10.2548C21.9398 7.57005 22.3015 6.22768 21.6875 5.17016C21.0735 4.11264 19.7235 3.75295 17.0235 3.03358L16.0689 2.77924C13.369 2.05986 12.019 1.70018 10.9555 2.31074C9.89196 2.9213 9.53023 4.26367 8.80678 6.94841L7.78366 10.7452C7.0602 13.4299 6.69848 14.7723 7.3125 15.8298C7.92652 16.8874 9.27651 17.2471 11.9765 17.9664Z" stroke="#020012" stroke-width="1.5" stroke-linecap="round"/>
   <path d="M12 20.9463L11.0477 21.2056C8.35403 21.9391 7.00722 22.3058 5.94619 21.6833C4.88517 21.0608 4.52429 19.6921 3.80253 16.9547L2.78182 13.0834C2.06006 10.346 1.69918 8.97728 2.31177 7.89902C2.84167 6.96629 4 7.00025 5.5 7.00013" stroke="#020012" stroke-width="1.5" stroke-linecap="round"/>
@@ -2724,14 +2724,14 @@
               <!--detail--> 
               <div class="flex flex-col gap-2">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Multi Document Support</h4>
-                <p class="text-base text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Create contracts, proposals, agreements, policies, and more instantly.</p>
+                <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Create contracts, proposals, agreements, policies, and more instantly.</p>
               </div>
           </div>
              <!--card-->  
-        <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] p-5 flex flex-col gap-5">
+        <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] p-5 flex flex-col gap-5">
             <!--icon--> 
             <div class="relative">
-                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-[#EEEEEC] rounded-lg">
+                  <div class="w-[54px] h-[54px] flex justify-center items-center bg-white border border-Theme-tertiary-gray rounded-lg">
                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#020012" stroke-width="1.5"/>
   <path d="M7 8.37931H11.5M11.5 8.37931H14.5M11.5 8.37931V7M17 8.37931H14.5M14.5 8.37931C13.9725 10.2656 12.8679 12.0487 11.6071 13.6158M11.6071 13.6158C10.5631 14.9134 9.41205 16.0628 8.39286 17M11.6071 13.6158C10.9643 12.8621 10.0643 11.6426 9.80714 11.0909M11.6071 13.6158L13.5357 15.6207" stroke="#020012" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2741,7 +2741,7 @@
               <!--detail--> 
               <div class="flex flex-col gap-2">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Natural Language Commands</h4>
-                <p class="text-base text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Describe your needs naturally without learning complex AI prompts.</p>
+                <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Describe your needs naturally without learning complex AI prompts.</p>
               </div>
           </div>
       </div>
@@ -2753,16 +2753,16 @@
       <!--heading wrapper-->
       <div class="flex flex-col md:gap-4 gap-2.5 md:max-w-[580px] max-w-[335px] mx-auto text-center md:mb-[50px] mb-[25px]">
         <span class="text-base font-inter-display leading-[28px] text-Theme-purple">Overview</span>
-        <h2 class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px]">
+        <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px]">
          Feature Deep Dive</h2>
       </div>
       <!--grid wrapper-->
       <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
         <!--card-->  
-        <div class="bg-[#F9F9F9] rounded-[18px] md:px-[25px] px-[15px] md:pt-[25px] pt-[15px] md:h-[415px] h-full flex flex-col justify-between md:gap-0 gap-5">
+        <div class="bg-Theme-background rounded-[18px] md:px-[25px] px-[15px] md:pt-[25px] pt-[15px] md:h-[415px] h-full flex flex-col justify-between md:gap-0 gap-5">
               <div class="flex flex-col gap-2.5">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Template Free Creation</h4>
-                <p class="md:text-base text-sm text-[rgba(2,0,18,0.60)] leading-[26px] font-inter-display">AI Creation and Editing transforms simple instructions into complete, professionally structured documents, eliminating manual drafting while delivering accurate, business-ready content tailored to your specific needs in seconds.</p>
+                <p class="md:text-base text-sm text-Theme-dark-gray leading-[26px] font-inter-display">AI Creation and Editing transforms simple instructions into complete, professionally structured documents, eliminating manual drafting while delivering accurate, business-ready content tailored to your specific needs in seconds.</p>
               </div>
               <!--overlay-->
               <div class="flex justify-center relative">
@@ -2771,10 +2771,10 @@
               </div>
           </div>
            <!--card-->  
-        <div class="bg-[#F9F9F9] rounded-[18px] md:px-[25px] px-[15px] md:pt-[25px] pt-[15px] md:h-[415px] h-full flex flex-col justify-between md:gap-0 gap-5">
+        <div class="bg-Theme-background rounded-[18px] md:px-[25px] px-[15px] md:pt-[25px] pt-[15px] md:h-[415px] h-full flex flex-col justify-between md:gap-0 gap-5">
               <div class="flex flex-col gap-2.5">
                 <h4 class="md:text-xl text-base text-Theme-black leading-[24px] capitalize font-inter-display">Edit Documents Smarter</h4>
-                <p class="md:text-base text-sm text-[rgba(2,0,18,0.60)] leading-[26px] font-inter-display">Rewrite sections, improve readability, adjust tone, expand content, or reorganize document structure through simple instructions without interrupting your existing document workflow.</p>
+                <p class="md:text-base text-sm text-Theme-dark-gray leading-[26px] font-inter-display">Rewrite sections, improve readability, adjust tone, expand content, or reorganize document structure through simple instructions without interrupting your existing document workflow.</p>
               </div>
               <!--overlay-->
               <div class="flex justify-center relative pb-[23px]">
@@ -2792,17 +2792,17 @@
           <div class="flex lg:flex-row flex-col items-center gap-[20px] justify-between md:mb-[50px] mb-[25px] md:text-left text-center">
             <div class="flex flex-col md:gap-4 gap-2.5 md:max-w-[580px] max-w-[335px]">
               <span class="text-base font-inter-display leading-[28px] text-Theme-purple md:text-left text-center">How It Works</span>
-              <h2 class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px] md:text-left text-center">Create, Edit, and Finalize Professional Documents in Four Simple Steps
+              <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:leading-[normal] leading-[28px] md:text-left text-center">Create, Edit, and Finalize Professional Documents in Four Simple Steps
 </h2>
             </div>
-            <a href="#" class="py-2 px-5 flex justify-center items-center w-[160px]  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+            <a href="#" class="py-2 px-5 flex justify-center items-center w-[160px]  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
               Create Document
             </a>
           </div>
           <!--grid wrapper-->
           <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
             <!--card-->  
-            <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
+            <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
                 <!--number-->  
                 <div class="pt-[25px] pl-[25px] ">
                     <div class="text-[67px] font-inter-tight font-semibold tracking-[-2.01px] leading-normal opacity-20 bg-[linear-gradient(180deg,#020012_0%,rgba(2,0,18,0.00)_100%)] bg-clip-text text-transparent ">1</div>
@@ -2810,11 +2810,11 @@
                 <!--detail-->
                 <div class="flex flex-col gap-2 p-[15px]"> 
                     <h5 class="text-lg text-Theme-black leading-[24px] capitalize font-inter-display">Describe Your Needs</h5>
-                    <p class="text-sm text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Explain your document requirements using simple, natural language instructions.</p>
+                    <p class="text-sm text-Theme-dark-gray leading-[23px] font-inter-display">Explain your document requirements using simple, natural language instructions.</p>
                 </div>
               </div>
                <!--card-->  
-            <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
+            <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
                 <!--number-->  
                 <div class="pt-[25px] pl-[25px] ">
                     <div class="text-[67px] font-inter-tight font-semibold tracking-[-2.01px] leading-normal opacity-20 bg-[linear-gradient(180deg,#020012_0%,rgba(2,0,18,0.00)_100%)] bg-clip-text text-transparent ">2</div>
@@ -2822,11 +2822,11 @@
                 <!--detail-->
                 <div class="flex flex-col gap-2 p-[15px]"> 
                     <h5 class="text-lg text-Theme-black leading-[24px] capitalize font-inter-display">Generate Document</h5>
-                    <p class="text-sm text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">AI creates a structured document tailored to your specific requirements instantly.</p>
+                    <p class="text-sm text-Theme-dark-gray leading-[23px] font-inter-display">AI creates a structured document tailored to your specific requirements instantly.</p>
                 </div>
               </div>
               <!--card-->  
-            <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
+            <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
                 <!--number-->  
                 <div class="pt-[25px] pl-[25px] ">
                     <div class="text-[67px] font-inter-tight font-semibold tracking-[-2.01px] leading-normal opacity-20 bg-[linear-gradient(180deg,#020012_0%,rgba(2,0,18,0.00)_100%)] bg-clip-text text-transparent ">3</div>
@@ -2835,12 +2835,12 @@
                 <div class="flex flex-col gap-2 p-[15px]"> 
                     <h5 class="text-lg text-Theme-black leading-[24px] capitalize font-inter-display">Review and Improve
 </h5>
-                    <p class="text-sm text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Refine wording, structure, tone, or content using AI editing assistance.
+                    <p class="text-sm text-Theme-dark-gray leading-[23px] font-inter-display">Refine wording, structure, tone, or content using AI editing assistance.
 </p>
                 </div>
               </div>
                <!--card-->  
-            <div class="bg-[#F9F9F9] border border-[#EEEEEC] rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
+            <div class="bg-Theme-background border border-Theme-tertiary-gray rounded-[14px] flex flex-col md:gap-[46px] gap-[0px]">
                 <!--number-->  
                 <div class="pt-[25px] pl-[25px] ">
                     <div class="text-[67px] font-inter-tight font-semibold tracking-[-2.01px] leading-normal opacity-20 bg-[linear-gradient(180deg,#020012_0%,rgba(2,0,18,0.00)_100%)] bg-clip-text text-transparent ">4</div>
@@ -2849,7 +2849,7 @@
                 <div class="flex flex-col gap-2 p-[15px]"> 
                     <h5 class="text-lg text-Theme-black leading-[24px] capitalize font-inter-display">Send or Export
 </h5>
-                    <p class="text-sm text-[rgba(2,0,18,0.60)] leading-[23px] font-inter-display">Finalize your document for sharing, signing, or downloading anytime.
+                    <p class="text-sm text-Theme-dark-gray leading-[23px] font-inter-display">Finalize your document for sharing, signing, or downloading anytime.
 </p>
                 </div>
               </div>
@@ -2862,7 +2862,7 @@
       <div class="flex xl:flex-row flex-col md:gap-[60px] gap-[15px]">
         <div class="xl:max-w-[300px] max-w-[280px] mx-auto">
           <h2
-            class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5 xl:text-left text-center md:leading-[normal]">
+            class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5 xl:text-left text-center md:leading-[normal]">
             Frequently
             Asked Questions.</h2>
           <p
@@ -2875,8 +2875,8 @@
           <div x-data="{ open: null }" class="w-full xl:max-w-[778px] max-w-full mx-auto flex flex-col gap-[15px]">
 
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-              :class="open === 1 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+              :class="open === 1 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 1 ? null : 1"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span
@@ -2886,7 +2886,7 @@
 
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 1"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
@@ -2910,8 +2910,8 @@
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-              :class="open === 2 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+              :class="open === 2 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 2 ? null : 2"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span
@@ -2920,7 +2920,7 @@
                   Can AI edit existing documents?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 2"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
@@ -2944,8 +2944,8 @@
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-              :class="open === 3 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+              :class="open === 3 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 3 ? null : 3"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span
@@ -2954,7 +2954,7 @@
                   Which documents can I create?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 3"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
@@ -2977,8 +2977,8 @@
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-              :class="open === 4 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+              :class="open === 4 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 4 ? null : 4"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span
@@ -2987,7 +2987,7 @@
                  Can I customize AI-generated content?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 4"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
@@ -3010,8 +3010,8 @@
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-[#EEEEEC] rounded-[14px] transition-colors duration-500 "
-              :class="open === 5 ? 'bg-[#F9F9F9]' : 'bg-white'">
+            <div class="border border-Theme-tertiary-gray rounded-[14px] transition-colors duration-500 "
+              :class="open === 5 ? 'bg-Theme-background' : 'bg-white'">
               <button @click="open = open === 5 ? null : 5"
                 class="w-full flex items-center justify-between md:py-[15px] py-2.5 pb-0 md:pb-0 md:px-5 px-3 text-left">
                 <span
@@ -3020,7 +3020,7 @@
                  Can I edit documents after AI generates them?
                 </span>
                 <span
-                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-[#EEEEEC] bg-white"
+                  class="shrink-0 ml-4 transition-colors duration-500 md:w-[34px] md:h-[34px] w-[24px] h-[24px]  flex items-center justify-center rounded-lg border border-Theme-tertiary-gray bg-white"
                   :class="">
                   <svg class="md:w-[18px] md:h-[18px] w-[14px] h-[14px]" x-show="open !== 5"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
@@ -3053,18 +3053,18 @@
   <!--CTA section-->
   <section class="relative ">
     <div class="max-w-[1170px] mx-auto px-[15px]">
-      <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-[#EEEEEC]">
+      <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-Theme-tertiary-gray">
         <div class="flex flex-col gap-[40px]">
           <div class="md:max-w-[536px] max-w-full mx-auto text-center md:pt-[60px] pt-[30px]  md:px-0 px-[15px]">
             <h2
-              class="md:text-[37px] text-[20px] text-[#090536] font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] mb-2.5 text-center md:leading-[normal] leading-[28px]">
+              class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] mb-2.5 text-center md:leading-[normal] leading-[28px]">
               Everything You Need to <br>
               Create, Send and Sign Documents</h2>
             <p
               class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full leading-[19px]  md:leading-[26px] mx-auto  md:mb-[25px] mb-[15px] md:max-w-full max-w-[247px]">
               Agreed helps teams reduce delays, improve signing completion</p>
             <a href="#"
-              class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[160px] w-fit mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#7b53d7]">
+              class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[160px] w-fit mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
               Start Creating Now
             </a>
           </div>
@@ -3139,7 +3139,7 @@
           <ul class="flex items-center gap-3">
             <li>
               <a href="#"
-                class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path
                     d="M7.14163 5.08118L11.6089 0H10.5503L6.67137 4.41192L3.57328 0H0L4.68492 6.6716L0 12H1.05866L5.15491 7.34086L8.42672 12H12L7.14137 5.08118H7.14163ZM5.69165 6.73038L5.21697 6.06604L1.44011 0.779808H3.06615L6.11412 5.04596L6.5888 5.71031L10.5508 11.2557H8.92476L5.69165 6.73063V6.73038Z"
@@ -3149,7 +3149,7 @@
             </li>
             <li>
               <a href="#"
-                class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M19.1195 6.16547C19.88 6.37087 20.4778 6.97018 20.6799 7.72987C21.0475 9.10858 21.0475 11.987 21.0475 11.987C21.0475 11.987 21.0475 14.8654 20.6799 16.2441C20.475 17.0066 19.8772 17.6059 19.1195 17.8085C17.7443 18.1771 12.2266 18.1771 12.2266 18.1771C12.2266 18.1771 6.71184 18.1771 5.33384 17.8085C4.57327 17.6031 3.97548 17.0038 3.77342 16.2441C3.40576 14.8654 3.40576 11.987 3.40576 11.987C3.40576 11.987 3.40576 9.10858 3.77342 7.72987C3.97829 6.96737 4.57608 6.36805 5.33384 6.16547C6.71184 5.79688 12.2266 5.79688 12.2266 5.79688C12.2266 5.79688 17.7443 5.79688 19.1195 6.16547ZM15.0471 11.987L10.4641 14.6403V9.33367L15.0471 11.987Z"
@@ -3159,7 +3159,7 @@
             </li>
             <li>
               <a href="#"
-                class="w-[38px] h-[38px] flex justify-center items-center border border-[#EEEEEC] rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
+                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M17.5007 7.03108C19.2991 9.69158 20.1872 12.6925 19.8552 16.1473C19.8538 16.162 19.8463 16.1754 19.8343 16.1842C18.4725 17.1904 17.153 17.8011 15.852 18.206C15.8419 18.2091 15.831 18.2089 15.821 18.2055C15.811 18.2021 15.8023 18.1956 15.7961 18.187C15.4955 17.7662 15.2224 17.3226 14.9832 16.8567C14.9694 16.8293 14.982 16.7963 15.0102 16.7854C15.444 16.621 15.8564 16.4239 16.2531 16.1906C16.2843 16.1722 16.2863 16.1271 16.2575 16.1055C16.1733 16.0426 16.0899 15.9765 16.01 15.9104C15.9951 15.8982 15.975 15.8958 15.9581 15.904C13.3826 17.1007 10.5613 17.1007 7.9554 15.904C7.93849 15.8964 7.91838 15.899 7.90385 15.911C7.82423 15.9771 7.74063 16.0426 7.65723 16.1055C7.62837 16.1271 7.63076 16.1722 7.66221 16.1906C8.05891 16.4195 8.47133 16.621 8.90446 16.7862C8.93253 16.7971 8.94586 16.8293 8.93193 16.8567C8.69785 17.3232 8.42476 17.7668 8.11862 18.1876C8.10529 18.2046 8.08339 18.2124 8.06269 18.206C6.76789 17.8011 5.44841 17.1904 4.08653 16.1842C4.07518 16.1754 4.06702 16.1614 4.06583 16.1467C3.78835 13.1584 4.35385 10.1326 6.41816 7.03048C6.42314 7.02226 6.4307 7.01586 6.43946 7.01205C7.4552 6.543 8.54339 6.19792 9.68074 6.00084C9.70145 5.99764 9.72215 6.00725 9.73289 6.02568C9.87342 6.27603 10.0341 6.59707 10.1427 6.85944C11.3416 6.67518 12.5592 6.67518 13.7831 6.85944C13.8918 6.60268 14.0468 6.27603 14.1868 6.02568C14.1918 6.01654 14.1995 6.00921 14.2088 6.00476C14.2182 6.0003 14.2287 5.99893 14.2389 6.00084C15.3769 6.19852 16.4651 6.5436 17.48 7.01205C17.489 7.01586 17.4963 7.02226 17.5007 7.03108ZM10.7522 12.713C10.7648 11.8295 10.1246 11.0985 9.32107 11.0985C8.52408 11.0985 7.89012 11.8231 7.89012 12.713C7.89012 13.6026 8.53662 14.3272 9.32107 14.3272C10.1182 14.3272 10.7522 13.6026 10.7522 12.713ZM16.0433 12.713C16.0558 11.8295 15.4157 11.0985 14.6123 11.0985C13.8152 11.0985 13.1812 11.8231 13.1812 12.713C13.1812 13.6026 13.8277 14.3272 14.6123 14.3272C15.4157 14.3272 16.0433 13.6026 16.0433 12.713Z"
@@ -3176,77 +3176,77 @@
             class="grid md:grid-cols-3 grid-cols-2 flex-wrap md:gap-x-[100px] gap-x-20  md:gap-y-[70px] gap-y-6 md:mb-[50px] mb-5">
             <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-              <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Product</h5>
+              <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Product</h5>
               <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Drag & Drop Editor
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Document Repository
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Workspaces
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Custom Branding & Themes
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Signature Request
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Signing Order
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Bulk Send
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Collect Payment
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     ID Verification
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Signature Verification
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     AI Document Assistant
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     AI Data Extraction
                   </a>
                 </li>
@@ -3254,77 +3254,77 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5 ">
-              <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Solutions</h5>
+              <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Solutions</h5>
               <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Sales
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Human Resources
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Legal
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Healthcare
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Real Estate
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Financial Services
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Insurance
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Construction
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Small Business
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Teams
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Enterprise
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Government
                   </a>
                 </li>
@@ -3332,29 +3332,29 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-              <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Resources</h5>
+              <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Resources</h5>
               <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Blog
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Templates
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Affiliate
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Help Center
                   </a>
                 </li>
@@ -3363,42 +3363,42 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-              <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Legal</h5>
+              <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Legal</h5>
               <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Terms of Service
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Cookie Policy
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Fair Use
 
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     GDPR
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Security
                   </a>
                 </li>
@@ -3406,29 +3406,29 @@
             </div>
             <!--col-->
             <div class="flex flex-col  md:gap-[28px] gap-5 ">
-              <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Alternatives</h5>
+              <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Alternatives</h5>
               <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
@@ -3438,29 +3438,29 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:gap-[28px] gap-5">
-              <h5 class="md:text-base text-sm font-inter-display-semibold text-[#090536]">Free Tools</h5>
+              <h5 class="md:text-base text-sm font-inter-display-semibold text-Theme-black">Free Tools</h5>
               <ul class="flex flex-col md:gap-[15px] gap-2.5 ">
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Blog
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Templates
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Affiliate
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="md:text-base text-xs font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="md:text-base text-xs font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Help Center
                   </a>
                 </li>
@@ -4236,9 +4236,9 @@
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
         header.classList.remove('border-transparent');
-        header.classList.add('border-[#EEEEEC]');
+        header.classList.add('border-Theme-tertiary-gray');
       } else {
-        header.classList.remove('border-[#EEEEEC]');
+        header.classList.remove('border-Theme-tertiary-gray');
         header.classList.add('border-transparent');
       }
     });

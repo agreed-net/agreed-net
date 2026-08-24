@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Security | Agreed</title>
+  <title>Cookie Policy | Agreed</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/output.css" />
+  <link rel="stylesheet" href="../assets/css/output.css" />
 
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
@@ -313,7 +313,7 @@
         <nav class="hidden items-center gap-[34px] pl-[50px] lg:flex w-full">
           <div class="relative">
             <button @click="openMenu = openMenu === 'platform' ? null : 'platform'"
-              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
               Product
 
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
@@ -325,7 +325,7 @@
 
           <div class="relative">
             <button @click="openMenu = openMenu === 'solutions' ? null : 'solutions'"
-              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
               Solutions
 
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
@@ -337,7 +337,7 @@
 
           <div class="relative">
             <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
-              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
               Templates
 
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
@@ -348,7 +348,7 @@
           </div>
           <div class="relative">
             <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
-              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
               Integrations
 
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
@@ -359,7 +359,7 @@
           </div>
           <div class="relative">
             <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
-              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+              class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
               Resources
 
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
@@ -370,7 +370,7 @@
           </div>
 
           <a href="#"
-            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">Pricing</a>
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">Pricing</a>
         </nav>
 
         <a href="#"
@@ -395,7 +395,7 @@
         style="display: none">
         <div class="relative">
           <button @click="openMenu = openMenu === 'platform' ? null : 'platform'"
-            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
             Platform
 
             <svg class="transition-transform" :class="openMenu === 'platform' ? 'rotate-180' : ''"
@@ -408,7 +408,7 @@
 
         <div class="relative">
           <button @click="openMenu = openMenu === 'solutions' ? null : 'solutions'"
-            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
             Solutions
 
             <svg class="transition-transform" :class="openMenu === 'solutions' ? 'rotate-180' : ''"
@@ -421,7 +421,7 @@
 
         <div class="relative">
           <button @click="openMenu = openMenu === 'resources' ? null : 'resources'"
-            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-[#090536] hover:text-black">
+            class="text-sm leading-5 font-inter-display-medium flex items-center gap-1 text-Theme-black hover:text-black">
             Resources
 
             <svg class="transition-transform" :class="openMenu === 'resources' ? 'rotate-180' : ''"
@@ -447,216 +447,186 @@
   <div class="md:pt-[130px] pt-[100px] md:pb-[100px] pb-[50px]">
     <div class="max-w-[974px] mx-auto px-[15px]">
       <!--content header-->
-      <div class="border-b border-[#EEEEEC] md:pb-10 pb-5 md:mb-[50px] mb-[25px]">
+      <div class="border-b border-[#EEEEEC] pb-10 mb-[50px]">
         <div class="flex flex-col gap-[15px]">
           <span
             class="w-fit bg-[rgba(142,94,254,0.10)] rounded-lg py-[7px] px-[15px] text-sm text-Theme-purple font-inter-display-medium">
             Legal
           </span>
-          <h1 class="text-[47px] text-[#090536] leading-[66px] tracking-[-1.41px] font-inter-tight font-light">
-            Security</h1>
+          <h1 class="text-[47px] text-Theme-black leading-[66px] tracking-[-1.41px] font-inter-tight font-light">
+            Cookie Policy</h1>
         </div>
       </div>
       <!--content main-->
       <div class="block">
-        <span class="text-base font-inter-display-medium leading-[28px] text-Theme-black/60 mb-[50px] block">Effective
+        <span class="text-base font-inter-display-medium leading-[28px] text-Theme-dark-gray mb-[50px] block">Effective
           Date: July 14, 2026</span>
         <!--main-->
         <div class="flex flex-col gap-10">
           <!--sub-->
           <div class="flex flex-col gap-3">
-            <h2 class="text-2xl text-[#090536] font-inter-display-medium ">1. Our Approach to Security</h2>
+            <h2 class="text-2xl text-Theme-black font-inter-display-medium ">1. What Are Cookies</h2>
             <div class="flex flex-col gap-3.5">
-              <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">At Agreed, security is
-                foundational to everything we build. As a platform handling contracts, e-signatures, and sensitive
-                business agreements, we apply industry-standard practices to protect the confidentiality, integrity,
-                and availability of your data.</p>
+              <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">Cookies are small text
+                files stored on your device when you visit a website. They allow the website to recognize your
+                device, remember your preferences, and improve your overall experience. Agreed also uses similar
+                technologies such as local storage and pixel tags, collectively referred to as "cookies" in this
+                policy.</p>
             </div>
           </div>
           <!--sub-->
           <div class="flex flex-col gap-3.5">
             <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">2. Data Encryption</h2>
+              <h2 class="text-2xl text-Theme-black font-inter-display-medium ">2. Types of Cookies We Use</h2>
+            </div>
+            <div class="overflow-x-auto rounded-lg border border-[#EEEEEC]">
+              <table class="w-full border-collapse table-fixed">
+                <thead>
+                  <tr class="bg-Theme-background">
+                    <th
+                      class="text-left text-sm  font-inter-display text-Theme-black py-[15px] px-[15px] border-b border-r border-Theme-tertiary-gray whitespace-nowrap    ">
+                      Cookie type</th>
+                    <th
+                      class="text-left text-sm font-inter-display text-Theme-black py-[15px] px-[15px] border-b border-r border-Theme-tertiary-gray">
+                      Purpose</th>
+                    <th
+                      class="text-left text-sm font-inter-display text-Theme-black py-[15px] px-[15px] border-b border-r border-Theme-tertiary-gray">
+                      Examples</th>
+                    <th
+                      class="text-left text-sm font-inter-display text-Theme-black py-[15px] px-[15px] border-b border-Theme-tertiary-gray whitespace-nowrap">
+                      Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b  border-Theme-tertiary-gray">
+                    <td class="text-sm font-inter-display text-Theme-black py-3.5 px-4  whitespace-nowrap align-middle border-r border-Theme-tertiary-gray">
+                      Essential</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Required for login, security, and core platform functionality</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Session ID, auth token, CSRF token</td>
+                    <td
+                      class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top whitespace-nowrap">
+                      Session / up to 30 days</td>
+                  </tr>
+                  <tr class="border-b border-Theme-tertiary-gray">
+                    <td class="text-sm font-inter-display text-Theme-black py-3.5 px-4 align-middle whitespace-nowrap border-r border-Theme-tertiary-gray">
+                      Analytics</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Help us understand usage patterns and improve the platform</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Page views, feature usage, click tracking</td>
+                    <td
+                      class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top whitespace-nowrap">
+                      Up to 12 months</td>
+                  </tr>
+                  <tr class="border-b border-Theme-tertiary-gray">
+                    <td class="text-sm font-inter-display text-Theme-black py-3.5 px-4 align-middle whitespace-nowrap border-r border-Theme-tertiary-gray">
+                      Preference</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Remember your settings and choices</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Language, theme, saved filters</td>
+                    <td
+                      class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top whitespace-nowrap">
+                      Up to 12 months</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-inter-display text-Theme-black py-3.5 px-4 align-middle whitespace-nowrap border-r border-Theme-tertiary-gray">
+                      Payment</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Support secure checkout and subscription billing</td>
+                    <td class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top border-r border-Theme-tertiary-gray">
+                      Payment session tokens</td>
+                    <td
+                      class="text-sm font-inter-display leading-[22px] text-Theme-dark-gray py-3.5 px-4 align-top whitespace-nowrap">
+                      Session only</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3.5">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl text-Theme-black font-inter-display-medium ">3. Why We Use Cookies</h2>
             </div>
             <div class="flex flex-col gap-3">
               <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">All data transmitted
-                  between your device and Agreed is encrypted using TLS 1.2 or higher</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Sensitive data at
-                  rest, including documents and signatures, is encrypted using AES-256 encryption</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Payment information is
-                  never stored on our servers directly; it is processed through PCI-DSS compliant payment
-                  processors</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">To keep you securely
+                  logged in during your session</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">To remember your
+                  language, display, and account preferences</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">To process payments
+                  and manage subscription billing securely</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">To understand how
+                  users interact with our platform so we can improve it</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">To detect and prevent
+                  fraud or unauthorized account access</li>
               </ul>
             </div>
           </div>
           <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">3. Account Security</h2>
-            </div>
-            <div class="flex flex-col gap-3">
-              <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Multi-factor
-                  authentication (MFA) is available and recommended for all accounts</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Passwords are hashed
-                  using industry-standard algorithms and are never stored in plain text</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Automatic session
-                  timeouts protect accounts left idle on shared or public devices</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Login attempts are
-                  monitored for suspicious activity, with automatic lockouts after repeated failed attempts</li>
-              </ul>
+          <div class="flex flex-col gap-3">
+            <h2 class="text-2xl text-Theme-black font-inter-display-medium ">4. Third-Party Cookies</h2>
+            <div class="flex flex-col gap-3.5">
+              <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">Some cookies may be set
+                by trusted third-party service providers who help us operate the platform, such as analytics and
+                payment processing providers. These providers may collect information about your use of Agreed and
+                other websites, subject to their own privacy policies. We do not permit third parties to use
+                cookies on Agreed for their own advertising purposes.</p>
             </div>
           </div>
           <!--sub-->
           <div class="flex flex-col gap-3.5">
             <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">4. Infrastructure Security</h2>
-            </div>
-            <div class="flex flex-col gap-3">
-              <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Our infrastructure is
-                  hosted on reputable cloud providers with industry-leading physical and network security</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Systems are protected
-                  by firewalls, intrusion detection, and continuous monitoring</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Data is backed up
-                  regularly to prevent loss in the event of a system failure</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Access to production
-                  systems is restricted to authorized personnel and logged for audit purposes</li>
-              </ul>
-            </div>
-          </div>
-          <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">5. Application Security</h2>
-            </div>
-            <div class="flex flex-col gap-3">
-              <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Regular security
-                  audits and vulnerability assessments are conducted on our platform</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Periodic penetration
-                  testing is performed by independent security professionals</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Security patches and
-                  updates are applied promptly across our systems</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Secure coding
-                  practices and code review processes are followed throughout development</li>
-              </ul>
-            </div>
-          </div>
-          <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">6. E Signature & Document Integrity</h2>
-            </div>
-            <div class="flex flex-col gap-3">
-              <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">All signed documents
-                  include a tamper-evident audit trail recording timestamps, IP addresses, and signatory actions
-                </li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Document hashes are
-                  used to detect any unauthorized modification after signing</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Access to stored
-                  documents is restricted to authorized parties associated with each agreement</li>
-              </ul>
-            </div>
-          </div>
-          <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">7. Employee Access & Training</h2>
-            </div>
-            <div class="flex flex-col gap-3">
-              <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Employee access to
-                  user data is limited on a need-to-know basis</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">All employees
-                  undergo security and data protection training</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Access to sensitive
-                  systems requires authentication and is logged and periodically reviewed</li>
-              </ul>
-            </div>
-          </div>
-          <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">8. Incident Response</h2>
-              <div class="flex flex-col gap-3.5">
-                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Agreed maintains an
-                  incident response plan to detect, investigate, and respond to potential security incidents. In
-                  the event of a data breach affecting your personal information, we will:</p>
-              </div>
-            </div>
-            <div class="flex flex-col gap-3">
-              <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Investigate and
-                  contain the incident promptly</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Notify affected users
-                  and relevant regulatory authorities as required by applicable law</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Take corrective
-                  action to prevent recurrence</li>
-              </ul>
-            </div>
-          </div>
-          <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">9. Reporting a Security Vulnerability
+              <h2 class="text-2xl text-Theme-black font-inter-display-medium ">5. Managing Your Cookie Preferences
               </h2>
               <div class="flex flex-col gap-3.5">
-                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We welcome responsible
-                  disclosure from security researchers. If you discover a potential vulnerability in Agreed, please
-                  report it to us before disclosing it publicly, so we can investigate and address it promptly.</p>
-                <p class="text-base font-inter-display-medium leading-[26px] text-Theme-black">Report
-                  vulnerabilities to: <a href="#" class="text-[#007DFF] font-inter-display">mail@agreed.net</a></p>
-                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Please include a clear
-                  description of the issue, steps to reproduce it, and any relevant technical details. We aim to
-                  acknowledge reports within a reasonable time frame and will keep you informed of our progress.</p>
-              </div>
-            </div>
-          </div>
-          <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">10. Your Role in Security</h2>
-              <div class="flex flex-col gap-3.5">
-                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">Security is a shared
-                  responsibility. We recommend that you:</p>
+                <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">You have control over
+                  cookies in the following ways:</p>
               </div>
             </div>
             <div class="flex flex-col gap-3">
               <ul class="list-disc pl-5">
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Use a strong, unique
-                  password for your Agreed account</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Enable multi-factor
-                  authentication</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Avoid sharing your
-                  login credentials with others</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Log out of Agreed
-                  when using shared or public devices</li>
-                <li class="text-base font-inter-display leading-[32px] text-Theme-black/50">Report any suspicious
-                  activity on your account immediately</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">Cookie banner — when
+                  you first visit agreed.net, you can accept or customize non-essential cookies</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">Browser settings —
+                  most browsers let you block or delete cookies through their settings menu</li>
+                <li class="text-base font-inter-display leading-[32px] text-Theme-dark-gray">Account settings —
+                  logged-in users can manage certain preference cookies from account settings</li>
               </ul>
             </div>
+            <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">Please note that disabling
+              essential cookies may prevent you from logging in or using core features of Agreed. Disabling
+              analytics or preference cookies will not affect core functionality but may reduce personalization.</p>
           </div>
           <!--sub-->
-          <div class="flex flex-col gap-3.5">
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">11. Changes to This Page</h2>
-              <div class="flex flex-col gap-3.5">
-                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">We may update this
-                  Security page to reflect improvements to our practices and infrastructure. Material changes will
-                  be reflected by updating the "Effective Date" above.</p>
-              </div>
+          <div class="flex flex-col gap-3">
+            <h2 class="text-2xl text-Theme-black font-inter-display-medium ">6. Do Not Track Signals</h2>
+            <div class="flex flex-col gap-3.5">
+              <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">Some browsers offer a "Do
+                Not Track" (DNT) setting. Where technically feasible, Agreed honors DNT signals by disabling
+                non-essential analytics cookies for users who have enabled this setting.</p>
+            </div>
+          </div>
+          <!--sub-->
+          <div class="flex flex-col gap-3">
+            <h2 class="text-2xl text-Theme-black font-inter-display-medium ">7. Changes to This Cookie Policy</h2>
+            <div class="flex flex-col gap-3.5">
+              <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">We may update this
+                Cookie Policy periodically to reflect changes in technology, regulation, or our practices. Material
+                changes will be reflected by updating the "Effective Date" above and, where appropriate,
+                communicated via the platform or email.</p>
             </div>
           </div>
           <!--sub-->
           <div class="flex flex-col gap-3.5">
             <div class="flex flex-col gap-3">
-              <h2 class="text-2xl text-[#090536] font-inter-display-medium ">12. Contact Us</h2>
+              <h2 class="text-2xl text-Theme-black font-inter-display-medium ">8. Contact Us</h2>
               <div class="flex flex-col gap-3.5">
-                <p class="text-base font-inter-display leading-[26px] text-Theme-black/50">For security-related
-                  questions or concerns, please contact us:</p>
+                <p class="text-base font-inter-display leading-[26px] text-Theme-dark-gray">If you have questions
+                  about our use of cookies, please contact us:</p>
               </div>
             </div>
             <div class="flex flex-col gap-3.5">
@@ -680,7 +650,7 @@
       <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-[#EEEEEC]">
         <div class="flex flex-col gap-[40px]">
           <div class="max-w-[536px] mx-auto text-center pt-[60px]">
-            <h2 class="text-[37px] text-[#090536] font-inter-tight font-light tracking-[-1.11px] mb-2.5 text-center">
+            <h2 class="text-[37px] text-Theme-black font-inter-tight font-light tracking-[-1.11px] mb-2.5 text-center">
               Everything You Need to
               Create, Send and Sign Documents</h2>
             <p
@@ -754,7 +724,7 @@
                   fill="#8E5EFE" />
               </svg>
             </a>
-            <p class="text-base font-inter-display leading-[23px] text-Theme-black/50">Create agreements, contracts,
+            <p class="text-base font-inter-display leading-[23px] text-Theme-dark-gray">Create agreements, contracts,
               proposals and documents in minutes. Send for </p>
           </div>
           <ul class="flex items-center gap-3">
@@ -797,77 +767,77 @@
             class="grid md:grid-cols-3 grid-cols-1 flex-wrap md:gap-x-[100px]  md:gap-y-[70px] gap-8 md:mb-[50px] mb-5">
             <!--col-->
             <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
-              <h5 class="text-base font-inter-display-semibold text-[#090536]">Product</h5>
+              <h5 class="text-base font-inter-display-semibold text-Theme-black">Product</h5>
               <ul class="flex flex-col gap-[15px] md:text-left text-center">
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Drag & Drop Editor
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Document Repository
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Workspaces
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Custom Branding & Themes
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Signature Request
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Signing Order
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Bulk Send
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Collect Payment
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     ID Verification
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Signature Verification
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     AI Document Assistant
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     AI Data Extraction
                   </a>
                 </li>
@@ -875,77 +845,77 @@
             </div>
             <!--col-->
             <div class="flex flex-col  md:items-start items-center md:gap-[28px] gap-4 ">
-              <h5 class="text-base font-inter-display-semibold text-[#090536]">Solutions</h5>
+              <h5 class="text-base font-inter-display-semibold text-Theme-black">Solutions</h5>
               <ul class="flex flex-col gap-[15px] md:text-left text-center">
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Sales
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Human Resources
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Legal
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Healthcare
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Real Estate
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Financial Services
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Insurance
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Construction
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Small Business
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Teams
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Enterprise
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Government
                   </a>
                 </li>
@@ -953,29 +923,29 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
-              <h5 class="text-base font-inter-display-semibold text-[#090536]">Resources</h5>
+              <h5 class="text-base font-inter-display-semibold text-Theme-black">Resources</h5>
               <ul class="flex flex-col gap-[15px] md:text-left text-center">
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Blog
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Templates
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Affiliate
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Help Center
                   </a>
                 </li>
@@ -984,42 +954,42 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
-              <h5 class="text-base font-inter-display-semibold text-[#090536]">Legal</h5>
+              <h5 class="text-base font-inter-display-semibold text-Theme-black">Legal</h5>
               <ul class="flex flex-col gap-[15px] md:text-left text-center">
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Terms of Service
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Cookie Policy
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Fair Use
 
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     GDPR
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Security
                   </a>
                 </li>
@@ -1027,29 +997,29 @@
             </div>
             <!--col-->
             <div class="flex flex-col  md:items-start items-center md:gap-[28px] gap-4 ">
-              <h5 class="text-base font-inter-display-semibold text-[#090536]">Alternatives</h5>
+              <h5 class="text-base font-inter-display-semibold text-Theme-black">Alternatives</h5>
               <ul class="flex flex-col gap-[15px] md:text-left text-center">
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Pandadoc Alternative
                   </a>
                 </li>
@@ -1059,29 +1029,29 @@
             </div>
             <!--col-->
             <div class="flex flex-col md:items-start items-center md:gap-[28px] gap-4 ">
-              <h5 class="text-base font-inter-display-semibold text-[#090536]">Free Tools</h5>
+              <h5 class="text-base font-inter-display-semibold text-Theme-black">Free Tools</h5>
               <ul class="flex flex-col gap-[15px] md:text-left text-center">
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Blog
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Templates
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Affiliate
                   </a>
                 </li>
                 <li>
                   <a href="#"
-                    class="text-base font-inter-display leading-[22px] text-[#090536] transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
+                    class="text-base font-inter-display leading-[22px] text-Theme-black transition-all duration-500 whitespace-nowrap hover:text-Theme-purple">
                     Help Center
                   </a>
                 </li>

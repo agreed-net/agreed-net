@@ -71,8 +71,8 @@
   @apply
   grid
   items-center
-  grid-cols-[minmax(0,1fr)_150px_130px_120px_60px]
-  min-[1400px]:grid-cols-[minmax(0,1fr)_207px_112px_310px_50px];
+  grid-cols-[minmax(0,1fr)_202px_210px_115px_280px_80px]
+  max-[1600px]:grid-cols-[minmax(0,1fr)_150px_160px_120px_165px_80px];
 }
 
 /* base classes*/
@@ -248,10 +248,8 @@
 }
 /* Firefox Scrollbar only */
 @-moz-document url-prefix() {
-    .custom-scrollbar {
-        scrollbar-width: thin;
-        scrollbar-color: #EAE8E5 transparent;
-        
+    .custom-scroll-gap {
+        scrollbar-width: none;
     }
 }
 
@@ -566,7 +564,7 @@ input[type="number"] {
       font-family: 'inter tight';
       font-weight: 400;
       text-transform: capitalize;
-      color: #A5A5A5;
+      color: #7D7972;
       transition: .35s;
     }
 
@@ -580,12 +578,12 @@ input[type="number"] {
     .step p {
 
       margin-top: 14px;
-      max-width: 290px;
+      max-width: 320px;
       line-height: 26px;
       height: 52px;
       display: none;
 
-      color: rgba(2, 0, 18, 0.60);
+      color: #7D7972;
 
     }
 
@@ -684,7 +682,7 @@ input[type="number"] {
     }
 
     #stackHero .stack-fill-heading {
-      color: rgba(9, 5, 54, 0.22);
+      color: #131211;
     }
 
     #stackHero .stack-fill-word {
@@ -693,7 +691,7 @@ input[type="number"] {
     }
 
     #stackHero .stack-fill-char {
-      color: rgba(9, 5, 54, 0.22);
+      color: #131211;
     }
 
     .accordion-content {

@@ -2859,320 +2859,159 @@
         </div>
     </div>
 
+    <!--hero-->
+    <div class="xl:pt-[64px] md:pt-[50px] pt-[40px] px-4">
+        <div class="w-full max-w-[1140px] mx-auto relative pb-5 border-b border-Theme-tertiary-gray">
+            <h1
+                class="text-[22px] md:text-[47px] font-inter-tight font-light leading-[30px] md:leading-[66px] tracking-[-1.41px] text-Theme-black w-full mb-2.5">
+               Our Product
+            </h1>
+            <p
+                class="text-xs md:text-base font-inter-display font-normal text-[#131211]/50 w-full leading-[19px] md:leading-[26px] max-w-[871px] mb-5">
+              Discover the tools that help your team create documents faster, collaborate seamlessly, collect signatures, automate approvals, and close deals with confidence.
+            </p>
+
+            <label class="relative block w-full" aria-label="Search templates"><svg
+                    class="pointer-events-none absolute left-3.5 top-1/2  -translate-y-1/2 text-[#756F6F]"
+                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M14.166 14.168L17.4993 17.5013" stroke="#57534E" stroke-width="1.4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667Z"
+                        stroke="#57534E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg><input
+                    class="h-12  w-full rounded-lg border-0 bg-[#F6F6F6] py-0 pl-11 pr-4 md:text-base text-sm text-Theme-black outline-none placeholder:text-[#9C9C9C]"
+                    placeholder="Search Document" type="search"></label>
+        </div>
+    </div>
+
     <!-- template section -->
-    <section class="w-full px-4 pt-6">
-        <div class="w-full max-w-[1140px] mx-auto ">
-
-
+    <section class="w-full px-4 pt-5">
+        <div class="w-full max-w-[1140px] mx-auto flex gap-[15px]">
+           
             <div class="w-full">
-
-                <nav class="flex flex-wrap items-center gap-5 text-sm text-[#7D7676] p-3.5 border-b border-Theme-tertiary-gray w-full"
-                    aria-label="Breadcrumb"><a class="text-Theme-black text-sm leading-5 font-normal font-inter-display"
-                        href="/templates">Resources</a><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                        viewBox="0 0 14 14" fill="none">
-                        <path d="M5.25207 3.49763L8.75222 6.99781L5.25 10.5" stroke="#000A06" stroke-width="1.2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg><a class="text-Theme-black text-sm leading-5 font-normal font-inter-display"
-                        href="">Templates</a><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                        viewBox="0 0 14 14" fill="none">
-                        <path d="M5.25207 3.49763L8.75222 6.99781L5.25 10.5" stroke="#000A06" stroke-width="1.2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg><span class="text-Theme-purple text-sm leading-5 font-inter-display-medium font-inter-display">Product
-                        Marketing Proposal Template</span></nav>
-
-
-                <div class="flex flex-col lg:flex-row gap-[15px]">       
-                <div class="pt-[30px]">
-                    <h1
-                        class="max-w-[570px] text-[22px] md:text-[37px] font-inter-tight  tracking-[-1.41px] text-Theme-black w-full mb-2.5">
-                        Product Marketing Proposal Template
-                    </h1>
-                    <p
-                        class="text-xs md:text-base font-inter-display font-normal text-Theme-dark-gray w-full leading-[19px] md:leading-[24px]  mb-5">
-                        Browse customizable templates for contracts, proposals, agreements, HR forms, invoices, and
-                        more. Create, edit, and send documents in minutes.
-                    </p>
-
-                    <div class="w-[816px] h-[1154px] bg-[#d9d9d9] rounded-xl p-1">
-                        <img src="../assets/images/template-detail-page-img1.png" alt=""
-                            class="border border-Theme-tertiary-gray rounded-lg">
-                    </div>
-                </div>
-                    <aside
-                class="mt-[30px] lg:max-w-[300px] w-full overflow-x-auto lg:sticky lg:top-[80px] lg:flex flex-col gap-3.5 h-fit">
-                <div
-                    class="p-3 bg-Theme-background flex flex-col gap-[17px] rounded-xl w-full">
-                    <div class=" flex flex-col gap-2.5">
-                        <button
-                            class="bg-[#7D4BF2] rounded-lg py-2.5 px-3 flex items-center justify-between w-full text-sm font-inter-display-medium text-white transition-all duration-500 hover:bg-[#5527B0] cursor-pointer">Use
-                            this template <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                viewBox="0 0 14 14" fill="none">
-                                <path d="M5 3L9 7L5 11" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></button>
-
-                       
-
-                            <div x-data="dropdownComponent('download-template')" class="relative w-full">
-                
-                 <button @click="toggle"  
-                            class="bg-[#131211] rounded-lg py-2.5 px-3 flex items-center justify-between w-full text-sm font-inter-display-medium text-white transition-all duration-500 hover:bg-[#2b2a28] cursor-pointer">Download
-                            this template <svg :class="{'rotate-180': isOpen}" class="transition-all duration-300 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                viewBox="0 0 14 14" fill="none">
-                                <path d="M11 5L7 9L3 5" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg></button>
-                <div x-ref="download-template" x-show="isOpen" x-transition="" x-bind:style="'overflow:hidden; transition:height 300ms ease; height:' + height" @click.outside="close" @keydown.escape.window="close()" class="absolute left-0 z-10  mt-[5px] w-full bg-white border-[0.5px] border-Theme-tertiary-gray rounded-10px shadow-[0_6px_14px_0_rgba(0,0,0,0.02),0_25px_25px_0_rgba(0,0,0,0.02),0_57px_34px_0_rgba(0,0,0,0.01)] p-[4px]" style="overflow: hidden; transition: height 300ms; height: auto;">
-                 
-                  <div class="block">
-                    <!--list-->
-                    <ul class="flex flex-col gap-0.5">
-                      <li>
-                        <button class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
-                          
-                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M13.3307 8.66927V7.1072C13.3307 6.56217 13.3307 6.28967 13.2293 6.04464C13.1277 5.79962 12.9351 5.60693 12.5497 5.22156L9.392 2.06386C9.0594 1.73127 8.89313 1.56497 8.68706 1.46644C8.6442 1.44594 8.60033 1.42775 8.55553 1.41194C8.34013 1.33594 8.105 1.33594 7.6346 1.33594C5.47128 1.33594 4.3896 1.33594 3.65695 1.92665C3.50894 2.04599 3.37412 2.18081 3.25478 2.32882C2.66406 3.06148 2.66406 4.14315 2.66406 6.3065V8.66927M8.66406 1.66927V2.0026C8.66406 3.88822 8.66406 4.83103 9.24986 5.41682C9.83566 6.0026 10.7785 6.0026 12.6641 6.0026H12.9974" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M13.1693 10.6641H11.5026C11.1344 10.6641 10.8359 10.9625 10.8359 11.3307V12.6641M10.8359 12.6641V14.6641M10.8359 12.6641H12.8359M2.83594 14.6641V12.9974M2.83594 12.9974V10.6641H4.0026C4.64694 10.6641 5.16927 11.1864 5.16927 11.8307C5.16927 12.4751 4.64694 12.9974 4.0026 12.9974H2.83594ZM6.83594 10.6641H7.83594C8.57234 10.6641 9.16927 11.261 9.16927 11.9974V13.3307C9.16927 14.0671 8.57234 14.6641 7.83594 14.6641H6.83594V10.6641Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                          PDF
-                        </button>
-                      </li>
-                      <li>
-                        <button data-modal-target="convert-to-template" @click="close()" class="group w-full  py-2 px-3 flex items-center gap-2 rounded-md text-sm leading-5 text-Theme-dark-gray font-inter-display-medium transition-all duration-500 ease-in-out hover:bg-[#F5F4F2] hover:text-Theme-black">
-                          
-                          <svg class="text-Theme-dark-gray group-hover:text-Theme-purple transition-all duration-500 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M13.3307 8.66927V7.1072C13.3307 6.56217 13.3307 6.28967 13.2293 6.04464C13.1277 5.79962 12.9351 5.60693 12.5497 5.22156L9.392 2.06386C9.0594 1.73127 8.89313 1.56497 8.68706 1.46644C8.6442 1.44594 8.60033 1.42775 8.55553 1.41194C8.34013 1.33594 8.105 1.33594 7.6346 1.33594C5.47128 1.33594 4.3896 1.33594 3.65695 1.92665C3.50894 2.04599 3.37412 2.18081 3.25478 2.32882C2.66406 3.06148 2.66406 4.14315 2.66406 6.3065V8.66927M8.66406 1.66927V2.0026C8.66406 3.88822 8.66406 4.83103 9.24986 5.41682C9.83566 6.0026 10.7785 6.0026 12.6641 6.0026H12.9974" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M13.6697 11.4771C13.6349 10.6835 13.1185 10.6641 12.4179 10.6641C11.3388 10.6641 11.1599 10.9347 11.1599 11.9974V13.3307C11.1599 14.3934 11.3388 14.6641 12.4179 14.6641C13.1185 14.6641 13.6349 14.6446 13.6697 13.851M4.84632 12.6641C4.84632 13.7687 4.00357 14.6641 2.96397 14.6641C2.7294 14.6641 2.61211 14.6641 2.52475 14.6105C2.31559 14.4822 2.33652 14.2225 2.33652 13.9974V11.3307C2.33652 11.1057 2.31559 10.8459 2.52475 10.7177C2.61211 10.6641 2.7294 10.6641 2.96397 10.6641C4.00357 10.6641 4.84632 11.5595 4.84632 12.6641ZM8.003 14.6641C7.41147 14.6641 7.11567 14.6641 6.93187 14.4688C6.74813 14.2735 6.74813 13.9593 6.74813 13.3307V11.9974C6.74813 11.3689 6.74813 11.0546 6.93187 10.8593C7.11567 10.6641 7.41147 10.6641 8.003 10.6641C8.5946 10.6641 8.8904 10.6641 9.07413 10.8593C9.25793 11.0546 9.25793 11.3689 9.25793 11.9974V13.3307C9.25793 13.9593 9.25793 14.2735 9.07413 14.4688C8.8904 14.6641 8.5946 14.6641 8.003 14.6641Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-</svg>
-                          Docs
-                        </button>
-                      </li>
-                     
-                    </ul>
-                  </div>
-                </div>
-              </div>
-                    </div>
-
-                    <ul class="text-sm text-Theme-dark-gray font-normal font-inter-display px-1.5">
-                        <li class="flex items-center gap-[7px] pb-2.5 border-b border-Theme-tertiary-gray"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M10.6693 8C10.6693 8 8.70532 10.6667 8.00259 10.6667C7.29986 10.6667 5.33594 8 5.33594 8M8.00259 10.3333V2" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M11.3333 5.33594C12.8061 5.33594 14 6.52984 14 8.0026V9.66927C14 11.2257 14 12.0039 13.6851 12.593C13.4365 13.0581 13.0555 13.4391 12.5904 13.6877C12.0013 14.0026 11.2231 14.0026 9.66665 14.0026H6.3336C4.77693 14.0026 3.99859 14.0026 3.40943 13.6876C2.94443 13.439 2.56357 13.0582 2.31497 12.5932C2 12.004 2 11.2257 2 9.669V8.00194C2.00037 6.53003 3.19325 5.33677 4.66515 5.33594H4.66667" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>Used/Downloads <span class="text-Theme-black font-inter-display-semibold">855</span> times</li>
-
-                        <li class="flex items-center gap-[7px] py-2.5 border-b border-Theme-tertiary-gray"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M5.33594 1.33594V3.33594" stroke="#7E7A73" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10.6641 1.33594V3.33594" stroke="#7E7A73" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M2.33594 6.0625H13.6693" stroke="#7E7A73" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 5.66927V11.3359C14 13.3359 13 14.6693 10.6667 14.6693H5.33333C3 14.6693 2 13.3359 2 11.3359V5.66927C2 3.66927 3 2.33594 5.33333 2.33594H10.6667C13 2.33594 14 3.66927 14 5.66927Z" stroke="#7E7A73" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10.4625 9.13021H10.4685" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10.4625 11.1302H10.4685" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7.99373 9.13021H7.99972" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7.99373 11.1302H7.99972" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M5.5328 9.13021H5.53878" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M5.5328 11.1302H5.53878" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>Updated <span class="text-Theme-black font-inter-display-semibold">Jul 5, 2026</span></li>
-
-
-                        <li class="flex items-center gap-[7px] pt-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M7.33594 1.33594H6.0026C2.66927 1.33594 1.33594 2.66927 1.33594 6.0026V10.0026C1.33594 13.3359 2.66927 14.6693 6.0026 14.6693H10.0026C13.3359 14.6693 14.6693 13.3359 14.6693 10.0026V8.66927" stroke="#7E7A73" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10.6972 2.01155L5.44383 7.26488C5.24383 7.46488 5.04383 7.85822 5.00383 8.14488L4.71716 10.1515C4.61049 10.8782 5.12383 11.3849 5.85049 11.2849L7.85716 10.9982C8.13716 10.9582 8.53049 10.7582 8.73716 10.5582L13.9905 5.30488C14.8972 4.39822 15.3238 3.34488 13.9905 2.01155C12.6572 0.678215 11.6038 1.10488 10.6972 2.01155Z" stroke="#7E7A73" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M9.9375 2.76562C10.3842 4.35896 11.6308 5.60562 13.2308 6.05896" stroke="#7E7A73" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>Created by <span class="text-Theme-black font-inter-display-semibold">Agreed</span></li>
-                    </ul>
-
+                <h4 class="text-base font-inter-display-semibold text-Theme-black leading-[22px] capitalize mb-5">Create & Manage</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[15px] w-full">
                     <div
-                        class="flex items-center gap-[7px] p-[7px] bg-white rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.09)] ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 29 29" fill="none">
-                            <path
-                                d="M11.1543 1.89453C13.025 0.300346 15.7757 0.300339 17.6465 1.89453L17.9668 2.16699C18.6874 2.78109 19.5836 3.15217 20.5273 3.22754L20.9463 3.26074C23.3965 3.45627 25.3425 5.40237 25.5381 7.85254L25.5713 8.27148C25.6467 9.2153 26.0177 10.1114 26.6318 10.832L26.9043 11.1514V11.1523C28.4984 13.0231 28.4984 15.7738 26.9043 17.6445L26.6318 17.9648C26.0177 18.6854 25.6467 19.5816 25.5713 20.5254L25.5381 20.9443C25.3425 23.3945 23.3965 25.3406 20.9463 25.5361L20.5273 25.5693C19.5835 25.6448 18.6873 26.0158 17.9668 26.6299L17.6465 26.9023C15.7757 28.4965 13.0251 28.4965 11.1543 26.9023H11.1533L10.834 26.6299C10.1134 26.0158 9.21726 25.6448 8.27344 25.5693L7.85449 25.5361C5.40433 25.3406 3.45822 23.3946 3.2627 20.9443L3.22949 20.5254C3.15412 19.5816 2.78305 18.6854 2.16895 17.9648L1.89648 17.6445C0.302292 15.7738 0.302299 13.0231 1.89648 11.1523L2.16895 10.832C2.78303 10.1114 3.15411 9.21527 3.22949 8.27148L3.2627 7.85254C3.45822 5.40235 5.4043 3.45627 7.85449 3.26074L8.27344 3.22754C9.21722 3.15216 10.1133 2.78108 10.834 2.16699L11.1543 1.89453Z"
-                                fill="#D3F360" stroke="white" stroke-width="1.4" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M10.4941 14.3969L13.0941 16.9969L18.2941 11.7969" stroke="#131211"
-                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <div class="text-sm text-[#131211] font-inter-display font-normal">Esign ready with <span
-                                class="text-[#7D4BF2] font-semibold">agreed</span> <span
-                                class="text-[#7D4BF2] font-normal">sign</span></div>
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
+                    </div>
+                     <div
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
+                    </div>
+                     <div
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
+                    </div>
+                     <div
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
+                    </div>
+                     <div
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
+                    </div>
+                     <div
+                        class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1.5 transition-all duration-500  rounded-10px cursor-pointer">
+                        <div class="relative z-[1]  h-[230px]  bg-white rounded-10px border border-Theme-tertiary-gray  ">
+                           
+                            <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
+                                    loading="lazy" class="max-w-full max-h-full object-contain"
+                                    src="/assets/images/template-img1.png">
+                            </div>
+                        </div>
+                        <div class="px-1.5 py-3 flex flex-col gap-2">
+                            <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">AI Document Creation
+                            </h4>
+                            <p class="text-sm font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Create from scratch, upload a file, use a template, or let AI draft your document.</p>
+                        </div>
                     </div>
 
                 </div>
-
-                <div
-                    class="rounded-xl bg-Theme-background p-[2px] flex flex-col items-center justify-center gap-5">
-                   <div class="pt-5 px-5 w-full flex flex-col justify-center items-center">
-               <svg width="118" height="149" viewBox="0 0 118 149" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_ddd_8092_5397)">
-<rect x="36" y="10" width="46" height="46" rx="10" fill="#7D4BF2"/>
-<rect x="35" y="9" width="48" height="48" rx="11" stroke="white" stroke-width="2"/>
-</g>
-<path d="M67.1711 31.4604C67.1711 29.7882 66.6124 29.0347 66.1228 28.6693C65.5684 28.2556 64.833 28.14 64.2541 28.2087C63.388 28.3116 61.5703 29.7483 62.2538 32.2886C62.6747 33.8524 63.6905 35.0157 64.9851 35.7477C66.3953 34.4996 67.1711 32.8919 67.1711 31.4604ZM50.8136 31.4604C50.8136 32.8919 51.5893 34.4996 52.9995 35.7477C54.2941 35.0157 55.31 33.8524 55.7309 32.2886C56.4144 29.7483 54.5967 28.3116 53.7306 28.2087C53.1517 28.14 52.4163 28.2556 51.8619 28.6693C51.3723 29.0347 50.8136 29.7882 50.8136 31.4604ZM70.0113 31.4604C70.0113 33.3057 69.3011 35.1132 68.0651 36.6344C69.2896 36.6967 70.4488 36.4276 71.3121 35.8765L72.8402 38.2705C70.6978 39.638 67.8319 39.8046 65.342 38.9912C63.5785 40.0639 61.4134 40.7181 59.0206 40.7181H58.9641C56.5713 40.7181 54.4061 40.0639 52.6426 38.9912C50.1528 39.8046 47.2869 39.638 45.1445 38.2705L46.6726 35.8765C47.5359 36.4276 48.695 36.6967 49.9196 36.6344C48.6835 35.1132 47.9734 33.3057 47.9734 31.4604C47.9734 29.0713 48.8227 27.3936 50.1632 26.3932C51.439 25.4412 52.9558 25.2566 54.0656 25.3884C56.5769 25.6866 59.6261 28.7429 58.4734 33.0265C57.9834 34.8474 56.9693 36.2807 55.6958 37.3283C56.6632 37.6753 57.7577 37.878 58.9641 37.878H59.0206C60.227 37.878 61.3214 37.6753 62.2888 37.3283C61.0154 36.2807 60.0013 34.8474 59.5113 33.0265C58.3586 28.7429 61.4078 25.6866 63.9191 25.3884C65.0289 25.2566 66.5457 25.4412 67.8215 26.3932C69.162 27.3936 70.0113 29.0713 70.0113 31.4604Z" fill="white"/>
-<defs>
-<filter id="filter0_ddd_8092_5397" x="0" y="0" width="118" height="149" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="57"/>
-<feGaussianBlur stdDeviation="17"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8092_5397"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="25"/>
-<feGaussianBlur stdDeviation="12.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0"/>
-<feBlend mode="normal" in2="effect1_dropShadow_8092_5397" result="effect2_dropShadow_8092_5397"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="6"/>
-<feGaussianBlur stdDeviation="7"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0"/>
-<feBlend mode="normal" in2="effect2_dropShadow_8092_5397" result="effect3_dropShadow_8092_5397"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow_8092_5397" result="shape"/>
-</filter>
-</defs>
-</svg>
-
-
-                    <div class="flex flex-col gap-2 items-center justify-center">
-                        <h4 class="text-lg font-inter-display-medium text-Theme-blue font-inter-display">Agreed AI </h4>
-                        <p class="text-sm font-normal text-center text-Theme-dark-gray max-w-[235px]">Generate your own
-                            contract or agreement
-                            with Agreed AI in one click</p>
-                    </div>
-                    </div>
-                    <div class="bg-white block rounded-[14px] py-2.5 px-2 w-full">
-                    <a href="#"
-                        class="w-full block py-2.5 px-5 text-center bg-[#D3F360] rounded-lg text-sm leading-5 font-inter-display-medium text-Theme-black transition-all duration-500 hover:bg-[#c0dd58]">
-                        Create for Free
-                    </a>
-                    </div>
-                </div>
-
-                <div class="bg-Theme-background rounded-lg p-1 grid grid-cols-2 gap-1.5">
+                <div class="w-fit mt-[30px] mx-auto">
                     <button
-                        class="rounded-md p-2 flex items-center justify-center gap-[5px] text-sm font-normal text-Theme-dark-gray transition-all duration-500 hover:bg-white hover:text-[#131211] active [&.active]:bg-white [&.active]:text-[#131211]"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path
-                                d="M17.5 5.41797C17.5 6.79868 16.3807 7.91797 15 7.91797C13.6192 7.91797 12.5 6.79868 12.5 5.41797C12.5 4.03726 13.6192 2.91797 15 2.91797C16.3807 2.91797 17.5 4.03726 17.5 5.41797Z"
-                                stroke="currentColor" stroke-width="1.2" />
-                            <path
-                                d="M7.5 10C7.5 11.3807 6.38071 12.5 5 12.5C3.61929 12.5 2.5 11.3807 2.5 10C2.5 8.61925 3.61929 7.5 5 7.5C6.38071 7.5 7.5 8.61925 7.5 10Z"
-                                stroke="currentColor" stroke-width="1.2" />
-                            <path
-                                d="M17.5 14.582C17.5 15.9628 16.3807 17.082 15 17.082C13.6192 17.082 12.5 15.9628 12.5 14.582C12.5 13.2013 13.6192 12.082 15 12.082C16.3807 12.082 17.5 13.2013 17.5 14.582Z"
-                                stroke="currentColor" stroke-width="1.2" />
-                            <path d="M7.27344 8.95661L12.6901 6.45703M7.27344 11.0404L12.6901 13.5399"
-                                stroke="currentColor" stroke-width="1.2" />
-                        </svg>Share</button>
-                    <button
-                        class="rounded-md p-2 flex items-center justify-center gap-[5px] text-sm font-normal text-Theme-dark-gray transition-all duration-500  hover:bg-white hover:text-[#131211]"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3.33203 5.83203V17.4987" stroke="currentColor" stroke-width="1.25"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                                d="M9.7967 3.25721C7.04233 1.85414 4.87474 2.6762 3.79391 3.516C3.5991 3.66738 3.50168 3.74306 3.41686 3.91639C3.33203 4.08973 3.33203 4.25115 3.33203 4.574V12.2766C4.14011 11.3618 6.56436 9.944 9.7967 11.5905C12.6854 13.062 15.1438 12.452 16.3068 11.8163C16.4681 11.7281 16.5488 11.6839 16.6071 11.5857C16.6654 11.4874 16.6654 11.3808 16.6654 11.1674V4.89491C16.6654 4.20448 16.6654 3.85928 16.5009 3.73422C16.3364 3.60916 15.9517 3.71583 15.1822 3.9292C13.8654 4.29433 11.9506 4.35443 9.7967 3.25721Z"
-                                stroke="currentColor" stroke-width="1.25" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>Report</button>
+                        class="py-[7px] px-5 bg-Theme-tertiary-gray rounded-md text-sm font-inter-display-medium text-Theme-black w-fit transition-all duration-500 hover:bg-Theme-background">Load
+                        More</button>
                 </div>
-            </aside>
-            </div>  
             </div>
-
-        
         </div>
     </section>
-    <!--detail section-->
+
+    <!--FAQ section-->
     <section class="relative xl:py-[100px] md:py-[80px] py-[40px]">
         <div class="max-w-[1170px] mx-auto px-[15px]">
-            <div class="flex flex-col gap-[48px]">
-                <!--detail-->
-                <div class="flex flex-col gap-4">
-                    <h3 class="text-Theme-black text-2xl font-inter-display leading-[30px]">About Product Agreement Template</h3>
-                    <p class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full  md:leading-[26px] mx-auto  xl:text-left text-center">The Product Agreement Template helps companies clearly define product terms, responsibilities, deliverables, and expectations between businesses. It provides a structured framework for documenting key product details, ensuring both parties have a clear understanding of their roles and obligations. Built on Agreed, this template makes it easier to create, review, approve, and manage professional agreements.</p>
-                </div>
-                 <!--detail-->
-                <div class="flex flex-col gap-4">
-                    <h3 class="text-Theme-black text-2xl font-inter-display leading-[30px]">Benefits of Product Agreement Template</h3>
-                    <p class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full  md:leading-[26px] mx-auto  xl:text-left text-center">The Product Agreement Template helps companies clearly define product terms, responsibilities, deliverables, and expectations between businesses. It provides a structured framework for documenting key product details, ensuring both parties have a clear understanding of their roles and obligations. Built on Agreed, this template makes it easier to create, review, approve, and manage professional agreements.</p>
-                </div>
-                <!--detail-->
-                <div class="flex flex-col gap-4">
-                    <h3 class="text-Theme-black text-2xl font-inter-display leading-[30px]">Use Cases of Product Agreement Template</h3>
-                   <ul class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full  md:leading-[32px] mx-auto  xl:text-left text-center list-disc ml-5">
-                       <li>Product supply and distribution agreements</li>
-<li>Product development partnerships</li>
-<li>Vendor and supplier agreements</li>
-<li>Product licensing arrangements</li>
-<li>Business-to-business product contracts</li>
-<li>Product delivery and service terms</li>
-<li>Partnership and collaboration agreements</li>
-                   </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!---->
-    <!--how to use section-->
-    <section class="relative xl:pb-[100px] md:pb-[80px] pb-[40px]">
-        <div class="max-w-[1170px] mx-auto px-[15px]">
-                <div class="flex justify-center md:mb-[50px] mb-[15px]">
-                    <h2
-                        class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px] tracking-[-0.66px]  xl:text-left text-center md:leading-[normal]">
-                        How to Use Product Agreement Template</h2>
-                </div>
-                <!--grid-->
-                <div class="grid grid-cols-3 gap-4">
-                   <!--CARD-->
-                    <div class="p-5 flex flex-col gap-5 bg-Theme-background rounded-[14px] border border-Theme-tertiary-gray">
-                        <div class="w-[54px] h-[54px] bg-white rounded-10px flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M21 10V13C21 16.7712 21 18.6569 19.8284 19.8284C18.6569 21 16.7712 21 13 21H11C7.22876 21 5.34315 21 4.17157 19.8284C3 18.6569 3 16.7712 3 13V11C3 7.22876 3 5.34315 4.17157 4.17157C5.34315 3 7.22876 3 11 3H14" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10 3L15 20.5" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M3 13L12 11" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M19.5 2.9375V4.5M19.5 4.5V6.0625M19.5 4.5H18.25M19.5 4.5H20.75M22 4.5L20.9156 4.13852C20.4179 3.97263 20.0274 3.58211 19.8615 3.08443L19.5 2L19.1385 3.08443C18.9726 3.58211 18.5821 3.97263 18.0844 4.13852L17 4.5L18.0844 4.86148C18.5821 5.02737 18.9726 5.41789 19.1385 5.91557L19.5 7L19.8615 5.91557C20.0274 5.41789 20.4179 5.02737 20.9156 4.86148L22 4.5Z" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h4 class="text-xl text-Theme-black font-inter-display leading-[24px] capitalize">Start With the Template</h4>
-                            <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Open the Product Agreement Template in your Agreed workspace and begin with a ready-to-use agreement structure.</p>
-                        </div>
-                    </div>
-                    <!--CARD-->
-                    <div class="p-5 flex flex-col gap-5 bg-Theme-background rounded-[14px] border border-Theme-tertiary-gray">
-                        <div class="w-[54px] h-[54px] bg-white rounded-10px flex justify-center items-center">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M17.458 9.08015L17.1669 8.56619C16.9468 8.17749 16.8367 7.98314 16.6494 7.90564C16.4622 7.82814 16.2503 7.8893 15.8267 8.0116L15.1071 8.21782C14.8366 8.28127 14.5529 8.24528 14.3059 8.11619L14.1072 7.99956C13.8955 7.86157 13.7326 7.65811 13.6424 7.41896L13.4455 6.82053C13.316 6.42452 13.2512 6.22651 13.0971 6.11325C12.943 6 12.7382 6 12.3287 6H11.6713C11.2618 6 11.057 6 10.9029 6.11325C10.7488 6.22651 10.684 6.42452 10.5545 6.82053L10.3576 7.41896C10.2674 7.65811 10.1045 7.86157 9.89276 7.99956L9.69409 8.11619C9.44713 8.24528 9.16338 8.28127 8.89292 8.21782L8.17329 8.0116C7.74966 7.8893 7.53785 7.82814 7.35056 7.90564C7.16327 7.98314 7.0532 8.17749 6.83305 8.56619L6.54196 9.08015C6.3356 9.4445 6.23243 9.62667 6.25245 9.82061C6.27248 10.0145 6.4106 10.1708 6.68686 10.4834L7.29491 11.175C7.44352 11.3664 7.54903 11.7 7.54903 11.9999C7.54903 12.3 7.44355 12.6335 7.29492 12.8249L6.68686 13.5166C6.4106 13.8291 6.27248 13.9854 6.25245 14.1793C6.23243 14.3733 6.33561 14.5555 6.54196 14.9198L6.83304 15.4337C7.05319 15.8224 7.16327 16.0168 7.35056 16.0943C7.53785 16.1718 7.74967 16.1106 8.17331 15.9883L8.89289 15.7821C9.1634 15.7186 9.44721 15.7547 9.69419 15.8838L9.89284 16.0004C10.1046 16.1384 10.2674 16.3419 10.3576 16.581L10.5545 17.1795C10.684 17.5755 10.7488 17.7735 10.9029 17.8867C11.057 18 11.2618 18 11.6713 18H12.3287C12.7382 18 12.943 18 13.0971 17.8867C13.2512 17.7735 13.316 17.5755 13.4455 17.1795L13.6424 16.581C13.7326 16.3419 13.8954 16.1384 14.1072 16.0004L14.3058 15.8838C14.5528 15.7547 14.8366 15.7186 15.1071 15.7821L15.8267 15.9883C16.2503 16.1106 16.4621 16.1718 16.6494 16.0943C16.8367 16.0168 16.9468 15.8224 17.167 15.4338L17.458 14.9198C17.6644 14.5555 17.7676 14.3733 17.7475 14.1793C17.7275 13.9854 17.5894 13.8291 17.3131 13.5166L16.7051 12.8249C16.5564 12.6335 16.451 12.3 16.451 11.9999C16.451 11.7 16.5565 11.3664 16.7051 11.175L17.3131 10.4834C17.5894 10.1708 17.7275 10.0145 17.7475 9.82061C17.7676 9.62667 17.6644 9.4445 17.458 9.08015Z" stroke="#131211" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M12 13.75C12.9665 13.75 13.75 12.9665 13.75 12C13.75 11.0335 12.9665 10.25 12 10.25C11.0335 10.25 10.25 11.0335 10.25 12C10.25 12.9665 11.0335 13.75 12 13.75Z" stroke="#131211" stroke-width="1.5"/>
-  <path d="M19 2V4.85857C17.1962 3.09032 14.7255 2 12 2C6.47715 2 2 6.47715 2 12C2 13.4222 2.29689 14.7751 2.83209 16M5 22V19.1414C6.80375 20.9097 9.27455 22 12 22C17.5228 22 22 17.5228 22 12C22 10.5778 21.7031 9.22492 21.1679 8" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h4 class="text-xl text-Theme-black font-inter-display leading-[24px] capitalize">Customize Agreement Details</h4>
-                            <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Add or edit product details, responsibilities, pricing, deliverables, timelines, and other terms to match your agreement needs.</p>
-                        </div>
-                    </div>
-                    <!--CARD-->
-                    <div class="p-5 flex flex-col gap-5 bg-Theme-background rounded-[14px] border border-Theme-tertiary-gray">
-                        <div class="w-[54px] h-[54px] bg-white rounded-10px flex justify-center items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M8.87038 6.13264L14.7327 4.19538C18.033 3.10476 19.6831 2.55945 20.5579 3.43426C21.4327 4.30907 20.8874 5.95922 19.7968 9.25953L17.8595 15.1218C16.6236 18.8619 16.0056 20.7319 14.8796 20.9603C14.6411 21.0087 14.3955 21.0129 14.1549 20.9727C13.019 20.7832 12.3132 18.9359 10.9016 15.2413C10.6328 14.5376 10.4983 14.1858 10.2574 13.9127C10.2018 13.8497 10.1424 13.7903 10.0795 13.7348C9.80638 13.4938 9.45455 13.3594 8.75089 13.0906C5.05627 11.679 3.20896 10.9732 3.01945 9.83727C2.97931 9.59669 2.98353 9.35108 3.03189 9.11259C3.26025 7.98657 5.13029 7.36859 8.87038 6.13264Z" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12.8047 11.1894L15.5019 8.49219" stroke="#131211" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <h4 class="text-xl text-Theme-black font-inter-display leading-[24px] capitalize">Review, Sign & Manage</h4>
-                            <p class="text-base text-Theme-dark-gray leading-[23px] font-inter-display">Send the agreement for review and approval, collect signatures, and manage the completed agreement securely in Agreed.</p>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </section>
-<!--FAQ section-->
-  <section class="relative xl:pb-[100px] md:pb-[80px] pb-[40px]">
-    <div class="max-w-[1170px] mx-auto px-[15px]">
-      <div class="flex xl:flex-row flex-col md:gap-[60px] gap-[15px]">
+           <div class="flex xl:flex-row flex-col md:gap-[60px] gap-[15px]">
         <div class="xl:max-w-[300px] max-w-[280px] mx-auto">
           <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] md:mb-5 mb-2.5 xl:text-left text-center md:leading-[normal]">Frequently
             Asked Questions.</h2>
@@ -3185,26 +3024,21 @@
           <div x-data="{ open: null }" class="w-full max-w-[778px] mx-auto flex flex-col gap-[15px]">
 
             <!-- Item -->
-            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 "
-            :class="open === 1 ? 'bg-Theme-background' : 'bg-white'">
-              <button @click="open = open === 1 ? null : 1"
-                class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
-                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
-                  :class="open === 1 ? 'text-Theme-purple' : 'text-Theme-black'">
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 1 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 1 ? null : 1" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 1 ? 'text-Theme-purple' : 'text-Theme-black'">
                   Do my clients need to create an account to sign?
                 </span>
-                <span
-                  class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center "
-                  :class="">
+                <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
                   <svg :class="{'rotate-180': open === 1 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 
                  
 
                 </span>
               </button>
-              <div class="accordion-content md:px-5 px-3 " :class="open === 1 ? 'open' : ''">
+              <div class="accordion-content md:px-5 px-3" :class="open === 1 ? 'open' : ''">
                 <div>
                   <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
                     Never. Signers simply click the link you send them and sign directly in their browser no account, no
@@ -3214,26 +3048,21 @@
               </div>
             </div>
             <!-- Item -->
-            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 "
-            :class="open === 2 ? 'bg-Theme-background' : 'bg-white'">
-              <button @click="open = open === 2 ? null : 2"
-                class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
-                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
-                  :class="open === 2? 'text-Theme-purple' : 'text-Theme-black'">
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 2 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 2 ? null : 2" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 2? 'text-Theme-purple' : 'text-Theme-black'">
                  Are signatures created with Agreed legally binding?
                 </span>
-                <span
-                  class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center "
-                  :class="">
+                <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
                   <svg :class="{'rotate-180': open === 2 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 
                  
 
                 </span>
               </button>
-              <div class="accordion-content md:px-5 px-3 " :class="open === 2 ? 'open' : ''">
+              <div class="accordion-content md:px-5 px-3" :class="open === 2 ? 'open' : ''">
                 <div>
                   <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
                     Never. Signers simply click the link you send them and sign directly in their browser no account, no
@@ -3243,26 +3072,93 @@
               </div>
             </div>
              <!-- Item -->
-            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 "
-            :class="open === 3 ? 'bg-Theme-background' : 'bg-white'">
-              <button @click="open = open === 3 ? null : 3"
-                class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
-                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
-                  :class="open === 3? 'text-Theme-purple' : 'text-Theme-black'">
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 3 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 3 ? null : 3" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 3? 'text-Theme-purple' : 'text-Theme-black'">
                  How does the workflow automation work?
                 </span>
-                <span
-                  class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center "
-                  :class="">
+                <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
                   <svg :class="{'rotate-180': open === 3 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 
                  
 
                 </span>
               </button>
-              <div class="accordion-content md:px-5 px-3 " :class="open === 3 ? 'open' : ''">
+              <div class="accordion-content md:px-5 px-3" :class="open === 3 ? 'open' : ''">
+                <div>
+                  <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
+                    Never. Signers simply click the link you send them and sign directly in their browser no account, no
+                    app download, no friction. It works on any device in under 60 seconds.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Item -->
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 4 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 4 ? null : 4" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 4? 'text-Theme-purple' : 'text-Theme-black'">
+                 Can I use my own branding on documents and emails?
+                </span>
+                <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
+                  <svg :class="{'rotate-180': open === 4 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                 
+
+                </span>
+              </button>
+              <div class="accordion-content md:px-5 px-3" :class="open === 4 ? 'open' : ''">
+                <div>
+                  <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
+                    Never. Signers simply click the link you send them and sign directly in their browser no account, no
+                    app download, no friction. It works on any device in under 60 seconds.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Item -->
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 5 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 5 ? null : 5" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 5? 'text-Theme-purple' : 'text-Theme-black'">
+                 Can multiple people sign the same document?
+                </span>
+               <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
+                  <svg :class="{'rotate-180': open === 5 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                 
+
+                </span>
+              </button>
+              <div class="accordion-content md:px-5 px-3" :class="open === 5 ? 'open' : ''">
+                <div>
+                  <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
+                    Never. Signers simply click the link you send them and sign directly in their browser no account, no
+                    app download, no friction. It works on any device in under 60 seconds.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Item -->
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 6 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 6 ? null : 6" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 6? 'text-Theme-purple' : 'text-Theme-black'">
+                 What happens to my documents after the free trial?
+                </span>
+               <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
+                  <svg :class="{'rotate-180': open === 6 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+                 
+
+                </span>
+              </button>
+              <div class="accordion-content md:px-5 px-3" :class="open === 6 ? 'open' : ''">
                 <div>
                   <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
                     Never. Signers simply click the link you send them and sign directly in their browser no account, no
@@ -3272,26 +3168,21 @@
               </div>
             </div>
              <!-- Item -->
-            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 "
-            :class="open === 4 ? 'bg-Theme-background' : 'bg-white'">
-              <button @click="open = open === 4 ? null : 4"
-                class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
-                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6  transition-colors duration-500"
-                  :class="open === 4? 'text-Theme-purple' : 'text-Theme-black'">
-                 How does the workflow automation work?
+            <div class="border border-Theme-tertiary-gray rounded-[10px] transition-colors duration-500 bg-white" :class="open === 7 ? 'bg-Theme-background' : 'bg-white'">
+              <button @click="open = open === 7 ? null : 7" class="w-full flex items-center justify-between md:py-[18px] py-2.5 pb-0 md:pb-0 md:pl-[18px] md:pr-[16px] px-3 text-left">
+                <span class="md:text-lg text-base font-inter-display font-normal md:leading-6 transition-colors duration-500 text-Theme-black" :class="open === 7? 'text-Theme-purple' : 'text-Theme-black'">
+                 Does Agreed integrate with tools my team already uses?
                 </span>
-                <span
-                  class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center "
-                  :class="">
-                  <svg :class="{'rotate-180': open === 3 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+               <span class="shrink-0 ml-4 duration-500  w-[20px] h-[20px]  flex items-center justify-center " :class="">
+                  <svg :class="{'rotate-180': open === 7 }" class="transition-all duration-300 ease-in-out" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 7.50295L9.9998 12.5032L4.99664 7.5" stroke="#131211" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 
                  
 
                 </span>
               </button>
-              <div class="accordion-content md:px-5 px-3 " :class="open === 3 ? 'open' : ''">
+              <div class="accordion-content md:px-5 px-3" :class="open === 7 ? 'open' : ''">
                 <div>
                   <p class="pb-[18px]  text-sm font-inter-display text-Theme-dark-gray leading-[26px]">
                     Never. Signers simply click the link you send them and sign directly in their browser no account, no
@@ -3303,158 +3194,53 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-    <!-- Related Template Section -->
-    <section class="relative px-4 xl:pb-[100px] md:pb-[80px] pb-[40px]">
-        <div class="max-w-[1140px] mx-auto w-full">
-            <div class="flex items-center justify-between">
-                <h2
-                    class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px] tracking-[-0.66px] md:mb-5 mb-2.5 xl:text-left text-center md:leading-[normal]">
-                    Related templates</h2>
-
-                <a href="" class="text-base font-normal text-[#7D4BF2]">See More</a>
-            </div>
-
-            <div class="pt-[50px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div
-                    class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1 transition-all duration-500  rounded-xl cursor-pointer">
-                    <div class="relative z-[1]  h-[300px]  bg-white rounded-xl   ">
-                        <div class="absolute top-[-1px] right-[-1px] z-20 w-[50px] h-[50px] overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-Theme-background transition-all duration-500 before:content-[''] before:absolute before:top-[48px] before:right-0 before:w-[76px]  before:rounded-lg  before:h-px  before:origin-top-right before:rotate-45 [clip-path:polygon(100%_0,100%_100%,0_0)]">
-                            </div>
-                        </div>
-                        <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
-                                loading="lazy" class="max-w-full max-h-full object-contain"
-                                src="/assets/images/template-img1.png">
-                        </div>
-                    </div>
-                    <div class="px-2.5 pt-3 pb-2.5 flex flex-col gap-1.5">
-                        <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Product Marketing Proposal Template
-                        </h4>
-                        <p class="text-xs font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Use built-in
-                            variables, templates, and CSV files to send unique documents to hundreds ...</p>
-                    </div>
-                </div>
-                <div
-                    class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1 transition-all duration-500  rounded-xl cursor-pointer">
-                    <div class="relative z-[1]  h-[300px]  bg-white rounded-xl border border-Theme-tertiary-gray  ">
-                        <div class="absolute top-[-1px] right-[-1px] z-20 w-[50px] h-[50px] overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-Theme-background transition-all duration-500 before:content-[''] before:absolute before:top-[48px] before:right-0 before:w-[76px] before:border before:rounded-lg before:border-Theme-tertiary-gray before:h-px before:bg-Theme-background before:origin-top-right before:rotate-45 [clip-path:polygon(100%_0,100%_100%,0_0)]">
-                            </div>
-                        </div>
-                        <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
-                                loading="lazy" class="max-w-full max-h-full object-contain"
-                                src="/assets/images/template-img1.png">
-                        </div>
-                    </div>
-                    <div class="px-2.5 pt-3 pb-2.5 flex flex-col gap-1.5">
-                        <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Product Marketing Proposal Template
-                        </h4>
-                        <p class="text-xs font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Use built-in
-                            variables, templates, and CSV files to send unique documents to hundreds ...</p>
-                    </div>
-                </div>
-                <div
-                    class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1 transition-all duration-500  rounded-xl cursor-pointer">
-                    <div class="relative z-[1]  h-[300px]  bg-white rounded-xl border border-Theme-tertiary-gray  ">
-                        <div class="absolute top-[-1px] right-[-1px] z-20 w-[50px] h-[50px] overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-Theme-background transition-all duration-500 before:content-[''] before:absolute before:top-[48px] before:right-0 before:w-[76px] before:border before:rounded-lg before:border-Theme-tertiary-gray before:h-px before:bg-Theme-background before:origin-top-right before:rotate-45 [clip-path:polygon(100%_0,100%_100%,0_0)]">
-                            </div>
-                        </div>
-                        <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
-                                loading="lazy" class="max-w-full max-h-full object-contain"
-                                src="/assets/images/template-img1.png">
-                        </div>
-                    </div>
-                    <div class="px-2.5 pt-3 pb-2.5 flex flex-col gap-1.5">
-                        <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Product Marketing Proposal Template
-                        </h4>
-                        <p class="text-xs font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Use built-in
-                            variables, templates, and CSV files to send unique documents to hundreds ...</p>
-                    </div>
-                </div>
-                <div
-                    class="group 2xl:w-full 2xl:h-full h-full w-full relative bg-Theme-background p-1 transition-all duration-500  rounded-xl cursor-pointer">
-                    <div class="relative z-[1]  h-[300px]  bg-white rounded-xl border border-Theme-tertiary-gray  ">
-                        <div class="absolute top-[-1px] right-[-1px] z-20 w-[50px] h-[50px] overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-Theme-background transition-all duration-500 before:content-[''] before:absolute before:top-[48px] before:right-0 before:w-[76px] before:border before:rounded-lg before:border-Theme-tertiary-gray before:h-px before:bg-Theme-background before:origin-top-right before:rotate-45 [clip-path:polygon(100%_0,100%_100%,0_0)]">
-                            </div>
-                        </div>
-                        <div class="relative z-0 flex items-center justify-center h-full w-full p-5"><img alt=""
-                                loading="lazy" class="max-w-full max-h-full object-contain"
-                                src="/assets/images/template-img1.png">
-                        </div>
-                    </div>
-                    <div class="px-2.5 pt-3 pb-2.5 flex flex-col gap-1.5">
-                        <h4 class="text-sm font-inter-display-medium leading-5 text-Theme-black">Product Marketing Proposal Template
-                        </h4>
-                        <p class="text-xs font-normal font-inter-display text-Theme-dark-gray line-clamp-2">Use built-in
-                            variables, templates, and CSV files to send unique documents to hundreds ...</p>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </section>
-
     <!--CTA section-->
-    <section class="relative ">
-        <div class="max-w-[1170px] mx-auto px-[15px]">
-            <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-Theme-tertiary-gray">
-                <div class="flex flex-col gap-[40px]">
-                    <div
-                        class="md:max-w-[536px] max-w-full mx-auto text-center md:pt-[60px] pt-[30px]  md:px-0 px-[15px]">
-                        <h2
-                            class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] mb-2.5 text-center md:leading-[normal] leading-[28px]">
-                            Everything You Need to <br>
-                            Create, Send and Sign Documents</h2>
-                        <p
-                            class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full leading-[19px]  md:leading-[26px] mx-auto  md:mb-[25px] mb-[15px] md:max-w-full max-w-[247px]">
-                            Agreed helps teams reduce delays, improve signing completion</p>
-                        <a href="#"
-                            class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[160px] w-fit mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
-                            Start Creating Now
-                        </a>
-                    </div>
-                    <div class="xl:hidden flex justify-center px-[15px]">
-                        <img src="../assets/images/cta-img-mobile.png" alt="image"
-                            class="md:max-w-[500px] max-w-full w-full" />
-                    </div>
-                    <div id="ctaCardsWrap" class="xl:flex hidden justify-center relative min-h-[170px] overflow-hidden">
-                        <div class="cta-card absolute left-0 right-0 flex justify-center z-30">
-                            <img src="../assets/images/cta-card1.png" alt="image" />
-                        </div>
-                        <div class="cta-card absolute xl:left-[325px] xl:top-[25px]  z-20">
-                            <img src="../assets/images/cta-card2.png" alt="image" />
-                        </div>
-                        <div class="cta-card absolute right-[350px] top-[25px] z-20 ">
-                            <img src="../assets/images/cta-card3.png" alt="image" />
-                        </div>
-                        <div class="cta-card absolute left-[240px] top-[70px]  z-10">
-                            <img src="../assets/images/cta-card4.png" alt="image" />
-                        </div>
-                        <div class="cta-card absolute right-[250px] top-[50px]  z-10">
-                            <img src="../assets/images/cta-card5.png" alt="image" />
-                        </div>
-                        <div class="cta-card absolute left-[140px] top-[95px]  ">
-                            <img src="../assets/images/cta-card6.png" alt="image" />
-                        </div>
-                        <div class="cta-card absolute right-[150px] top-[106px]  ">
-                            <img src="../assets/images/cta-card7.png" alt="image" />
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+  <section class="relative ">
+  <div class="max-w-[1170px] mx-auto px-[15px]">
+    <div class="bg-[linear-gradient(180deg,#F9F6FF_0%,#FFF_100%)] rounded-[18px] border border-Theme-tertiary-gray">
+        <div class="flex flex-col gap-[40px]">
+          <div class="md:max-w-[536px] max-w-full mx-auto text-center md:pt-[60px] pt-[30px]  md:px-0 px-[15px]">
+           <h2 class="md:text-[37px] text-[20px] text-Theme-black font-inter-tight font-light md:tracking-[-1.11px]  tracking-[-0.66px] mb-2.5 text-center md:leading-[normal] leading-[28px]">Everything You Need to <br>
+Create, Send and Sign Documents</h2>
+            <p class="md:text-base text-xs font-inter-display font-normal text-Theme-dark-gray w-full leading-[19px]  md:leading-[26px] mx-auto  md:mb-[25px] mb-[15px] md:max-w-full max-w-[247px]">Agreed helps teams reduce delays, improve signing completion</p>
+            <a href="#" class="md:py-2 md:px-5 py-[7px] px-[22px] flex justify-center items-center md:w-[160px] w-fit mx-auto  bg-Theme-purple rounded-lg text-sm leading-[22px] font-inter-display-medium text-white shrink-0 transition-all duration-500 hover:bg-[#5527B0]">
+          Start Creating Now
+        </a>
+          </div>
+          <div class="xl:hidden flex justify-center px-[15px]">
+          <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787728639863-cta-img-mobile.png" alt="image" class="md:max-w-[500px] max-w-full w-full">
         </div>
+          <div id="ctaCardsWrap" class="xl:flex hidden justify-center relative min-h-[170px] overflow-hidden" data-cta-anim-init="true">
+            <div class="cta-card absolute left-0 right-0 flex justify-center z-30" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823133293-cta-card1.webp" alt="image">
+            </div>
+            <div class="cta-card absolute xl:left-[325px] xl:top-[25px]  z-20" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823134075-cta-card2.webp" alt="image">
+            </div>
+            <div class="cta-card absolute right-[350px] top-[25px] z-20 " style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823134769-cta-card3.webp" alt="image">
+            </div>
+            <div class="cta-card absolute left-[240px] top-[70px]  z-10" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823135273-cta-card4.webp" alt="image">
+            </div>
+            <div class="cta-card absolute right-[250px] top-[50px]  z-10" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823135918-cta-card5.webp" alt="image">
+            </div>
+            <div class="cta-card absolute left-[140px] top-[95px]  " style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823136880-cta-card6.webp" alt="image">
+            </div>
+             <div class="cta-card absolute right-[150px] top-[106px]  " style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <img src="https://f005.backblazeb2.com/file/agreed-net/cms-assets/1787823137439-cta-card7.webp" alt="image">
+            </div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
 
-    </section>
-
+</section>
     <!--footer section-->
     <footer class="relative w-full">
         <div class="max-w-[1170px] mx-auto px-[15px]">
@@ -3495,7 +3281,7 @@
                     <ul class="flex items-center gap-3">
                         <li>
                             <a href="#"
-                                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
+                                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
                                     fill="none">
                                     <path
@@ -3506,7 +3292,7 @@
                         </li>
                         <li>
                             <a href="#"
-                                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
+                                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -3517,7 +3303,7 @@
                         </li>
                         <li>
                             <a href="#"
-                                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-Theme-background">
+                                class="w-[38px] h-[38px] flex justify-center items-center border border-Theme-tertiary-gray rounded-lg transition-all duration-500 hover:bg-[#F9F9F9]">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
